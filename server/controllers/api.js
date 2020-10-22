@@ -24,7 +24,15 @@ module.exports = {
     chuandoan: async(req,res)=>{
         try {
             let trieuchung = req.body.trieuchung
-            console.log( trieuchung)
+            //console.log(trieuchung)\
+            let str = ""
+            trieuchung.map((x,y)=>{
+                if(trieuchung[y+1] != undefined){
+                    str += `regex(str(?cmt), "${x}", "i") || `
+                 }else{
+                    str +=`regex(str(?cmt), "${x}", "i")`
+                 } 
+             })
             let rs = await graphDBEndpoint.query(
                 `
                 SELECT DISTINCT  ?tenbenh ?trieuchung_moi ?vitri  
@@ -32,17 +40,16 @@ module.exports = {
                 ?x data:hasSymptom ?y .
                 ?y rdfs:comment ?cmt.
                 ?x rdfs:comment ?tenbenh
-                FILTER  (`+
-               
-                `regex(str(?cmt), "${trieuchung}", "i")`
-                +`).
+                FILTER  (${str}).
                 ?x data:hasSymptom ?q.
                 ?q rdfs:comment ?trieuchung_moi.
                 ?q rdf:type ?t.
                 ?t rdfs:comment ?vitri
-                }
+}
+            
                 `       )
-            //console.log(rs.results.bindings)
+            console.log(rs.results.bindings)
+            res.send(rs.results.bindings)
            // res.send(rs.results.bindings)
         }catch(err){
             console.log(err)
