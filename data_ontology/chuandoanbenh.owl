@@ -1,0 +1,2622 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#"
+     xml:base="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-4="http://www.semanticweb.org/tvanl/ontologies/2020/8/untitled-ontology-4#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua">
+        <owl:imports rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Kháng_Bệnh -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Kháng_Bệnh">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Loại_Bệnh"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nguyên_Nhân_Do -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nguyên_Nhân_Do">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Loại_Bệnh"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nguyên_Nhân"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#isSymptomOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Loại_Bệnh"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#isSymptomOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#isSymptomOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Loại_Bệnh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Image -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Image">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phòng_chống -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phòng_chống">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Loại_Bệnh"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thời_điểm -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thời_điểm">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Loại_Bệnh"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tác_hại -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tác_hại">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Loại_Bệnh"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Điều_trị -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Điều_trị">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Loại_Bệnh"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
+        <rdfs:comment>Triệu chứng xuất hiện trên Bông</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bẹ_Lá -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bẹ_Lá">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <rdfs:comment>Triệu chứng xuất hiện trên Bẹ Lá</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Loại_Bệnh"/>
+        <rdfs:comment>Do các loại bệnh gây hại</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chóp_Lá -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chóp_Lá">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <rdfs:comment>Triệu chứng xuất hiện trên Chóp Lá</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chồi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chồi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
+        <rdfs:comment>Triệu chứng xuất hiện trên Chồi</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cổ_Bông -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cổ_Bông">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông"/>
+        <rdfs:comment>Triệu chứng xuất hiện trên Cổ Bông</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hè_Thu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hè_Thu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vụ_Mùa"/>
+        <rdfs:comment>Vụ hè thu thường được bắt đầu từ đầu tháng 4 và kết thúc vào khoảng cuối tháng 8. Vụ Hè Thu cũng thường được sử dụng các loại giống ngắn ngày.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
+        <rdfs:comment>Triệu chứng xuất hiện trên Hạt</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Loại_Bệnh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Loại_Bệnh"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
+        <rdfs:comment>Triệu chứng xuất hiện trên Lá</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mô -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mô">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
+        <rdfs:comment>Triệu chứng xuất hiện trên Mô</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mùa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mùa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vụ_Mùa"/>
+        <rdfs:comment>Thường được gieo cấy từ đầu mùa mưa khoảng tháng 5,6 và tiến hành thu hoạch vào cuối mùa mưa ở tháng 11. Đây là vụ mùa thường được sử dụng các loại giống dài ngày và thích hợp với mực nước sâu.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nguyên_Nhân -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nguyên_Nhân"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phiến_Lá -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phiến_Lá">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <rdfs:comment>Triệu chứng xuất hiện trên Phiến Lá</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_Thể -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_Thể">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rễ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rễ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Loại_Bệnh"/>
+        <rdfs:comment>Do các loại sâu, rầy và vi khuẩn gây hại</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Chất_Dinh_Dưỡng -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Chất_Dinh_Dưỡng">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Loại_Bệnh"/>
+        <rdfs:comment>Do cây lúa thiếu chất dinh dưỡng</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thời_kỳ_chín -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thời_kỳ_chín">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thời_Điểm"/>
+        <rdfs:comment>Sau khi thụ tinh, bông lúa bước vào kỳ chín, kết thúc thời kỳ này là bông lúa chín hoàn toàn, sau đó tiến hành thu hoạch hạt thóc</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thời_kỳ_sinh_trưởng_sinh_dưỡng -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thời_kỳ_sinh_trưởng_sinh_dưỡng">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thời_Điểm"/>
+        <rdfs:comment>Tính từ lúc hạt thóc nảy mầm đến khi bắt đầu vào giai đoạn phân hoá hoa lúa (trên thực tế người ta tính từ khi gieo mạ, cấy lúa, cây lúa đẻ nhánh tới số nhánh tối đa)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thời_kỳ_sinh_trưởng_sinh_thực -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thời_kỳ_sinh_trưởng_sinh_thực">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thời_Điểm"/>
+        <rdfs:comment>Tính từ lúc bắt đầu phân hoá hoa lúa đến khi lúa trỗ bông và thụ tinh (bao gồm từ: làm đòng - phân hoá đòng, đến trỗ bông - bông lúa thoát khỏi lá đòng, nở hoa, tung phấn, thụ tinh.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thời_Điểm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thời_Điểm"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vụ_Mùa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vụ_Mùa"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đông_Xuân -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đông_Xuân">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vụ_Mùa"/>
+        <rdfs:comment>Thường được bắt đầu gieo cấy khi vụ Mùa vừa kết thúc là khoảng cuối tháng 11 đầu tháng 12 và tiến hành thu hoạch vào đầu tháng 4. Đây là vụ lúa mới và sử dụng những loại giống ngắn ngày.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Biến_màu_vàng_nâu_và_thối -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Biến_màu_vàng_nâu_và_thối">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rễ"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Rễ_Lúa"/>
+        <rdfs:comment>Đỗi màu vàng nâu và thối</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông_lép_trắng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông_lép_trắng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_Bướm_2_Chấm"/>
+        <rdfs:comment>Bông lép trắng</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông_lúa_bị_bạc_màu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông_lúa_bị_bạc_màu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_Bướm_Cú_Mèo"/>
+        <rdfs:comment>Bông lúa bị bạc màu</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông_lúa_trỗ_không_thoát -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông_lúa_trỗ_không_thoát">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xoắn_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xọc_Đen"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nhện_Gíe"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Khô_Đầu_Lá_Lúa"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thối_Thân/Thối_Rễ/Thối_Bẹ"/>
+        <rdfs:comment>Bông lúa trỗ không thoát</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4900"/>
+        <Nguyên_Nhân_Do rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vi_khuẩn_Xanthomonas"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_lan_rộng_theo_đường_gợn_sóng_màu_vàng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mô_bệnh_xanh_tái,_vàng_lục"/>
+        <Phòng_chống>Khi phát hiện bệnh, cần dừng ngay việc bón phân đạm.
+Sử dụng một số loại thuốc để phun phòng bệnh</Phòng_chống>
+        <Tác_hại>Bệnh bạc lá phát triển mạnh trong điều kiện thời tiết nóng ẩm,nắng mua thất thường và thường gây hại trong vụ lúa mùa.Vi khuẩn có thể tồn tại trong hạt giống, tàn dư cây bệnh hay ở trong cỏ dại.</Tác_hại>
+        <Điều_trị>Khi phát hiện bệnh, cần dừng ngay việc bón phân đạm
+Sử dụng một số loại thuốc để phun phòng bệnh</Điều_trị>
+        <rdfs:comment>Bệnh Bạc Lá</rdfs:comment>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <rdfs:comment>hinh ne</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
+        <rdfs:comment>hinh benh bac la ne</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_trắng_cả_đồng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_trắng_cả_đồng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_Thể"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Cuốn_Lá_Nhỏ"/>
+        <rdfs:comment>Bạc trắng cả đồng</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bề_mặt_xuất_hiện_những_giọt_dịch_màu_vàng_đục -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bề_mặt_xuất_hiện_những_giọt_dịch_màu_vàng_đục">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Sọc_Vi_Khuẩn"/>
+        <rdfs:comment>Bề mặt xuất hiện những giọt dịch màu vàng đục</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Lúa_Von -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Lúa_Von">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <rdfs:comment>Bệnh Lúa Von</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Trĩ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Trĩ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_cuốn_lại_ở_chóp_tóp_lại_và_khô_vàng_đi"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_héo"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_xuất_hiện_nhiều_điểm_trắng_nhỏ"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dần_chuyển_sang_màu_vàng_nhạt,_vàng_da_cam"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
+        <Phòng_chống>Dùng giống kháng hoặc ít nhiễm rầy. Nếu thuận lợi nên dùng giống ngắn ngày
+ thay cho giống dài ngày.
+ Không bón phân đạm quá nhiều, không sạ cấy quá dày.
+Gieo cấy tập trung, không gieo cấy lệch thời vụ chính quá nhiều.
+ Hạn chế tối đa việc dùng thuốc trừ sâu, nhất là vào giai đoạn đầu vụ để bảo vệ 
+nguồn thiên địch của rầy.
+ Tạt dầu vào gốc lúa ở những ruộng lúa cao, khó phun xịt.
+Khi lúa 4-5 tuần tuổi, có nơi thả cá rô phi, cá mè để diệt rầy nâu hoặc thả vịt vào
+ ruộng lúa diệt rầy
+Hoặc có thể sử dụng các chế phẩm sinh học về các loại nấm đối kháng của rầy nâu như nấm xanh Metarhizium anisopliea, nấm trắng,..</Phòng_chống>
+        <Tác_hại>Bọ trĩ thường tập trung gây hại vào những ngày trời râm mát, hoặc ban đêm. Khi trời nắng, bọ trĩ thường ẩn náu trong các lá nõn hoặc lá cuốn. .
+Khi lúa non bị bọ trĩ (bù lạch) gây hại thường để lại nhiều điểm trắng nhỏ, khi bị nặng thì lá bị cuốn lại ở chóp, làm lá héo, tóp lại 
+và khô vàng đi. Khi bị hại nghiêm trọng thì xuất hiện màu vàng sẫm, đặc biệt nặng ở các ruộng khô nước.
+Có nhiều triệu chứng lúa bị vàng đọt giống bọ trĩ gây hại, nên cần nhận biết bọ trĩ để xác định vì chúng rất nhỏ. Nhận biết bằng cách
+ đặt lòng bàn tay xuống nước cho ướt rồi dùng lòng bàn tay quét trên ngọn các cây lúa. Sau đó đưa lòng bàn tay gần mắt để quan 
+sát kỹ. Nếu đúng bọ trĩ gây hại, thì trên lòng bàn tay những con bọ trĩ rất nhỏ màu đen (khoảng 1,5 mm) nhảy hoặc bò chậm chạp vì dính nước trên lòng bàn tay.</Tác_hại>
+        <Điều_trị>Thường xuyên kiểm tra đồng ruộng phát hiện và phun tuốc kịp thời.
+ Dùng các loại thuốc Regent 800WG, Hopsan 75EC, Selecron 500EC hoặc Actara 25WP phun khi bọ trĩ phát sinh rộ.</Điều_trị>
+        <rdfs:comment>Bệnh do Bọ Trĩ gây hãi</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Dài -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Dài">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_bị_lửng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_chuyển_sang_màu_bạc"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <Phòng_chống>Vệ sinh đồng ruộng, dọn sạch cỏ ở các bờ ruộng hoặc sơn bờ ruộng.
+Tập trung cấy đúng thời vụ trên từng vùng rộng lớn để có kế hoạch theo dõi, tổ chức phòng trừ.
+ Có thể tổ chức đốt đuốc để bẫy bọ xít trưởng thành ra rộ, sử dụng các bó lá xoan ngâm nước giải một ngày, cắm lên các cọc bố trí quanh ruộng để tập trung tiêu diệt bọ xít...</Phòng_chống>
+        <Tác_hại>Bọ xít non hay trưởng thành đều trích hút hạt lúa non làm cho hạt bị lép trắng, làm giảm phẩm chất và năng suất (có thể lên đến 50%).
+Bọ xít thường gây hại nặng ở tất cả các giai đoạn sinh trưởng của cây lúa, quan trọng nhất là thời kỳ trỗ, bông lúa bị hại lửng lép hoặc bạc trắng, giảm năng suất. Ruộng lúa gần bìa rừng, gần ruộng rau màu và có nhiều cỏ dại thường bị hại nặng.</Tác_hại>
+        <Điều_trị>Sử dụng các loại thuốc hóa học lưu dẫn, có vị độc, tiếp xúc như Ofatox 400EC, Fastac 5EC…</Điều_trị>
+        <rdfs:comment>Bệnh do Bọ Xích Dài gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Xanh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Xanh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_bị_lửng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_chuyển_sang_màu_bạc"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <Phòng_chống>Phát hiện sớm, diệt các ổ bọ xít xanh mới nở, vợt bắt con trưởng thành.
+Nên trồng sớm họăc đồng lọat, luân canh với các cây khác không cùng ký chủ. Sử dụng thuốc hóa học nên lưu ý dến sự lưu bả độc trên trái đậu rau.</Phòng_chống>
+        <Tác_hại>Ruộng lúa gần ruộng rau thì bị hại nặng hơn, bọ xít xanh thường di cư hàng loạt từ ruộng rau sang ruộng lúa vì phổ gây hại của bọ xít xanh rất rộng, nó có thể hại hầu hết các loại cây trồng: từ cây lương thực, thực phẩm đến các cây nông nghiệp ngắn, dài ngày. Bọ xít xanh hại trên lúa, làm cho lúa bị lép lửng. Bọ xít xanh xuất hiện tại khắp các vùng ở Việt Nam và thế giới.</Tác_hại>
+        <Điều_trị>Sử dụng các loại thuốc hóa học lưu dẫn, có vị độc, tiếp xúc như Ofatox 400EC, Fastac 5EC, Padan 95 SP; Cyperan 5EC/10EC hoặc 25EC; Bassan 50EC; Sumicidin 10 hoặc 20EC, BIAN 40EC để phòng trị..</Điều_trị>
+        <rdfs:comment>Bệnh do Bọ Xích Xanh gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Đen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Đen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_lúa_sinh_trưởng_và_phát_triển_kém"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Dưới_chân_lá_có_các_đốm_vàng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_bị_lửng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_chuyển_sang_màu_bạc"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chết_từng_khốm_,từng_chòm"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
+        <Phòng_chống>Vệ sinh đồng ruộng, diệt trừ cỏ dại là ký chủ phụ của bọ xít.
+Cấy gọn thời vụ. Phát hiện sớm, thu gom ổ trứng để diệt, vợt bắt bọ xít trưởng thành.
+Ở những cánh đồng có điều kiện tưới tiêu thuận tiện thì vào thời kỳ bọ xít đẻ trứng rộ có thể hạ mức nước trong ruộng để bọ xít đẻ trứng ở vị trí thấp hơn, sau đó cứ cách 4 ngày một lần cho nước vào cao hơn vị trí ban đầu, ngâm 24 giờ. Làm 2 - 3 lần như vậy có thể tiêu diệt được nhiều trứng bọ xít.</Phòng_chống>
+        <Tác_hại>Bọ thường gây hại nặng ở giai đoạn lúa đẻ nhánh rộ đến làm đòng và thường tập trung chích hút ở mắt thân lúa.Hàng năm bọ xít có thể hình thành 2 lứa. Lứa từ tháng 3 - 5 và lứa từ tháng 8 - 9. Bọ xít đen trước đây chỉ xuất hiện rải rác và gây hại không đáng kể, nhưng những năm gần đây chúng xuất hiện và gây hại nhiều hơn, trên các giống lúa mùa cũng như các giống lúa ngắn ngày. Thực tế đồng ruộng cho thấy những giống nào không kháng được rầy nâu, thì thường là những giống bị bọ xít đen gây hại nhiều hơn những giống khác.</Tác_hại>
+        <Điều_trị>Dùng các loại thuốc Ofatox 400EC,Actara 25WP, Bassa… phun khi bọ xít phát sinh rộ.</Điều_trị>
+        <rdfs:comment>Bệnh do Bọ Xích Đen gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bộ_rễ_kém_phát_triển_có_màu_đen_và_tanh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bộ_rễ_kém_phát_triển_có_màu_đen_và_tanh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rễ"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
+        <rdfs:comment>Bộ rễ kém phát triển có màu đen và tanh</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cháy_Lá-Phỏng_Lá -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cháy_Lá-Phỏng_Lá">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_lúa_có_nhiều_đường_vân_vòng_cung_nối_tiếp_nhau_loen_rộng_ra"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vùng_bị_nhiễm_khô_như_bị_phỏng_đi_giống_như_là_đã_chín"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_biến_đổi_giữa_màu_vàng_nhạt_và_nâu_tối"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_có_màu_xanh_xám,_xuất_hiện_khi_ngâm_trong_nước"/>
+        <Phòng_chống>Chọn giống kháng bệnh
+Không bón quá nhiều phân đạm, Đốt rơm lúa bệnh để diệt nguồn lưu tồn</Phòng_chống>
+        <Tác_hại>Nấm lưu tồn trên hạt hay xác lá lúa bệnh khô. Cỏ lồng vực (Echinochloa crus-galli) cũng là ký chủ phụ của mầm bệnh.Khoảng 3 ngày sau khi xâm nhiễn, các đài có nhánh ngắn sẽ phát triển ở khí khổng và sinh đính bào tử. gây thất thu năng suất</Tác_hại>
+        <Điều_trị>Phun các thuốc gốc đồng như hỗn hợp Bordeaux, Copper Zinc, Copper B
+, hoặc Hinosan 40 EC</Điều_trị>
+        <rdfs:comment>Cháy Lá - Phỏng Lá</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chót_lá_chuyển_màu_trắng_xám -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chót_lá_chuyển_màu_trắng_xám">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chóp_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Khô_Đầu_Lá_Lúa"/>
+        <rdfs:comment>Chót lá chuyển màu xám trắng</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chồi_phụ_mọc_từ_các_đốt_trên_bị_cong_xoắn_ở_trong_bẹ_lúa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chồi_phụ_mọc_từ_các_đốt_trên_bị_cong_xoắn_ở_trong_bẹ_lúa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chồi"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xoắn_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nhện_Gíe"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Khô_Đầu_Lá_Lúa"/>
+        <rdfs:comment>Chồi phụ mọc từ các đốt trên bị cong xoắn ở trong bẹ lúa</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_lá_bị_bệnh_có_xu_hướng_xoè_ngang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_lá_bị_bệnh_có_xu_hướng_xoè_ngang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
+        <rdfs:comment>Các lá bị bệnh có xu hướng xoè ngang</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_đốm_chạy_dọc_giữa_các_gân_lá_tạo_thành_các_sọc_nâu_hẹp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_đốm_chạy_dọc_giữa_các_gân_lá_tạo_thành_các_sọc_nâu_hẹp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Sọc_Vi_Khuẩn"/>
+        <rdfs:comment>Các đốm chạy dọc giữa các gân lá tạo thành các sọc nâu hẹp</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_đồng_non_bị_cắn_phá -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_đồng_non_bị_cắn_phá">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_Thể"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_5_Vạch"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Ốc_Bươu_Vàng"/>
+        <rdfs:comment>Các đồng non bị cắn phá</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_lúa_chuyển_sang_màu_vàng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_lúa_chuyển_sang_màu_vàng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_Thể"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Rễ_Lúa"/>
+        <rdfs:comment>Cây lúa chuyển sang màu vàng</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_lúa_lụi_tàn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_lúa_lụi_tàn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
+        <rdfs:comment>Cây lúa lụi tàn</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_lúa_sinh_trưởng_và_phát_triển_kém -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_lúa_sinh_trưởng_và_phát_triển_kém">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_Thể"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Đen"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Rễ_Lúa"/>
+        <rdfs:comment>Cây lúa sinh trưởng và phát triển kém</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_các_nốt_phòng_màu_trắng_chạy_dọc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_các_nốt_phòng_màu_trắng_chạy_dọc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xọc_Đen"/>
+        <rdfs:comment>Có các nốt phòng màu trắng chạy dọc</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_các_vệt_trắng_dài_trên_lá -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_các_vệt_trắng_dài_trên_lá">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Cuốn_Lá_Nhỏ"/>
+        <rdfs:comment>Có các vệt trắng dài trên lá</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_các_đốm_đen_như_bị_thối -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_các_đốm_đen_như_bị_thối">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bẹ_Lá"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rễ"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nhện_Gíe"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Vòng"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thối_Thân/Thối_Rễ/Thối_Bẹ"/>
+        <rdfs:comment>Có đốm đen như bị thối ở trên bẹ lá</rdfs:comment>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_các_đốm_đen_như_bị_thối"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#isSymptomOf"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Vòng"/>
+        <rdfs:comment rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rễ"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_màu_nâu_nhạt_hoặc_sẫm_tùy_theo_giống -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_màu_nâu_nhạt_hoặc_sẫm_tùy_theo_giống">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Gạch_Nâu_Hại_Lúa"/>
+        <rdfs:comment>Có màu nâu nhạt hoặc sẵm tùy theo giống</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_nhiều_sọc_dài_màu_nâu_tím -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_nhiều_sọc_dài_màu_nâu_tím">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bẹ_Lá"/>
+        <rdfs:comment>Có nhiều sọc dài màu nâu tím</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_nhiều_vết_dục_qua_bẹ_phía_ngoài_vào_đến_nõn_giữa_phá_hại_làm_cho_dảnh_lúa_bị_héo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_nhiều_vết_dục_qua_bẹ_phía_ngoài_vào_đến_nõn_giữa_phá_hại_làm_cho_dảnh_lúa_bị_héo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
+        <rdfs:comment>Sâu đục qua bẹ phía ngoài vào đến nõn giữa phá hại làm cho dảnh lúa bị héo</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cứng_giòn_và_chết_nhanh_chóng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cứng_giòn_và_chết_nhanh_chóng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von"/>
+        <rdfs:comment>Thân cây cứng giòn dễ rãy và chết nhanh chóng</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Dưới_chân_lá_có_các_đốm_vàng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Dưới_chân_lá_có_các_đốm_vàng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Đen"/>
+        <rdfs:comment>Dưới chân lá có các đốm vàng</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Dễ_bị_đứt_gốc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Dễ_bị_đứt_gốc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rễ"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_5_Vạch"/>
+        <rdfs:comment>Dễ bị đứt gốc</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giảm_chồi_gốc_và_đễ_nhánh_ít -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giảm_chồi_gốc_và_đễ_nhánh_ít">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Rễ_Lúa"/>
+        <rdfs:comment>Giảm chồi góc và đẽ nhánh ít</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Gạch_Nâu_Hại_Lúa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Gạch_Nâu_Hại_Lúa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_màu_nâu_nhạt_hoặc_sẫm_tùy_theo_giống"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_sọc_nhỏ_ngăn_khác_nhau"/>
+        <Phòng_chống>Sử dụng giống kháng bênh. Chỉ xử lý hạt giống hoặc phun thuốc trên đồng ruộng như các bệnh đốm nâu, tiêm lửa trong trường hợp cần thiết.</Phòng_chống>
+        <Tác_hại>Bệnh phổ biến trên lúa ở các vùng trồng lúa trong nước và trên thế giới. Trên các giống nhiễm có thể bị bệnh nặng, thiệt hại tới 40% năng suất. Bệnh phát sinh muộn, thường phát triển mạnh vào thời kỳ lúa trỗ, nở hoa. Bệnh hại trên cả lá già, lá non. Nấm bảo tồn trên hạt giống.</Tác_hại>
+        <Điều_trị>Có thể sử dụng các thuốc như: Dithane M – 45, Carbendazim 0,2%, Bonazan 100DD, Cyproconazole (0,3 – 0,4 lít) hoặc Tilt super 300ND (0,3 lít/ha nồng độ 0,1%).</Điều_trị>
+        <rdfs:comment>Bệnh do Gạch Nâu gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#HG2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#HG2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống lúa HG2: TGST 95 ngày; thân rạ cứng, chiều cao cây 105cm; năng suất 5 - 7 tấn/ha; khả năng kháng rầy nâu cấp 1 - 3, kháng đạo ôn cấp 1; tỉ lệ gạo nguyên 40 - 50%, bạc bụng (cấp 9) 2 - 5%; hạt dài 7,03 mm; hàm lượng amylose: 20%. Đặc tính khác: Cứng cây, kháng vàng lùn, lùn xoắn lá, gạo đẹp, dẻo, thơm</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_bị_lửng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_bị_lửng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Dài"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Xanh"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Đen"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lem_Lép_Hạt"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xoắn_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Lưng_Trắng"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_Bướm_Cú_Mèo"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Lửa_Hại_Lúa"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Nâu"/>
+        <rdfs:comment>Hạt bị lửng</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_chuyển_sang_màu_bạc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_chuyển_sang_màu_bạc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Dài"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Xanh"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Đen"/>
+        <rdfs:comment>Hạt chuyển sang màu bạc</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_có_nhiều_đốm_nâu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_có_nhiều_đốm_nâu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xoắn_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nhện_Gíe"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Nâu"/>
+        <rdfs:comment>Hạt có nhiều đốm nâu</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Dài"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Xanh"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Đen"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lem_Lép_Hạt"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nhện_Gíe"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Lưng_Trắng"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_Bướm_Cú_Mèo"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Kali"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Hạch_Lúa"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Lửa_Hại_Lúa"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Khô_Đầu_Lá_Lúa"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Nâu"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Than_Vàng/Hoa_Cúc"/>
+        <rdfs:comment>Hạt bị lép</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lúa_bị_đen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lúa_bị_đen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Lửa_Hại_Lúa"/>
+        <rdfs:comment>Hạt lúa bị đen</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_nhân_lại_và_dễ_vở -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_nhân_lại_và_dễ_vở">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Vòng"/>
+        <rdfs:comment>Hạt nhân lại và dễ vở</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Khô_Vằn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Khô_Vằn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_có_dạng_đốm_loang_lổ_như_da_beo,_màu_xanh_xám,_viền_nâu,_sũng_nước"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#vết_kéo_dài_bao_quanh_cổ_bông,_hai_đầu_vết_bệnh_có_màu_xám_loang_ra,_phần_giữa_vết_bệnh_màu_lục_sẫm_co_tóp_lại"/>
+        <Phòng_chống>Dọn sạch rơm rạ, lúa chét, cỏ dại, tàn dư thực vật sau khi thu hoạch.
+Không gieo cấy quá dầy, chăm bón cân đối. Không để ruộng lúa quá ẩm, nước ngập quá sâu.
+Không để ruộng lúa quá ẩm, nước ngập quá sâu.Thường xuyên theo dõi, phát hiện bệnh để xử lý sớm.</Phòng_chống>
+        <Tác_hại>Khi bệnh năng, nấm bệnh ăn tới lá đòng thì năng suất có thể giảm tới 50%, hạt không đẹp, lúa bị lép, lửng, khi xay dễ bể.</Tác_hại>
+        <Điều_trị>Từ giai đoạn lúa đứng cái trở đi, cần chú ý điều tra phát hiện, khi thấy tỷ lệ bệnh từ 5-7% số dảnh bị bệnh trở lên cần sử dụng một trong các loại thuốc để phun như: Anvil 5SC, Tilt super 300EC, Amistar Top 325SC, Nevo 330EC.</Điều_trị>
+        <rdfs:comment>Bệnh Khô Vằn</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Không_có_bông_hoặc_trỗ_bông_muộn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Không_có_bông_hoặc_trỗ_bông_muộn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xoắn_Lá"/>
+        <rdfs:comment>Không có bông hoặc trỗ bông muộn</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lem_Lép_Hạt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lem_Lép_Hạt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_bị_lửng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vỏ_hạt_lúa_và_hạt_gạo_bị_đổi_màu"/>
+        <Phòng_chống>Gieo cấy đúng thời vụ, với mật độ thích hợp.
+Bón phân đầy đủ và cân đối, cung cấp thêm các loại trung, vi lượng.
+Gieo cấy đúng thời vụ, với mật độ thích hợp.</Phòng_chống>
+        <Tác_hại>Thiếu dinh dưỡng như: thiếu các nguyên tố đa, trung và vi lượng, đất bị chua phèn.
+Do thiếu nước, nhất là lúc trổ.Bị mưa to, gió lớn lúc trổ. Bị sốc nhiệt độ (nóng quá hoặc lạnh quá) lúc trổ.
+Cỏ dại cạnh tranh dinh dưỡng, ánh sáng và nước. Do các loài vi khuẩn gây hại, Do các loài nấm bệnh. Do nhện gié và các côn trùng gây ra</Tác_hại>
+        <Điều_trị>Khi điều kiện thời tiết thích hợp cho bệnh hại và nhện gié phát triển thì phun phòng ngừa một trong các loại thuốc sau vào giai đoạn trước trổ và sau khi trổ đều:
++ Vụ Hè Thu với các loại thuốc trừ nấm bệnh như Dipomate 430SC, bệnh bạc lá như Saipan 2SL, bệnh khô vằn như Saizole 5SC; nhện gié như Sulox 80WP/ Saromite 73EC
++ Vụ Đông Xuân với các loại thuốc đạo ôn như Trizole 400SC, Sagograin 300EC</Điều_trị>
+        <rdfs:comment>Bệnh Lem Lép Hạt</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Làm_giảm_số_chồi_trên_bụi_lúa_mắc_bệnh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Làm_giảm_số_chồi_trên_bụi_lúa_mắc_bệnh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_Thể"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
+        <rdfs:comment>Làm giảm số chồi trên bụi lúa mắc bệnh</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Làm_đổi_màu_khác_bình_thường -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Làm_đổi_màu_khác_bình_thường">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cổ_Bông"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vân_Nâu_Lá_Lúa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_bệnh_có_xu_hướng_xoè_ngang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_bệnh_có_xu_hướng_xoè_ngang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <rdfs:comment>Các lá bị bệnh có xu hướng xoè ngang</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_cuốn_lại_ở_chóp_tóp_lại_và_khô_vàng_đi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_cuốn_lại_ở_chóp_tóp_lại_và_khô_vàng_đi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Trĩ"/>
+        <rdfs:comment>Lá bị cuốn lại ở chóp tóp lại và khô vàng đi</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_cắn_khuyết_từng_mảng_từng_đoạn_và_có_thể_trụi_lá -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_cắn_khuyết_từng_mảng_từng_đoạn_và_có_thể_trụi_lá">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Cuốn_Lá_Lớn"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Phao"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Châu_Chấu/Cào_Cào"/>
+        <rdfs:comment>Lá bị cắn khuyết và trụi lá</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_héo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_héo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Trĩ"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Nâu"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai/Bọ_Gai"/>
+        <rdfs:comment>Lá bị héo</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_thủng_từng_lổ_nhỏ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_thủng_từng_lổ_nhỏ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Châu_Chấu/Cào_Cào"/>
+        <rdfs:comment>Lá bị thủng từng lỗ nhỏ</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_xoắn_lại -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_xoắn_lại">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xọc_Đen"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Khô_Đầu_Lá_Lúa"/>
+        <rdfs:comment>Lá bị xoắn lại</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dễ_bị_gãy_gặp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dễ_bị_gãy_gặp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Cuốn_Lá_Lớn"/>
+        <rdfs:comment>Lá dễ bị gãy gặp</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_lúa_bị_cắn_ngang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_lúa_bị_cắn_ngang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Ốc_Bươu_Vàng"/>
+        <rdfs:comment>Lá lúa bị cắn ngang</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_lúa_từ_màu_xanh_lục_chuyển_dần_sang_màu_xanh_nhạt_rồi_vàng_gạch_cua -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_lúa_từ_màu_xanh_lục_chuyển_dần_sang_màu_xanh_nhạt_rồi_vàng_gạch_cua">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <rdfs:comment>Lá lúa từ màu xanh lục chuyển dần sang màu xanh nhạt rồi vàng gạch cua</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_non_có_màu_xanh_nhạt__lốm_đốm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_non_có_màu_xanh_nhạt__lốm_đốm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
+        <rdfs:comment>Lá non có màu xanh nhạt  lốm đốm</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_sọc_nhỏ_ngăn_khác_nhau -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_sọc_nhỏ_ngăn_khác_nhau">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Gạch_Nâu_Hại_Lúa"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Sọc_Vi_Khuẩn"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trên lá xuất hiện nhiều vết sọc ngắn khác nhau</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_xanh_đậm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_xanh_đậm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Kali"/>
+        <rdfs:comment>Lá có màu xanh đậm</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xoắn_Lá -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xoắn_Lá">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#HG2"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_3995"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4218"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5239"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5451"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5472"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5636"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5930"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6976"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông_lúa_trỗ_không_thoát"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chồi_phụ_mọc_từ_các_đốt_trên_bị_cong_xoắn_ở_trong_bẹ_lúa"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_bị_lửng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_có_nhiều_đốm_nâu"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Không_có_bông_hoặc_trỗ_bông_muộn"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sinh_trưởng_cằn_cọc"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_chồi_lúa_bị_bệnh_giảm_chiều_cao,_bị_lùn_cây"/>
+        <Phòng_chống>Sử dụng thuốc hóa học theo nguyên tắc 4 đúng để hạn chế tối đa mật độ rầy nâu
+và rầy nâu mang mầm bệnh</Phòng_chống>
+        <Tác_hại>Bệnh do virus Rice ragged stunt virus (RRSV) gây ra. Môi giới truyền bệnh là rầy nâu (Nilaparvata lugens), một cá thể rầy nâu mang virus gây bệnh chích hút trên cây lúa một vài giờ là khiến cho cây lúa bị bệnh.</Tác_hại>
+        <Điều_trị>Đối với ruộng lúa giai đoạn đòng đến trổ, vận động nhổ, vùi cây lúa nhiễm bệnh phun thuốc trừ rầy nâu theo hướng dẫn nếu phát hiện rầy có số &gt;3 con/tép, rầy đang tuổi 1-2. Các loại thuốc cho hiệu quả cao là Actara 25WG, Chess 50WG.</Điều_trị>
+        <rdfs:comment>Bệnh Lùn Xoắn Lá</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xọc_Đen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xọc_Đen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông_lúa_trỗ_không_thoát"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_các_nốt_phòng_màu_trắng_chạy_dọc"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_xoắn_lại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vỏ_hạt_lúa_và_hạt_gạo_bị_đổi_màu"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_chồi_lúa_bị_bệnh_giảm_chiều_cao,_bị_lùn_cây"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nảy_trồi_trên_đốt_thân,_xuất_hiện_nhiều_rễ_mọc_ngược_lên_trên"/>
+        <Phòng_chống>Làm đất kỹ, đất được làm ải vụ xuân, làm giầm vụ mùa tùy theo từng điều kiện canh tác khác nhau. Diệt các mầm bệnh ở các cây ký chủ khác trên đồng ruộng như dọn sạch tan dư, ký chủ phụ, không cho lúa chét tái sinh để hạn chế nguồn bệnh.
+Trước khi gieo giống cần tiến hành xử lý hạt giống bằng một số thuốc như Cruiser Plus 312.5FS, Pre-pat 412.5F, Sunato 540FS, Regent 5SC, …; xử lý theo khuyến cáo của nhà sản xuất.
+ Cần tiến hành gieo mạ tập trung, che phủ 100% nilong, vừa chủ động chống rét vụ xuân vừa hạn chế rầy xâm nhập, lây bệnh trên cây mạ.
+Trên ruộng mạ nếu phát sinh rầy lưng trắng, rầy nâu nhỏ cần tiến hành phun thuốc trừ rầy bằng một số thuốc tiếp xúc như Virtako 1.5 GR, Nibas 50EC, … phun theo hướng dẫn của nhà sản xuất.</Phòng_chống>
+        <Tác_hại>Bệnh lùn sọc đen do virus lùn sọc đen phương Nam có tên SRBSDV (Southern Rice Black-Streaked Dwarf Virus) gây nên. Hiện nay chưa có thuốc đặc hiệu chữa bệnh lùn sọc đen. 
+Rầy lưng trắng và rầy nâu nhỏ mang virus có thể truyền sang các cây ký chủ khi trên đồng ruộng chưa có cây trồng lúa, ngô.. Virus tồn tại trong cơ thể rầy và di chuyển rất xa theo gió, bão gây bệnh cho lúa và một rồi cây trồng khác ở các vùng lân cận khác.</Tác_hại>
+        <Điều_trị>Giai đoạn sau cấy: Cần thường xuyên công tác kiểm tra đồng ruộng, nếu phát hiện có biểu hiện bệnh cần tiến hành nhổ và vùi sâu.
+Giai đoạn đẻ nhánh – ôm đồng, sử dụng một trong các thuốc nội hấp trừ rầy như: Cheesta 50WP, Amira 25WG, Actara 25WG… phun đúng nồng độ khuyến cáo.
+ Giai đoạn trỗ - chin sáp, sử dụng một trong các thuốc tiếp xúc trừ rầy như: Bonus-gold 500EC, Vitako 1.5GR, …Khi phun cần tiến hành rẽ hành phun, đảm bảo thuốc tiếp xúc với rầy.</Điều_trị>
+        <rdfs:comment>Bệnh Lùn Xọc Đen</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4900"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_lúa_lụi_tàn"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cứng_giòn_và_chết_nhanh_chóng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_bị_lửng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lớp_phấn_trắng_phớt_hồng_bao_quanh_đốt_thân"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thối_gốc_và_rễ"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_phát_triển_cao_vọt_,_cong_keo_mảnh_khảnh"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dần_chuyển_sang_màu_vàng_nhạt,_vàng_da_cam"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
+        <Phòng_chống>Không sử dụng hạt lúa ở những ruộng đã bị bệnh làm giống cho vụ sau.
+Đối với lúa cấy, khi nhổ mạ cần chú ý tránh làm đứt chồi, rễ, tránh dập nát cây mạ, để hạn chế sự xâm nhập của nấm bệnh vào bên trong cây.
+Kiểm tra ruộng lúa thường xuyên để phát hiện và nhổ bỏ kịp thời những cây bị bệnh, đem ra khỏi ruộng tiêu hủy.
+Bố trí mùa vụ hợp lý, sạ thưa, bón phân cân đối giữa đạm, lân và kali để cây sinh trưởng, phát triển tốt, làm giảm bớt sự nhiễm bệnh của cây.
+Bệnh chủ yếu lây qua hạt giống và lưu tồn trong đất. chính vì thế, 2 biện pháp được đề xuất trong phòng trừ là xử lý hạt giống và đất trước khi gieo sạ.</Phòng_chống>
+        <Tác_hại>Nếu bị nhiễm muộn, lá bị khô, giảm số chồi. Nếu nhiễm vào giai đoạn trước khi đâm chồi, cây mạ bị chết khô. Trường hợp sống sót, trỗ bông với toàn hạt lép hoặc lững
+Lá lúa từ màu xanh lục chuyển dần sang màu xanh nhạt rồi vàng gạch cua, cứng giòn và chết nhanh chóng.
+Phần lớn cây bị bệnh sẽ chết do thối gốc</Tác_hại>
+        <Điều_trị>Dùng VICARBEN 50HP: Ngâm hạt giống cho vừa nhú mộng, cho vào nước thuốc  theo tỷ lệ 0,1%. Ngâm  trong 2 giờ, vớt ra tiếp tục ngâm ủ cho đến khi gieo được. Hoặc xử lý khô ở tỷ lệ 0,5 – 1% theo trọng lượng hạt. Sau đó tiến hành ngâm ủ  như bình thường.Ở những ruộng sản xuất giống, đặc biệt trên giống Jasmine, khi lúa đã nhiễm bệnh, có thể khống chế bằng cách:
+Carban 50SC , pha 3 ml / 1 lít nước, ngâm cho 1 kg lúa giống trong khoảng 24 giờ.
+Ở những ruộng sản xuất giống, đặc biệt trên giống Jasmine, khi lúa đã nhiễm bệnh, có thể khống chế bằng cách:
+- Phun Vicarben 50HP. Phun 2 lần, lúc lúa trỗ và lúc vào chắc. Liều lượng 30/00.  Nên phun vào chiều mát.
+- Xử lý Carban 50SC, liều lượng 1lít/ha. Nên phun vào chiều mát. Carban 50SC không chỉ loại trừ được nấm gây bệnh lúa von mà còn hạn chế nấm gây bệnh lem lép hạt.bệnh của cây.</Điều_trị>
+        <rdfs:comment>Bệnh Lúa Von</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lớp_phấn_trắng_phớt_hồng_bao_quanh_đốt_thân -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lớp_phấn_trắng_phớt_hồng_bao_quanh_đốt_thân">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von"/>
+        <rdfs:comment>Lớp phấn trắng phớt hồng bao quanh đốt thân</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mặt_trên_phiến_lá_bị_cắn_lỗ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mặt_trên_phiến_lá_bị_cắn_lỗ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phiến_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai/Bọ_Gai"/>
+        <rdfs:comment>Mặt trên phiến lá bị cắn lỗ</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nhện_Gíe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nhện_Gíe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông_lúa_trỗ_không_thoát"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_các_đốm_đen_như_bị_thối"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_có_nhiều_đốm_nâu"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_hại_ban_đầu_là_các_chấm_nhỏ_màu_trắng_vàng_về_sau_thành_đám_màu_vàng_nâu_đến_nâu_đen"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Những_đốm_nhỏ_màu_vàng_nhạt,_về_sau_vết_chích_kéo_dài_thành_hình_chữ_nhật_và_dần_dần_biến_sang_nâu_đen."/>
+        <Phòng_chống>Sau khi thu hoạch lúa, rải rơm đốt đồng trước khi làm đất nếu là vùng thường xuyên có nhện gié xuất hiện.
+Cày ải phơi đất, vệ sinh đồng ruộng, phun thuốc diệt sạch cỏ bờ, lúa chét, lúa rày.
+ Sạ lúa theo hàng với mật độ vừa phải, bón phân cân đối giữa đạm-lân-kali.
+ Bảo vệ thiên địch trong ruộng lúa, một số loại nhện và ong nội ký sinh có khả năng kiềm chế mật số nhện gié.
+Cung cấp đủ nước cho ruộng lúa vì nhện gié thích hợp điều kiện ruộng khô.
+ Luân canh cây trồng bằng cách trồng cây trồng cạn để cắt đứt vòng đời của chúng như các cây họ đậu đồng thời làm tăng độ phì của đất.</Phòng_chống>
+        <Tác_hại>Sự gây hại của nhện gié còn tạo ra các vết thương cơ giới, là điều kiện thuận lợi cho một số loài nấm, vi khuẩn xâm nhập, phát triển và gây hại như Sarocladium oryzae, Curvularia sp., Alternaria padwrekii, trong đó chủ yếu là nấm Sarocladium oryzae gây bệnh thối bẹ.
+Không chỉ làm giảm năng suất mà nhện gié còn làm giảm tỷ lệ gạo thương phẩm, chất lượng gạo cũng giảm theo. Trên các giống lúa khác nhau thì mức độ gây hại và mật độ nhện cũng khác nhau.</Tác_hại>
+        <Điều_trị>Phun thuốc trừ ngay từ thế hệ đầu tiên mới có hiệu quả cao. Có thể sử dụng một số thuốc hóa học đặc trị nhện như: Nissorun, Kinalux, Kumulus, Comite, Danitol-S 50EC (sử dụng theo liều khuyến cáo).
+ Trước khi phun thuốc cần vô nước cho mực nước ruộng cao để đẩy nhện gié di chuyển lên phía trên thân lúa dễ dính thuốc. Do nhện gié sống trong bẹ lá lúa nên cần phun lượng nước cao mới có thể tiêu diệt được chúng (3-4 bình 16 lít/1.000 m2).</Điều_trị>
+        <rdfs:comment>Bệnh do Nhện Gié gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Những_khối_nấm_hồng_bao_phủ_cả_vỏ_hạt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Những_khối_nấm_hồng_bao_phủ_cả_vỏ_hạt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Than_Vàng/Hoa_Cúc"/>
+        <rdfs:comment>Những khối nắm hồng bao phủ cả vỏ hạt</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Những_lá_già_chuyển_màu_nâu_và_chết -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Những_lá_già_chuyển_màu_nâu_và_chết">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Canxi"/>
+        <rdfs:comment>Những lá già chuyển màu nâu và chết</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Những_đám_chết_mô_xuất_hiện_dọc_theo_mép_lá -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Những_đám_chết_mô_xuất_hiện_dọc_theo_mép_lá">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Canxi"/>
+        <rdfs:comment>Những đám chết mô xuất hiện dọc theo mép lá</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nõn_lúa_bị_héo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nõn_lúa_bị_héo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chồi"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_Bướm_Cú_Mèo"/>
+        <rdfs:comment>Nõn lúa bị héo</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nấm_Rhizoctonia_solani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nấm_Rhizoctonia_solani">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nguyên_Nhân"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OMCS2000 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OMCS2000">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống lúa OMCS2000: Đặc tính chủ yếu của giống lúa OMCS2000 là có chiều cao cây: 108cm. Thời gian sinh trưởng: 93 ngày (vụ Đông-Xuân: 93 ngày, Hè-Thu: 99 ngày). Thuộc dạng hình thâm canh trung bình. Có khả năng chống chịu rầy nâu cấp 5, đạo ôn cấp 7. Cây có dạng trung bình, chịu phèn khá. Năng suất cao nhất: 8 tấn/ha, trung bình: 5.4 tấn/ha, thấp nhất: 3,6 tấn/ha. Chiều dài bông: 24cm, số hạt chắc/bông: 70-90, tỷ lệ lép: 15-19%. Trọng lượng 1000 hạt: 25-26g, dạng hạt thon, dài: 7,3mm. Tỷ lệ gạo nguyên: 52,4%. Chất lượng gạo tốt, rất được người tiêu dùng ưa chuộng. Riêng về hướng sử dụng, yêu cầu kỹ thuật thì giống lúa OMCS2000 có vùng thích nghi rộng ở mọi chân đất. Thích nghi cả hai vụ Đông-Xuân và Hè-Thu.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_2718 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_2718">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống lúa OM 2718: Thời gian sinh trưởng 100 ngày trong điều kiện gieo mạ cấy và 90 - 95 trong điều kiện gieo thẳng. Chiều cao cây 100 – 105 cm. Năng suất trung bình ở vụ Đông Xuân 5 - 6 tấn/ha, vụ Hè Thu 4 tấn/ha. OM 2718 có gạo hạt dài 7mm, gạo trong k hông bạc bụng, cơm mềm đạt tiêu chuẩn gạo xuất khẩu. kháng trung bình với rầy nâu và nhiễm bệnh đạo ôn (cấp 7), hơi nhiễm rầy nâu (cấp 5).</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_3995 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_3995">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống lúa OM 3995: TGST: 95 -100 ngày; Cao cây : 95 -100 cm; Trọng lượng 1000 hạt: 25,8 gam; Đẻ nhánh khá, lá cờ trung bình, bông dài, hạt đóng khít; Tỷ lệ hạt chắc cao: 83,4 %; Hạt gạo dài, trong; Nhiễm rầy nâu (cấp 5), nhiễm cháy lá (cấp 6); Năng suất bình quân 6-8 tấn/ha; Thích nghi cả 2 vụ Đông Xuân và Hè Thu; Chú ý : Theo dõi phòng trừ rầy nâu, đạo ôn khi canh tác.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4101 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4101">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống OM 4101: Có thời gian sinh trưởng 85-90 ngày, chiều cao 98-103cm, thân rạ cứng. Năng suất đạt 5-7 tấn/ha. Dạng hình cây lúa thấp cây, chín sớm, gạo thơm nhẹ, ngon cơm.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4218 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4218">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống lúa OM 4218: Thời gian sinh trưởng 90-95 ngày, gạo dài, trong, mềm cơm, chịu phèn nhẹ. Chiều cao cây 90-95 cm. Năng suất đông xuân 6-8 t/ha, hè thu 5-6 t/ha. It đỗ ngã, chống chịu vàng lùn-lùn xoắn lá tốt.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4498 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4498">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống lúa OM 4498: Thời gian sinh trưởng 90 – 95 ngày. Chiều cao cây đạt 95 – 100 cm. Chống chịu sâu bệnh: Hơi nhiễm rầy nâu (cấp 5), hơi kháng bệnh đạo ôn (cấp 3); chịu phèn khá. Năng suất: 6 – 8 tấn/ha. Chất lượng gạo: Tỉ lệ xay sát cao (gạo lức: 79 -80 %; gạo tổng số 68 – 69 %; gạo nguyên: 50 – 55 %). Hạt gạo thon dài (7,0 – 7,1 mm), tỉ lệ dài/rộng (D/R: 3,3), bạc bụng thấp; hàm lượng amyloza trung bình khoảng 24,5%.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4900 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4900">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>GIỐNG LÚA OM 4900: Thời gian sinh trưởng: 95 - 105 ngày, Chiều cao cây: 100 - 110cm.. Lá cờ đứng, cứng cây, bông to đùm, Hơi nhiễm rầy nâu, đạo ôn, cháy bìa lá, lúa von. Chịu phèn nhẹ.. Chất lượng: Cơm dẻo, thơm.. Hạt gạo dài, đạt tiêu chuẩn xuất khẩu. Năng suất: 6 - 8 tấn / ha (Đông Xuân), 5 - 6 tấn / ha (Hè Thu)</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5239 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5239">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống lúa OM 5239 do Viện lúa ĐBSCL tạo chọn, có nguồn gốc từ tổ hợp lai IR64/OM 2395. Thời gian sinh trưởng: 95-100 ngày. Phản ứng với rầy nâu, đạo ôn cấp 3 và bệnh vàng lùn, lùn xoắn lá cấp 3.  Năng suất trung bình là 7 tấn/ha trong vụ Đông Xuân và 4 tấn/ ha trong vụ Hè Thu</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5451 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5451">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống lúa OM 5451: Được chọn từ tổ hợp lai Jasmine 85/OM2490. Giống OM5451 có thời gian sinh trưởng khoảng 88 - 93 ngày (lúa sạ) trong vụ ĐX, 90 - 95 ngày trong vụ HT, trổ tập trung, chiều cao cây 95 - 100cm. OM 5451 có dạng hình đẹp, tương đối cứng cây, khả năng đẻ nhánh khá, bông đóng hạt dầy, tỉ lệ lép thấp, trọng lượng nghìn hạt trung bình 25 - 26g, hạt gạo dài, ít bạc bụng, cơm mềm. Giống OM 5451 chống chịu RN và bệnh đạo ôn khá, chống chịu bệnh VL - LXL khá. Tiềm năng năng suất của giống lúa này khá cao và ổn định trong cả 2 vụ ĐX và HT, đạt từ 5 đến 8 tấn/ha.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5472 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5472">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống lúa OM 5472: Được chọn từ tổ hợp lai OM 2718/Jasmine85 và mới được được Bộ NN &amp; PTNT công nhận là giống lúa sản xuất thử tại các tỉnh ĐBSCl và Trung bộ trong năm 2009. Giống OM 5472 thích nghi rộng và đã được canh tác nhiều tại các vùng trồng lúa ĐBSCL. Giống OM 5472 có thời gian sinh trưởng của lúa sạ khoảng 90 - 93 ngày trong vụ đông xuân (ĐX), 93-95 ngày trong vụ hè thu (HT), trổ tập trung, chiều cao cây 95 - 105cm. Đây là giống lúa có dạng hình đẹp, tương đối cứng cây, khả năng đẻ nhánh khá, bông đóng hạt dầy, tỉ lệ lép thấp, trọng lượng nghìn hạt từ 26 - 27g, gạo có mùi thơm nhẹ, hạt dài, trong, ít bạc bụng, cơm mềm. Giống OM 5472 chống chịu rầy nâu (RN) và bệnh đạo ôn trung bình. Trong vụ HT 2009 giống OM 5472 bị nhiễm nhẹ bệnh đạo ôn ở đầu vụ, chống chịu bệnh vàng lùn-lùn xoắn lá (VL - LXL) khá. Tiềm năng năng suất của lúa này khá cao và ổn định trong cả hai vụ ĐX và HT, đạt từ 5 đến 8 tấn/ha.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5636 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5636">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống lúa OM 5636: TGST 93 - 37 ngày; thân rạ cứng, chiều cao cây 110 cm; năng suất: 5 - 7 tấn/ha; khả năng kháng rầy nâu cấp 3, kháng đạo ôn cấp 3; tỉ lệ gạo nguyên 35 - 50%, bạc bụng (cấp 9) 10%; hạt dài 7,02 mm; hàm lượng amylose: 24,52%. Đặc tính khác: Cứng cây, kháng vàng lùn, lùn xoắn lá, chịu phèn, gạo đẹp, công nhận sản xuất thử 2008.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5930 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5930">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống lúa OM 5930: TGST 95 - 100 ngày; thân rạ cứng; chiều cao cây 103 cm; năng suất: 5 - 7 tấn/ha; khả năng kháng rầy nâu cấp 1 - 3; khả năng kháng đạo ôn cấp 1; tỉ lệ gạo nguyên 40 - 50%, tỷ lệ bạc bụng (cấp 9): 5 - 7%; hạt dài 7,2 mm; hàm lượng amylose: 24,05%. Đặc tính khác: Cứng cây, kháng vàng lùn, lùn xoắn lá, gạo đẹp, thơm nhẹ, công nhận quốc gia 2008.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6162 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6162">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>GIỐNG LÚA OM 6162: Thời giang sinh trưởng 95 ngày; thân rạ cứng; chiều cao cây 109 cm; năng suất 5 - 7 tấn/ha; khả năng kháng rầy nâu cấp 1 - 3, kháng đạo ôn cấp 1; tỉ lệ gạo nguyên 40 - 50%, bạc bụng (cấp 9) 2 - 5%; hạt dài 7,05 mm; hàm lượng amylose 19,5%. Đặc tính khác: Cứng cây, kháng vàng lùn, lùn xoắn lá, gạo đẹp, dẻo, thơm.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6377 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6377">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>GIỐNG LÚA OM 6162: Thời giang sinh trưởng 95 ngày; thân rạ cứng; chiều cao cây 109 cm; năng suất 5 - 7 tấn/ha; khả năng kháng rầy nâu cấp 1 - 3, kháng đạo ôn cấp 1; tỉ lệ gạo nguyên 40 - 50%, bạc bụng (cấp 9) 2 - 5%; hạt dài 7,05 mm; hàm lượng amylose 19,5%. Đặc tính khác: Cứng cây, kháng vàng lùn, lùn xoắn lá, gạo đẹp, dẻo, thơm.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6561 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6561">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống lúa OM 6561: Thời gian sinh trưởng 90-95 ngày, gạo dài, trong, bông to. Chiều cao cây 95-100 cm. Năng suất đông xuân 6-8 t/ha, hè thu 4-6 t/ha. It đỗ ngã, chống chịu vàng lùn-lùn xoắn lá tốt.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6600 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6600">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>OM 6600: Thời gian sinh trưởng (TGST): 100 – 105 ngày; Chiều cao cây : 95 -100 cm; Trọng lượng 1000 hạt: 27,4 gam; Dạng hình đẹp, đẻ nhánh khá, lá cờ to, thẳng, bông dài, hạt đóng khít; Hạt gao dài, trong; Nhiễm đạo ôn (cấp 1- 6), rầy nâu (cấp 3 – 5); Năng suất bình quân 6 - 8 tấn/ha; Thích nghi cả 2 vụ Đông Xuân và Hè Thu.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6976 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6976">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống lúa OM 6976 được chọn từ tổ hợp lai IR68144/OM997/OM2718. Thời gian sinh trưởng: 95-100 ngày. Chống chịu Rầy nâu và bệnh đạo ôn tốt, chống chịu bệnh VL - LXL khá.Năng suất trung bình vụ Đông Xuân: 7 - 9 tấn/ ha, Hè Thu: 5,0 - 6,0 tấn/ ha. Tiềm năng năng suất OM 6976 cao và ổn định trong cả 2 vụ ĐX và HT. Nông dân canh tác giống OM 6976 cần có biện pháp bón phân hoặc phun thuốc nuôi hạt để tăng tỷ lệ hạt chắc</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_CS2009 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_CS2009">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống lúa OM CS2009: TGST 85 ngày; thân rạ cứng, chiều cao cây 101 cm; năng suất 5 - 7 tấn/ha; khả năng kháng rầy nâu cấp 1 - 3, kháng đạo ôn cấp 1 - 3; tỉ lệ gạo nguyên 45%, bạc bụng (cấp 9) 5 - 10%; hạt dài 7,08 mm; hàm lượng amylose 24,3%. Đặc tính khác: Cứng cây, kháng vàng lùn, lùn xoắn lá, ngắn ngày, gạo đẹp, mềm cơm.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phần_phía_dưới_chùn_xuống_trông_giống_vết_sâu_ăn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phần_phía_dưới_chùn_xuống_trông_giống_vết_sâu_ăn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Thân_Lúa"/>
+        <rdfs:comment>Phần phía dưới lá chùn xuống giống vết sâu ăn</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Lưng_Trắng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Lưng_Trắng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_bị_lửng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Số_lượng_bông_và_chiều_dài_bông_giảm"/>
+        <Phòng_chống>Không trồng lúa liên tục trong năm, bảo đảm thời gian cách ly giữa hai vụ lúa ít nhất 20-30 ngày, không để vụ lúa chét.
+Sử dụng các giống lúa kháng rầy.
+ Không gieo cấy quá dày, bón cân đối NPK, tránh bón thừa phân đạm.
+Để bảo vệ cây lúa non, sau khi sạ nên cho nước vào ruộng và duy trì mực nước thích hợp để hạn chế rầy nâu chích hút thân cây lúa.</Phòng_chống>
+        <Tác_hại>Rầy lưng trắng hại nặng trên các giống lúa nhiễm rầy, lúa lai; ruộng lúa cấy dày, bón nhiều đạm.
+Rầy lưng trắng là môi giới chính truyền bệnh vi rút lùn sọc đen cho lúa.
+Giảm năng suất của vụ mùa</Tác_hại>
+        <Điều_trị>Khi phát hiện rầy nâu trên đồng ruộng với mật độ ≥ 2.000 con/m2(giai đoạn lúa đẻ nhánh – làm đòng) hoặc ≥ 3.000 con/m2(giai đoạn lúa làm đòng – trỗ) thì phải phun thuốc trừ rầy. Khi phun thuốc phải tuân thủ theo nguyên tắc “4 đúng”: đúng thuốc, đúng liều lượng, đúng lúc và đúng cách.</Điều_trị>
+        <rdfs:comment>Bệnh do Rầy Lưng Trắng gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Nâu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Nâu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_2718"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_3995"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4498"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4900"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5451"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5472"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_héo"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_và_thân_xuất_hiện_các_vết_nâu_cứng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
+        <Phòng_chống>Dùng giống kháng hoặc ít nhiễm rầy. Nếu thuận lợi nên dùng giống ngắn ngày
+ thay cho giống dài ngày.
+Không bón phân đạm quá nhiều, không sạ cấy quá dày.
+Gieo cấy tập trung, không gieo cấy lệch thời vụ chính quá nhiều.
+Hạn chế tối đa việc dùng thuốc trừ sâu, nhất là vào giai đoạn đầu vụ để bảo vệ 
+nguồn thiên địch của rầy.
+ Tạt dầu vào gốc lúa ở những ruộng lúa cao, khó phun xịt.
+Khi lúa 4-5 tuần tuổi, có nơi thả cá rô phi, cá mè để diệt rầy nâu hoặc thả vịt vào
+ ruộng lúa diệt rầy
+Hoặc có thể sử dụng các chế phẩm sinh học về các loại nấm đối kháng của rầy nâu như nấm xanh Metarhizium anisopliea, nấm trắng …/.</Phòng_chống>
+        <Tác_hại>Rầy nâu hại giai đoạn trỗ-chắc xanh, mật độ cao gây ra hiện tượng cháy rầy.
+Cả rầy non và trưởng thành đều không thích ánh sáng trực xạ nên rầy nâu sống gần gốc lúa, chích hút ngay thân lúa, chỉ khi râm mát 
+rầy trưởng thành mới có ở trên mặt tán lá. 
+Ngoài ra rầy nâu còn là môi giới truyền bệnh virus trên lúa như bệnh lúa cỏ, lùn xoắn lá. Phân của rầy nâu chứa nhiều đường là môi
+ trường cho các loại nấm phát triển gây nên bệnh bồ hóng ở gốc lúa làm cản trở quang hợp</Tác_hại>
+        <Điều_trị>Phun thuốc khi trứng nở được 80% với mật độ &gt; 50 con/khóm
+ Giai đoạn đẻ nhánh - đòng: Dùng các loại thuốc nội hấp và thuốc ức chế sinh
+ trưởng: Cytoc 250WP, Conphai 10WP, Actara 25WG, Asarasuper 250WDG, 
+Wofara 300WG, Onera 300WG, Dantotsu 16 WSG, Chatot 600WG,  Applaud 25SC, Aperlaur 100WP…
+Giai đoạn đòng già - ngậm sữa, chắc xanh: Chỉ dùng các loại thuốc tiếp xúc
+ có hoạt chất Fenobucarb (Bassa 50EC, Azora 350EC, Jetan 50EC, Bascide 50EC, 
+Nibas 50ND…) và nhóm Chlorpyrifos Ethyl (Victory 585EC, Pyrifdaaic 500EC…).</Điều_trị>
+        <rdfs:comment>Bệnh do Rầy Nâu gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sinh_trưởng_cằn_cọc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sinh_trưởng_cằn_cọc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_Thể"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xoắn_Lá"/>
+        <rdfs:comment>Sinh trưởng cần cọc</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Cuốn_Lá_Lớn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Cuốn_Lá_Lớn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_cắn_khuyết_từng_mảng_từng_đoạn_và_có_thể_trụi_lá"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dễ_bị_gãy_gặp"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_chồi_lúa_bị_bệnh_giảm_chiều_cao,_bị_lùn_cây"/>
+        <Phòng_chống>Vệ sinh đồng ruộng, làm sạch cỏ dại, tiêu diệt lúa chét,
+Điều chỉnh mật độ cấy phù hợp,Bón phân cân đối, hợp lý, đặc biệt bón phân đạm vừa phải. 
+Bảo vệ các thiên địch trên đồng ruộng.</Phòng_chống>
+        <Tác_hại>Sâu cuốn lá lớn phát sinh, gây hại từ giai đoạn lúa mới cấy cho đến khi lúa chín. Vào những năm mưa nhiều, thời tiết mát mẻ, sâu phát sinh nặng. Sâu cuốn lá lớn phân bố ở tất cả các vùng trồng lúa ở trong nước và trên thế giới. Ở Việt Nam, vùng trung du và miền núi bị hại nặng hơn vùng đồng bằng, vùng có bố trí cơ cấu cây trồng phức tạp cũng dễ bị hại nặng.</Tác_hại>
+        <Điều_trị>Phun các loại thuốc lưu dẫn, vị độc, tiếp xúc, nội hập như: Padan 95SP, Gegent 800WP...
+ngắt dảnh héo, ổ trứng; bẫy đèn đồng loạt bắt bướm…</Điều_trị>
+        <rdfs:comment>Bệnh do Sâu Cuốn Lá Lớn gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Cuốn_Lá_Nhỏ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Cuốn_Lá_Nhỏ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_trắng_cả_đồng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_các_vệt_trắng_dài_trên_lá"/>
+        <Phòng_chống>Vệ sinh đồng ruộng, làm sạch cỏ dại,
+Điều chỉnh mật độ cấy phù hợp
+Bón phân cân đối, hợp lý, đặc biệt bón phân đạm vừa phải.</Phòng_chống>
+        <Tác_hại>Lá lúa bị cuốn, sâu non ăn biểu bì mặt trên và diệp lục của lá dọc theo gân lá tạo thành những vệt trắng dài, các vệt này có thể nối liền với nhau thành từng mảng làm giảm diện tích quang hợp và đặc biệt là trên lá đòng hoặc lá công năng sẽ làm giảm năng suất rõ rệt.</Tác_hại>
+        <Điều_trị>Chú ý bảo vệ hoặc bổ sung thiên địch như ong mắt đỏ Trichogramma sp., 
+nấm… Ký sinh thiên địch của sâu cuốn lá nhỏ rất đa dạng từ các loài ong
+, nấm, các loài ăn thịt… 
+Dùng các loại thuốc Padan 95SP, Regent 800WP, Sumithion 50EC, Karate 2.5EC... phun khi sâu còn tuổi 1-2, sâu đã lớn cần phá bao lá trước khi phun mới có hiệu quả.</Điều_trị>
+        <rdfs:comment>Bệnh do Sâu Cuốn Lá Nhỏ gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Phao -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Phao">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_cắn_khuyết_từng_mảng_từng_đoạn_và_có_thể_trụi_lá"/>
+        <Phòng_chống>Cho nước vào ngập ruộng dùng rỗ vớt hết các phao sâu.
+Giữ nương mạ không bị ngập nước.
+Thoát nước nhiều ngày có thể diệt được sâu phao nhưng cỏ dại mọc nhiều.</Phòng_chống>
+        <Tác_hại>Sâu làm nhộng ở các khe nứt nẽ, vùng đất xung quanh gốc lúa.
+Sâu thường phá thời kỳ mạ, lúa đẻ nhánh, sâu thường phá rất nhanh có thể cắn trụi ruộng này sang ruộng khác, những năm mưa nhiều ngập úng sâu thường phá mạnh.</Tác_hại>
+        <Điều_trị>Để phòng trừ khi mật độ cao dùng các loại thuốc như Padan, Netoxin, Regent, các loại thuốc thuộc nhóm Pyrethroid …</Điều_trị>
+        <rdfs:comment>Bệnh do Sâu Phao gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_5_Vạch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_5_Vạch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_đồng_non_bị_cắn_phá"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Dễ_bị_đứt_gốc"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_non_trước_tiên_bị_cuốn_dọc_,_có_màu_xanh_tái_sẫm,_dần_chuyển_sang_màu_vàng_và_héo_khô."/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
+        <Phòng_chống>Bón cân đối NPK, không nên bón quá nhiều đạm và bón đạm kéo dài.
+Bố trí cơ cấu mùa vụ thích hợp. Sau khi gặt lúa, cày lật gốc rạ, phơi ải hoặc
+ ngâm nước (làm dầm) để diệt nhộng.
+Dùng các biện pháp thủ công: ngắt dảnh héo, ổ trứng; bẫy đèn đồng loạt bắt bướm…</Phòng_chống>
+        <Tác_hại>Ngài của sâu đục thân 5 vạch đầu đen có tính hướng sáng yếu hơn sâu đục thân bướm 2 chấm và vũ hóa về đêm và sau đó giao phối ngay trong đêm đó hoặc đêm sau và sau khi giao phối 1 đêm thì bắt đầu đẻ trứng. Mỗi ngài cái có thể đẻ từ tới 480 trứng trong 3 ngày, một ổ trứng có từ 7-150 quả trứng/ổ và trứng có tỉ lệ nở rất cao. Một năm sâu đục thân 5 vạch đầu đen phát sinh 6 lứa. Điều kiện nhiệt độ ấm nóng và ẩm độ cao thích hợp cho sâu phát sinh gây hại.
+Sâu non xâm nhập vào bẹ lá vào thân cắt đứt đường vận chuyển dinh dưỡng làm héo đỉnh sinh trưởng, làm chế cây ở giai đoạn lúa non hoặc bông bạc, ảnh hưởng trực tiếp đến năng suất lúa. Nhộng làm ổ bên trong thân lúa và bướm vũ hóa từ đấy.</Tác_hại>
+        <Điều_trị>Phun các loại thuốc lưu dẫn, vị độc, tiếp xúc, nội hấp như: Padan 95SP, 
+Gegent 800WP...</Điều_trị>
+        <rdfs:comment>Bệnh do Sâu Đục Thân 5 Vạch gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_Bướm_2_Chấm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_Bướm_2_Chấm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông_lép_trắng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_đục_qua_bẹ_phía_ngoài_vào_đến_nõn_giữa_phá_hại_làm_cho_dảnh_lúa_bị_héo"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_non_trước_tiên_bị_cuốn_dọc_,_có_màu_xanh_tái_sẫm,_dần_chuyển_sang_màu_vàng_và_héo_khô."/>
+        <Phòng_chống>Cày lật gốc rạ, ngâm nước, làm dầm kịp thời (đặc biệt đối với lúa vụ mùa sau
+ khi gặt). Tránh tình trạng để tới tháng 1 - 2 đầu năm mới tiến hành cày.
+Khi thu hoạch lúa cần cắt sát gốc rạ. Rơm rạ trên ruộng sau khi gặt cần
+ được thu dọn gọn
+Nếu đều kiện tưới tiêu chủ động có thể điều chỉnh mực nước ở ruộng để diệt sâu.
+Theo dõi các đợt bướm ra quanh năm tổ chức đốt đèn bẫy bướm trên diện rộng đồng loạt - cùng một thời gian.
+Ngắt ổ trứng sâu gom lại và đem tiêu hủy.
+Phát huy tác dụng của nhóm thiên địch nhất là ong ký sinh trứng.</Phòng_chống>
+        <Tác_hại>Do 2 đối tượng chính gây nên là sâu đục thân và bướm 2 chấm, chúng sẽ cắn phá cây lúa làm chết cây và làm giảm năng sức của vụ mùa</Tác_hại>
+        <Điều_trị>Thuốc trừ sâu đục thân đặc hiệu hiện nay chủ yếu có 2 nhóm: 
+Nhóm chlorantranliprole (DupontTM Prevathon, Virtako,Voliam targo.
+Nhóm này có tác dụng nội hấp.
+Nhóm chlopyriphos Ethyl có tác động tiếp xúc thấm sâu hiệu quả phòng trừ 
+tốt nhưng độ độc cao gây bộc phát rầy cuối vụ.</Điều_trị>
+        <rdfs:comment>Bệnh do Sâu Đục Thân Bướm 2 Chấm gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_Bướm_Cú_Mèo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_Bướm_Cú_Mèo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông_lúa_bị_bạc_màu"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_bị_lửng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nõn_lúa_bị_héo"/>
+        <Phòng_chống>Bón cân đối NPK, không nên bón quá nhiều đạm và bón đạm kéo dài.
+ Bố trí cơ cấu mùa vụ thích hợp. Sau khi gặt lúa, cày lật gốc rạ, phơi ải hoặc ngâm nước (làm dầm) để diệt nhộng.</Phòng_chống>
+        <Tác_hại>Sâu đục thân 5 vạch đầu đen phát sinh gây hại nặng ở vụ lúa thu đến vụ mùa, xuân chính vụ bị hại nhẹ hơn xuân muộn. Đặc điểm của loài sâu này chịu nóng và chịu lạnh khỏe nên ở vùng núi và trung du sâu này gây hại nặng. Loại sâu này phân bố ở khắp các vùng trồng lúa trong nước và trên thế giới.
+Giảm năng suất của vụ mùa</Tác_hại>
+        <Điều_trị>Phun các loại thuốc lưu dẫn, vị độc, tiếp xúc, nội hập như: Padan 95SP, Gegent 800WP... ngắt dảnh héo, ổ trứng; bẫy đèn đồng loạt bắt bướm…</Điều_trị>
+        <rdfs:comment>Bệnh do Sâu Đục Thân Bướm Cú Mèo gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_đục_qua_bẹ_phía_ngoài_vào_đến_nõn_giữa_phá_hại_làm_cho_dảnh_lúa_bị_héo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_đục_qua_bẹ_phía_ngoài_vào_đến_nõn_giữa_phá_hại_làm_cho_dảnh_lúa_bị_héo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_Bướm_2_Chấm"/>
+        <rdfs:comment>Sâu đục qua bẹ phía ngoài vào đến nõn giữa phá hại làm cho dảnh lúa bị héo</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Số_lượng_bông_và_chiều_dài_bông_giảm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Số_lượng_bông_và_chiều_dài_bông_giảm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Lưng_Trắng"/>
+        <rdfs:comment>Số lượng bông và chiều dài bông giảm</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Canxi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Canxi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Chất_Dinh_Dưỡng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Những_lá_già_chuyển_màu_nâu_và_chết"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Những_đám_chết_mô_xuất_hiện_dọc_theo_mép_lá"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đầu_lá_non_chuyển_màu_trắng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_chồi_lúa_bị_bệnh_giảm_chiều_cao,_bị_lùn_cây"/>
+        <rdfs:comment>Bệnh do thiếu Canxi</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Kali -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Kali">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Chất_Dinh_Dưỡng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_xanh_đậm"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Viền_có_màu_nâu_vàng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_hoại_tử_nâu_sẫm_trên_đầu_lá_già"/>
+        <rdfs:comment>Bệnh do thiếu Kali</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Đạm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Đạm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Chất_Dinh_Dưỡng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Toàn_bộ_đồng_ruộng_có_màu_vàng_nhạt"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_chồi_lúa_bị_bệnh_giảm_chiều_cao,_bị_lùn_cây"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dần_chuyển_sang_màu_vàng_nhạt,_vàng_da_cam"/>
+        <rdfs:comment>Bệnh do thiếu Đạm</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thối_gốc_và_rễ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thối_gốc_và_rễ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rễ"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Rễ_Lúa"/>
+        <rdfs:comment>Thối gốc và rễ</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Hạch_Lúa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Hạch_Lúa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chấm_nâu,_dần_chuyển_thành_nâu_đậm,_rồi_sau_đen_hẳn."/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Ống_rạ_phân_giải_thành_chất_nhầy,_có_mùi_hôi"/>
+        <Phòng_chống>Dọn sạch rơm rạ, gốc rạ bị bệnh đem đốt, không nên đánh đóng hoặc dùng để phủ đất các loại cây trồng khác ngoài đồng ruộng
+Chọn giống lúa chống bệnh. Nhóm giống lúa Japonica có khả năng chống bệnh cao hơn nhóm giống lúa Indica</Phòng_chống>
+        <Điều_trị>Có thể sử dụng thuốc để diệt ổ bệnh trung tâm khi bệnh chỉ xuất hiện ở 1 
+góc ruộng như: New Hinosan 30EC (1,2 l/ha); Ravral 50 WP (0,1 - 0,2 %);
+ Dithan M45 - 80WP (1,5 - 2 kg/ha) kết hợp với thay đổi mức nước trong
+ ruộng và vơ bỏ các lá già khô chết.</Điều_trị>
+        <rdfs:comment>Bệnh Tiêm Hạch Lúa</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Lửa_Hại_Lúa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Lửa_Hại_Lúa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_bị_lửng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lúa_bị_đen"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_trên_lá_hoặc_đọt_bông_chuyển_sang_màu_xanh_nâu"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Xuất_hiện_nhiều_đốm_nâu_nhỏ"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_lúa_có_màu_nâu_non,_xung_quanh_có_quầng_vàng_hình_bầu_dục"/>
+        <Phòng_chống>Vệ sinh đồng ruộng, dọn dẹp sạch cỏ dại và tàn dư rơm rạ, cấy đúng thời vụ, bón phân đúng kỹ thuật, đảm bảo đủ nước cho lúa, luân canh và cải tạo đất.
+Đảm bảo cung cấp đầy đủ dinh dưỡng cho lúa.
+Chú ý việc chọn lọc giống như phơi khô, quạt sạch, chọn hạt mẩy, sáng bóng, không có vết đốm nâu.
+ Có thể sử dụng biện pháp sử  lý hạt giống bằng nước nóng 54 độ C trong 10 phút hoặc sử lý bằng thuốc diệt nấm rồi đãi cho sạch đem ủ cho thóc nảy mầm và gieo.</Phòng_chống>
+        <Tác_hại>Hạt bị bệnh phẩm chất và phẩm chất và trọng lượng giảm 4,58 – 29,1%. Bệnh hại mức độ nhẹ, khi bệnh nặng vết bệnh làm lá sớm vàng và khô chết. Bệnh làm cháy lá mạ, lúa nhiễm bệnh vào lúc đòng non cho đến trỗ vỏ hạt thường bị đen, tỷ lệ hạt lửng và lép cao.</Tác_hại>
+        <Điều_trị>Trong trường hợp cần thiết có thể phun thuốc trừ nấm như: New Hinosan 30EC (1,2 l/1ha); Kitazin 50EC ( 1 - 5l/ha); Rovral 50 WP (0,1 - 0,2%); Zineb 80WP (1kg/ha).</Điều_trị>
+        <rdfs:comment>Bệnh Tiêm Lửa Hại Lúa</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Toàn_bộ_đồng_ruộng_có_màu_vàng_nhạt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Toàn_bộ_đồng_ruộng_có_màu_vàng_nhạt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_Thể"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Đạm"/>
+        <rdfs:comment>Toàn bộ ruộng có màu vàng nhạt</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_hạt_có_bám_các_hạt_nắm_máu_vàng_phìn_to -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_hạt_có_bám_các_hạt_nắm_máu_vàng_phìn_to">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Than_Vàng/Hoa_Cúc"/>
+        <rdfs:comment>Trên hạt có bám các hạt nắm máu vàng phìn to</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_lúa_có_nhiều_đường_vân_vòng_cung_nối_tiếp_nhau_loen_rộng_ra -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_lúa_có_nhiều_đường_vân_vòng_cung_nối_tiếp_nhau_loen_rộng_ra">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cháy_Lá-Phỏng_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vân_Nâu_Lá_Lúa"/>
+        <rdfs:comment>Trên lá lúa có nhiều đường vân vòng cung nối tiếp nhau loen rộng ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_và_thân_xuất_hiện_các_vết_nâu_cứng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_và_thân_xuất_hiện_các_vết_nâu_cứng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Nâu"/>
+        <rdfs:comment>Trên lá và thân xuất hiện các vết nâu cứng</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_xuất_hiện_nhiều_điểm_trắng_nhỏ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_xuất_hiện_nhiều_điểm_trắng_nhỏ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Trĩ"/>
+        <rdfs:comment>Trên lá xuất hiện nhiều điểm trắng nhỏ</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Rễ_Lúa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Rễ_Lúa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Biến_màu_vàng_nâu_và_thối"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_lúa_chuyển_sang_màu_vàng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_lúa_sinh_trưởng_và_phát_triển_kém"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giảm_chồi_gốc_và_đễ_nhánh_ít"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thối_gốc_và_rễ"/>
+        <Phòng_chống>Vệ sinh đồng ruộng sạch sẽ.
+ Để nước ngập trong ruộng vài ngày trước khi làm đất chuẩn bị gieo sạ.
+Giữ nước trong ruộng, không để khô hạn lâu, nhất là giai đoạn lúa còn nhỏ.
+Cần cho nước vào ruộng khoảng 3 - 5cm và giữ liên tục 5 - 7 ngày.</Phòng_chống>
+        <Tác_hại>Tuyến trùng đục lỗ chui vào sinh sống trong rễ ngay từ khi mới gieo sạ và hình thành bướu trên rễ rất sớm (từ 5 ngày sau sạ). 
+Khi cây lúa bị bướu rễ, chất dinh dưỡng bị tắc nghẽn không vận chuyển nuôi thân lá được, do vậy sau thời gian bị nhiễm bệnh cây lúa sẽ có triệu chứng vàng lá, cháy khô từ chóp xuống, lúa phát triển kém, chồi nhiễm bệnh bị lùn, trổ sớm và có rất ít hạt, hạt bị lửng lép nhiều.</Tác_hại>
+        <Điều_trị>Sử dụng một số chế phẩm cải tạo đất và tăng cường khả năng ra rễ mới cho lúa như Rhizomyx 2,5G (trộn với phân chuồng hoai mục nếu có) kết hợp phun các loại phân bón hữu cơ qua lá như DS80, Humix, Biogen... để giúp lúa nhanh hồi phục ra lá, ra rễ nhanh hơn.</Điều_trị>
+        <rdfs:comment>Bệnh do Tuyến Trùng Hại Rễ Lúa gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Thân_Lúa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Thân_Lúa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phần_phía_dưới_chùn_xuống_trông_giống_vết_sâu_ăn"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_làm_trắng_lá"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_trên_lá_hoặc_đọt_bông_chuyển_sang_màu_xanh_nâu"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_trên_lá_nâu_thẫm_và_xoắn_lại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_non_xoắn_và_không_trỗ_thoát,_thậm_chí_bị_phá_hủy"/>
+        <Phòng_chống>Đốt tàn dư sau thu hoạch ở những chân ruộng bị nhiễm nặng.
+Sử dụng cây luân canh không phải là ký chủ của loài D. Angutus
+Chọn đất không nhiễm tuyến trùng để gieo mạ. Tránh để gốc rạ trên đồng ruộng
+ mọc lúa chét, lúa mọc hoang và cỏ dại ngăn chặn sự tồn tại và phát triển lây lan sang vụ sau.
+Không tưới nước theo rãnh, hoặc mương máng chảy tràn làm lây lan nguồn tuyến trùng trên ruộng lúa.</Phòng_chống>
+        <Tác_hại>D. Angutus là loài ngoại ký sinh, sử dụng thức ăn ở các bộ phận cây còn non. Ở giai đoạn mạ, có thể tìm thấy tuyến trùng xung quanh phần ngọn mới phát triển của lúa, trên đất trũng có thể tìm thấy chúng ở tất cả các bộ phận của cây.
+Ở điều kiện ngập úng, tuyến trùng mất khả năng hoạt động ít nhất là 4 tháng, song trên đất nhiễm tuyến trùng để khô trong 6 tuần
+thì vết bệnh xoắn ngọn chỉ xuất hiện sau cấy lúa 2 tháng.</Tác_hại>
+        <Điều_trị>Sử dụng các loại thuốc để phòng ngừa tuyến trùng. Các loại thuốc đã có
+ hiệu quả phòng trừ như: Cabofuran, Mocap, Monocrotophos, phenazine, ..</Điều_trị>
+        <rdfs:comment>Bệnh do Tuyến Trùng Hại Thân Lúa gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Khô_Đầu_Lá_Lúa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Khô_Đầu_Lá_Lúa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông_lúa_trỗ_không_thoát"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chót_lá_chuyển_màu_trắng_xám"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chồi_phụ_mọc_từ_các_đốt_trên_bị_cong_xoắn_ở_trong_bẹ_lúa"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_xoắn_lại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đầu_lá_bị_khô_tóp"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_chồi_lúa_bị_bệnh_giảm_chiều_cao,_bị_lùn_cây"/>
+        <Phòng_chống>Chọn lọc hạt giống sạch bệnh: không lấy hạt ở các ruộng, các vùng đang có bệnh
+Sử dụng hạt giống kháng tuyến trùng và kết hợp các biện pháp canh tác hạn chế tác hại của chúng dưới ngưỡn gây hại kinh tế
+Tiêu huỷ các tàn dư cây bệnh tránh lây lan từ rơm rạ
+Hạt giống trước khi đưa vào sản xuất cần xử lý bằng nước nóng  52 - 54oC trong 15 phút, phơi lúa dưới ánh sáng mặt trời hoặc sấy khô ở nhiệt độ 30 – 35oC trước khi bảo quản.</Phòng_chống>
+        <Tác_hại>Từ giai đoạn này đến khi lúa trỗ tuyến trùng sinh sản nhanh, nằm trong nách lá, bẹn lá và dùng kim chích hút vào mô lấy chất dinh tưỡng theo kiểu ngoại ký sinh. Theo sự phát triển của cây lúa, tuyến trùng di chuyển dần lên phía trên vào ngọn cây tới đòng, bao phấn của bông lúa dẫn tới khả năng tồn tại của tuyến trùng ở trong hạt, đến khi lúa chin thì trên thân (rơm rạ)hầu như không có tuyến trùng, chúng chui vào hạt nằm cuộn tròn dưới lớp vỏ trấu và sống tiềm sinh ẩn. Hạt thóc trở thành môi giới nhiễm tuyến trùng và bệnh được lây lan nhờ hạt giống nhiễm bệnh.
+ gây giảm năng suất tới 50 – 80%.</Tác_hại>
+        <Điều_trị>Biện pháp hoá học: Sử dụng các thuốc xử lý hạt giống như: Fensulfothian, Carbofuran, Aldicarb, Methomyl … Có thể xử lý xông hơi mằng Metyl bromide: 567g/28,094 m3 trong 6 giờ</Điều_trị>
+        <rdfs:comment>Bệnh Tuyến Trùng Khô Đầu Lá Lúa</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vi_khuẩn_Xanhthomonas_Oryzicola -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vi_khuẩn_Xanhthomonas_Oryzicola">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nguyên_Nhân"/>
+        <rdfs:comment>Bệnh đốm sọc vi khuẩn do vi khuẩn Xanhthomonas Oryzicola gây nên, thường phát sinh trong điều kiện thời tiết thất thường</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vi_khuẩn_Xanthomonas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vi_khuẩn_Xanthomonas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nguyên_Nhân"/>
+        <rdfs:comment>Bệnh do vi khuẩn Xanthomonas gây ra và phát triển mạnh trong điều kiện ấm nóng nên ở các tỉnh phía Bắc bệnh xuất hiện từ cuối tháng 3 trở đi và thường gây hại nặng trong vụ lúa mùa. Những năm thời tiết ẩm ướt, nhiều mưa, bão là điều kiện thuận lợi cho bệnh phát sinh, phát triển.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Viền_có_màu_nâu_vàng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Viền_có_màu_nâu_vàng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Kali"/>
+        <rdfs:comment>Viền có màu nâu vàng</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#HG2"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_3995"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4218"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5239"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5451"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5472"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5636"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5930"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6976"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_lá_bị_bệnh_có_xu_hướng_xoè_ngang"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Làm_giảm_số_chồi_trên_bụi_lúa_mắc_bệnh"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_chồi_lúa_bị_bệnh_giảm_chiều_cao,_bị_lùn_cây"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dần_chuyển_sang_màu_vàng_nhạt,_vàng_da_cam"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_thể_ruộng_lúa_bị_bệnh_ngả_màu_vàng,_chiều_cao_cây_lúa_không_đồng_đều."/>
+        <Phòng_chống>Đối với ruộng lúa giai đoạn mạ đến đòng, nhiễm nhẹ, vận động nhổ, cày vùi cây lúa nhiễm bệnh.
+Đối với ruộng lúa giai đoạn mạ đến đòng, nhiễm nặng, vận động nông dân tiêu hủy lúa nhiễm bệnh hoặc phòng trừ rầy nâu theo hướng dẫn.</Phòng_chống>
+        <Tác_hại>Bệnh xuất hiện nặng từ 30 ngày sau khi sạ. Bệnh xuất hiện càng trễ thì khả năng thiệt hại càng cao. 
+Cây lúa bị nhiễm bệnh, thân lá thấp, phiến lá ngắn hay cong xoắn, có khả năng nảy chồi mạnh như sẽ mất khả năng trổ vì vậy năng suất sẽ bị thất thu nghiệm trọng.
+Bệnh có khuynh hướng phát sinh và phát triển theo chu kỳ của rầy nâu.
+Thông thường bệnh sẽ bộc phát mạnh kèm sau các đợt dịch rầy.</Tác_hại>
+        <Điều_trị>Đối với ruộng lúa giai đoạn đòng đến trổ, vận động nhổ, vùi cây lúa nhiễm bệnh phun thuốc trừ rầy nâu theo hướng dẫn nếu phát hiện rầy có số &gt;3 con/tép, rầy đang tuổi 1-2. Các loại thuốc cho hiệu quả cao là Actara 25WG, Chess 50WG.</Điều_trị>
+        <rdfs:comment>Bệnh Vàng Lùn</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bộ_rễ_kém_phát_triển_có_màu_đen_và_tanh"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_lá_bị_bệnh_có_xu_hướng_xoè_ngang"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_lúa_lụi_tàn"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_non_có_màu_xanh_nhạt__lốm_đốm"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_sọc_nhỏ_ngăn_khác_nhau"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_chồi_lúa_bị_bệnh_giảm_chiều_cao,_bị_lùn_cây"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dần_chuyển_sang_màu_vàng_nhạt,_vàng_da_cam"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_thể_ruộng_lúa_bị_bệnh_ngả_màu_vàng,_chiều_cao_cây_lúa_không_đồng_đều."/>
+        <Phòng_chống>Sử dụng các giống lúa kháng bệnh.
+Nếu phát hiện trên ruộng có dảnh bị nhiễm bệnh thì ngay lập tức phải nhổ bỏ và phun thuốc trừ rầy.</Phòng_chống>
+        <Tác_hại>Bệnh vàng lụi (còn gọi là bệnh vàng tạm thời hoặc bệnh vàng lá di động) là loại bệnh do virus Transitory yellowing gây lên và môi giới truyền bệnh là rầy xanh (Nephotettix cincticeps, N. Nigropictus và N. Viresent). Bệnh này xuất hiện từ năm 1958 và chủ yếu chỉ có ở các tỉnh phía Bắc Việt Nam.</Tác_hại>
+        <Điều_trị>Khi ruộng bị bệnh nhẹ và ở giai đoạn lúa đẻ nhánh, áp dụng các biện pháp thay nước ruộng, bón thêm vôi và phân lân kết hợp làm cỏ sục bùn, phun thuốc trừ rầy, sau đó khoảng 7-10 ngày bộ rễ lúa phát triển sẽ làm cho cây lúa hồi phục và cho năng suất bình thường.</Điều_trị>
+        <rdfs:comment>Bệnh Vàng Lụi</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vân_Nâu_Lá_Lúa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vân_Nâu_Lá_Lúa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Làm_đổi_màu_khác_bình_thường"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_lúa_có_nhiều_đường_vân_vòng_cung_nối_tiếp_nhau_loen_rộng_ra"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vùng_bị_nhiễm_khô_như_bị_phỏng_đi_giống_như_là_đã_chín"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_bẹ_lá_tạo_ra_những_đốm_nhỏ_hình_bầu_dục,_hình_chữ_nhật,_màu_nâu_đỏ,_tím_đen"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_bẹ_vết_đốm_to_dần_chuyển_sang_màu_nâu,_xám"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_có_đường_vân_cung_có_màu_nâu,_nâu_nhạt"/>
+        <Tác_hại>Nấm có sợi đa bào, tản nấm dầy xốp màu trắng mọc nhanh trên môi trường. Bào tử phân sinh hình trăng khuyết cong có 1 – 3 ngăn
+ ngang nhưng thông thuồng là 2 tế bào, không màu (khi tụ lại thành hình khối bào tử có màu hồng nhạt).
+Bệnh làm giảm 20 – 30% năng suất lúa.</Tác_hại>
+        <Điều_trị>Phun thuốc và sử lý hạt giống bằng Dithane M – 45, Carbendazim (Bavistin) 
+hoặc Benlat 1,5 – 3 g/kg hạt.</Điều_trị>
+        <rdfs:comment>Vàng Nâu Lá Lúa</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vùng_bị_nhiễm_khô_như_bị_phỏng_đi_giống_như_là_đã_chín -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vùng_bị_nhiễm_khô_như_bị_phỏng_đi_giống_như_là_đã_chín">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phiến_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cháy_Lá-Phỏng_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vân_Nâu_Lá_Lúa"/>
+        <rdfs:comment>Vùng bị nhiễm khô như bị phỏng đi giống như là đã chín</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_biến_đổi_giữa_màu_vàng_nhạt_và_nâu_tối -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_biến_đổi_giữa_màu_vàng_nhạt_và_nâu_tối">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phiến_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cháy_Lá-Phỏng_Lá"/>
+        <rdfs:comment>vết bệnh biến đổi giữa màu vàng nhạt và nâu tối</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_có_hình_ovan_đến_hình_tròn_xung_quanh_màu_vàng_nhạt_và_xám_có_đốm_đen_ở_giửa_tâm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_có_hình_ovan_đến_hình_tròn_xung_quanh_màu_vàng_nhạt_và_xám_có_đốm_đen_ở_giửa_tâm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Vòng"/>
+        <rdfs:comment>Vết bệnh có hình ovan đến hình tròn xung quanh màu vàng nhạt và xám có đốm đen ở giửa tâm trên lá</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_lan_rộng_theo_đường_gợn_sóng_màu_vàng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_lan_rộng_theo_đường_gợn_sóng_màu_vàng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá"/>
+        <rdfs:comment>Vết bệnh có dạng đốm loang lổ như da beo, màu xanh xám, viền nâu, sũng nước</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_làm_trắng_lá -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_làm_trắng_lá">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cổ_Bông"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Thân_Lúa"/>
+        <rdfs:comment>Vết bệnh làm trắng lá</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_trên_lá_hoặc_đọt_bông_chuyển_sang_màu_xanh_nâu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_trên_lá_hoặc_đọt_bông_chuyển_sang_màu_xanh_nâu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Lửa_Hại_Lúa"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Thân_Lúa"/>
+        <rdfs:comment>Vết bệnh trên lá hoặc đọt bông chuyển sang màu xanh nâu</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_trên_lá_nâu_thẫm_và_xoắn_lại -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_trên_lá_nâu_thẫm_và_xoắn_lại">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Thân_Lúa"/>
+        <rdfs:comment>Vết bệnh trên lá nâu thẫm và xoắn lại</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_hại_ban_đầu_là_các_chấm_nhỏ_màu_trắng_vàng_về_sau_thành_đám_màu_vàng_nâu_đến_nâu_đen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_hại_ban_đầu_là_các_chấm_nhỏ_màu_trắng_vàng_về_sau_thành_đám_màu_vàng_nâu_đến_nâu_đen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bẹ_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nhện_Gíe"/>
+        <rdfs:comment>Vết hại ban đầu là các chấm nhỏ màu trắng vàng về sau thành đám màu vàng nâu đến nâu đen</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vỏ_hạt_lúa_và_hạt_gạo_bị_đổi_màu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vỏ_hạt_lúa_và_hạt_gạo_bị_đổi_màu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lem_Lép_Hạt"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xọc_Đen"/>
+        <rdfs:comment>Vỏ hạt lúa và hạt gạo bị đổi màu</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Xuất_hiện_các_vết_nâu_cứng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Xuất_hiện_các_vết_nâu_cứng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
+        <rdfs:comment>Xuất hiện các vết nâu cứng</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Xuất_hiện_nhiều_điểm_trắng_nhỏ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Xuất_hiện_nhiều_điểm_trắng_nhỏ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <rdfs:comment>Xuất hiện nhiều điểm trắng nhỏ</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Xuất_hiện_nhiều_đốm_nâu_nhỏ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Xuất_hiện_nhiều_đốm_nâu_nhỏ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bẹ_Lá"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Lửa_Hại_Lúa"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Nâu"/>
+        <rdfs:comment>Xuất hiện nhiều đốm nâu nhỏ</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_2718"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_3995"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4498"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_4900"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5239"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5451"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_5472"/>
+        <Giống_Kháng_Bệnh rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6976"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_lúa_lụi_tàn"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_bị_lửng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_héo"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cổ_bông_mọc_một_lớp_nấm_mốc_màu_xám_xanh,_dễ_bị_gãy"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_hạt_vết_bệnh_có_hình_tròn,_viền_nâu,_tâm_màu_xám_trắng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_có_hình_thoi,_những_đốm_to_thì_hai_đầu_nhọn,_tâm_có_màu_xám_trắng"/>
+        <Phòng_chống>Bón phân NPK hợp lý, đúng giai đoạn, không bón đạm tập trung vào thời kỳ lúa dễ nhiễm bệnh. 
+Khi có bệnh phải tạm ngừng bón thúc đạm và tiến hành phun thuốc phòng trừ.</Phòng_chống>
+        <Thời_điểm>Bệnh này thường phát triển mạnh trong điều kiện khí hậu mát mẽ, ấm độ cao, mưa nhỏ kéo dài, đêm sương mù nhiều.
+Đặc biệt trong vụ lúa Đông Xuân vào tháng giêng-tháng hai dương lịch, bệnh này sẽ gây hại trên diện rộng trùng vào lúc lúa đứng cái đến trổ</Thời_điểm>
+        <Tác_hại>Bệnh gây hại ngay từ trên ruộng mạ nhưng gây hại nặng từ giai đoạn lúa đẻ nhánh rộ trở đi. bệnh sẽ phát sinh, lây lan nhanh trên diện rộng và có thể gây cháy lụi nếu không được phòng trừ kịp thời. Phần lớn các giống lúa đều nhiễm bệnh.Bệnh thích hợp thời tiết nắng ấm, trời âm u, ẩm độ cao, sương mù, gieo sạ dầy, hay bón nhiều đạm…
+Đạo ôn cổ bông phát sinh và gây hại nặng ở điều kiện ẩm độ cao, mưa kéo dài.
+Trong điều kiện trời nắng, ẩm độ thấp thì sự gây hại của bệnh không đáng kể.</Tác_hại>
+        <Điều_trị>Giữ nước thường xuyên cho ruộng lúa nhất là khi có dịch bệnh
+Khi phát hiện ổ bệnh trên đồng ruộng cần tiến hành phun thuốc trừ sớm và nhanh.  Một số loại thuốc hoá học sử dụng để phòng trừ bệnh như Fuji –one 40WP, Bump 650WP, Filia 525SE, Kasai-S 92SC, Kabim 30WP, abum 650WP, Bankan 600WP, Bemsuper 75WP, Katana 20SC, Fu-army 40EC,…</Điều_trị>
+        <rdfs:comment>Bệnh Đạo Ôn</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đầu_lá_bị_khô_tóp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đầu_lá_bị_khô_tóp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Khô_Đầu_Lá_Lúa"/>
+        <rdfs:comment>Đầu lá bị khô tóp</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đầu_lá_non_chuyển_màu_trắng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đầu_lá_non_chuyển_màu_trắng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Canxi"/>
+        <rdfs:comment>Đầu lá non chuyển màu trắng</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Nâu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Nâu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_bị_lửng"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_có_nhiều_đốm_nâu"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Xuất_hiện_nhiều_đốm_nâu_nhỏ"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_nâu_tròn,_bầu_dục_trên_lá_mầm,_làm_biến_dạng_lá_mầm"/>
+        <Phòng_chống>Cần thăm đồng thường xuyên để nhận diện và không nhầm lẫn với bệnh đạo ôn. Đồng thời tập trung chăm sóc và duy trì đầu tư nước tưới hợp lý từ 2 - 5cm, bón đủ và cân đối NPK theo đúng thời kỳ sinh trưởng phát triển để cây lúa khỏe mạnh và hạn chế sự phát sinh gây hại của nấm bệnh.</Phòng_chống>
+        <Tác_hại>Do thời tiết có nhiều nắng nóng nhiệt cao, độ ẩm không khí cao thấp thất thường, cây lúa thường xuyên bị đói hoặc không được đáp ứng kịp thời các yếu tố dinh dưỡng và nước vì đặc điểm chân ruộng.
+Bệnh do nấm Bipolaris Oryzae, tồn tại chủ yếu từ hạt giống. Phát sinh gây hại trên giống (KM 18, Bắc thơm 7, Tám xoan Điện Biên), chân ruộng được đánh giá là xấu nghèo dinh dưỡng và không đậu nước.</Tác_hại>
+        <Điều_trị>Khi ruộng có triệu chứng bị hại, cần phun thuốc TilSuper300EC. Một cốc TilSuper300EC pha đều trong bình 16 lít nước, phun cho 6 - 8 thước ruộng vào chiều mát không mưa. Phun 2 lần liên tục, lần 2 sau lần 1 từ 3 - 4 ngày.</Điều_trị>
+        <rdfs:comment>Bệnh Đốm Nâu</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Sọc_Vi_Khuẩn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Sọc_Vi_Khuẩn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <Nguyên_Nhân_Do rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vi_khuẩn_Xanhthomonas_Oryzicola"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bề_mặt_xuất_hiện_những_giọt_dịch_màu_vàng_đục"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_đốm_chạy_dọc_giữa_các_gân_lá_tạo_thành_các_sọc_nâu_hẹp"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_sọc_nhỏ_ngăn_khác_nhau"/>
+        <Phòng_chống>Tiến hành vệ sinh đồng rộng và hạn chế cấy các giồng mầm mẫn cảm với bệnh</Phòng_chống>
+        <Tác_hại>Bệnh đốm sọc vi khuẩn do vi khuẩn Xanhthomonas Oryzicola gây nên, thường phát sinh trong điều kiện thời tiết thất thường, 
+gây giảm quang hợp làm giảm năng suất lúa.</Tác_hại>
+        <Điều_trị>Cần rút nước, tháo nước để khô trong  2-3 ngày
+Rắc vôi để hạn chế bệnh lây lan sang các cây khác</Điều_trị>
+        <rdfs:comment>Bệnh Đốm Sọc Vi Khuẩn</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Vòng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Vòng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <Nguyên_Nhân_Do rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nấm_Rhizoctonia_solani"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_các_đốm_đen_như_bị_thối"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_nhân_lại_và_dễ_vở"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_có_hình_ovan_đến_hình_tròn_xung_quanh_màu_vàng_nhạt_và_xám_có_đốm_đen_ở_giửa_tâm"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_hạt_vết_bệnh_có_hình_tròn,_viền_nâu,_tâm_màu_xám_trắng"/>
+        <Phòng_chống>Không lấy giống ở ruộng có nhiều hạt bị đốm nâu đen
+Vệ sinh ruộng trồng.
+Xử lý hạt với Dithane M-45 (Zineb) hay Ceresan, hoặc Rovral 50 WP ở nồng độ 0,2% hoặc bằng nước nóng (54°C).</Phòng_chống>
+        <Tác_hại>Bệnh nhẹ thì làm tăng tỷ lệ lem lép hạt, gây đổ ngã, làm giảm năng suất.
+Bệnh nặng sẽ làm cây lúa chết và có thể gây thất thu năng suất lên đến 25%</Tác_hại>
+        <Điều_trị>Xử lý hạt với Dithane M-45 (Zineb) hay Ceresan, hoặc Rovral 50 WP ở nồng độ 0,2% hoặc bằng nước nóng (54°C).
+Phun Rovral 50 WP, nồng độ 0,2% từ khi lúa trổ trở về sau</Điều_trị>
+        <rdfs:comment>Bệnh Đốm Vòng</rdfs:comment>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Vòng"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_các_đốm_đen_như_bị_thối"/>
+        <rdfs:comment rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rễ"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_hoại_tử_nâu_sẫm_trên_đầu_lá_già -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_hoại_tử_nâu_sẫm_trên_đầu_lá_già">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Kali"/>
+        <rdfs:comment>Đốm hoại tử nâu sẫm trên đầu lá già</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Ốc_Bươu_Vàng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Ốc_Bươu_Vàng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_đồng_non_bị_cắn_phá"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_lúa_bị_cắn_ngang"/>
+        <Phòng_chống>Làm đất kỹ bằng phẳng, tránh để những khu vực trũng nước trên ruộng.
+ Bắt ốc và ổ trứng bằng tay vào sáng sớm hoặc chiều mát. Nên bắt ốc sớm và liên tục từ lúc sạ đến 2, 3 tuần sau.
+ Có thể sử dụng thức ăn như lá khoai, rau muống... dẫn dụ ốc tập trung đến ăn để dễ thu gom.
+Sử dụng giống tốt có tỷ lệ nẩy mầm cao.</Phòng_chống>
+        <Tác_hại>Ốc bươu vàng là loài sinh vật ngoại lai xâm hại, là đối tượng ăn thực vật, thức ăn ưa thích là xà lách, mạ non, rau muống… đặc biệt là mạ dưới 3 tuần tuổi có thể bị ốc cắn ngang thân gây thiệt hại trên đồng ruộng, khi ốc bươu vàng phát triển ở mật độ cao có thể làm ruộng mất trắng. Các nghiên cứu cho thấy, 1 con ốc bươu vàng (2 - 3 cm)/m2 gây hại trong giai đoạn lúa 3 – 20 ngày sau sạ sẽ làm giảm 15 - 20% năng suất lúa, nếu mật độ 6-10 con ốc /m2 thì ruộng lúa sạ sẽ mất trắng sau 1 ngày đêm. Vòng đời ốc trung bình là 60 ngày và ốc có thể sống đến 4 - 6 năm.</Tác_hại>
+        <Điều_trị>Một số loại thuốc được ưa chuộng hiện nay là thuốc DIOTO 250EC (Diệt ốc tốt) là thuốc đặc trị OBV có hoạt chất là Niclosamide, hàm lượng a.i: 250g/L, dạng nhũ dầu, thơm mùi cồn, thuộc nhóm độc III (WHO).</Điều_trị>
+        <rdfs:comment>Bệnh do Ốc Bươu Vàng gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Châu_Chấu/Cào_Cào -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Châu_Chấu/Cào_Cào">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_cắn_khuyết_từng_mảng_từng_đoạn_và_có_thể_trụi_lá"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_thủng_từng_lổ_nhỏ"/>
+        <Phòng_chống>Dọn sạch cỏ ở các bờ ruộng hoặc sơn bờ ruộng.
+Theo dõi sát tình hình mật độ châu chấu (cào cào) trên lúa mùa, nếu mật độ cao có thể tổ chức phát động nông dân dùng vợt bắt trước khi vào vụ sản xuất.
+Châu chấu (cào cào) có xu tính bay vào ánh lửa sáng vào ban đêm, do vậy những vùng có mật độ cao có thể đốt lửa vào ban đêm để tiêu diệt nhằm giảm mật độ trên đồng ruộng.</Phòng_chống>
+        <Tác_hại>Châu chấu (cào cào) phân bố phổ biến ở khắp các vùng trồng lúa và hoa màu của Việt Nam và trên thế giới. Cả trưởng thành và sâu non đều gây hại và gây hại tất cả các thời kỳ phát triển của cây trồng.
+Con non ngay sau khi nở đã bắt đầu phá hại. Trưởng thành hoạt động mạnh vào 7-10 giờ và 16-17 giờ. Ban đêm châu chấu (cào cào) có xu hướng bay vào ánh lửa sáng hoặc đèn tia tử ngoại, khi nhảy xuống mặt nước có thể bơi. Châu chấu (cào cào) phá hại quanh năm, đặc biệt là những nơi cấy cả vụ sớm và muộn.</Tác_hại>
+        <Điều_trị>Dùng các loại thuốc có vị độc, tiếp xúc như: Sherpa 25EC, Fastac 5EC... Có thể dùng hỗn hợp thuốc lân hữu cơ và cúc tổng hợp có hiệu quả cao nhất: Bà con có thể tự pha trộn hoặc dùng các thuốc đã hỗn hợp sẵn như Dragon, Fenbis, Sherzol… Ngoài ra, cũng có thể dùng một số thuốc khác như Gà Nòi, Pyrinex, Sagosuper… 
+ Sử dụng các chế phẩm nấm sinh học Metarhizum để phòng trừ, tuy nhiên hiệu quả chậm. Điểm mặt của phương pháp này là hiệu quả lâu dài, an toàn, bảo vệ thiên địch và môi trường.</Điều_trị>
+        <rdfs:comment>Bệnh do Châu Chấu và Cào Cào gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chấm_nâu,_dần_chuyển_thành_nâu_đậm,_rồi_sau_đen_hẳn. -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chấm_nâu,_dần_chuyển_thành_nâu_đậm,_rồi_sau_đen_hẳn.">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Hạch_Lúa"/>
+        <rdfs:comment>Chấm nâu dân chuyển thành nâu đậm, rồi sau đen hẩn</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chết_từng_khốm_,từng_chòm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chết_từng_khốm_,từng_chòm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_Thể"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Đen"/>
+        <rdfs:comment>Chết từng khốm , từng chòm</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_chồi_lúa_bị_bệnh_giảm_chiều_cao,_bị_lùn_cây -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_chồi_lúa_bị_bệnh_giảm_chiều_cao,_bị_lùn_cây">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_Thể"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xoắn_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xọc_Đen"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Cuốn_Lá_Lớn"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Canxi"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Đạm"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Khô_Đầu_Lá_Lúa"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
+        <rdfs:comment>Các chồi lúa bị bệnh giảm chiều cao , bị lùn cây</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_phát_triển_cao_vọt_,_cong_keo_mảnh_khảnh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_phát_triển_cao_vọt_,_cong_keo_mảnh_khảnh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_Thể"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von"/>
+        <rdfs:comment>Cây phát triển cao vọt, công veo mảnh khảnh</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cổ_bông_mọc_một_lớp_nấm_mốc_màu_xám_xanh,_dễ_bị_gãy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cổ_bông_mọc_một_lớp_nấm_mốc_màu_xám_xanh,_dễ_bị_gãy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cổ_Bông"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
+        <rdfs:comment>Cổ bông mọc một lớp nấm mốc màu xám xanh, dễ bị gãy</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dần_chuyển_sang_màu_vàng_nhạt,_vàng_da_cam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dần_chuyển_sang_màu_vàng_nhạt,_vàng_da_cam">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Trĩ"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Đạm"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Hạch_Lúa"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
+        <rdfs:comment>Lá dần chuyển sang màu vàng nhạt,  vàng da cam rồi vàng khô</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_non_trước_tiên_bị_cuốn_dọc_,_có_màu_xanh_tái_sẫm,_dần_chuyển_sang_màu_vàng_và_héo_khô. -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_non_trước_tiên_bị_cuốn_dọc_,_có_màu_xanh_tái_sẫm,_dần_chuyển_sang_màu_vàng_và_héo_khô.">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_5_Vạch"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_Bướm_2_Chấm"/>
+        <rdfs:comment>lá non trước tiên bị cuốn dọc , có màu xanh tái sẫm, dần chuyển sang màu vàng và héo khô.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_non_xoắn_và_không_trỗ_thoát,_thậm_chí_bị_phá_hủy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_non_xoắn_và_không_trỗ_thoát,_thậm_chí_bị_phá_hủy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Thân_Lúa"/>
+        <rdfs:comment>Lá non xoắn và không trỗ thoát, thậm chí bị phá hủy</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phiến_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Trĩ"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Đen"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Khô_Vằn"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Nâu"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_5_Vạch"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Hạch_Lúa"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Lửa_Hại_Lúa"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai/Bọ_Gai"/>
+        <rdfs:comment>Lá vàng, khô và chết dần</rdfs:comment>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#isSymptomOf"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá"/>
+        <rdfs:comment>hinh aloalo</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mô_bệnh_xanh_tái,_vàng_lục -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mô_bệnh_xanh_tái,_vàng_lục">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mô"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá"/>
+        <rdfs:comment>Mô bệnh xanh tái, vàng lục</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Những_đốm_nhỏ_màu_vàng_nhạt,_về_sau_vết_chích_kéo_dài_thành_hình_chữ_nhật_và_dần_dần_biến_sang_nâu_đen. -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Những_đốm_nhỏ_màu_vàng_nhạt,_về_sau_vết_chích_kéo_dài_thành_hình_chữ_nhật_và_dần_dần_biến_sang_nâu_đen.">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nhện_Gíe"/>
+        <rdfs:comment>Những đốm nhỏ màu vàng nhạt, về sau vết chích kéo dài thành hình chữ nhật và dần dần biến sang nâu đen.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nảy_trồi_trên_đốt_thân,_xuất_hiện_nhiều_rễ_mọc_ngược_lên_trên -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nảy_trồi_trên_đốt_thân,_xuất_hiện_nhiều_rễ_mọc_ngược_lên_trên">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xọc_Đen"/>
+        <rdfs:comment>Cây bị bệnh thường nảy trồi trên đốt thân, xuất hiện nhiều rễ mọc ngược lên trên</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6377(AG1) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6377(AG1)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
+        <rdfs:comment>Giống lúa OM 6377(AG1): TGST 90 - 95 ngày; thân rạ cứng, chiều cao cây 111 cm; năng suất: 5 - 7 tấn/ha; khả năng kháng rầy nâu cấp 1 - 3, kháng đạo ôn cấp 1 - 3; tỉ lệ gạo nguyên 45%, bạc bụng (cấp 9) 8%; hạt dài 7,05 mm; hàm lượng amylose 24,3%. Đặc tính khác: Cứng cây, kháng vàng lùn, gạo đẹp, thơm nhẹ.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_thể_ruộng_lúa_bị_bệnh_ngả_màu_vàng,_chiều_cao_cây_lúa_không_đồng_đều. -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_thể_ruộng_lúa_bị_bệnh_ngả_màu_vàng,_chiều_cao_cây_lúa_không_đồng_đều.">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_Thể"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
+        <rdfs:comment>Quần thể ruộng lúa bị bệnh ngả màu vàng, chiều cao cây lúa không đồng đều.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai/Bọ_Gai -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai/Bọ_Gai">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_héo"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mặt_trên_phiến_lá_bị_cắn_lỗ"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
+        <Phòng_chống>Vệ sinh đồng ruộng, diệt cỏ dại trong và xung quanh ruộng.
+ Không cấy dày. Quan sát đồng ruộng và nhặt bỏ thành trùng, ấu trùng và trứng trên lá lúa khi mật số bọ gai còn ít.</Phòng_chống>
+        <Tác_hại>Sâu non đục lá, ăn phần diệp lục giữa hai lớp biểu bì tạo thành những đường hầm không đều nhau. Con trưởng thành ăn mặt trên phiến lá, để lại lớp biểu bì phía dưới. Sâu gai phân bố ở khắp các vùng trồng lúa trong nước, đặc biệt những vùng trồng lúa năng suất cao.</Tác_hại>
+        <Điều_trị>Sử dụng các loại thuốc hóa học thông thường: Regent 800WG, Padan 95SP hoặc Actara 25WG khi sâu phát sinh rộ.
+ Dùng dây thừng nhúng vào dầu lửa và nước, mỗi thứ 1 phần bằng nhau, 2 người kéo trên tán lá lúa dọc theo ruộng.</Điều_trị>
+        <rdfs:comment>Bệnh do Sâu Gai hay Bọ Gai gây ra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Than_Vàng/Hoa_Cúc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Than_Vàng/Hoa_Cúc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Những_khối_nấm_hồng_bao_phủ_cả_vỏ_hạt"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_hạt_có_bám_các_hạt_nắm_máu_vàng_phìn_to"/>
+        <Phòng_chống>Không sử dụng hạt giống ở những ruộng bị bệnh. Xử lí hạt giống bằng nước nóng 54OC.
+Chăm sóc hợp lý làm cho cây khoẻ, tăng cường khả năng chống bệnh. Vệ sinh đồng ruộng, phơi ải, ngâm dầm để tiêu diệt bào tử và hạch nấm. Không gieo cấy những giống lúa mẫn cảm với bệnh.</Phòng_chống>
+        <Tác_hại>Bệnh hoa cúc phát sinh gây hại từ giai đoạn lúa phơi màu cho tới khi lúa chín. Bệnh gây hại trên vỏ trấu, bệnh trong hạt. Triệu chứng bệnh là những khối nấm hồng bao phủ cả vỏ hạt. Bệnh nặng làm toàn thể hạt gạo bên trong bị lép, biến màu, đôi khi có mùi mốc.... 
+Nấm xâm nhiễm vào hạt, biến từng hạt riêng rẻ của bông lúa thành khối bào tử hình tròn dạng nhung mịn. Khối bào tử lúc đầu nhỏ, sau đó to dần và đạt tới đường kính có thể 1cm, khối bào tử này được bao phủ bởi màng mỏng, trơn nhẵn màu vàng, màng bị vỡ rách do khối bào tử tiếp tục sinh trưởng khi đó khối bào tử có màu có màu vàng da cam sau đó biến thành màu xanh nâu hoặc đen xanh nhạt. 
+Ở thời kỳ này bề mặt khối bào tử bị nứt nẻ. Thông thường chỉ một vài hạt trên bông lúa bị bệnh, khi bệnh nặng có nhiều hạt trên bông lúa bị bệnh.</Tác_hại>
+        <Điều_trị>Sử dụng thuốc trừ bệnh đúng thời điểm. Nên phun thuốc trước trổ 5-7 ngày và sau dứt trổ 5-7 ngày: Diboxylin 2 SL; Rovral 50 WP; Tilral 500 WP  với nồng độ theo khuyến cáo; thuốc trừ bệnh nhóm gốc đồng như: Oxyt clorua đồng, Bordeaux, Copper Zine (sử dụng 40-45 g/bình phun 8 lít nước).</Điều_trị>
+        <rdfs:comment>Bệnh Than Vàng/Hoa Cúc</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thối_Thân/Thối_Rễ/Thối_Bẹ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thối_Thân/Thối_Rễ/Thối_Bẹ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh_Hại"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông_lúa_trỗ_không_thoát"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_các_đốm_đen_như_bị_thối"/>
+        <Phòng_chống>Vệ sinh đồng ruộng dọn sạch tàn dư cây trồng và cỏ dại, làm đất kỹ
+Gieo sạ đúng thời vụ và tập trung
+Không hoặc hạn chế sử dụng các giống ghi nhận đã nhiễm thối thân nặng, 
+nên sạ giống cấp xác nhận.
+Sạ hàng, sạ thưa (100-120kg/ha).</Phòng_chống>
+        <Tác_hại>Đây là những bệnh phổ biến và gây hại nghiêm trọng trên cây lúa trong thời gian gần đây. 
+Đặc biệt gây hại nặng trên những diện tích bón nhiều phân đạm, sạ dày, đất bị yếm khí, sử dụng giống nhiễm ML48, ML68, AN 26, AN 13…
+Bệnh gây hại trên cây lúa từ giai đoạn đẻ nhánh nhưng nặng nhất từ làm đòng đến sau trổ, làm thất thu năng suất rất lớn nếu không phát hiện và phòng trừ kịp thời.</Tác_hại>
+        <Điều_trị>Bón phân đủ và cân đối N-P-K. 
+Phun thuốc Nevo 330EC hay các sản phẩm có hoạt chất (Difenoconazole + Propiconazole)</Điều_trị>
+        <rdfs:comment>Bệnh Thối Thân, Thối Rễ và Thối Bẹ</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_bẹ_lá_tạo_ra_những_đốm_nhỏ_hình_bầu_dục,_hình_chữ_nhật,_màu_nâu_đỏ,_tím_đen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_bẹ_lá_tạo_ra_những_đốm_nhỏ_hình_bầu_dục,_hình_chữ_nhật,_màu_nâu_đỏ,_tím_đen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bẹ_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vân_Nâu_Lá_Lúa"/>
+        <rdfs:comment>Trên bẹ lá tạo ra những đốm nhỏ hình bầu dục, hình chữ nhật, màu nâu đỏ, tím đen</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_bẹ_vết_đốm_to_dần_chuyển_sang_màu_nâu,_xám -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_bẹ_vết_đốm_to_dần_chuyển_sang_màu_nâu,_xám">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bẹ_Lá"/>
+        <rdfs:comment>Trên bẹ vết đốm to dần chuyển sang màu nâu xám</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_hạt_vết_bệnh_có_hình_tròn,_viền_nâu,_tâm_màu_xám_trắng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_hạt_vết_bệnh_có_hình_tròn,_viền_nâu,_tâm_màu_xám_trắng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Vòng"/>
+        <rdfs:comment>Trên hạt vết bệnh có hình tròn, viền nâu, tâm màu xám trắng</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_có_hình_thoi,_những_đốm_to_thì_hai_đầu_nhọn,_tâm_có_màu_xám_trắng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_có_hình_thoi,_những_đốm_to_thì_hai_đầu_nhọn,_tâm_có_màu_xám_trắng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
+        <rdfs:comment>trên lá có hình thoi, những đốm to thì hai đầu nhọn, tâm có màu xám trắng</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_có_đường_vân_cung_có_màu_nâu,_nâu_nhạt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_có_đường_vân_cung_có_màu_nâu,_nâu_nhạt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vân_Nâu_Lá_Lúa"/>
+        <rdfs:comment>Trên lá có đường vân cung có màu nâu, nâu nhạt</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_lúa_có_màu_nâu_non,_xung_quanh_có_quầng_vàng_hình_bầu_dục -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_lúa_có_màu_nâu_non,_xung_quanh_có_quầng_vàng_hình_bầu_dục">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Lửa_Hại_Lúa"/>
+        <rdfs:comment>Trên lá lúa có màu nâu non, xung quanh có quầng vàng hình bầu dục</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_có_dạng_đốm_loang_lổ_như_da_beo,_màu_xanh_xám,_viền_nâu,_sũng_nước -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_có_dạng_đốm_loang_lổ_như_da_beo,_màu_xanh_xám,_viền_nâu,_sũng_nước">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bẹ_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Khô_Vằn"/>
+        <rdfs:comment>Vết bệnh có dạng đốm loang lổ như da beo, màu xanh xám, viền nâu, sũng nước</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_có_màu_xanh_xám,_xuất_hiện_khi_ngâm_trong_nước -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_có_màu_xanh_xám,_xuất_hiện_khi_ngâm_trong_nước">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phiến_Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cháy_Lá-Phỏng_Lá"/>
+        <rdfs:comment>Vết bệnh có màu xanh xám, xuất hiện khi ngâm trong nước</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_nâu_tròn,_bầu_dục_trên_lá_mầm,_làm_biến_dạng_lá_mầm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_nâu_tròn,_bầu_dục_trên_lá_mầm,_làm_biến_dạng_lá_mầm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Nâu"/>
+        <rdfs:comment>Vết nâu tròn hình bầu dục trên lá mầm làm biến dạng là mầm</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#vết_kéo_dài_bao_quanh_cổ_bông,_hai_đầu_vết_bệnh_có_màu_xám_loang_ra,_phần_giữa_vết_bệnh_màu_lục_sẫm_co_tóp_lại -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#vết_kéo_dài_bao_quanh_cổ_bông,_hai_đầu_vết_bệnh_có_màu_xám_loang_ra,_phần_giữa_vết_bệnh_màu_lục_sẫm_co_tóp_lại">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cổ_Bông"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Khô_Vằn"/>
+        <rdfs:comment>vết kéo dài bao quanh cổ bông, hai đầu vết bệnh có màu xám loang ra, phần giữa vết bệnh màu lục sẫm co tóp lại</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Ống_rạ_phân_giải_thành_chất_nhầy,_có_mùi_hôi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Ống_rạ_phân_giải_thành_chất_nhầy,_có_mùi_hôi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Hạch_Lúa"/>
+        <rdfs:comment>ống rạ phân giải thành chất nhầy, có mùi hôi</rdfs:comment>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <Image></Image>
+    </rdf:Description>
+    <rdf:Description>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12331231</Image>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rễ"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bẹ_Lá"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chóp_Lá"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phiến_Lá"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

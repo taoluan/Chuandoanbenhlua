@@ -20,36 +20,32 @@ let graphDBEndpoint = new EnapsoGraphDBClient.Endpoint({
     repository: GRAPHDB_REPOSITORY,
     prefixes: DEFAULT_PREFIXES
 });
+let functions = require('../functions/functions')
 module.exports = {
     chuandoan: async(req,res)=>{
         try {
-            let trieuchung = req.body.trieuchung
-            //console.log(trieuchung)\
-            let str = ""
-            trieuchung.map((x,y)=>{
-                if(trieuchung[y+1] != undefined){
-                    str += `regex(str(?cmt), "${x}", "i") || `
-                 }else{
-                    str +=`regex(str(?cmt), "${x}", "i")`
-                 } 
-             })
+            let trieuchung = await functions.map_sysptom(req.body.trieuchung) 
             let rs = await graphDBEndpoint.query(
                 `
-                SELECT DISTINCT  ?tenbenh ?trieuchung_moi ?vitri  
+                SELECT DISTINCT  ?tenbenh ?trieuchung_moi ?vitri ?hinh
                 WHERE {
                 ?x data:hasSymptom ?y .
                 ?y rdfs:comment ?cmt.
                 ?x rdfs:comment ?tenbenh
-                FILTER  (${str}).
+                FILTER  (${trieuchung}).
                 ?x data:hasSymptom ?q.
                 ?q rdfs:comment ?trieuchung_moi.
                 ?q rdf:type ?t.
-                ?t rdfs:comment ?vitri
-}
+                ?t rdfs:comment ?vitri.
+                OPTIONAL {?annotation owl:annotatedSource ?x;
+                            owl:annotatedTarget ?q;
+                            rdfs:comment ?hinh}
+                }
             
-                `       )
-            console.log(rs.results.bindings)
-            res.send(rs.results.bindings)
+                `)
+            let resut =await functions.filter_extraction(rs.results.bindings)
+           // console.log(rs.results.bindings)
+            //res.send(resut)
            // res.send(rs.results.bindings)
         }catch(err){
             console.log(err)
