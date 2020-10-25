@@ -24,15 +24,15 @@ let functions = require('../functions/functions')
 module.exports = {
     chuandoan: async(req,res)=>{
         try {
-            let trieuchung = await functions.map_sysptom(req.body.trieuchung) 
-            let rs = await graphDBEndpoint.query(
+            let trieuchung_input = await functions.map_sysptom(req.body.trieuchung) 
+            let rs_trieutung_new = await graphDBEndpoint.query(
                 `
-                SELECT DISTINCT  ?tenbenh ?trieuchung_moi ?vitri ?hinh
+                SELECT DISTINCT  ?tenbenh ?trieuchung_moi ?vitri ?hinh ?trieuchung_input
                 WHERE {
                 ?x data:hasSymptom ?y .
-                ?y rdfs:comment ?cmt.
+                ?y rdfs:comment ?trieuchung_input.
                 ?x rdfs:comment ?tenbenh
-                FILTER  (${trieuchung}).
+                FILTER  (${trieuchung_input}).
                 ?x data:hasSymptom ?q.
                 ?q rdfs:comment ?trieuchung_moi.
                 ?q rdf:type ?t.
@@ -43,10 +43,25 @@ module.exports = {
                 }
             
                 `)
-            let resut =await functions.filter_extraction(rs.results.bindings)
-           // console.log(rs.results.bindings)
-            //res.send(resut)
-           // res.send(rs.results.bindings)
+            let count_benh = await graphDBEndpoint.query(
+                `
+                SELECT DISTINCT ?tenbenh  ( COUNT( DISTINCT ?a) AS ?HowMany )
+                WHERE {
+                ?x data:hasSymptom ?y .
+                ?y rdfs:comment ?trieuchung_input.
+                ?x rdfs:comment ?tenbenh
+                FILTER  (${trieuchung_input}).
+                ?a data:isSymptomOf ?b.
+                FILTER (?b = ?x)
+                }
+                group by ?tenbenh
+                order by ?tenbenh
+                `)
+            //let resut = await functions.filter_extraction(rs_trieutung_new.results.bindings)
+            let resut_count_benh = await functions.handling_count_benh(count_benh.results.bindings)
+            let resut_possibility = await functions.handling_possibility(resut_count_benh,rs_trieutung_new.results.bindings)
+            //console.log(resut_count_benh)
+            res.send(rs_trieutung_new.results.bindings)
         }catch(err){
             console.log(err)
         }

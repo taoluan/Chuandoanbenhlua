@@ -425,18 +425,6 @@ Sử dụng một số loại thuốc để phun phòng bệnh</Phòng_chống>
 Sử dụng một số loại thuốc để phun phòng bệnh</Điều_trị>
         <rdfs:comment>Bệnh Bạc Lá</rdfs:comment>
     </owl:NamedIndividual>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá"/>
-        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
-        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
-        <rdfs:comment>hinh ne</rdfs:comment>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá"/>
-        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
-        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
-        <rdfs:comment>hinh benh bac la ne</rdfs:comment>
-    </owl:Axiom>
     
 
 
@@ -589,7 +577,7 @@ Không bón quá nhiều phân đạm, Đốt rơm lúa bệnh để diệt ngu�
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chót_lá_chuyển_màu_trắng_xám">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chóp_Lá"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Khô_Đầu_Lá_Lúa"/>
-        <rdfs:comment>Chót lá chuyển màu xám trắng</rdfs:comment>
+        <rdfs:comment>Chót lá chuyển màu trắng xám</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -717,7 +705,7 @@ Không bón quá nhiều phân đạm, Đốt rơm lúa bệnh để diệt ngu�
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_màu_nâu_nhạt_hoặc_sẫm_tùy_theo_giống">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Gạch_Nâu_Hại_Lúa"/>
-        <rdfs:comment>Có màu nâu nhạt hoặc sẵm tùy theo giống</rdfs:comment>
+        <rdfs:comment>Có màu nâu nhạt hoặc sẫm tùy theo giống</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -775,7 +763,7 @@ Không bón quá nhiều phân đạm, Đốt rơm lúa bệnh để diệt ngu�
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giảm_chồi_gốc_và_đễ_nhánh_ít">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Rễ_Lúa"/>
-        <rdfs:comment>Giảm chồi góc và đẽ nhánh ít</rdfs:comment>
+        <rdfs:comment>Giảm chồi gốc và đẽ nhánh ít</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -957,6 +945,7 @@ Cỏ dại cạnh tranh dinh dưỡng, ánh sáng và nước. Do các loài vi 
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cổ_Bông"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vân_Nâu_Lá_Lúa"/>
+        <rdfs:comment>Làm đổi màu khác bình thường</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1010,7 +999,7 @@ Cỏ dại cạnh tranh dinh dưỡng, ánh sáng và nước. Do các loài vi 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_thủng_từng_lổ_nhỏ">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Châu_Chấu/Cào_Cào"/>
-        <rdfs:comment>Lá bị thủng từng lỗ nhỏ</rdfs:comment>
+        <rdfs:comment>Lá bị thủng từng lổ nhỏ</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1222,7 +1211,7 @@ Không chỉ làm giảm năng suất mà nhện gié còn làm giảm tỷ lệ
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Những_khối_nấm_hồng_bao_phủ_cả_vỏ_hạt">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Than_Vàng/Hoa_Cúc"/>
-        <rdfs:comment>Những khối nắm hồng bao phủ cả vỏ hạt</rdfs:comment>
+        <rdfs:comment>Những khối nấm hồng bao phủ cả vỏ hạt</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1261,6 +1250,14 @@ Không chỉ làm giảm năng suất mà nhện gié còn làm giảm tỷ lệ
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nấm_Rhizoctonia_solani">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nguyên_Nhân"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM3536 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM3536">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
     </owl:NamedIndividual>
     
 
@@ -1502,7 +1499,7 @@ Nibas 50ND…) và nhóm Chlorpyrifos Ethyl (Victory 585EC, Pyrifdaaic 500EC…)
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sinh_trưởng_cằn_cọc">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_Thể"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xoắn_Lá"/>
-        <rdfs:comment>Sinh trưởng cần cọc</rdfs:comment>
+        <rdfs:comment>Sinh trưởng cằn cọc</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1781,7 +1778,7 @@ Chú ý việc chọn lọc giống như phơi khô, quạt sạch, chọn hạt
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_xuất_hiện_nhiều_điểm_trắng_nhỏ">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Trĩ"/>
-        <rdfs:comment>Trên lá xuất hiện nhiều điểm trắng nhỏ</rdfs:comment>
+        <rdfs:comment>Trên lá xuất hiện nhiều điểm trẳng nhỏ</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -2250,7 +2247,7 @@ Con non ngay sau khi nở đã bắt đầu phá hại. Trưởng thành hoạt 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chấm_nâu,_dần_chuyển_thành_nâu_đậm,_rồi_sau_đen_hẳn.">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Hạch_Lúa"/>
-        <rdfs:comment>Chấm nâu dân chuyển thành nâu đậm, rồi sau đen hẩn</rdfs:comment>
+        <rdfs:comment>Chấm nâu , dần chuyển thành nâu đậm, rồi sau đen hẳn</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -2287,7 +2284,7 @@ Con non ngay sau khi nở đã bắt đầu phá hại. Trưởng thành hoạt 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_phát_triển_cao_vọt_,_cong_keo_mảnh_khảnh">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_Thể"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von"/>
-        <rdfs:comment>Cây phát triển cao vọt, công veo mảnh khảnh</rdfs:comment>
+        <rdfs:comment>Cây phát triển cao vọt, cong keo mảnh khảnh</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -2354,15 +2351,10 @@ Con non ngay sau khi nở đã bắt đầu phá hại. Trưởng thành hoạt 
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Lửa_Hại_Lúa"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai/Bọ_Gai"/>
         <rdfs:comment>Lá vàng, khô và chết dần</rdfs:comment>
     </owl:NamedIndividual>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng,_khô_và_chết_dần"/>
-        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#isSymptomOf"/>
-        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá"/>
-        <rdfs:comment>hinh aloalo</rdfs:comment>
-    </owl:Axiom>
     
 
 
@@ -2486,7 +2478,7 @@ Phun thuốc Nevo 330EC hay các sản phẩm có hoạt chất (Difenoconazole 
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_bẹ_vết_đốm_to_dần_chuyển_sang_màu_nâu,_xám">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bẹ_Lá"/>
-        <rdfs:comment>Trên bẹ vết đốm to dần chuyển sang màu nâu xám</rdfs:comment>
+        <rdfs:comment>Trên bẹ vêt đốm to dần chuyển sang màu nâu xám</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -2557,7 +2549,7 @@ Phun thuốc Nevo 330EC hay các sản phẩm có hoạt chất (Difenoconazole 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_nâu_tròn,_bầu_dục_trên_lá_mầm,_làm_biến_dạng_lá_mầm">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Nâu"/>
-        <rdfs:comment>Vết nâu tròn hình bầu dục trên lá mầm làm biến dạng là mầm</rdfs:comment>
+        <rdfs:comment>Vết nâu tròn, bầu dục trên lá mầm, làm biến dạng lá mầm</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -2579,12 +2571,6 @@ Phun thuốc Nevo 330EC hay các sản phẩm có hoạt chất (Difenoconazole 
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Hạch_Lúa"/>
         <rdfs:comment>ống rạ phân giải thành chất nhầy, có mùi hôi</rdfs:comment>
     </owl:NamedIndividual>
-    <rdf:Description>
-        <Image></Image>
-    </rdf:Description>
-    <rdf:Description>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12331231</Image>
-    </rdf:Description>
     
 
 
