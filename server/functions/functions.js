@@ -1,3 +1,4 @@
+const graphDBEndpoint = require('../graphDB/ontology')
 module.exports={
     map_sysptom: (arr_trieuchung)=>{
         return new Promise ((res,rej)=>{
@@ -11,8 +12,7 @@ module.exports={
             })
             res(str)
         })
-    }
-    ,
+    },
     filter_extraction:(arr_data)=>{
         return new Promise ((res,rej)=>{
             let trieuchung_moi = [],vi_tri = [],trieuchung_vitri =[], rs= [] , temp=[]
@@ -39,11 +39,11 @@ module.exports={
         })
         //console.log(rs)
     },
-    handling_count_benh:(arr_benh)=>{
-        return new Promise ((res,rej)=>{
+    handling_count_benh: (arr_benh)=>{
+        return new Promise (async (res,rej)=>{
                 let resut = []
                 arr_benh.map(rs=>{
-                    resut.push({tenbenh: rs.tenbenh.value , so_trieuchung: Number(rs.HowMany.value)})
+                    resut.push({tenbenh: rs.tenbenh.value , so_trieuchung: Number(rs.HowMany.value), co_trieuchung:[]})
                 })
                 res(resut)
         }) 
@@ -70,6 +70,43 @@ module.exports={
                     x = x.co_trieuchung.push('abc')
                 }
             })*/
+            
         })
+    },
+    get_data_benh: (trieuchung_input,arr_benh)=>{
+        return new Promise(async (res,rej)=>{
+            let rs_trieutung_benh = await graphDBEndpoint.query(
+            `
+            SELECT DISTINCT  ?tenbenh ?ten_trieuchung  ?hinh ?vitri
+            WHERE {
+            ?uri_benh data:hasSymptom ?y .
+            ?y rdfs:comment ?trieuchung_input.
+            ?uri_benh rdfs:comment ?tenbenh
+            FILTER  (${trieuchung_input}).
+			?uri_trieuchung data:isSymptomOf ?b.
+    		FILTER (?b = ?uri_benh)
+    		?uri_trieuchung rdfs:comment ?ten_trieuchung
+    		OPTIONAL {	?annotation owl:annotatedSource ?uri_benh;
+		  				owl:annotatedTarget ?uri_trieuchung;
+		  				data:Image ?hinh}
+            } orderby ?tenbenh
+            `)
+        
+        let results = []
+        arr_benh.map(x=>{
+            rs_trieutung_benh.results.bindings.map(y=>{
+                 if( y.tenbenh.value == x.tenbenh){
+                   //  console.log(y.hinh)
+                     x.co_trieuchung.push({ten_trieuchung: y.ten_trieuchung.value})
+                 }
+                // console.log(c)
+            })
+        })
+        arr_benh.map(x=>{
+            console.log(x)
+        })
+       // console.log(rs_trieutung_benh.results.bindings)
+        })
+        
     }
 }

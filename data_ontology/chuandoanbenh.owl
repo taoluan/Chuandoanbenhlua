@@ -3570,7 +3570,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/13-VN
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá"/>
-        <rdfs:comment>Vết bệnh có dạng đốm loang lổ như da beo, màu xanh xám, viền nâu, sũng nước</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vết bệnh lan rộng theo đường gợn sóng màu vàng</rdfs:comment>
     </owl:NamedIndividual>
     
 

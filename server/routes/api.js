@@ -5,4 +5,5 @@ const urlencodedParser = bodyParser.json()
 const api_controllers = require('../controllers/controllers.api')
 router.get('/chuandoan',urlencodedParser,api_controllers.chuandoan)
 router.get('/benh',api_controllers.benh)
+router.get('/thongke',urlencodedParser,api_controllers.thongke)
 module.exports = router;
