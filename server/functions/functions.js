@@ -21,6 +21,7 @@ module.exports={
                     vi_tri.push(element.vitri.value)
                 }
             });
+            console.log(vi_tri)
             vi_tri.forEach(vt => {
                 arr_data.forEach(element => {
                     if(vt == element.vitri.value){
@@ -43,7 +44,7 @@ module.exports={
         return new Promise (async (res,rej)=>{
                 let resut = []
                 arr_benh.map(rs=>{
-                    resut.push({tenbenh: rs.tenbenh.value , so_trieuchung: Number(rs.HowMany.value), co_trieuchung:[]})
+                    resut.push({tenbenh: rs.tenbenh.value , so_trieuchung: Number(rs.HowMany.value)})
                 })
                 res(resut)
         }) 
@@ -73,9 +74,43 @@ module.exports={
             
         })
     },
+    count_benh_mac: (arr_trieuchung,count_benh_all)=>{
+        return new Promise(async (res,rej)=>{
+               let rs_count = await graphDBEndpoint.query(
+               `
+               SELECT DISTINCT  ?tenbenh  ( COUNT( ?uri_trieuchung) AS ?HowMany )
+                            WHERE {
+                            ?uri_benh data:hasSymptom ?uri_trieuchung .
+                            ?uri_trieuchung rdfs:comment ?trieuchung_input.
+                            ?uri_benh rdfs:comment ?tenbenh.
+                            OPTIONAL {	?annotation owl:annotatedSource ?uri_benh;
+                                        owl:annotatedTarget ?uri_trieuchung;
+                                        data:Image ?hinh}
+                            FILTER  (${arr_trieuchung}).
+                }
+                groupby ?tenbenh 
+                orderby DESC(?HowMany)
+                limit 8
+               `)
+               let result_count_benh_mac = []
+               let results = []
+               rs_count.results.bindings.map(rs=>{
+                    result_count_benh_mac.push({tenbenh: rs.tenbenh.value , so_trieuchung: Number(rs.HowMany.value)})
+               })
+               result_count_benh_mac.map(x=>{
+                   count_benh_all.map(y=>{
+                        (x.tenbenh == y.tenbenh) 
+                        && results.push({tenbenh: x.tenbenh , tyle: Math.round((x.so_trieuchung/y.so_trieuchung)*100)})
+                        
+                   })
+               })
+               results.sort((a,b)=> b.tyle - a.tyle )
+              res(results)
+           })
+    },
     get_data_benh: (trieuchung_input,arr_benh)=>{
         return new Promise(async (res,rej)=>{
-            let rs_trieutung_benh = await graphDBEndpoint.query(
+         /*   let rs_trieutung_benh = await graphDBEndpoint.query(
             `
             SELECT DISTINCT  ?tenbenh ?ten_trieuchung  ?hinh ?vitri
             WHERE {
@@ -91,22 +126,31 @@ module.exports={
 		  				data:Image ?hinh}
             } orderby ?tenbenh
             `)
-        
         let results = []
         arr_benh.map(x=>{
             rs_trieutung_benh.results.bindings.map(y=>{
                  if( y.tenbenh.value == x.tenbenh){
-                   //  console.log(y.hinh)
-                     x.co_trieuchung.push({ten_trieuchung: y.ten_trieuchung.value})
-                 }
-                // console.log(c)
+                    (y.hinh) 
+                    ? x.co_trieuchung.push({ten_trieuchung: y.ten_trieuchung.value , img:y.hinh.value})
+                    : x.co_trieuchung.push({ten_trieuchung: y.ten_trieuchung.value})
+                }   
             })
-        })
-        arr_benh.map(x=>{
-            console.log(x)
-        })
-       // console.log(rs_trieutung_benh.results.bindings)
+        })*/
+        res(arr_benh)
         })
         
+    },
+    handling_tracuu:(arr_benh)=>{
+        return new Promise((res,rej)=>{
+            let results = [] , img
+            arr_benh.map(x=>{
+                img = x.hinh.value.substring(0,x.hinh.value.indexOf(','))
+                if(x.giongkhangbenh){
+                 results.push({tenbenh:x.tenbenh.value, uri_benh: x.uri_benh.value,mota: x.mota.value,hinh:img,khangbenh: x.giongkhangbenh.value})}
+                else{results.push({tenbenh:x.tenbenh.value, uri_benh: x.uri_benh.value,hinh: img,mota: x.mota.value})}
+            }) 
+            res(results)
+        })
+       
     }
 }
