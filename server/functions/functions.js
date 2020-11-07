@@ -5,11 +5,28 @@ module.exports={
             let str = ""
             arr_trieuchung.map((x,y)=>{
                     if(arr_trieuchung[y+1] != undefined){
-                        str += `regex(str(?trieuchung_input), "${x}", "i") || `
+                        (x.hinhanh)
+                        ? str += ` ( (?uri_trieuchung = <${x.uri_trieuchung}>) && (?vitri ="${x.vitri}")  && (?hinh = "${x.hinhanh}") )|| `
+                        : str += ` ( (?uri_trieuchung = <${x.uri_trieuchung}>) && (?vitri ="${x.vitri}") ) || `
                     }else{
-                        str +=`regex(str(?trieuchung_input), "${x}", "i")`
+                        (x.hinhanh)
+                        ? str += ` ( (?uri_trieuchung = <${x.uri_trieuchung}>) && (?vitri ="${x.vitri}") && (?hinh = "${x.hinhanh}") ) `
+                        : str += ` ( (?uri_trieuchung = <${x.uri_trieuchung}>) && (?vitri ="${x.vitri}") )`
                     } 
-            })
+                   
+                    /*
+                    if(arr_trieuchung[y+1] != undefined){
+                        if(x.hinh){
+                         str += `( regex(str(?ten_trieuchung), "${x}", "i") && (?vitri =${x.vitri}) && (?hinh = ${x.hinhanh}) )|| ` }
+                        else {str += `( regex(str(?ten_trieuchung), "${x}", "i") && (?vitri =${x.vitri}))|| `}
+                    }else{
+                        if(x.hinh){
+                        str += `( regex(str(?ten_trieuchung), "${x}", "i") && (?vitri =${x.vitri}) && (?hinh = ${x.hinhanh}) ) `}
+                        else{ str += `( regex(str(?ten_trieuchung), "${x}", "i") && (?vitri =${x.vitri}))`}
+                    } 
+                     */
+            }) 
+            console.log(str)
             res(str)
         })
     },
@@ -25,9 +42,9 @@ module.exports={
             vi_tri.forEach(vt => {
                 arr_data.forEach(element => {
                     if(vt == element.vitri.value){
-                    if(!trieuchung_moi.includes(element.trieuchung_moi.value)){
-                        trieuchung_moi.push(element.trieuchung_moi.value)
-                        trieuchung_vitri[element.trieuchung_moi.value] = {vitri:vt}
+                    if(!trieuchung_moi.includes(element.ten_trieuchung_moi.value)){
+                        trieuchung_moi.push(element.ten_trieuchung_moi.value)
+                        trieuchung_vitri[element.ten_trieuchung_moi.value] = {vitri:vt}
                         if(element.hinh){
                         //console.log(vt + " : " +element.trieuchung_moi.value+" // hinh "+element.hinh.value + "// ( "+element.tenbenh.value+" )")
                         }else{
