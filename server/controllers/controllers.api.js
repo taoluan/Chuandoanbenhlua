@@ -6,25 +6,29 @@ module.exports = {
             let trieuchung_input = await functions.map_sysptom(req.body.data_input) 
             let rs_trieutung_new = await graphDBEndpoint.query(
                 `
-                SELECT DISTINCT  ?ten_trieuchung_moi ?uri_trieuchungmoi ?hinh ?vitri
+                SELECT DISTINCT  ?ten_trieuchung_moi ?uri_trieuchungmoi ?img ?vi_tri
                 WHERE {
                 ?uri_benh data:hasSymptom ?uri_trieuchung.
     			?uri_trieuchung rdfs:comment ?ten_trieuchung.
                 ?uri_benh rdfs:comment ?ten_benh.
+                ?annotation_1 owl:annotatedSource ?uri_benh;
+		  					owl:annotatedTarget  ?uri_trieuchung;
+         					data:DiseaseSite ?vitri.
+    			OPTIONAL {?annotation data:Image ?hinh.}
                 FILTER  (${trieuchung_input}).
                 ?uri_benh data:hasSymptom ?uri_trieuchungmoi.
                 ?uri_trieuchungmoi rdfs:comment ?ten_trieuchung_moi.
-    			?annotation owl:annotatedSource ?uri_benh;
+    			?annotation_2 owl:annotatedSource ?uri_benh;
 		  					owl:annotatedTarget  ?uri_trieuchungmoi;
-         					data:DiseaseSite ?vitri.
-    			OPTIONAL {?annotation data:Image ?hinh.}
+         					data:DiseaseSite ?vi_tri.
+    			OPTIONAL {?annotation_2 data:Image ?img.}
     			
-                }orderby ?vitri
+                }orderby ?vi_tri
                 `)
-            //let resut = await functions.filter_extraction(rs_trieutung_new.results.bindings)
+            let resut = await functions.handling_chuandoan(rs_trieutung_new.results.bindings)
             //let resut_count_benh = await functions.handling_count_benh(count_benh.results.bindings)
             //let resut_possibility = await functions.handling_possibility(resut_count_benh,rs_trieutung_new.results.bindings)
-            res.send(rs_trieutung_new.results.bindings)
+            res.send(resut)
         }catch(err){
             console.log(err)
         }
@@ -51,23 +55,26 @@ module.exports = {
     },
     thongke: async(req,res)=>{
         try {
-            let trieuchung_input = await functions.map_sysptom(req.body.trieuchung) 
+            let trieuchung_input = await functions.map_sysptom(req.body.data_input) 
             let count_benh_all = await graphDBEndpoint.query(
             `
-            SELECT DISTINCT ?tenbenh ( COUNT( DISTINCT ?a) AS ?HowMany )
+            SELECT DISTINCT ?ten_benh ?uri_benh ( COUNT( DISTINCT ?uri_trieuchung_all) AS ?so_trieuchung )
             WHERE {
-            ?x data:hasSymptom ?y .
-            ?y rdfs:comment ?trieuchung_input.
-            ?x rdfs:comment ?tenbenh
+            ?uri_benh data:hasSymptom ?uri_trieuchung .
+            ?annotation owl:annotatedSource ?uri_benh;
+		  					owl:annotatedTarget  ?uri_trieuchung;
+         					data:DiseaseSite ?vitri.
+    		OPTIONAL {?annotation data:Image ?hinh.}
             FILTER  (${trieuchung_input}).
-            ?a data:isSymptomOf ?b.
-            FILTER (?b = ?x)
+            ?uri_trieuchung_all data:isSymptomOf ?uri_benh.
+            ?uri_benh rdfs:comment ?ten_benh.
             }
-            group by ?tenbenh ?y
-            order by ?tenbenh
+            group by ?ten_benh ?uri_benh
+            order by desc(?so_trieuchung)
             `)
-        let resut_count_benh = await functions.handling_count_benh(count_benh_all.results.bindings)
-        let result_tyle = await functions.count_benh_mac(trieuchung_input,resut_count_benh)
+
+       // let resut_count_benh = await functions.handling_count_benh(count_benh_all.results.bindings)
+        let result_tyle = await functions.count_benh_mac(trieuchung_input,count_benh_all.results.bindings)
         res.send(result_tyle)
         } catch (error) {
             console.log(error) 
@@ -116,6 +123,46 @@ module.exports = {
                 }
                 `)
             res.send(timkiem.results.bindings)
+        } catch (error) {
+            
+        }
+    },
+    thongketheoloaibenh:async(req,res)=>{
+        try {
+            let thongketheoloaibenh = await graphDBEndpoint.query(
+                `
+                select DISTINCT ?uri_benh ?ten_benh ( COUNT (DISTINCT ?uri_loaibenh) AS ?so_benh ) 
+                where { 
+                    ?uri_benh rdfs:subClassOf data:Bệnh.
+                    ?uri_loaibenh rdf:type ?uri_benh.
+                    ?uri_benh rdfs:comment ?ten_benh
+                }
+                group by ?uri_benh ?ten_benh
+                `
+            )
+            res.send(thongketheoloaibenh.results.bindings)
+        } catch (error) {
+            
+        }
+    },
+    thongketheokhuvuc:async(req,res)=>{
+        try {
+            let thongketheokhuvuc = await graphDBEndpoint.query(
+                `
+                select  DISTINCT ?ten_khuvuc ?uri_khuvuc ?ten_loaibenh ?thuocloaibenh   ( COUNT ( ?thuocloaibenh) AS ?so_benh ) 
+                where { 
+                    ?uri_khuvuc rdf:type data:Khu_Vực.
+                    ?uri_benh data:inArea ?uri_khuvuc;
+                            rdf:type ?thuocloaibenh.
+                    FILTER(?thuocloaibenh != owl:NamedIndividual && ?thuocloaibenh != data:Bệnh).
+                    ?uri_khuvuc rdfs:comment ?ten_khuvuc.
+                    ?thuocloaibenh rdfs:comment ?ten_loaibenh
+                }
+                group by ?ten_khuvuc ?uri_khuvuc ?ten_loaibenh ?thuocloaibenh
+                `
+            )
+            let results = await functions.handling_thongketheokhuvuc(thongketheokhuvuc.results.bindings)
+            res.send(results)
         } catch (error) {
             
         }

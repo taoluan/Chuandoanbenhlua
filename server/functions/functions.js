@@ -1,3 +1,4 @@
+const e = require('express')
 const graphDBEndpoint = require('../graphDB/ontology')
 module.exports={
     map_sysptom: (arr_trieuchung)=>{
@@ -26,42 +27,77 @@ module.exports={
                     } 
                      */
             }) 
-            console.log(str)
             res(str)
         })
     },
-    filter_extraction:(arr_data)=>{
+    handling_chuandoan:(arr_data)=>{
         return new Promise ((res,rej)=>{
-            let trieuchung_moi = [],vi_tri = [],trieuchung_vitri =[], rs= [] , temp=[]
-            arr_data.forEach(element => {
-                if(!vi_tri.includes(element.vitri.value)){
-                    vi_tri.push(element.vitri.value)
-                }
-            });
-            console.log(vi_tri)
-            vi_tri.forEach(vt => {
-                arr_data.forEach(element => {
-                    if(vt == element.vitri.value){
-                    if(!trieuchung_moi.includes(element.ten_trieuchung_moi.value)){
-                        trieuchung_moi.push(element.ten_trieuchung_moi.value)
-                        trieuchung_vitri[element.ten_trieuchung_moi.value] = {vitri:vt}
-                        if(element.hinh){
-                        //console.log(vt + " : " +element.trieuchung_moi.value+" // hinh "+element.hinh.value + "// ( "+element.tenbenh.value+" )")
+            let trieuchung_moi = [],vi_tri = [],trieuchung_vitri =[] , results=[] , temp
+            arr_data.map(x=>{
+                (!module.exports.check_vitri(x.vi_tri.value,results))
+                && results.push({vi_tri:x.vi_tri.value ,data :[] })
+            })
+           /*  for(let i = 0 ; i < results.length ; i++){
+                for(let y = 0 ; y < arr_data.length ; y++){
+                    if( results[i].vi_tri == arr_data[y].vi_tri.value){
+                        if(results[i].data.length === 0){
+                            if(arr_data[y].img){
+                                results[i].data.push({ten_trieuchung: arr_data[y].ten_trieuchung_moi.value, uri_trieuchung: arr_data[y].uri_trieuchungmoi.value, img: [arr_data[y].img.value] })
+                            }
+                            else{
+                                results[i].data.push({ten_trieuchung: arr_data[y].ten_trieuchung_moi.value, uri_trieuchung: arr_data[y].uri_trieuchungmoi.value})
+                            }
                         }else{
-                            //console.log(vt + " : " +element.trieuchung_moi.value+ " ( "+element.tenbenh.value+" )")
+                                let check = module.exports.check_ten(arr_data[y].ten_trieuchung_moi.value,results[i].data)
+                                if(check.rs){
+                                    if(arr_data[y].img){
+                                        results[i].data[check.vt].img.push(arr_data[y].img.value)
+                                    }
+                                }else{
+                                    if(arr_data[y].img){
+                                        results[i].data.push({ten_trieuchung: arr_data[y].ten_trieuchung_moi.value, uri_trieuchung: arr_data[y].uri_trieuchungmoi.value, img: [arr_data[y].img.value] })
+                                    }
+                                    else{
+                                        results[i].data.push({ten_trieuchung: arr_data[y].ten_trieuchung_moi.value, uri_trieuchung: arr_data[y].uri_trieuchungmoi.value})
+                                    }
+                                }
                         }
                     }
+                }
+            }*/
+            results.map(x=>{ 
+                arr_data.map( y=>{
+                    if( x.vi_tri == y.vi_tri.value){
+                        if(x.data.length === 0){
+                            (y.img)
+                                && x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value, img: [y.img.value] })
+                                || x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value})
+                        }else{
+                                let check =  module.exports.check_ten(y.ten_trieuchung_moi.value,x.data) 
+                                if(check.rs){
+                                     (y.img) 
+                                            && x.data[check.vt].img.push(y.img.value) 
+                                            || x.data[check.vt].img.push(" ") 
+                                }else{
+                                     (y.img)
+                                            && x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value, img: [y.img.value] })
+                                                    || x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value})
+                                }
+                        } 
                     }
-                });
-            });
+    
+                })
+            })
+              res(results)  
         })
+            
         //console.log(rs)
     },
     handling_count_benh: (arr_benh)=>{
         return new Promise (async (res,rej)=>{
                 let resut = []
                 arr_benh.map(rs=>{
-                    resut.push({tenbenh: rs.tenbenh.value , so_trieuchung: Number(rs.HowMany.value)})
+                    resut.push({tenbenh: rs.ten_benh.value ,uri_benh: rs.uri_benh.value, so_trieuchung: Number(rs.HowMany.value)})
                 })
                 res(resut)
         }) 
@@ -95,34 +131,30 @@ module.exports={
         return new Promise(async (res,rej)=>{
                let rs_count = await graphDBEndpoint.query(
                `
-               SELECT DISTINCT  ?tenbenh  ( COUNT( ?uri_trieuchung) AS ?HowMany )
-                            WHERE {
-                            ?uri_benh data:hasSymptom ?uri_trieuchung .
-                            ?uri_trieuchung rdfs:comment ?trieuchung_input.
-                            ?uri_benh rdfs:comment ?tenbenh.
-                            OPTIONAL {	?annotation owl:annotatedSource ?uri_benh;
-                                        owl:annotatedTarget ?uri_trieuchung;
-                                        data:Image ?hinh}
-                            FILTER  (${arr_trieuchung}).
+                SELECT DISTINCT  ?ten_benh ?uri_benh ( COUNT( ?uri_trieuchung) AS ?so_trieuchung )
+                WHERE {
+                ?uri_benh data:hasSymptom ?uri_trieuchung .
+                ?annotation owl:annotatedSource ?uri_benh;
+                                 owl:annotatedTarget  ?uri_trieuchung;
+                                data:DiseaseSite ?vitri.
+                OPTIONAL {?annotation data:Image ?hinh.}
+                FILTER  (${arr_trieuchung}).     
+                ?uri_benh rdfs:comment ?ten_benh.           
                 }
-                groupby ?tenbenh 
-                orderby DESC(?HowMany)
-                limit 8
+                   groupby ?ten_benh ?uri_benh
+                   orderby DESC(?so_trieuchung)
+                   limit 8
                `)
-               let result_count_benh_mac = []
                let results = []
-               rs_count.results.bindings.map(rs=>{
-                    result_count_benh_mac.push({tenbenh: rs.tenbenh.value , so_trieuchung: Number(rs.HowMany.value)})
-               })
-               result_count_benh_mac.map(x=>{
+               rs_count.results.bindings.map(x=>{
                    count_benh_all.map(y=>{
-                        (x.tenbenh == y.tenbenh) 
-                        && results.push({tenbenh: x.tenbenh , tyle: Math.round((x.so_trieuchung/y.so_trieuchung)*100)})
+                        (x.ten_benh.value == y.ten_benh.value) 
+                        && results.push({tenbenh: x.ten_benh.value ,uri_benh: x.uri_benh.value ,tyle: Math.round((x.so_trieuchung.value / y.so_trieuchung.value )*100)})
                         
                    })
                })
-               results.sort((a,b)=> b.tyle - a.tyle )
-              res(results)
+                results.sort((a,b)=> b.tyle - a.tyle )
+                res(results)
            })
     },
     get_data_benh: (trieuchung_input,arr_benh)=>{
@@ -169,5 +201,42 @@ module.exports={
             res(results)
         })
        
+    },
+    handling_thongketheokhuvuc: (data)=>{
+        return new Promise((res,rej)=>{
+            let results = [{ten_khuvuc : "Đồng bằng Duyên Hải Miền Trung" , thongke: []},
+                            {ten_khuvuc : "Đồng bằng Sông Cửu Long" , thongke: []},
+                            {ten_khuvuc : "Đồng bằng Sông Hồng" , thongke: []}
+                            ]
+            results.map(x=>{
+                data.map(y=>{
+                    (y.ten_khuvuc.value == x.ten_khuvuc) 
+                    && x.thongke.push({ uri_khuvuc: y.uri_khuvuc.value , 
+                                        ten_loaibenh: y.ten_loaibenh.value,
+                                        uri_loaibenh: y.thuocloaibenh.value,
+                                        sobenh: y.so_benh.value
+                                        })
+                })
+            })
+            res(results)
+        })
+    },
+    check_vitri: (obj, list)=> {
+        let i;
+        for (i = 0; i < list.length; i++) {
+            if (list[i].vi_tri === obj) {
+                return true;
+            }
+        }
+        return false;
+    },
+    check_ten: (obj, list)=> {
+        let i;
+        for (i = 0; i < list.length; i++) {
+            if (list[i].ten_trieuchung === obj) {
+                return {rs : true , vt: i};
+            }
+        }
+        return {rs : false , vt: i};;
     }
 }

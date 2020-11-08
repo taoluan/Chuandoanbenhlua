@@ -8,4 +8,6 @@ router.get('/benh',urlencodedParser,api_controllers.benh)
 router.get('/thongke',urlencodedParser,api_controllers.thongke)
 router.get('/tracuu',urlencodedParser,api_controllers.tracuu)
 router.get('/timkiem',urlencodedParser,api_controllers.timkiem)
+router.get('/thongketheoloaibenh',api_controllers.thongketheoloaibenh)
+router.get('/thongketheokhuvuc',api_controllers.thongketheokhuvuc)
 module.exports = router;
