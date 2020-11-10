@@ -81,7 +81,7 @@ module.exports={
                                 }else{
                                      (y.img)
                                             && x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value, img: [y.img.value] })
-                                                    || x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value})
+                                            || x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value})
                                 }
                         } 
                     }
@@ -90,8 +90,6 @@ module.exports={
             })
               res(results)  
         })
-            
-        //console.log(rs)
     },
     handling_count_benh: (arr_benh)=>{
         return new Promise (async (res,rej)=>{
