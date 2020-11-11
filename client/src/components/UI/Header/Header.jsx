@@ -1,25 +1,9 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { MDBContainer, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBIcon } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-class Header extends React.Component {
-  constructor(props) {
-      super(props);
-      this.state = {
-          collapse: false,
-      };
-      this.onClick = this.onClick.bind(this);
-  }
-
-  onClick() {
-    this.setState({
-        collapse: !this.state.collapse,
-      });
-  }
-
-  render() {
-    const bgPink = {backgroundColor: 'white'}
-    const container = {height: 1300}
+const Header = ()=>{
+    const [collapse,setCollapse] = useState(false)
     return(
       <div>
           <header>
@@ -35,8 +19,8 @@ class Header extends React.Component {
               />
               <strong className="text-dark font-weight-bold pr-2 "> RICE</strong>
               </MDBNavbarBrand>
-              <MDBNavbarToggler onClick={ this.onClick } />
-              <MDBCollapse isOpen = { this.state.collapse }  navbar>
+              <MDBNavbarToggler className="text-dark" onClick={()=>{setCollapse(!collapse)} } />
+              <MDBCollapse isOpen = { collapse }  navbar>
                 <MDBNavbarNav  left>
                   <MDBNavItem  active>
                       <MDBNavLink  className="text-dark font-weight-bold " to="/" >Trang chủ</MDBNavLink>
@@ -62,7 +46,6 @@ class Header extends React.Component {
           </header>
       </div>
     );
-  }
 }
 
 export default Header;

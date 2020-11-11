@@ -8,6 +8,8 @@ import Disesea from './components/User/Disesea'
 import Header from './components/UI/Header/Header'
 import DirectionUser from './directional/User';
 import DirectionAdmin from './directional/Admin';
+import './css/scrollbar.css';
+
 class App extends Component {
   render() {
     return (
