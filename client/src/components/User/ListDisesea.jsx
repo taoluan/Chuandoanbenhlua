@@ -1,7 +1,7 @@
 import React from 'react'
 const ListDisesea = () =>{
     return(
-        <p>ListDisesea</p>
+        <p>ListDisesea-123</p>
     )
 }
 export default ListDisesea;

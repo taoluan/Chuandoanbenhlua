@@ -1,25 +1,21 @@
 import React from 'react';
-import {BrowserRouter as Router ,Switch,Route,Link } from 'react-router-dom';
-import Header from '../components/UI/Header/Header'
+import { BrowserRouter ,Switch,Route,Link } from 'react-router-dom';
 import Home from '../components/User/Home'
 import Diagnose from '../components/User/Diagnose'
 import ListDisesea from '../components/User/ListDisesea'
 import Disesea from '../components/User/Disesea'
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
-
-
+import Header from '../components/UI/Header/Header'
 const User = ()=>{
     return(
-            <div>
-                <Header/>
-                <Switch>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/chandoan" exact component={Diagnose} />
-                    <Route path="/benh" exact component={ListDisesea}/>
-                    <Route path="/benh/:benh"  component={Disesea} />
-                </Switch>
-                
-            </div>
+        <BrowserRouter>
+            <Header/>
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/chuandoan" exact component={Diagnose} />
+                <Route path="/benh" exact component={ListDisesea}/>
+                <Route path="/benh/:benh" exact component={Disesea} />
+            </Switch>
+        </BrowserRouter>
     )
 }
 export default  User;

@@ -1,22 +1,24 @@
-import React from 'react';
-import './App.css';
-import {BrowserRouter, Switch, Route } from 'react-router-dom';
+import React, { Component } from "react";
+import { MDBBtn, MDBCol, MDBContainer, MDBRow } from "mdbreact";
+import { Switch, Route ,BrowserRouter } from 'react-router-dom';
+import Home from './components/User/Home'
+import Diagnose from './components/User/Diagnose'
+import ListDisesea from './components/User/ListDisesea'
+import Disesea from './components/User/Disesea'
+import Header from './components/UI/Header/Header'
 import DirectionUser from './directional/User';
 import DirectionAdmin from './directional/Admin';
-import Dianose from './components/User/Diagnose';
-import Home from './components/User/Home';
-import Disease from './components/User/ListDisesea'
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
-function App() {
-  return(
-      <Switch>
-          <Route path="/admin" exact component={DirectionAdmin}/> 
-          <Route path="/" component={DirectionUser} />
-      </Switch>
-   );
- 
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <Switch>
+            <Route path="/admin" exact component={DirectionAdmin}/> 
+            <Route path="/" component={DirectionUser} />
+        </Switch>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
