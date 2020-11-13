@@ -1,0 +1,15 @@
+.title{
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #083071;
+}
+.line{
+    border-radius: 4px;
+    background: #2067dd;
+    width: 100px;
+    height: 6px;
+    display: inline-block;
+}
