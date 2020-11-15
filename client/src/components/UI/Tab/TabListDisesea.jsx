@@ -17,6 +17,7 @@ import BugReportOutlinedIcon from '@material-ui/icons/BugReportOutlined';
 import BubbleChartIcon from '@material-ui/icons/BubbleChart';
 import CardDisesea from '../Card/CardDisesea'
 import TabPagination from './TabPagination'
+import InvertColorsOffIcon from '@material-ui/icons/InvertColorsOff';
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -83,7 +84,7 @@ const TabListDisesea = ()=> {
             <Tab icon={<BugReportOutlinedIcon />} label="Vi khuẩn" />
             <Tab icon={<GestureIcon />} label="Tuyến trùng" />
             <Tab icon={<BubbleChartIcon />} label="Nấm" />
-            <Tab icon={<MDBIcon icon="tint" />} label="Thiếu dinh dưỡng" />
+            <Tab icon={<InvertColorsOffIcon/>} label="Thiếu dinh dưỡng" />
         </Tabs>
     </Paper>
       <TabPanel value={value} index={0}>

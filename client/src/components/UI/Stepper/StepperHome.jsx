@@ -12,7 +12,7 @@ import { MDBRow } from 'mdbreact';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    backgroundColor: 'blue'
+    height:'100%'
   },
   button: {
     marginTop: theme.spacing(1),
@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   resetContainer: {
     padding: theme.spacing(3),
+    background: "rgba(255, 255, 255, 0.0)"
   },
 }));
 
@@ -33,16 +34,23 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return (<MDBRow>
-
-      </MDBRow>);
+      return (
+      <div>
+        <span className="text-dark"> <span className="font-weight-bold">Bước 1:</span>  Nhập triệu chứng mà bạn thấy được trên Lúa</span>  
+        <img src={process.env.PUBLIC_URL + '/img/b1.png'} alt="" height="50px" className="img-fluid"/>
+      </div>);
     case 1:
-      return 'An ad group contains one or more ads which target a shared set of keywords.';
+      return  (
+        <div>
+          <span className="text-dark"> <span className="font-weight-bold">Bước 2:</span>  Quan sát các triệu chứng tiếp theo</span>  
+          <img src={process.env.PUBLIC_URL + '/img/b1.png'} alt="" height="50px" className="img-fluid "/>
+        </div>);
     case 2:
-      return `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`;
+      return (
+        <div>
+          <span className="text-dark"> <span className="font-weight-bold">Bước 3:</span>  Nhập triệu chứng mà bạn thấy được trên Lúa</span>  
+          <img src={process.env.PUBLIC_URL + '/img/b1.png'} alt="" height="50px" className="img-fluid "/>
+        </div>);
     default:
       return 'Unknown step';
   }
@@ -67,12 +75,12 @@ export default function StepperHome() {
 
   return (
     <div className={classes.root}>
-      <Stepper activeStep={activeStep} orientation="vertical">
+      <Stepper activeStep={activeStep} orientation="vertical" style={{background: "rgba(255, 255, 255, 0.0)"}}>
         {steps.map((label, index) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
             <StepContent>
-              <p>{getStepContent(index)}</p>
+              <div>{getStepContent(index)}</div>
               <div className={classes.actionsContainer}>
                 <div>
                   <Button
@@ -98,9 +106,9 @@ export default function StepperHome() {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={0} className={classes.resetContainer}>
-          <Typography>All steps completed - you&apos;re finished</Typography>
-          <Button onClick={handleReset} className={classes.button}>
-            Reset
+          <Typography component="span">Dựa theo các triệu chứng của bạn hệ thống sẽ đưa ra tỷ lệ mắc bệnh trên Lúa</Typography>
+          <Button onClick={handleReset} className="${classes.button}+ btn-primary">
+            Làm lại
           </Button>
         </Paper>
       )}

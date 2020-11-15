@@ -4,6 +4,7 @@ import Header from '../UI/Header/Header'
 const Disesea = () =>{
     return(
         <>
+        <Header url={false}/>
         <main>
         <MDBContainer className="text-center my-5">
         <p align="justify">eniam, id est laborum.</p>

@@ -1,13 +1,13 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import { MDBContainer, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBIcon } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-const Header = ()=>{
+const Header = (url)=>{
     const [collapse,setCollapse] = useState(false)
+    const [istransparent,setTransparent] = useState(url)
     return(
-      <div>
           <header>
-            <MDBNavbar color="white"  dark expand="md" scrolling fixed="top" transparent>
+            <MDBNavbar color="white"  dark expand="md" scrolling fixed="top" transparent={istransparent.url}>
             <MDBContainer>
               <MDBNavbarBrand href="/">
               <strong className="text-dark font-weight-bold pr-2 "> DOCTER</strong>
@@ -44,7 +44,6 @@ const Header = ()=>{
               </MDBContainer>
             </MDBNavbar>
           </header>
-      </div>
     );
 }
 

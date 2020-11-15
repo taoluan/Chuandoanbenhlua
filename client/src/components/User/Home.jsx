@@ -9,6 +9,7 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import StepperHome from '../UI/Stepper/StepperHome'
 import TabListDisesea from '../UI/Tab/TabListDisesea'
 import '../../css/home.css'
+import Header from '../UI/Header/Header'
 const top100Films = [
   { title: 'The Shawshank Redemption', year: 1994 },
   { title: 'The Godfather', year: 1972 },
@@ -18,8 +19,9 @@ const Home = ()=>{
   const [content, setContent] = useState(false);
     return(
         <>
+        <Header url={true}/>
         <MDBView src={process.env.PUBLIC_URL + '/img/mbr-1920x1281.jpg'} className="pb-0 mb-0">
-            <MDBMask overlay="light" className="flex-center flex-column text-white text-center d-flex align-items-center bd-highlight mb-3 example-parent">
+            <MDBMask className="flex-center flex-column text-white text-center d-flex align-items-center bd-highlight mb-3 example-parent">
               <MDBContainer style={{backgroundColor:"white" , opacity: 0.9 }} className="w-50 rounded mb-0 shadow-box-example z-depth-3 " >
               <h3 className="text-dark pt-4">Chuẩn đoán bệnh theo triệu chứng</h3>
                 <MDBRow className="d-flex justify-content-center pb-5">
@@ -52,17 +54,20 @@ const Home = ()=>{
         </MDBView>
         <main>
         <MDBContainer>
-          <MDBRow className=" d-flex justify-content-center">
-            <MDBCol sm="6"  className="heavy-rain-gradient">
-              <StepperHome style={{opacity: 0.1}}/>
+          <MDBRow className=" d-flex justify-content-center deep-blue-gradient shadow-box-example z-depth-3 mt-4 mb-4 rounded bg">
+            <MDBCol sm="12"  className="text-center title text-dark mb-0 pb-0 pt-3 ">
+              <p>CÁC BƯỚC CHUẨN ĐOÁN BỆNH</p>
             </MDBCol>
-            <MDBCol sm="6" className="heavy-rain-gradient" >
+            <MDBCol sm="12" lg="6" size="12" className=" d-flex align-self-center mt-0 pt-0">
+              <StepperHome/>
+            </MDBCol>
+            <MDBCol lg="6" className=" d-flex align-self-center mt-0 pt-0">
               <UndrawDesigner
               />
             </MDBCol>
           </MDBRow>
         </MDBContainer>
-        <MDBContainer fluid className="text-center pt-4 pb-4  rgba-blue-slight" >
+        <MDBContainer fluid className="text-center pt-4 pb-4 rgba-blue-slight" >
         <MDBRow className="d-flex justify-content-center">
             <MDBCol sm="8">
                <MDBRow >
@@ -143,7 +148,7 @@ const Home = ()=>{
         </MDBContainer>
         <MDBContainer fluid className="pt-2" style={{backgroundColor:"white"}}>
           <MDBRow className="d-flex justify-content-center">
-            <MDBCol lg="8">
+            <MDBCol lg="10">
               <MDBCol sm="12" className="text-center pb-4">
                   <h3 className="title pt-5 pb-0 mb-0">Danh sách các bệnh trên lúa</h3>
                   <span className="line mt-0 pt-0"></span>
@@ -154,13 +159,6 @@ const Home = ()=>{
             </MDBCol>
           </MDBRow>
         </MDBContainer>
-        <MDBFooter className="font-small ">
-        <div className="footer-copyright text-center py-3 blue lighten-5">
-          <MDBContainer fluid className="text-dark">
-            &copy; {new Date().getFullYear()} Created by: <a href="https://www.facebook.com/tvl98n" className="text-dark"> Tào Luân <MDBIcon className="text-dark" fab icon="facebook" /></a>      
-          </MDBContainer>
-        </div>
-      </MDBFooter>
       </main>
       </>
     )
