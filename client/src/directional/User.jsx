@@ -12,6 +12,7 @@ const User = ()=>{
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/chuandoan" exact component={Diagnose} />
+                <Route path="/chuandoan/:trieuchung" exact component={Diagnose} />
                 <Route path="/benh" exact component={ListDisesea}/>
                 <Route path="/benh/:benh" exact component={Disesea} />
             </Switch>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import TreeView from '@material-ui/lab/TreeView';
@@ -14,7 +14,6 @@ import BubbleChartIcon from '@material-ui/icons/BubbleChart';
 import InvertColorsOffIcon from '@material-ui/icons/InvertColorsOff';
 import AdbIcon from '@material-ui/icons/Adb';
 import EmojiNatureIcon from '@material-ui/icons/EmojiNature';
-
 const useTreeItemStyles = makeStyles((theme) => ({
   root: {
     color: theme.palette.text.secondary,
@@ -68,7 +67,6 @@ const useTreeItemStyles = makeStyles((theme) => ({
 function StyledTreeItem(props) {
   const classes = useTreeItemStyles();
   const { labelText, labelIcon: LabelIcon, labelInfo, color, bgColor, ...other } = props;
-
   return (
     <TreeItem
       label={
@@ -115,7 +113,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function GmailTreeView() {
+const GmailTreeView = ({show}) =>{
   const classes = useStyles();
 
   return (
@@ -125,12 +123,13 @@ export default function GmailTreeView() {
       defaultCollapseIcon={<ArrowDropDownIcon />}
       defaultExpandIcon={<ArrowRightIcon />}
       defaultEndIcon={<div style={{ width: 24 }} />}
+      onNodeSelect={(e,value)=>{show(e,value)}}
     >
       <StyledTreeItem nodeId="1" labelText="Sâu" labelIcon={EmojiNatureIcon} labelInfo="10"  color="#03a9f4" bgColor="#e1f5fe">
       </StyledTreeItem>
       <StyledTreeItem nodeId="2" labelText="Virus" labelIcon={AdbIcon} color="#a250f5" bgColor="#f3e8fd">
       <StyledTreeItem
-          nodeId="7"
+          nodeId="ghg"
           labelText="Vàng lùn"
           labelIcon={InfoIcon}
         />
@@ -143,12 +142,12 @@ export default function GmailTreeView() {
       <StyledTreeItem nodeId="3" labelText="Vi khuẩn" labelIcon={BugReportIcon} labelInfo="18" color="#33691e" bgColor="#dcedc8">
         <StyledTreeItem
           nodeId="9"
-          labelText="Vàng lùn"
+          labelText="Vàng lùn 1"
           labelIcon={InfoIcon}
         />
         <StyledTreeItem
           nodeId="10"
-          labelText="Lùn xoắn lá"
+          labelText="Lùn xoắn lá 2"
           labelIcon={InfoIcon}
         />
       </StyledTreeItem>
@@ -161,3 +160,4 @@ export default function GmailTreeView() {
     </TreeView>
   );
 }
+export default GmailTreeView
