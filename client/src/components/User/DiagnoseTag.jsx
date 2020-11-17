@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { MDBIcon,MDBBtn,MDBContainer, MDBRow, MDBCol } from 'mdbreact';
-import { useHistory } from 'react-router-dom';
+import { MDBTypography,MDBBtn,MDBContainer, MDBRow, MDBCol } from 'mdbreact';
+import { useHistory ,useLocation ,useParams} from 'react-router-dom';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
@@ -11,15 +11,18 @@ import TimeLine from '../UI/Timeline/Timeline'
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Icon from '../UI/UndrawDesigner/IconSVG'
+import Progress from '../UI/Progress/Proress'
 const top100Films = [
   { title: 'The Shawshank Redemption', year: 1994 },
   { title: 'The Godfather', year: 1972 },
   { title: 'The Godfather: Part II', year: 1974 },
 ]
-const Dianose = () =>{
+const DiagnoseTag = () =>{
   let history = useHistory();
   const [textSearch, setTextSearch] = useState()
   const [trieuchung,setTrieuChung] = useState()
+  const Params = useParams();
+  console.log(Params.trieuchung);
   const showTrieuChung = (e,value)=>{
     setTrieuChung(value)
   }
@@ -38,7 +41,7 @@ const Dianose = () =>{
                 <span className="line-3 mt-0 pt-0"></span>
               </MDBCol>
             </MDBRow>
-            <MDBRow className="d-flex justify-content-center mb-4">
+            <MDBRow className="d-flex justify-content-center mb-1">
               <MDBCol size="9">
               <Autocomplete
                     freeSolo
@@ -63,19 +66,24 @@ const Dianose = () =>{
                       <Icon.SearchIcon/>
                   </MDBBtn>
               </MDBCol>
+              <MDBCol sm="12" className="mb-0 pb-0 pt-1">
+                <MDBTypography note noteColor='secondary' noteTitle='Từ khóa: '>
+                   {Params.trieuchung}
+                </MDBTypography>
+              </MDBCol>
             </MDBRow>
             <MDBRow >
               <MDBCol sm="3" size="12" className=" pr-0 pl-0" >
                 <header className=" align-self-md-center" style={{height:"40px" , backgroundColor:"#2067dd "}}>
-                  <p className="title-2">Các bệnh trên lúa</p>
+                  <p className="title-2">Kết quả chuẩn đoán</p>
                 </header>
-                <TreeView show={showTrieuChung}/>
+                <Progress/>
               </MDBCol>
               <MDBCol sm="9" size="12" className=" pr-0 pl-0">
                 <header className=" align-self-md-center" style={{height:"40px" , backgroundColor:"#9e9e9e "}}>
-                    <p className="title-2">Triệu chứng trên Lúa</p>
+                    <p className="title-2">Hãy quan sát thêm các triệu chứng tiếp theo <Icon.ExclamationIcon/></p>
                 </header>
-                <TimeLine/>
+                
               </MDBCol>
             </MDBRow>
           </MDBContainer>
@@ -84,4 +92,4 @@ const Dianose = () =>{
       </>
     )
 }
-export default Dianose;
+export default DiagnoseTag;
