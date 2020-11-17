@@ -1,7 +1,10 @@
 import React from 'react'
 import { MDBView,MDBMask,MDBContainer } from 'mdbreact';
 import Header from '../UI/Header/Header'
+import { useHistory ,useLocation ,useParams} from 'react-router-dom';
 const Disesea = () =>{
+    const Params = useParams();
+    console.log(Params.benh);
     return(
         <>
         <Header url={false}/>

@@ -24,7 +24,7 @@ const Dianose = () =>{
     setTrieuChung(value)
   }
   const checkSearch = ()=>{
-    (textSearch) ?  history.push("/chuandoan/:"+textSearch) : alert(12)
+    (textSearch) ?  history.push("/chuandoan/"+textSearch) : alert(12)
   }
     return(
       <>
