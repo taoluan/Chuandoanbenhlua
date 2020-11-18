@@ -2,12 +2,12 @@ import React,{useState,useEffect} from 'react';
 import { MDBContainer, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBIcon } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-const Header = (url)=>{
+const Header = (props)=>{
     const [collapse,setCollapse] = useState(false)
-    const [istransparent,setTransparent] = useState(url)
+    const [istransparent,setTransparent] = useState(props.url)
     return(
           <header>
-            <MDBNavbar color="white"  dark expand="md" scrolling fixed="top" transparent={istransparent.url}>
+            <MDBNavbar color="white"  dark expand="md" scrolling fixed="top" transparent={istransparent}>
             <MDBContainer>
               <MDBNavbarBrand href="/">
               <strong className="text-dark font-weight-bold pr-2 "> DOCTER</strong>
@@ -27,6 +27,10 @@ const Header = (url)=>{
                   </MDBNavItem>
                   <MDBNavItem>
                       <MDBNavLink className="text-dark font-weight-bold" to="/chuandoan">Chuẩn đoán</MDBNavLink>
+                  </MDBNavItem>
+                  
+                  <MDBNavItem>
+                      <MDBNavLink className="text-dark font-weight-bold" to="/dubao">Dự báo</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
                       <MDBNavLink className="text-dark font-weight-bold" to="/benh">Bệnh</MDBNavLink>

@@ -63,7 +63,7 @@ const DiagnoseTag = () =>{
                   /> 
               </MDBCol>
               <MDBCol size="2" className="d-flex align-items-center pr-0 mt-1"> 
-                  <MDBBtn tag="a" size="md" floating="true" className="teal lighten-3 z-depth-0 " onClick={checkSearch} >
+                  <MDBBtn tag="a" size="md" floating="true" className="teal lighten-3 z-depth-0 d-flex justify-content-center" onClick={checkSearch} >
                       <Icon.SearchIcon/>
                   </MDBBtn>
               </MDBCol>
