@@ -5,7 +5,7 @@ import ChartThongKeBenh from '../UI/Charts/ThongKeBenh'
 import ChartMap from '../UI/Charts/Map'
 import ReactTooltip from "react-tooltip";
 import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import Search from '../UI/Search/Search'
 import StepperHome from '../UI/Stepper/StepperHome'
 import TabListDisesea from '../UI/Tab/TabListDisesea'
 import '../../css/home.css'
@@ -25,29 +25,7 @@ const Home = ()=>{
               <MDBContainer style={{backgroundColor:"white" , opacity: 0.9 }} className="w-50 rounded mb-0 shadow-box-example z-depth-3 " >
               <h3 className="text-dark pt-4">Chuẩn đoán bệnh theo triệu chứng</h3>
                 <MDBRow className="d-flex justify-content-center pb-5">
-                  <MDBCol lg="8" sm="12" >
-                  <Autocomplete
-                    freeSolo
-                    id="free-solo-2-demo"
-                    disableClearable
-                    options={top100Films.map((option) => option.title)}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        label="Nhập triệu chứng trên lúa ?"
-                        margin="normal"
-                        variant="outlined"
-                        InputProps={{ ...params.InputProps, type: 'search' }}
-                        className="pb-1"
-                      />
-                    )}
-                  />  
-                  </MDBCol>
-                  <MDBCol lg="2" sm="12" className="d-flex align-items-center">
-                    <MDBBtn tag="a" size="xl" floating="true" color="info">
-                    <MDBIcon icon="search" />
-                    </MDBBtn>
-                  </MDBCol>
+                  <Search/>
                 </MDBRow>
               </MDBContainer>
             </MDBMask>
@@ -62,8 +40,7 @@ const Home = ()=>{
               <StepperHome/>
             </MDBCol>
             <MDBCol lg="6" className=" d-flex align-self-center mt-0 pt-0">
-              <UndrawDesigner
-              />
+              <UndrawDesigner/>
             </MDBCol>
           </MDBRow>
         </MDBContainer>

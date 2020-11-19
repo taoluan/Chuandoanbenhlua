@@ -9,7 +9,7 @@ import Header from '../UI/Header/Header'
 import TreeView from '../UI/TreeView/TreeView'
 import TimeLine from '../UI/Timeline/Timeline'
 import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import Search from '../UI/Search/Search'
 import Icon from '../UI/UndrawDesigner/IconSVG'
 const top100Films = [
   { title: 'The Shawshank Redemption', year: 1994 },
@@ -39,30 +39,7 @@ const Dianose = () =>{
               </MDBCol>
             </MDBRow>
             <MDBRow className="d-flex justify-content-center mb-4">
-              <MDBCol size="9">
-              <Autocomplete
-                    freeSolo
-                    id="free-solo-2-demo"
-                    disableClearable
-                    onChange={(e,value)=>{setTextSearch(value)}}
-                    options={top100Films.map((option) => option.title)}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        label="Nhập triệu chứng trên lúa ?"
-                        margin="normal"
-                        variant="outlined"
-                        InputProps={{ ...params.InputProps, type: 'search' }}
-                        
-                      />
-                    )}
-                  /> 
-              </MDBCol>
-              <MDBCol size="2" className="d-flex align-items-center pr-0 mt-1"> 
-                  <MDBBtn tag="a" size="md" floating="true" className="teal lighten-3 z-depth-0 " onClick={checkSearch} >
-                      <Icon.SearchIcon/>
-                  </MDBBtn>
-              </MDBCol>
+                <Search/>
             </MDBRow>
             <MDBRow >
               <MDBCol sm="3" size="12" className=" pr-0 pl-0" >

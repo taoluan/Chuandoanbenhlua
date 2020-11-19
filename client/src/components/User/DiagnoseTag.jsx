@@ -6,8 +6,7 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import "../UI/Header/Header"
 import Header from '../UI/Header/Header'
-import TreeView from '../UI/TreeView/TreeView'
-import TimeLine from '../UI/Timeline/Timeline'
+import Search from '../UI/Search/Search'
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Icon from '../UI/UndrawDesigner/IconSVG'
@@ -21,14 +20,9 @@ const top100Films = [
 const DiagnoseTag = () =>{
   let history = useHistory();
   const [textSearch, setTextSearch] = useState()
-  const [trieuchung,setTrieuChung] = useState()
   const Params = useParams();
-  console.log(Params.trieuchung);
   const showTrieuChung = (e,value)=>{
     setTrieuChung(value)
-  }
-  const checkSearch = ()=>{
-    (textSearch) ?  history.push("/chuandoan/:"+textSearch) : alert(12)
   }
     return(
       <>
@@ -43,30 +37,7 @@ const DiagnoseTag = () =>{
               </MDBCol>
             </MDBRow>
             <MDBRow className="d-flex justify-content-center mb-1">
-              <MDBCol size="9">
-              <Autocomplete
-                    freeSolo
-                    id="free-solo-2-demo"
-                    disableClearable
-                    onChange={(e,value)=>{setTextSearch(value)}}
-                    options={top100Films.map((option) => option.title)}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        label="Nhập triệu chứng trên lúa ?"
-                        margin="normal"
-                        variant="outlined"
-                        InputProps={{ ...params.InputProps, type: 'search' }}
-                        
-                      />
-                    )}
-                  /> 
-              </MDBCol>
-              <MDBCol size="2" className="d-flex align-items-center pr-0 mt-1"> 
-                  <MDBBtn tag="a" size="md" floating="true" className="teal lighten-3 z-depth-0 d-flex justify-content-center" onClick={checkSearch} >
-                      <Icon.SearchIcon/>
-                  </MDBBtn>
-              </MDBCol>
+                <Search/>
               <MDBCol sm="12" className="mb-0 pb-0 pt-1">
                 <MDBTypography note noteColor='secondary' noteTitle='Từ khóa: '>
                    {Params.trieuchung.toString()}

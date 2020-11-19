@@ -69,3 +69,20 @@
     height: 2px;
     display: inline-block;
 }
+.title-7{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color:rgb(253, 241, 241);
+    line-height: 50px;
+}
+.title-text{
+    font-weight: 700;
+    font-size: 18px;
+}
+.title-text-small{
+    font-weight: 400;
+    font-size: 18px;
+    color:rgb(77, 73, 73);
+}
