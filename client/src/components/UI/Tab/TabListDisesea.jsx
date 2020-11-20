@@ -18,6 +18,7 @@ import BubbleChartIcon from '@material-ui/icons/BubbleChart';
 import CardDisesea from '../Card/CardDisesea'
 import TabPagination from './TabPagination'
 import InvertColorsOffIcon from '@material-ui/icons/InvertColorsOff';
+import Icon from '../UndrawDesigner/IconSVG'
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -79,12 +80,12 @@ const TabListDisesea = ()=> {
             textColor="secondary"
             aria-label="icon label tabs example"
         >
-            <Tab icon={<MDBIcon icon="bug" />} label="Sâu" />
-            <Tab icon={<MDBIcon icon="radiation" />} label="Virus" />
-            <Tab icon={<BugReportOutlinedIcon />} label="Vi khuẩn" />
-            <Tab icon={<GestureIcon />} label="Tuyến trùng" />
-            <Tab icon={<BubbleChartIcon />} label="Nấm" />
-            <Tab icon={<InvertColorsOffIcon/>} label="Thiếu dinh dưỡng" />
+            <Tab icon={<Icon.Sau height="30" width="30"/>} label="Sâu" />
+            <Tab icon={<Icon.Virus height="30" width="30"/>} label="Virus" />
+            <Tab icon={<Icon.ViKhuan height="30" width="30"/>} label="Vi khuẩn" />
+            <Tab icon={<Icon.TuyenTrung height="30" width="30"/>} label="Tuyến trùng" />
+            <Tab icon={<Icon.Nam height="30" width="30"/>} label="Nấm" />
+            <Tab icon={<Icon.ChatDinhDuong height="30" width="30"/>} label="Thiếu dinh dưỡng" />
         </Tabs>
     </Paper>
       <TabPanel value={value} index={0}>

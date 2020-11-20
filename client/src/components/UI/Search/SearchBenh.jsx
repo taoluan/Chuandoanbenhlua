@@ -8,13 +8,13 @@ import { MDBBtn,MDBContainer, MDBCol } from 'mdbreact';
 import Icon from '../UndrawDesigner/IconSVG'
 import { useHistory ,useLocation } from 'react-router-dom';
 
-export default function Search() {
+export default function SearchBenh() {
     const [textSearch, setTextSearch] = useState()
     let location = useLocation();
     let history = useHistory();
     const checkSearch = ()=>{
         (textSearch)
-            ? history.push("/chuandoan/"+textSearch)
+            ? history.push("/benh/"+textSearch)
             : alert(12)
       }
     return (
@@ -26,7 +26,7 @@ export default function Search() {
                 getOptionLabel={(option) => option.title}
                 onChange={(e,value)=>{setTextSearch(value.title)}}
                 renderInput={(params) => (
-                    <TextField {...params} label="Nhập triệu chứng trên lúa ?" variant="outlined" margin="normal" />
+                    <TextField {...params} label="Nhập tên bệnh muốn tìm ?" variant="outlined" margin="normal" />
                 )}
                 renderOption={(option, { inputValue }) => {
                     const matches = match(option.title, inputValue);

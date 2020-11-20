@@ -20,6 +20,13 @@
     height: 6px;
     display: inline-block;
 }
+.line-2{
+    border-radius: 4px;
+    background: #c0c2c5;
+    width: 100px;
+    height: 4px;
+    display: inline-block;
+}
 .line-3{
     border-radius: 4px;
     background: #afbfd6;
@@ -62,6 +69,11 @@
     line-height: 25px;
     padding-bottom: 5px;
 }
+.title-8{
+    line-height: 25px;
+    font-size: 16px;
+    font-weight: 700;
+}
 .line-6{
     border-radius: 4px;
     background: #d9e0eb;
@@ -85,4 +97,13 @@
     font-weight: 400;
     font-size: 18px;
     color:rgb(77, 73, 73);
+}
+.makeStyles-labelText-14{
+    margin-left: 10px;
+}
+.MuiTypography-body2{
+    margin-left: 20px;
+}
+.bg{
+    height: 500px!important
 }

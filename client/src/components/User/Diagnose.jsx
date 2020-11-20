@@ -11,6 +11,7 @@ import TimeLine from '../UI/Timeline/Timeline'
 import TextField from '@material-ui/core/TextField';
 import Search from '../UI/Search/Search'
 import Icon from '../UI/UndrawDesigner/IconSVG'
+import ThongBao from '../UI/UndrawDesigner/BgSVG'
 const top100Films = [
   { title: 'The Shawshank Redemption', year: 1994 },
   { title: 'The Godfather', year: 1972 },
@@ -20,7 +21,9 @@ const Dianose = () =>{
   let history = useHistory();
   const [textSearch, setTextSearch] = useState()
   const [trieuchung,setTrieuChung] = useState()
-  const showTrieuChung = (e,value)=>{
+  const [check, setCheck] = useState(false)
+  const showBenh = (e,value)=>{
+    setCheck(true)
     setTrieuChung(value)
   }
   const checkSearch = ()=>{
@@ -29,9 +32,9 @@ const Dianose = () =>{
     return(
       <>
         <Header url={false}/>
-        <main className="grey lighten-4 pb-3">
+        <main className="grey lighten-4 pb-3" style={{height:"1000px"}}>
         <MDBContainer fluid style={{paddingTop:"100px" }}>
-          <MDBContainer style={{height:"900px"}} className="bg-white shadow-box-example z-depth-1">
+          <MDBContainer className="bg-white shadow-box-example z-depth-1">
             <MDBRow>
               <MDBCol className="text-center">
                 <p className="title-3 mb-0 pb-0 mt-3">Chuẩn đoán bệnh</p>
@@ -43,16 +46,25 @@ const Dianose = () =>{
             </MDBRow>
             <MDBRow >
               <MDBCol sm="3" size="12" className=" pr-0 pl-0" >
+                <MDBCol md="12" className=" pr-0 pl-0">
                 <header className=" align-self-md-center" style={{height:"40px" , backgroundColor:"#2067dd "}}>
                   <p className="title-2">Các bệnh trên lúa</p>
                 </header>
-                <TreeView show={showTrieuChung}/>
+                </MDBCol>
+                <MDBCol md="12" className=" pr-0 pl-0 ">
+                  <TreeView show={showBenh}/>
+                </MDBCol>
+                
               </MDBCol>
               <MDBCol sm="9" size="12" className=" pr-0 pl-0">
-                <header className=" align-self-md-center" style={{height:"40px" , backgroundColor:"#9e9e9e "}}>
-                    <p className="title-2">Triệu chứng trên Lúa</p>
-                </header>
-                <TimeLine/>
+                <MDBCol md="12" className=" pr-0 pl-0">
+                  <header className=" align-self-md-center" style={{height:"40px" , backgroundColor:"#9e9e9e "}}>
+                      <p className="title-2">Triệu chứng trên Lúa</p>
+                  </header>
+                </MDBCol>
+                <MDBCol md="12" className=" pr-0 pl-0">
+                  {check ? <TimeLine/>:<ThongBao title="Chưa có thông tin về bệnh" subTitle="Vui lòng chọn bệnh phía bên phải"/> }
+                </MDBCol>
               </MDBCol>
             </MDBRow>
           </MDBContainer>

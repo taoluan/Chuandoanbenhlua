@@ -19,7 +19,7 @@ const ProjectsPage = () => {
         <MDBRow className="mt-4 mb-2">
           <MDBCol sm="5" className=" d-flex align-items-center justify-content-center ">
               <div className="aqua-gradient z-depth-1 d-flex align-items-center justify-content-center rounded-circle" style={{height: "300px" ,  width : "300px"}}>
-                  <Icon.ViKhuan/>
+                  <Icon.ViKhuan height="200" width="200"/>
               </div>
           </MDBCol>
           <MDBCol sm="7">
@@ -77,15 +77,15 @@ const ProjectsPage = () => {
           </MDBCol>
         <MDBCol sm="5" className=" d-flex align-items-center justify-content-center ">
              <div className="dusty-grass-gradient z-depth-1 d-flex align-items-center justify-content-center rounded-circle" style={{height: "300px" ,  width : "300px"}}>
-                <Icon.Virus/>
+                <Icon.Virus  height="200" width="200"/>
             </div>
           </MDBCol>
         </MDBRow>
         <hr/>
         <MDBRow className="mt-4 mb-2">
-          <MDBCol sm="5" borderColor="grey.500"className="d-flex align-items-center justify-content-center ">
+          <MDBCol sm="5" className="d-flex align-items-center justify-content-center ">
             <div className="yellow accent-1 z-depth-1 d-flex align-items-center justify-content-center rounded-circle" style={{height: "300px" ,  width : "300px"}}>
-                <Icon.TuyenTrung/>
+                <Icon.TuyenTrung  height="200" width="200"/>
             </div>
           </MDBCol>
           <MDBCol sm="7">
@@ -143,15 +143,15 @@ const ProjectsPage = () => {
           </MDBCol>
             <MDBCol sm="5" className=" d-flex align-items-center justify-content-center ">
                 <div className=" grey lighten-3 z-depth-1 d-flex align-items-center justify-content-center rounded-circle" style={{height: "300px" ,  width : "300px"}}>
-                    <Icon.Sau/>
+                    <Icon.Sau  height="200" width="200"/>
                 </div>
             </MDBCol>
         </MDBRow>
         <hr/>
         <MDBRow className="mt-4 mb-2">
-          <MDBCol sm="5" borderColor="grey.500"className="d-flex align-items-center justify-content-center ">
+          <MDBCol sm="5" className="d-flex align-items-center justify-content-center ">
             <div className="deep-orange lighten-4 z-depth-1 d-flex align-items-center justify-content-center rounded-circle" style={{height: "300px" ,  width : "300px"}}>
-                <Icon.Nam/>
+                <Icon.Nam  height="200" width="200"/>
             </div>
           </MDBCol>
           <MDBCol sm="7">

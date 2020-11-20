@@ -3,7 +3,6 @@ import { MDBView,MDBMask,MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,MDBC
 import UndrawDesigner from '../UI/UndrawDesigner/UndrawDesigner'
 import ChartThongKeBenh from '../UI/Charts/ThongKeBenh'
 import ChartMap from '../UI/Charts/Map'
-import ReactTooltip from "react-tooltip";
 import TextField from '@material-ui/core/TextField';
 import Search from '../UI/Search/Search'
 import StepperHome from '../UI/Stepper/StepperHome'
@@ -16,7 +15,7 @@ const top100Films = [
   { title: 'The Godfather: Part II', year: 1974 },
 ]
 const Home = ()=>{
-  const [content, setContent] = useState(false);
+    const [test, settest] = useState()
     return(
         <>
         <Header url={true}/>
@@ -32,14 +31,14 @@ const Home = ()=>{
         </MDBView>
         <main>
         <MDBContainer>
-          <MDBRow className=" d-flex justify-content-center deep-blue-gradient shadow-box-example z-depth-3 mt-4 mb-4 rounded bg">
-            <MDBCol sm="12"  className="text-center title text-dark mb-0 pb-0 pt-3 ">
-              <p>CÁC BƯỚC CHUẨN ĐOÁN BỆNH</p>
+        <MDBRow className=" d-flex justify-content-center deep-blue-gradient shadow-box-example z-depth-3 mt-4 mb-4 rounded">
+            <MDBCol sm="12"  className="text-center text-dark mb-0 pb-0 pt-3 ">
+              <p className="title-1 mb-0 pb-0">CÁC BƯỚC CHUẨN ĐOÁN BỆNH</p>
             </MDBCol>
             <MDBCol sm="12" lg="6" size="12" className=" d-flex align-self-center mt-0 pt-0">
               <StepperHome/>
             </MDBCol>
-            <MDBCol lg="6" className=" d-flex align-self-center mt-0 pt-0">
+            <MDBCol lg="6" className=" d-flex justify-content-center mt-0 pt-0">
               <UndrawDesigner/>
             </MDBCol>
           </MDBRow>
@@ -54,42 +53,7 @@ const Home = ()=>{
                     <p className="font-weight-bold mt-3">Thống kê các loại bệnh theo từng khu vực ở Việt Nam</p>
                   </MDBCardHeader>
                   <MDBCardBody className="light-blue accent-2"  >
-                        <ChartMap setTooltipContent={setContent}  />
-                        {content === "Đồng bằng Sông Cửu Long" 
-                        ? <ReactTooltip place="right" type="light">
-                            <MDBCard className="pb-0 mb-0 pl-0 pr-0 ml-0">
-                              <MDBCardHeader className="pb-0">
-                                <p className="font-weight-bold text-dark">Thống kê các loại bệnh ở ĐB Sông Cửu Long</p>
-                              </MDBCardHeader>
-                              <MDBCardBody>
-                                  <ChartThongKeBenh/>
-                              </MDBCardBody>
-                            </MDBCard>
-                        </ReactTooltip>
-                        : (content === "Đồng bằng Sông Hồng")
-                        ? <ReactTooltip place="right">
-                              <MDBCard className="pb-0" transparent>
-                                <MDBCardHeader className="pb-0">
-                                  <p className="font-weight-bold text-dark">Thống kê các loại bệnh ở ĐB Sông Hồng</p>
-                                </MDBCardHeader>
-                                <MDBCardBody>
-                                    <ChartThongKeBenh/>
-                                </MDBCardBody>
-                              </MDBCard>
-                          </ReactTooltip>
-                        : (content === "Đồng bằng Duyên Hải Miền Trung") 
-                        ? <ReactTooltip place="right">
-                              <MDBCard className="bg-blue">
-                                <MDBCardHeader className="pb-0">
-                                  <p className="font-weight-bold text-dark">Thống kê các loại bệnh ở ĐB Duyên Hải Miền Trung</p>
-                                </MDBCardHeader>
-                                <MDBCardBody>
-                                    <ChartThongKeBenh/>
-                                </MDBCardBody>
-                              </MDBCard>
-                          </ReactTooltip>
-                        : <ReactTooltip ></ReactTooltip>
-                        }
+                        <ChartMap/>
                   </MDBCardBody>
                 </MDBCard>
               </MDBCol>
