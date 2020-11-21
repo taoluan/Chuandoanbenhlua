@@ -52,6 +52,15 @@
     color:rgb(97, 94, 94);
     line-height: 40px;
 }
+.title-9{
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    color:rgb(207, 42, 42);
+    line-height: 40px;
+}
 .title-4{
     text-transform: uppercase;
     text-align: center;
@@ -106,4 +115,7 @@
 }
 .bg{
     height: 500px!important
+}
+.trieuchung {
+    font-size: medium
 }
