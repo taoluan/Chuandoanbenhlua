@@ -32,7 +32,7 @@ const Dianose = () =>{
     return(
       <>
         <Header url={false}/>
-        <main className="grey lighten-4 pb-3" style={{height:"1000px"}}>
+        <main className="grey lighten-4 pb-3">
         <MDBContainer fluid style={{paddingTop:"100px" }}>
           <MDBContainer className="bg-white shadow-box-example z-depth-1">
             <MDBRow>

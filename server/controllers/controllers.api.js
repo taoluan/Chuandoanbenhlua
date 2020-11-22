@@ -140,6 +140,7 @@ module.exports = {
                 group by ?uri_benh ?ten_benh
                 `
             )
+            console.log(1)
             res.send(thongketheoloaibenh.results.bindings)
         } catch (error) {
             

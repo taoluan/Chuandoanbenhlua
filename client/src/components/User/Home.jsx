@@ -1,4 +1,4 @@
-import React,{useState,Fragment} from 'react';
+import React,{useState,useEffect} from 'react';
 import { MDBView,MDBMask,MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,MDBCardHeader,MDBBtn, MDBIcon,MDBFooter} from 'mdbreact';
 import UndrawDesigner from '../UI/UndrawDesigner/UndrawDesigner'
 import ChartThongKeBenh from '../UI/Charts/ThongKeBenh'
@@ -9,6 +9,8 @@ import StepperHome from '../UI/Stepper/StepperHome'
 import TabListDisesea from '../UI/Tab/TabListDisesea'
 import '../../css/home.css'
 import Header from '../UI/Header/Header'
+import diseseaApi from '../../api/diseseaApi'
+require('dotenv').config()
 const top100Films = [
   { title: 'The Shawshank Redemption', year: 1994 },
   { title: 'The Godfather', year: 1972 },
@@ -16,17 +18,30 @@ const top100Films = [
 ]
 const Home = ()=>{
     const [test, settest] = useState()
+    useEffect(() => {
+      const fetchDisesea_thongke = async ()=>{
+        try {
+          const respose = await diseseaApi.thongkeLoaiBenh()
+          console.log(respose)
+        } catch (error) {
+          console.log('loi o dau v ',error)
+        }
+      }
+      fetchDisesea_thongke()
+    }, [])
     return(
         <>
         <Header url={true}/>
         <MDBView src={process.env.PUBLIC_URL + '/img/mbr-1920x1281.jpg'} className="pb-0 mb-0">
             <MDBMask className="flex-center flex-column text-white text-center d-flex align-items-center bd-highlight mb-3 example-parent">
-              <MDBContainer style={{backgroundColor:"white" , opacity: 0.9 }} className="w-50 rounded mb-0 shadow-box-example z-depth-3 " >
+            <MDBCol xl="6" lg="8" md="10" sm="10" size="12" className="d-flex align-items-center"> 
+              <MDBContainer style={{backgroundColor:"white" , opacity: 0.9 }} className=" rounded mb-0 shadow-box-example z-depth-3 " >
                 <h3 className="text-dark pt-4">Chuẩn đoán bệnh theo triệu chứng</h3>
                 <MDBRow className="d-flex justify-content-center pb-5">
                   <Search/>
                 </MDBRow>
               </MDBContainer>
+            </MDBCol>
             </MDBMask>
         </MDBView>
         <main>

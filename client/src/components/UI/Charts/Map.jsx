@@ -30,7 +30,7 @@ const MapChart = () => {
       data-tip=""
       projection="geoMercator"
       projectionConfig={{
-          scale: 3100,
+          scale: 3000,
           center: [106, 16]
       }}
       style={{
