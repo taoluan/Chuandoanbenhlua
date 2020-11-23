@@ -9,7 +9,7 @@ import StepperHome from '../UI/Stepper/StepperHome'
 import TabListDisesea from '../UI/Tab/TabListDisesea'
 import '../../css/home.css'
 import Header from '../UI/Header/Header'
-import diseseaApi from '../../api/diseseaApi'
+import ChartThongKeKhuVuc from '../UI/Charts/ThongKeKhuVuc'
 require('dotenv').config()
 const top100Films = [
   { title: 'The Shawshank Redemption', year: 1994 },
@@ -17,18 +17,7 @@ const top100Films = [
   { title: 'The Godfather: Part II', year: 1974 },
 ]
 const Home = ()=>{
-    const [test, settest] = useState()
-    useEffect(() => {
-      const fetchDisesea_thongke = async ()=>{
-        try {
-          const respose = await diseseaApi.thongkeLoaiBenh()
-          console.log(respose)
-        } catch (error) {
-          console.log('loi o dau v ',error)
-        }
-      }
-      fetchDisesea_thongke()
-    }, [])
+    const [test, settest] = useState([])
     return(
         <>
         <Header url={true}/>
@@ -36,7 +25,7 @@ const Home = ()=>{
             <MDBMask className="flex-center flex-column text-white text-center d-flex align-items-center bd-highlight mb-3 example-parent">
             <MDBCol xl="6" lg="8" md="10" sm="10" size="12" className="d-flex align-items-center"> 
               <MDBContainer style={{backgroundColor:"white" , opacity: 0.9 }} className=" rounded mb-0 shadow-box-example z-depth-3 " >
-                <h3 className="text-dark pt-4">Chuẩn đoán bệnh theo triệu chứng</h3>
+                <h3 className="pt-4 title-3 mb-0">Chuẩn đoán bệnh theo triệu chứng</h3>
                 <MDBRow className="d-flex justify-content-center pb-5">
                   <Search/>
                 </MDBRow>
@@ -65,9 +54,9 @@ const Home = ()=>{
               <MDBCol xl="6" sm="12" className="pb-2">
                 <MDBCard className=" w-100 h-100 ">
                 <MDBCardHeader className="text-center light-blue  "  style={{opacity:0.7}}>
-                    <p className="font-weight-bold mt-3">Thống kê các loại bệnh theo từng khu vực ở Việt Nam</p>
+                    <p className="title-2 mt-0 mb-0">Thống kê các loại bệnh theo từng khu vực ở Việt Nam</p>
                   </MDBCardHeader>
-                  <MDBCardBody className="light-blue accent-2"  >
+                  <MDBCardBody className=" accent-2 p-0"  >
                         <ChartMap/>
                   </MDBCardBody>
                 </MDBCard>
@@ -77,20 +66,20 @@ const Home = ()=>{
                 <MDBCol sm="12" className="pb-2">
                   <MDBCard className="mb-2 w-100 h-100">
                     <MDBCardHeader className="light-blue" style={{opacity:0.7}}>
-                      <p className="font-weight-bold mt-3">Thống kê các loại bệnh trên cây lúa</p>
+                      <p className="title-2 mt-0 mb-0">Thống kê các loại bệnh trên cây lúa</p>
                     </MDBCardHeader>
-                    <MDBCardBody >
-                        <ChartThongKeBenh/>
+                    <MDBCardBody className="p-0">
+                        <ChartThongKeBenh option="all"/>
                     </MDBCardBody>
                   </MDBCard>
                   </MDBCol>
                   <MDBCol sm="12" className="pb-2">
                 <MDBCard className=" w-100 h-100" >
                     <MDBCardHeader className="light-blue" style={{opacity:0.7}}>
-                      <p className="font-weight-bold mt-3">Thống kê các loại bệnh trên cây lúa</p>
+                      <p className="title-2 mt-0 mb-0">Thống kê các loại bệnh theo từng khu vực</p>
                     </MDBCardHeader>
-                    <MDBCardBody>
-                        <ChartThongKeBenh/>
+                    <MDBCardBody className="p-0">
+                        <ChartThongKeKhuVuc/>
                     </MDBCardBody>
                   </MDBCard>
                   </MDBCol>
@@ -102,7 +91,7 @@ const Home = ()=>{
           </MDBRow>
            
         </MDBContainer>
-        <MDBContainer fluid className="pt-2" style={{backgroundColor:"white"}}>
+        <MDBContainer fluid className="pt-2" style={{backgroundColor:"white" ,height:"900px"}}>
           <MDBRow className="d-flex justify-content-center">
             <MDBCol lg="10">
               <MDBCol sm="12" className="text-center pb-4">

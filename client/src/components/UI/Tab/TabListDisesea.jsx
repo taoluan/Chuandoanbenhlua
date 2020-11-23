@@ -65,7 +65,6 @@ const TabListDisesea = ()=> {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
-    console.log(newValue)
     setValue(newValue);
   };
 
@@ -80,7 +79,7 @@ const TabListDisesea = ()=> {
             textColor="secondary"
             aria-label="icon label tabs example"
         >
-            <Tab icon={<Icon.Sau height="30" width="30"/>} label="Sâu" />
+            <Tab icon={<Icon.Sau height="30" width="30"/>} label="Sâu"  />
             <Tab icon={<Icon.Virus height="30" width="30"/>} label="Virus" />
             <Tab icon={<Icon.ViKhuan height="30" width="30"/>} label="Vi khuẩn" />
             <Tab icon={<Icon.TuyenTrung height="30" width="30"/>} label="Tuyến trùng" />
@@ -91,24 +90,44 @@ const TabListDisesea = ()=> {
       <TabPanel value={value} index={0}>
         <MDBRow>
           <MDBCol sm="12" className="d-flex justify-content-center">
-          <TabPagination/>
+          <TabPagination option="Sâu_Hại"/>
           </MDBCol>
         </MDBRow>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <MDBRow>
+            <MDBCol sm="12" className="d-flex justify-content-center">
+            <TabPagination option="Virus"/>
+            </MDBCol>
+        </MDBRow>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <MDBRow>
+            <MDBCol sm="12" className="d-flex justify-content-center">
+            <TabPagination option="Vi_Khuẩn"/>
+            </MDBCol>
+        </MDBRow>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item Four
+        <MDBRow>
+            <MDBCol sm="12" className="d-flex justify-content-center">
+            <TabPagination option="Tuyến_Trùng"/>
+            </MDBCol>
+        </MDBRow>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Item Five
+        <MDBRow>
+            <MDBCol sm="12" className="d-flex justify-content-center">
+            <TabPagination option="Nấm"/>
+            </MDBCol>
+        </MDBRow>
       </TabPanel>
       <TabPanel value={value} index={5}>
-        Item Six
+        <MDBRow>
+            <MDBCol sm="12" className="d-flex justify-content-center">
+            <TabPagination option="Thiếu_Chất_Dinh_Dưỡng"/>
+            </MDBCol>
+        </MDBRow>
       </TabPanel>
     </div>
   );

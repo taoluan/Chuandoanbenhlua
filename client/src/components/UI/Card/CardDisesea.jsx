@@ -9,12 +9,9 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
 });
 
-export default function ImgMediaCard() {
+export default function ImgMediaCard(props) {
   const classes = useStyles();
 
   return (
@@ -24,15 +21,12 @@ export default function ImgMediaCard() {
           component="img"
           alt="Contemplative Reptile"
           height="140"
-          image={process.env.PUBLIC_URL + '/img/mbr-1920x1351.jpg'}
+          image={process.env.PUBLIC_URL + '/img/mbr-1920x1351.png'}
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lùn xoắn lá
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="span">
-          <strong>Tên khoa học: </strong> across all continents except Antarctica
+          <Typography gutterBottom variant="h6" component="h2">
+            {props.item.ten_benh.value}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="span">
           <strong>Mô tả: </strong> across all continents except Antarctica

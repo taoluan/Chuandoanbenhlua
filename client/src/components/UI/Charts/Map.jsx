@@ -82,7 +82,7 @@ const MapChart = () => {
                   <text
                     textAnchor="middle"
                     y={markerOffset}
-                    style={{ fill: "black" , color: 'black' , fontSize: "30px" , fontWeight: 'bold'}}
+                    style={{ fill: "dark" , color: 'dark' , fontSize: "22px" , }}
                   >
                     {name}
                   </text>
@@ -91,24 +91,24 @@ const MapChart = () => {
       </ZoomableGroup>
     </ComposableMap>
     {content === "Đồng bằng Sông Cửu Long" 
-      ? <ReactTooltip place="right" type="light">
-          <MDBCard className="pb-0 mb-0 pl-0 pr-0 ml-0">
+      ? <ReactTooltip place="right" type="light" className="p-0 m-0">
+          <MDBCard className="p-0 mb-0 ml-0">
             <MDBCardHeader className="pb-0">
               <p className="font-weight-bold text-dark">Thống kê các loại bệnh ở ĐB Sông Cửu Long</p>
             </MDBCardHeader>
-            <MDBCardBody>
-                <ChartThongKeBenh/>
+            <MDBCardBody className="p-0">
+                <ChartThongKeBenh option="dbscl"/>
             </MDBCardBody>
           </MDBCard>
       </ReactTooltip>
       : (content === "Đồng bằng Sông Hồng")
       ? <ReactTooltip place="right">
-            <MDBCard className="pb-0">
+            <MDBCard >
               <MDBCardHeader className="pb-0">
                 <p className="font-weight-bold text-dark">Thống kê các loại bệnh ở ĐB Sông Hồng</p>
               </MDBCardHeader>
-              <MDBCardBody>
-                  <ChartThongKeBenh/>
+              <MDBCardBody className="p-0">
+                  <ChartThongKeBenh option="dbsh"/>
               </MDBCardBody>
             </MDBCard>
         </ReactTooltip>
@@ -118,8 +118,8 @@ const MapChart = () => {
               <MDBCardHeader className="pb-0">
                 <p className="font-weight-bold text-dark">Thống kê các loại bệnh ở ĐB Duyên Hải Miền Trung</p>
               </MDBCardHeader>
-              <MDBCardBody>
-                  <ChartThongKeBenh/>
+              <MDBCardBody className="p-0">
+                  <ChartThongKeBenh option="dbdhmt"/>
               </MDBCardBody>
             </MDBCard>
         </ReactTooltip>

@@ -10,4 +10,5 @@ router.get('/tracuu',urlencodedParser,api_controllers.tracuu)
 router.get('/timkiem',urlencodedParser,api_controllers.timkiem)
 router.get('/thongketheoloaibenh',api_controllers.thongketheoloaibenh)
 router.get('/thongketheokhuvuc',api_controllers.thongketheokhuvuc)
+router.get('/dscacbenh',api_controllers.dscacbenh)
 module.exports = router;

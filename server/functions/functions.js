@@ -209,7 +209,7 @@ module.exports={
             results.map(x=>{
                 data.map(y=>{
                     (y.ten_khuvuc.value == x.ten_khuvuc) 
-                    && x.thongke.push({ uri_khuvuc: y.uri_khuvuc.value , 
+                    && x.thongke.push({
                                         ten_loaibenh: y.ten_loaibenh.value,
                                         uri_loaibenh: y.thuocloaibenh.value,
                                         sobenh: y.so_benh.value
@@ -217,6 +217,28 @@ module.exports={
                 })
             })
             res(results)
+        })
+    },
+    handling_thongke:(data)=>{
+        return new Promise((res,rej)=>{
+            let label = [] 
+            let dataset = []
+            data.map(x=>{
+                label.push(x.ten_loaibenh.value)
+                dataset.push(Number(x.sobenh.value))
+            })
+            res({dataset,label})
+        })
+    },
+    handling_thongketheokhuvuc_result:(data)=>{
+        return new Promise((res,rej)=>{
+            let label = [] 
+            let dataset = []
+            data.map(x=>{
+                label.push(x.ten_loaibenh)
+                dataset.push(Number(x.sobenh))
+            })
+            res({dataset,label})
         })
     },
     check_vitri: (obj, list)=> {

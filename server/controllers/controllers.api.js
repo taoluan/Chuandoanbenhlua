@@ -131,17 +131,17 @@ module.exports = {
         try {
             let thongketheoloaibenh = await graphDBEndpoint.query(
                 `
-                select DISTINCT ?uri_benh ?ten_benh ( COUNT (DISTINCT ?uri_loaibenh) AS ?so_benh ) 
+                select DISTINCT ?ten_loaibenh ( COUNT (DISTINCT ?uri_loaibenh) AS ?sobenh ) 
                 where { 
                     ?uri_benh rdfs:subClassOf data:Bệnh.
                     ?uri_loaibenh rdf:type ?uri_benh.
-                    ?uri_benh rdfs:comment ?ten_benh
+                    ?uri_benh rdfs:label ?ten_loaibenh
                 }
-                group by ?uri_benh ?ten_benh
+                group by ?uri_benh ?ten_loaibenh
                 `
             )
-            console.log(1)
-            res.send(thongketheoloaibenh.results.bindings)
+            let result =await functions.handling_thongke(thongketheoloaibenh.results.bindings)
+            res.send(result)
         } catch (error) {
             
         }
@@ -150,22 +150,49 @@ module.exports = {
         try {
             let thongketheokhuvuc = await graphDBEndpoint.query(
                 `
-                select  DISTINCT ?ten_khuvuc ?uri_khuvuc ?ten_loaibenh ?thuocloaibenh   ( COUNT ( ?thuocloaibenh) AS ?so_benh ) 
+                select  DISTINCT ?ten_khuvuc ?ten_loaibenh ?thuocloaibenh   ( COUNT ( ?thuocloaibenh) AS ?so_benh ) 
                 where { 
                     ?uri_khuvuc rdf:type data:Khu_Vực.
                     ?uri_benh data:inArea ?uri_khuvuc;
                             rdf:type ?thuocloaibenh.
                     FILTER(?thuocloaibenh != owl:NamedIndividual && ?thuocloaibenh != data:Bệnh).
-                    ?uri_khuvuc rdfs:comment ?ten_khuvuc.
-                    ?thuocloaibenh rdfs:comment ?ten_loaibenh
+                    ?uri_khuvuc rdfs:label ?ten_khuvuc.
+                    ?thuocloaibenh rdfs:label ?ten_loaibenh
                 }
                 group by ?ten_khuvuc ?uri_khuvuc ?ten_loaibenh ?thuocloaibenh
                 `
             )
             let results = await functions.handling_thongketheokhuvuc(thongketheokhuvuc.results.bindings)
-            res.send(results)
+            let dbdhmt = await functions.handling_thongketheokhuvuc_result(results[0].thongke)
+            let dbscl = await functions.handling_thongketheokhuvuc_result(results[1].thongke)
+            let dbsh = await functions.handling_thongketheokhuvuc_result(results[2].thongke)
+            res.send({dbdhmt : dbdhmt , dbscl:dbscl , dbsh:dbsh})
         } catch (error) {
             
+        }
+    },
+    dscacbenh:async(req,res)=>{
+        try {
+            let loaibenh = req.query.loaibenh
+            let pages = req.query.page
+            const item_pages  = 8
+            let offset = (pages-1)*item_pages
+            let limit = item_pages*pages
+            let data = await graphDBEndpoint.query(
+                `
+                select  ?ten_benh ?image ?mota
+                WHERE { ?uri_benh rdf:type data:${loaibenh}.
+                        ?uri_benh rdfs:label ?ten_benh;
+                                   data:Describe ?mota.
+                OPTIONAL{
+                        ?uri_benh data:Image ?image
+                    }
+                }LIMIT ${limit} OFFSET ${offset}
+                `
+            )
+            res.json(data.results.bindings)
+        } catch (err) {
+            console.log(err)
         }
     }
 }

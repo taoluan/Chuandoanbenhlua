@@ -1,8 +1,15 @@
-const axiosClient  = require("./axiosClient")
-import axios from 'axios';
+import axiosClient from './axiosClient'
 const diseseaApi ={
-    thongkeLoaiBenh: (params)=>{
-        const url = `${process.env.REACT_APP_API_URL}/thongketheoloaibenh`
+    thongkeLoaiBenh: ()=>{
+        const url = '/thongketheoloaibenh'
+        return axiosClient.get(url)
+    },
+    thongkeLoaiBenhKhuVuc: ()=>{
+        const url = '/thongketheokhuvuc'
+        return axiosClient.get(url)
+    },
+    dsBenh: (params)=>{
+        const url = '/dscacbenh'
         return axiosClient.get(url,{params})
     }
 }

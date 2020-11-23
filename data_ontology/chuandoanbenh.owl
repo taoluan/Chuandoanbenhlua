@@ -593,6 +593,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135790/LuanVan_CNTT/01-BL
 https://res.cloudinary.com/taoluanby/image/upload/v1604135790/LuanVan_CNTT/01-BL-MA_qlnbmf.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135789/LuanVan_CNTT/01-BL_vbt977.jpg</Image>
         <rdfs:comment>Bệnh Bạc Lá</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bạc Lá</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá"/>
@@ -699,7 +700,8 @@ Bọ trĩ gây hại ngay từ khi cây lúa xuất hiện, mật độ tăng d�
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Selenothrips rubrocinctus</Describe>
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135800/LuanVan_CNTT/19-BT-lf_ar5t7v.jpg, https://res.cloudinary.com/taoluanby/image/upload/v1604473430/LuanVan_CNTT/19-BT-LA_bxzo8f.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135800/LuanVan_CNTT/19-BT_rdo7hd.jpg</Image>
-        <rdfs:comment>Bệnh do Bọ Trĩ gây hãi</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do Bọ Trĩ gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bọ Trĩ</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Trĩ"/>
@@ -767,7 +769,8 @@ Bọ xít thường gây hại nặng ở tất cả các giai đoạn sinh trư
 - Họ: Coreidae
 - Bộ: Hemiptera</Describe>
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135793/LuanVan_CNTT/29-BXD_sf01zd.png</Image>
-        <rdfs:comment>Bệnh do Bọ Xích Dài gây ra</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do Bọ Xích Dài gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bọ Xích Dài</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Dài"/>
@@ -826,7 +829,8 @@ Thành trùng có hình dạng tương tự như bọ xít xanh nhưng có một
 - Họ: Pentatomidae
 - Bộ: Hemiptera</Describe>
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135792/LuanVan_CNTT/28-BXX_w1b1z3.jpg</Image>
-        <rdfs:comment>Bệnh do Bọ Xích Xanh gây ra</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do Bọ Xích Xanh gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bọ Xích Xanh</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Xanh"/>
@@ -890,7 +894,8 @@ Cấy gọn thời vụ. Phát hiện sớm, thu gom ổ trứng để diệt, v
 - Bộ: Cánh nửa (Heminoptera)
 - Bọ xít đen có thể gây hại ở các vụ lúa trong năm, tuy nhiên gây hại nặng nhất ở vụ hè thu có điều kiện thời tiết nóng và ẩm. Bọ thường gây hại nặng ở giai đoạn lúa đẻ nhánh rộ đến làm đòng và thường tập trung chích hút ở mắt thân lúa.Hàng năm bọ xít có thể hình thành 2 lứa. Lứa từ tháng 3 - 5 và lứa từ tháng 8 - 9. Bọ xít đen trước đây chỉ xuất hiện rải rác và gây hại không đáng kể, nhưng những năm gần đây chúng xuất hiện và gây hại nhiều hơn, trên các giống lúa mùa cũng như các giống lúa ngắn ngày. Thực tế đồng ruộng cho thấy những giống nào không kháng được rầy nâu, thì thường là những giống bị bọ xít đen gây hại nhiều hơn những giống khác.</Describe>
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135793/LuanVan_CNTT/32-BX%C4%90-1_z1quvx.jpg</Image>
-        <rdfs:comment>Bệnh do Bọ Xích Đen gây ra</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do Bọ Xích Đen gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bọ Xích Đen</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Đen"/>
@@ -976,7 +981,8 @@ Không bón quá nhiều phân đạm, Đốt rơm lúa bệnh để diệt ngu�
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604469979/LuanVan_CNTT/12-CL-PL-LA-01_jpukph.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/12-CL-PL-LA_kozifb.gif,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/12-CL-PL_t7gtp1.gif</Image>
-        <rdfs:comment>Cháy Lá - Phỏng Lá</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Cháy Lá - Phỏng Lá</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cháy Lá - Phỏng Lá</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cháy_Lá-Phỏng_Lá"/>
@@ -1276,6 +1282,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/12-CL
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_làm_đồng">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_Đoạn"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Được tính từ khi cây lúa phân hóa đòng đến khi lúa trổ.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Giai đoạn làm đồng</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1285,6 +1292,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/12-CL
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_mạ">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_Đoạn"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Được tính từ lúc gieo sạ đến khi xuất hiện 3,2 lá (~20 ngày sau sạ - NSS) . Nếu là lúa cấy thì giai đoạn mạ là thời gian cây lúa trong nương mạ hay khay mạ.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Giai đoạn mạ</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1294,6 +1302,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/12-CL
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_trổ-chín">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_Đoạn"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Được tính từ khi lúa trổ đến chín</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Giai đoạn trổ chín</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1303,6 +1312,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/12-CL
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_đẻ_nhánh">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_Đoạn"/>
         <rdfs:comment>được tính từ sau khi mạ được 3,2 lá đến khi cây lúa đạt số chồi tối đa</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Giai đoạn đẻ nhánh</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1341,7 +1351,8 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/12-CL
 - Bệnh phổ biến trên lúa ở các vùng trồng lúa trong nước và trên thế giới. Trên các giống nhiễm có thể bị bệnh nặng, thiệt hại tới 40% năng suất.</Describe>
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604546434/LuanVan_CNTT/35-GNHL_01_nyalpj.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/35-GNHL_gejpas.jpg</Image>
-        <rdfs:comment>Bệnh do Gạch Nâu gây ra</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Gạch Nâu Hại Lúa</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gạch Nâu Hại Lúa</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Gạch_Nâu_Hại_Lúa"/>
@@ -1384,6 +1395,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/35-GN
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
         <rdfs:comment>Giống lúa HG2: TGST 95 ngày; thân rạ cứng, chiều cao cây 105cm; năng suất 5 - 7 tấn/ha; khả năng kháng rầy nâu cấp 1 - 3, kháng đạo ôn cấp 1; tỉ lệ gạo nguyên 40 - 50%, bạc bụng (cấp 9) 2 - 5%; hạt dài 7,03 mm; hàm lượng amylose: 20%. Đặc tính khác: Cứng cây, kháng vàng lùn, lùn xoắn lá, gạo đẹp, dẻo, thơm</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HG2</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1527,7 +1539,8 @@ Không để ruộng lúa quá ẩm, nước ngập quá sâu.Thường xuyên t
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/03-KV-LA-01_qdicoe.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604470487/LuanVan_CNTT/03-KV-LA-02_ftaf1l.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604546616/LuanVan_CNTT/02-DSVK-4_jhfd2g.jpg,</Image>
-        <rdfs:comment>Bệnh Khô Vằn</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Khô Vằn</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Khô Vằn</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Khô_Vằn"/>
@@ -1603,6 +1616,7 @@ Gieo cấy đúng thời vụ, với mật độ thích hợp.</Phòng_chống>
 https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/04-LLH-HAT_zbiypy.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604484867/LuanVan_CNTT/04-LLH-H_skf4ra.jpg</Image>
         <rdfs:comment>Bệnh Lem Lép Hạt</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lem Lép Hạt</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lem_Lép_Hạt"/>
@@ -1904,6 +1918,7 @@ và rầy nâu mang mầm bệnh</Phòng_chống>
 https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/14-LXL_i7o7hf.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604756774/LuanVan_CNTT/14-LXL-HAT_k7380p.jpg</Image>
         <rdfs:comment>Bệnh Lùn Xoắn Lá</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lùn Xoắn Lá</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xoắn_Lá"/>
@@ -1997,6 +2012,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604487496/LuanVan_CNTT/37-LX
 https://res.cloudinary.com/taoluanby/image/upload/v1604487499/LuanVan_CNTT/37-LXD-02_nxyxse.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/37-LXD-01_exsksg.png</Image>
         <rdfs:comment>Bệnh Lùn Xọc Đen</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lùn Xọc Đen</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xọc_Đen"/>
@@ -2098,7 +2114,8 @@ Carban 50SC , pha 3 ml / 1 lít nước, ngâm cho 1 kg lúa giống trong kho�
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/09-LV-02_guya2b.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/09-LV-CAY_b7oirs.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/09-LV_ckfxzc.jpg</Image>
-        <rdfs:comment>Bệnh Lúa Von</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Lúa Von</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lúa Von</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von"/>
@@ -2255,6 +2272,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG
 https://res.cloudinary.com/taoluanby/image/upload/v1604135792/LuanVan_CNTT/26-NG-THAN_xq5ata.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG_bma8pv.jpg</Image>
         <rdfs:comment>Bệnh do Nhện Gié gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nhện Gié</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nhện_Gíe"/>
@@ -2399,6 +2417,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
         <rdfs:comment>Giống lúa OM 2718: Thời gian sinh trưởng 100 ngày trong điều kiện gieo mạ cấy và 90 - 95 trong điều kiện gieo thẳng. Chiều cao cây 100 – 105 cm. Năng suất trung bình ở vụ Đông Xuân 5 - 6 tấn/ha, vụ Hè Thu 4 tấn/ha. OM 2718 có gạo hạt dài 7mm, gạo trong k hông bạc bụng, cơm mềm đạt tiêu chuẩn gạo xuất khẩu. kháng trung bình với rầy nâu và nhiễm bệnh đạo ôn (cấp 7), hơi nhiễm rầy nâu (cấp 5).</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OM 2718</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2423,6 +2442,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
         <rdfs:comment>Giống lúa OM 3995: TGST: 95 -100 ngày; Cao cây : 95 -100 cm; Trọng lượng 1000 hạt: 25,8 gam; Đẻ nhánh khá, lá cờ trung bình, bông dài, hạt đóng khít; Tỷ lệ hạt chắc cao: 83,4 %; Hạt gạo dài, trong; Nhiễm rầy nâu (cấp 5), nhiễm cháy lá (cấp 6); Năng suất bình quân 6-8 tấn/ha; Thích nghi cả 2 vụ Đông Xuân và Hè Thu; Chú ý : Theo dõi phòng trừ rầy nâu, đạo ôn khi canh tác.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OM 3995</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2446,6 +2466,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
         <rdfs:comment>Giống lúa OM 4218: Thời gian sinh trưởng 90-95 ngày, gạo dài, trong, mềm cơm, chịu phèn nhẹ. Chiều cao cây 90-95 cm. Năng suất đông xuân 6-8 t/ha, hè thu 5-6 t/ha. It đỗ ngã, chống chịu vàng lùn-lùn xoắn lá tốt.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OM 4218</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2468,6 +2489,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
         <rdfs:comment>Giống lúa OM 4498: Thời gian sinh trưởng 90 – 95 ngày. Chiều cao cây đạt 95 – 100 cm. Chống chịu sâu bệnh: Hơi nhiễm rầy nâu (cấp 5), hơi kháng bệnh đạo ôn (cấp 3); chịu phèn khá. Năng suất: 6 – 8 tấn/ha. Chất lượng gạo: Tỉ lệ xay sát cao (gạo lức: 79 -80 %; gạo tổng số 68 – 69 %; gạo nguyên: 50 – 55 %). Hạt gạo thon dài (7,0 – 7,1 mm), tỉ lệ dài/rộng (D/R: 3,3), bạc bụng thấp; hàm lượng amyloza trung bình khoảng 24,5%.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OM 4498</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2489,6 +2511,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
         <rdfs:comment>GIỐNG LÚA OM 4900: Thời gian sinh trưởng: 95 - 105 ngày, Chiều cao cây: 100 - 110cm.. Lá cờ đứng, cứng cây, bông to đùm, Hơi nhiễm rầy nâu, đạo ôn, cháy bìa lá, lúa von. Chịu phèn nhẹ.. Chất lượng: Cơm dẻo, thơm.. Hạt gạo dài, đạt tiêu chuẩn xuất khẩu. Năng suất: 6 - 8 tấn / ha (Đông Xuân), 5 - 6 tấn / ha (Hè Thu)</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OM 4900</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2509,6 +2532,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
         <rdfs:comment>Giống lúa OM 5239 do Viện lúa ĐBSCL tạo chọn, có nguồn gốc từ tổ hợp lai IR64/OM 2395. Thời gian sinh trưởng: 95-100 ngày. Phản ứng với rầy nâu, đạo ôn cấp 3 và bệnh vàng lùn, lùn xoắn lá cấp 3.  Năng suất trung bình là 7 tấn/ha trong vụ Đông Xuân và 4 tấn/ ha trong vụ Hè Thu</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OM 5239</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2528,6 +2552,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
         <rdfs:comment>Giống lúa OM 5451: Được chọn từ tổ hợp lai Jasmine 85/OM2490. Giống OM5451 có thời gian sinh trưởng khoảng 88 - 93 ngày (lúa sạ) trong vụ ĐX, 90 - 95 ngày trong vụ HT, trổ tập trung, chiều cao cây 95 - 100cm. OM 5451 có dạng hình đẹp, tương đối cứng cây, khả năng đẻ nhánh khá, bông đóng hạt dầy, tỉ lệ lép thấp, trọng lượng nghìn hạt trung bình 25 - 26g, hạt gạo dài, ít bạc bụng, cơm mềm. Giống OM 5451 chống chịu RN và bệnh đạo ôn khá, chống chịu bệnh VL - LXL khá. Tiềm năng năng suất của giống lúa này khá cao và ổn định trong cả 2 vụ ĐX và HT, đạt từ 5 đến 8 tấn/ha.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OM 5451</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2546,6 +2571,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
         <rdfs:comment>Giống lúa OM 5472: Được chọn từ tổ hợp lai OM 2718/Jasmine85 và mới được được Bộ NN &amp; PTNT công nhận là giống lúa sản xuất thử tại các tỉnh ĐBSCl và Trung bộ trong năm 2009. Giống OM 5472 thích nghi rộng và đã được canh tác nhiều tại các vùng trồng lúa ĐBSCL. Giống OM 5472 có thời gian sinh trưởng của lúa sạ khoảng 90 - 93 ngày trong vụ đông xuân (ĐX), 93-95 ngày trong vụ hè thu (HT), trổ tập trung, chiều cao cây 95 - 105cm. Đây là giống lúa có dạng hình đẹp, tương đối cứng cây, khả năng đẻ nhánh khá, bông đóng hạt dầy, tỉ lệ lép thấp, trọng lượng nghìn hạt từ 26 - 27g, gạo có mùi thơm nhẹ, hạt dài, trong, ít bạc bụng, cơm mềm. Giống OM 5472 chống chịu rầy nâu (RN) và bệnh đạo ôn trung bình. Trong vụ HT 2009 giống OM 5472 bị nhiễm nhẹ bệnh đạo ôn ở đầu vụ, chống chịu bệnh vàng lùn-lùn xoắn lá (VL - LXL) khá. Tiềm năng năng suất của lúa này khá cao và ổn định trong cả hai vụ ĐX và HT, đạt từ 5 đến 8 tấn/ha.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OM 5472</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2563,6 +2589,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
         <rdfs:comment>Giống lúa OM 5636: TGST 93 - 37 ngày; thân rạ cứng, chiều cao cây 110 cm; năng suất: 5 - 7 tấn/ha; khả năng kháng rầy nâu cấp 3, kháng đạo ôn cấp 3; tỉ lệ gạo nguyên 35 - 50%, bạc bụng (cấp 9) 10%; hạt dài 7,02 mm; hàm lượng amylose: 24,52%. Đặc tính khác: Cứng cây, kháng vàng lùn, lùn xoắn lá, chịu phèn, gạo đẹp, công nhận sản xuất thử 2008.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OM 5636</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2579,6 +2606,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
         <rdfs:comment>Giống lúa OM 5930: TGST 95 - 100 ngày; thân rạ cứng; chiều cao cây 103 cm; năng suất: 5 - 7 tấn/ha; khả năng kháng rầy nâu cấp 1 - 3; khả năng kháng đạo ôn cấp 1; tỉ lệ gạo nguyên 40 - 50%, tỷ lệ bạc bụng (cấp 9): 5 - 7%; hạt dài 7,2 mm; hàm lượng amylose: 24,05%. Đặc tính khác: Cứng cây, kháng vàng lùn, lùn xoắn lá, gạo đẹp, thơm nhẹ, công nhận quốc gia 2008.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OM 5930</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2594,6 +2622,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
         <isResistantVarieties rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
         <rdfs:comment>Giống lúa OM 6976 được chọn từ tổ hợp lai IR68144/OM997/OM2718. Thời gian sinh trưởng: 95-100 ngày. Chống chịu Rầy nâu và bệnh đạo ôn tốt, chống chịu bệnh VL - LXL khá.Năng suất trung bình vụ Đông Xuân: 7 - 9 tấn/ ha, Hè Thu: 5,0 - 6,0 tấn/ ha. Tiềm năng năng suất OM 6976 cao và ổn định trong cả 2 vụ ĐX và HT. Nông dân canh tác giống OM 6976 cần có biện pháp bón phân hoặc phun thuốc nuôi hạt để tăng tỷ lệ hạt chắc</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OM 6976</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2660,6 +2689,7 @@ Giảm năng suất của vụ mùa</Tác_hại>
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135792/LuanVan_CNTT/27-RLT_ec74oq.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135792/LuanVan_CNTT/27-RLT-lf_qtaqhm.jpg</Image>
         <rdfs:comment>Bệnh do Rầy Lưng Trắng gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rầy Lưng Trắng</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Lưng_Trắng"/>
@@ -2752,6 +2782,7 @@ Nibas 50ND…) và nhóm Chlorpyrifos Ethyl (Victory 585EC, Pyrifdaaic 500EC…)
 https://res.cloudinary.com/taoluanby/image/upload/v1604135800/LuanVan_CNTT/18-RN-lf_z77hm8.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135800/LuanVan_CNTT/18-RN_n1xspz.jpg</Image>
         <rdfs:comment>Bệnh do Rầy Nâu gây ra</rdfs:comment>
+        <rdfs:label>Rầy Nâu</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Nâu"/>
@@ -2821,6 +2852,7 @@ ngắt dảnh héo, ổ trứng; bẫy đèn đồng loạt bắt bướm…</Đ
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/22-SCLL-LA_d2hpda.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/22-SCLL_akflcm.jpg</Image>
         <rdfs:comment>Bệnh do Sâu Cuốn Lá Lớn gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Cuốn Lá Lớn</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Cuốn_Lá_Lớn"/>
@@ -2881,6 +2913,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/16-SC
 https://res.cloudinary.com/taoluanby/image/upload/v1604135800/LuanVan_CNTT/16-SCLN-lf_kcney9.webp,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/16-SCLN_wzqfrp.jpg</Image>
         <rdfs:comment>Bệnh do Sâu Cuốn Lá Nhỏ gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Cuốn Lá Nhỏ</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Cuốn_Lá_Nhỏ"/>
@@ -2934,6 +2967,7 @@ Sâu thường phá thời kỳ mạ, lúa đẻ nhánh, sâu thường phá r�
 https://res.cloudinary.com/taoluanby/image/upload/v1604135789/LuanVan_CNTT/23-SP-LA_tilvev.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/23-SP_kp2kkv.jpg</Image>
         <rdfs:comment>Bệnh do Sâu Phao gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Phao</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Phao"/>
@@ -2989,6 +3023,7 @@ Gegent 800WP...</Điều_trị>
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/20-SDT5V_d8vbxd.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/20-SDT5V-SAU_w8lru6.jpg</Image>
         <rdfs:comment>Bệnh do Sâu Đục Thân 5 Vạch gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Đục Thân 5 Vạch</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_5_Vạch"/>
@@ -3070,6 +3105,7 @@ tốt nhưng độ độc cao gây bộc phát rầy cuối vụ.</Điều_trị
 - Họ: Ngài sáng (Pyralidae)
 - Bộ: Cánh vảy (Lepidoptera)</Describe>
         <rdfs:comment>Bệnh do Sâu Đục Thân Bướm 2 Chấm gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Đục Thân Bướm 2 Chấm</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_Bướm_2_Chấm"/>
@@ -3129,6 +3165,7 @@ Giảm năng suất của vụ mùa</Tác_hại>
 - Bộ: Lepidoptera</Describe>
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/21-SDTBCM_rprxxb.jpg</Image>
         <rdfs:comment>Bệnh do Sâu Đục Thân Bướm Cú Mèo gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Đục Thân Bướm Cứu Mèo</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_Bướm_Cú_Mèo"/>
@@ -3204,6 +3241,7 @@ Bón phân YaraLiva Tropicote( CaNO3) trong cuối giai đoạn phát triển đ
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604479195/LuanVan_CNTT/41-TCX-01_qgxen1.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/41-TCX_ma1k0q.jpg</Image>
         <rdfs:comment>Bệnh do thiếu Canxi</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thiếu Canxi</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Canxi"/>
@@ -3260,6 +3298,7 @@ Kali giúp các tế bào thực vật thêm cứng cáp hơn nhờ tham gia và
         <Điều_trị rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Để lúa đạt năng suất từ 5-7 tấn/ha cần bón bổ sung 20-100K/ ha (24-120 K2O/ha) do đất hằng năm bị lấy đi đáng kể lượng kali qua rơm rạ và hạt lúa
 Lúa lai tạo luôn cần một lượng phân bón Kali (60-120 K2O/ha cho mọi loại đất) nhiều hơn các loại giống Lúa thuần khác.</Điều_trị>
         <rdfs:comment>Bệnh do thiếu Kali</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thiếu Kali</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Kali"/>
@@ -3319,6 +3358,7 @@ Lúa lai luôn đòi hỏi phải bón lót Đạm
 Lượng Đạm Nitơ cây cần nhiều nhất là giai đoạn giữa đẻ nhánh và hình thành bông
 Khác với Lân và Kali, hiệu lực tồn dư của Đạm là rất nhỏ</Điều_trị>
         <rdfs:comment>Bệnh do thiếu Đạm</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thiếu Đạm</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Đạm"/>
@@ -3380,7 +3420,8 @@ góc ruộng như: New Hinosan 30EC (1,2 l/ha); Ravral 50 WP (0,1 - 0,2 %);
 https://res.cloudinary.com/taoluanby/image/upload/v1604471370/LuanVan_CNTT/11-THL-03_rycwte.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604471501/LuanVan_CNTT/11-THL-OR_cb2tng.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/11-THL_zyla11.jpg</Image>
-        <rdfs:comment>Bệnh Tiêm Hạch Lúa</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Tiêm Hạch Lúa</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tiêm Hạch Lúa</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Hạch_Lúa"/>
@@ -3465,7 +3506,8 @@ Chú ý việc chọn lọc giống như phơi khô, quạt sạch, chọn hạt
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604471957/LuanVan_CNTT/34-TLHL-01_ttphau.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/34-TLHL_kp12yu.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604548371/LuanVan_CNTT/34-TLHL-02_hks0yv.jpg</Image>
-        <rdfs:comment>Bệnh Tiêm Lửa Hại Lúa</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Tiêm Lửa Hại Lúa</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tiêm Lửa Hại Lúa</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Lửa_Hại_Lúa"/>
@@ -3670,6 +3712,7 @@ Khi cây lúa bị bướu rễ, chất dinh dưỡng bị tắc nghẽn không 
 https://res.cloudinary.com/taoluanby/image/upload/v1604135793/LuanVan_CNTT/33-TTHRL-hd_ulwmny.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135793/LuanVan_CNTT/33-TTHRL_fylbsb.gif</Image>
         <rdfs:comment>Bệnh do Tuyến Trùng Hại Rễ Lúa gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tuyến Trùng Hại Rễ Lúa</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Rễ_Lúa"/>
@@ -3813,6 +3856,7 @@ Hạt giống trước khi đưa vào sản xuất cần xử lý bằng nước
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604487858/LuanVan_CNTT/36-TTKDLL-01_pkgoz3.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/36-TTKDLL_smrcxt.png</Image>
         <rdfs:comment>Bệnh Tuyến Trùng Khô Đầu Lá Lúa</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tuyến Trùng Khô Đầu Lá Lúa</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Khô_Đầu_Lá_Lúa"/>
@@ -3941,6 +3985,7 @@ Thông thường bệnh sẽ bộc phát mạnh kèm sau các đợt dịch rầ
 https://res.cloudinary.com/taoluanby/image/upload/v1604135797/LuanVan_CNTT/08-VL-LXL_kvakxn.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135797/LuanVan_CNTT/08-VL_amrml7.jpg</Image>
         <rdfs:comment>Bệnh Vàng Lùn</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vàng Lùn</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
@@ -4022,6 +4067,7 @@ Nếu phát hiện trên ruộng có dảnh bị nhiễm bệnh thì ngay lập 
 https://res.cloudinary.com/taoluanby/image/upload/v1604489508/LuanVan_CNTT/30-VL_bxx8qf.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604489622/LuanVan_CNTT/30-VL-02_tby3dk.jpg</Image>
         <rdfs:comment>Bệnh Vàng Lụi</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vàng Lụi</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
@@ -4118,7 +4164,8 @@ hoặc Benlat 1,5 – 3 g/kg hạt.</Điều_trị>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Microdochium oryzae Samuels</Describe>
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/13-VNLL-LA_h2dpin.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/13-VNLL_hpqrta.jpg</Image>
-        <rdfs:comment>Vàng Nâu Lá Lúa</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Vàng Nâu Lá Lúa</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vàng Nâu Lá Lúa</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vân_Nâu_Lá_Lúa"/>
@@ -4418,7 +4465,8 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/05-DO
 https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/05-DO-MA_pzt0q9.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/05-DO-THAN_xfzqrm.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/05-DO_jozj45.jpg</Image>
-        <rdfs:comment>Bệnh Đạo Ôn</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Đạo Ôn</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đạo Ôn</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
@@ -4528,7 +4576,8 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604472928/LuanVan_CNTT/38-DN
 https://res.cloudinary.com/taoluanby/image/upload/v1604472940/LuanVan_CNTT/38-DN-LA_bmhqbk.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/38-DN_kgbdkp.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/38-DN-CAY_upxgm1.jpg</Image>
-        <rdfs:comment>Bệnh Đốm Nâu</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Đốm Nâu</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đốm Nâu</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Nâu"/>
@@ -4603,6 +4652,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135792/LuanVan_CNTT/02-DS
 https://res.cloudinary.com/taoluanby/image/upload/v1604486834/LuanVan_CNTT/02-DSVK-3_qbzcyw.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604546616/LuanVan_CNTT/02-DSVK-4_jhfd2g.jpg</Image>
         <rdfs:comment>Bệnh Đốm Sọc Vi Khuẩn</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đốm Sọc Vi Khuẩn</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Sọc_Vi_Khuẩn"/>
@@ -4659,7 +4709,8 @@ Phun Rovral 50 WP, nồng độ 0,2% từ khi lúa trổ trở về sau</Điều
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Alternaria adwickii</Describe>
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604548812/LuanVan_CNTT/10-DV-02_p8fak1.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/10-DV_zcwzot.jpg</Image>
-        <rdfs:comment>Bệnh Đốm Vòng</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Đốm Vòng</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đốm Vòng</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Vòng"/>
@@ -4711,7 +4762,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/10-DV
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Khu_Vực"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đồng bằng Duyên Hải Miền Trung</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đồng bằng Duyên Hải Miền Trung</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4720,7 +4771,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/10-DV
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Khu_Vực"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đồng bằng Sông Cửu Long</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đồng bằng Sông Cửu Long</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4729,7 +4780,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/10-DV
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Khu_Vực"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đồng bằng Sông Hồng</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đồng bằng Sông Hồng</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4763,6 +4814,7 @@ Sử dụng giống tốt có tỷ lệ nẩy mầm cao.</Phòng_chống>
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604483120/LuanVan_CNTT/31-OBV_wdbkup.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604483133/LuanVan_CNTT/31-OBV-01_wpucmv.jpg</Image>
         <rdfs:comment>Bệnh do Ốc Bươu Vàng gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ốc Bươm Vàng</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Ốc_Bươu_Vàng"/>
@@ -4831,7 +4883,8 @@ Con non ngay sau khi nở đã bắt đầu phá hại. Trưởng thành hoạt 
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135790/LuanVan_CNTT/25-CC-CC_dsbicc.jpg, 
 https://res.cloudinary.com/taoluanby/image/upload/v1604135790/LuanVan_CNTT/25-CC-CC-SAU_cxnmc9.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604475559/LuanVan_CNTT/25-CC-CC-LA_lp2oyh.jpg</Image>
-        <rdfs:comment>Bệnh do Châu Chấu và Cào Cào gây ra</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do Châu Chấu/Cào Cào gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Châu Chấu/Cào Cào</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Châu_Chấu/Cào_Cào"/>
@@ -4854,6 +4907,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604475559/LuanVan_CNTT/25-CC
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OM_6377(AG1)">
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa"/>
         <rdfs:comment>Giống lúa OM 6377(AG1): TGST 90 - 95 ngày; thân rạ cứng, chiều cao cây 111 cm; năng suất: 5 - 7 tấn/ha; khả năng kháng rầy nâu cấp 1 - 3, kháng đạo ôn cấp 1 - 3; tỉ lệ gạo nguyên 45%, bạc bụng (cấp 9) 8%; hạt dài 7,05 mm; hàm lượng amylose 24,3%. Đặc tính khác: Cứng cây, kháng vàng lùn, gạo đẹp, thơm nhẹ.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OM 6377(AG1)</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4894,6 +4948,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604475559/LuanVan_CNTT/25-CC
 https://res.cloudinary.com/taoluanby/image/upload/v1604135789/LuanVan_CNTT/24-SG-BG-LA_h4l9jk.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604135790/LuanVan_CNTT/24-SG-BG-SAU_ivonek.jpg</Image>
         <rdfs:comment>Bệnh do Sâu Gai hay Bọ Gai gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Gai/Bọ Gai</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai/Bọ_Gai"/>
@@ -4951,6 +5006,7 @@ Nấm xâm nhiễm vào hạt, biến từng hạt riêng rẻ của bông lúa 
 https://res.cloudinary.com/taoluanby/image/upload/v1604135797/LuanVan_CNTT/07-TV-HC_dqotde.jpg,
 https://res.cloudinary.com/taoluanby/image/upload/v1604485297/LuanVan_CNTT/07-TV-HC-_hbzsig.jpg</Image>
         <rdfs:comment>Bệnh Than Vàng/Hoa Cúc</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Than Vàng/Hoa Cúc</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Than_Vàng/Hoa_Cúc"/>
@@ -5008,6 +5064,7 @@ Phun thuốc Nevo 330EC hay các sản phẩm có hoạt chất (Difenoconazole 
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Erwinia sp</Describe>
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/06-TT_czt2j5.jpg</Image>
         <rdfs:comment>Bệnh Thối Thân, Thối Rễ và Thối Bẹ</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thối Thân/Thối Rễ/Thối Bẹ</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thối_Thân/Thối_Rễ/Thối_Bẹ"/>

@@ -54,7 +54,6 @@ const Dianose = () =>{
                 <MDBCol md="12" className=" pr-0 pl-0 ">
                   <TreeView show={showBenh}/>
                 </MDBCol>
-                
               </MDBCol>
               <MDBCol sm="9" size="12" className=" pr-0 pl-0">
                 <MDBCol md="12" className=" pr-0 pl-0">
