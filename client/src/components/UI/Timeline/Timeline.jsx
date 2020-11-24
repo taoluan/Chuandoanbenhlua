@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Timeline from '@material-ui/lab/Timeline';
 import TimelineItem from '@material-ui/lab/TimelineItem';
@@ -7,13 +7,10 @@ import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
-import FastfoodIcon from '@material-ui/icons/Fastfood';
-import LaptopMacIcon from '@material-ui/icons/LaptopMac';
-import HotelIcon from '@material-ui/icons/Hotel';
-import RepeatIcon from '@material-ui/icons/Repeat';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Icon from '../UndrawDesigner/IconSVG'
+import diseseaApi from '../../../api/diseseaApi'
 const useStyles = makeStyles((theme) => ({
   paper: {
     padding: '6px 16px',
@@ -23,9 +20,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CustomizedTimeline() {
+export default function CustomizedTimeline(props) {
   const classes = useStyles();
-
+  const [trieuchung, settrieuchung] = useState([])
+  useEffect(() => {
+    const fetchTrieuChung = async ()=>{
+      try {
+        const respose = await diseseaApi.getTrieuChung({uri_benh: props.uri_benh})
+        settrieuchung(respose)
+      } catch (error) {
+      }
+    }
+    fetchTrieuChung()
+  }, [props.uri_benh])
   return (
     <Timeline align="alternate">
       <TimelineItem>
@@ -94,7 +101,7 @@ export default function CustomizedTimeline() {
             <Typography variant="h6" component="h1">
               Repeat
             </Typography>
-            <Typography>Because this is the life you love!</Typography>
+              <Typography>Because this is the life you love! {props.uri_benh}</Typography>
           </Paper>
         </TimelineContent>
       </TimelineItem>

@@ -50,8 +50,8 @@ const TabPagination = (props) =>{
           }
             
         </MDBRow>
-        <MDBRow className="d-flex justify-content-center">
-             <Pagination count={3} page={page} onChange={handleChange} color="secondary" />
+        <MDBRow className="d-flex justify-content-center" >
+             <Pagination count={Math.ceil(props.total/8)} page={page} onChange={handleChange} color="secondary" />
         </MDBRow>
      
     </div>

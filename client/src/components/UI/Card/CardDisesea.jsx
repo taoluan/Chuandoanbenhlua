@@ -7,23 +7,13 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-
-const useStyles = makeStyles({
-});
-
+import {Image as ImageCloud} from 'cloudinary-react';
 export default function ImgMediaCard(props) {
-  const classes = useStyles();
-
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="140"
-          image={process.env.PUBLIC_URL + '/img/mbr-1920x1351.png'}
-          title="Contemplative Reptile"
-        />
+    <Card >
+        <CardMedia>
+          <ImageCloud cloudName="taoluanby" publicId={props.item.image.value.includes(',') ? props.item.image.value.substring(0,props.item.image.value.indexOf(',')) : props.item.image.value} width="350" height="200" crop="scale"/>
+        </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h6" component="h2">
             {props.item.ten_benh.value}
@@ -32,7 +22,6 @@ export default function ImgMediaCard(props) {
           <strong>Mô tả: </strong> across all continents except Antarctica
           </Typography>
         </CardContent>
-      </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
           Xem thông tin chi tiếc

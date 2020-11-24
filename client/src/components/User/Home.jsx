@@ -91,14 +91,14 @@ const Home = ()=>{
           </MDBRow>
            
         </MDBContainer>
-        <MDBContainer fluid className="pt-2" style={{backgroundColor:"white" ,height:"900px"}}>
+        <MDBContainer fluid className="pt-2" style={{backgroundColor:"white" ,height:"1000px"}}>
           <MDBRow className="d-flex justify-content-center">
             <MDBCol lg="10">
               <MDBCol sm="12" className="text-center pb-4">
                   <h3 className="title pt-5 pb-0 mb-0">Danh sách các bệnh trên lúa</h3>
                   <span className="line mt-0 pt-0"></span>
               </MDBCol>
-              <MDBCol sm="12">
+              <MDBCol sm="12" size="12">
                   <TabListDisesea/>
               </MDBCol>
             </MDBCol>

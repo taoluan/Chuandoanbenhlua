@@ -379,6 +379,7 @@
     <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nấm">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do các loại Nấm gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nắm</rdfs:label>
     </owl:Class>
     
 
@@ -414,6 +415,7 @@
     <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh"/>
         <rdfs:comment>Do các loại sâu, rầy và vi khuẩn gây hại</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu</rdfs:label>
     </owl:Class>
     
 
@@ -423,6 +425,7 @@
     <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Chất_Dinh_Dưỡng">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh"/>
         <rdfs:comment>Do cây lúa thiếu chất dinh dưỡng</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thiếu Chất Dinh Dưỡng</rdfs:label>
     </owl:Class>
     
 
@@ -446,6 +449,7 @@
     <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do các loại tuyến trùng gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tuyến Trùng</rdfs:label>
     </owl:Class>
     
 
@@ -456,6 +460,7 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Virus"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do các loại Vi Khuẩn gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vi Khuẩn</rdfs:label>
     </owl:Class>
     
 
@@ -465,6 +470,7 @@
     <owl:Class rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Virus">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do các loại Virus gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Virus</rdfs:label>
     </owl:Class>
     
 
@@ -587,11 +593,11 @@ Sử dụng một số loại thuốc để phun phòng bệnh</Điều_trị>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Xanthomonas campestris pv. Oryzae Dowson
 - Bệnh bạc lá lúa được phát hiện đầu tiên tại Nhật Bản vào khoảng năm 1884 - 1885. Bệnh phổ biến ở hầu khắp các nước trồng lúa trên thế giới, đặc biệt ở Nhật Bản, Trung Quốc, Philippines, Ấn Độ, Xaaylan. Ở Việt Nam, bệnh bạc lá lúa đã đươc phát hiện từ lâu trên các giống lúa mùa cũ. Đặc biệt, từ năm 1965 - 1966 trở lại đây, bệnh thường xuyên phá hoại một cách nghiêm trọng ở các vùng trồng lúa trên các giống nhập nội có năng suất cao cấy trong vụ chiêm xuân và đặc biệt ở vụ mùa. 
 - Mức độ, tác hại của bệnh phụ thuộc vào giống, thời kỳ bị bệnh của cây sớm hay muộn và mức độ bị bệnh nặng hay nhẹ, bệnh làm cho lá lúa đặc biệt là lá đòng sớm tàn, nhanh chóng chết khô, bộ lá sơ xác, tỷ lệ hạt lép cao, năng suất giảm sút rõ rệt.</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135790/LuanVan_CNTT/01-BL-DICHKHO_czbtih.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135789/LuanVan_CNTT/01-BL-DICH_ng4qut.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135790/LuanVan_CNTT/01-BL-LA_zvadsq.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135790/LuanVan_CNTT/01-BL-MA_qlnbmf.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135789/LuanVan_CNTT/01-BL_vbt977.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/01-BL-DICHKHO_czbtih,
+LuanVan_CNTT/01-BL-DICH_ng4qut,
+LuanVan_CNTT/01-BL-LA_zvadsq,
+LuanVan_CNTT/01-BL-MA_qlnbmf,
+LuanVan_CNTT/01-BL_vbt977</Image>
         <rdfs:comment>Bệnh Bạc Lá</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bạc Lá</rdfs:label>
     </owl:NamedIndividual>
@@ -606,21 +612,21 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135789/LuanVan_CNTT/01-BL
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng_khô_và_chết_dần"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135790/LuanVan_CNTT/01-BL-MA_qlnbmf.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/01-BL-MA_qlnbmf</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá"/>
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mô_bệnh_xanh_tái_vàng_lục"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135789/LuanVan_CNTT/01-BL-DICH_ng4qut.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/01-BL-DICH_ng4qut</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá"/>
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_lan_rộng_theo_đường_gợn_sóng_màu_vàng"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135790/LuanVan_CNTT/01-BL-LA_zvadsq.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/01-BL-LA_zvadsq</Image>
     </owl:Axiom>
     
 
@@ -698,8 +704,9 @@ Bọ trĩ gây hại ngay từ khi cây lúa xuất hiện, mật độ tăng d�
         <Điều_trị>Thường xuyên kiểm tra đồng ruộng phát hiện và phun tuốc kịp thời.
  Dùng các loại thuốc Regent 800WG, Hopsan 75EC, Selecron 500EC hoặc Actara 25WP phun khi bọ trĩ phát sinh rộ.</Điều_trị>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Selenothrips rubrocinctus</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135800/LuanVan_CNTT/19-BT-lf_ar5t7v.jpg, https://res.cloudinary.com/taoluanby/image/upload/v1604473430/LuanVan_CNTT/19-BT-LA_bxzo8f.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135800/LuanVan_CNTT/19-BT_rdo7hd.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/19-BT-lf_ar5t7v, 
+LuanVan_CNTT/19-BT-LA_bxzo8f,
+LuanVan_CNTT/19-BT_rdo7hd</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do Bọ Trĩ gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bọ Trĩ</rdfs:label>
     </owl:NamedIndividual>
@@ -720,7 +727,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135800/LuanVan_CNTT/19-BT
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dần_chuyển_sang_màu_vàng_nhạt_vàng_da_cam"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604473430/LuanVan_CNTT/19-BT-LA_bxzo8f.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/19-BT-LA_bxzo8f</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Trĩ"/>
@@ -765,10 +772,10 @@ Bọ xít thường gây hại nặng ở tất cả các giai đoạn sinh trư
         <Đặc_điểm_sinh_học_và_gây_hại rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bọ xít trưởng thành hoạt động giao phối vào ban ngày, lúc 9-10 giờ sáng, trứng được đẻ thành từng ổ, mỗi ổ trứng có từ 30-130 trứng; mỗi con cái đẻ từ 50-500 trứng. Bọ xít trưởng thành có tập tính qua đông và qua đông trong vỏ cây, tàn dư lá cây hoặc những khu vực khác. Mùa xuân đến, nhiệt độ ấm lên, bọ xít xanh chui ra khỏi nơi ẩn nấp, phá hại và đẻ trứng. Con cái có thể bắt đầu đẻ sau khi hoá trưởng thành 3-4 tuần. Bọ xít trưởng thành thích ánh sáng đèn. Trưởng thành có thể di chuyển xa với khoảng cách hàng cây số.
 - Điều kiện phát sinh của bọ xít xanh: về mùa: mùa xuân và hè thu; về vụ: vụ mùa sớm và xuân muộn. Ruộng lúa gần ruộng rau thì bị hại nặng hơn, bọ xít xanh thường di cư hàng loạt từ ruộng rau sang ruộng lúa vì phổ gây hại của bọ xít xanh rất rộng, nó có thể hại hầu hết các loại cây trồng: từ cây lương thực, thực phẩm đến các cây nông nghiệp ngắn, dài ngày. Bọ xít xanh hại trên lúa, làm cho lúa bị lép lửng. Bọ xít xanh xuất hiện tại khắp các vùng ở Việt Nam và thế giới.
  Khi bị bọ xít hại, hạt lúa sẽ lửng lép hoặc bạc trắng, giảm năng suất.</Đặc_điểm_sinh_học_và_gây_hại>
-        <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Leptocorisa varicormis Fabr., Leptocoría acuta Thunb
-- Họ: Coreidae
-- Bộ: Hemiptera</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135793/LuanVan_CNTT/29-BXD_sf01zd.png</Image>
+        <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Leptocorisa varicormis Fabr., Leptocoría acuta Thunb
+Họ: Coreidae
+Bộ: Hemiptera</Describe>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/29-BXD_sf01zd</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do Bọ Xích Dài gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bọ Xích Dài</rdfs:label>
     </owl:NamedIndividual>
@@ -828,7 +835,7 @@ Thành trùng có hình dạng tương tự như bọ xít xanh nhưng có một
 + Bọ xít xanh vai vàng: Piezodorus rubrofasciatus
 - Họ: Pentatomidae
 - Bộ: Hemiptera</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135792/LuanVan_CNTT/28-BXX_w1b1z3.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/28-BXX_w1b1z3</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do Bọ Xích Xanh gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bọ Xích Xanh</rdfs:label>
     </owl:NamedIndividual>
@@ -893,7 +900,7 @@ Cấy gọn thời vụ. Phát hiện sớm, thu gom ổ trứng để diệt, v
 - Họ: Bọ xít năm cạnh (Pentatomidae)
 - Bộ: Cánh nửa (Heminoptera)
 - Bọ xít đen có thể gây hại ở các vụ lúa trong năm, tuy nhiên gây hại nặng nhất ở vụ hè thu có điều kiện thời tiết nóng và ẩm. Bọ thường gây hại nặng ở giai đoạn lúa đẻ nhánh rộ đến làm đòng và thường tập trung chích hút ở mắt thân lúa.Hàng năm bọ xít có thể hình thành 2 lứa. Lứa từ tháng 3 - 5 và lứa từ tháng 8 - 9. Bọ xít đen trước đây chỉ xuất hiện rải rác và gây hại không đáng kể, nhưng những năm gần đây chúng xuất hiện và gây hại nhiều hơn, trên các giống lúa mùa cũng như các giống lúa ngắn ngày. Thực tế đồng ruộng cho thấy những giống nào không kháng được rầy nâu, thì thường là những giống bị bọ xít đen gây hại nhiều hơn những giống khác.</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135793/LuanVan_CNTT/32-BX%C4%90-1_z1quvx.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/32-BX%C4%90-1_z1quvx</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do Bọ Xích Đen gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bọ Xích Đen</rdfs:label>
     </owl:NamedIndividual>
@@ -978,9 +985,9 @@ Không bón quá nhiều phân đạm, Đốt rơm lúa bệnh để diệt ngu�
         <Điều_trị>Phun các thuốc gốc đồng như hỗn hợp Bordeaux, Copper Zinc, Copper B
 , hoặc Hinosan 40 EC</Điều_trị>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Microdochium oryzae</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604469979/LuanVan_CNTT/12-CL-PL-LA-01_jpukph.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/12-CL-PL-LA_kozifb.gif,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/12-CL-PL_t7gtp1.gif</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/12-CL-PL-LA-01_jpukph,
+LuanVan_CNTT/12-CL-PL-LA_kozifb,
+LuanVan_CNTT/12-CL-PL_t7gtp1</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Cháy Lá - Phỏng Lá</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cháy Lá - Phỏng Lá</rdfs:label>
     </owl:NamedIndividual>
@@ -990,14 +997,14 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/12-CL
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_lúa_có_nhiều_đường_vân_vòng_cung_nối_tiếp_nhau_loen_rộng_ra"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chóp lá</DiseaseSite>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phiến lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/12-CL-PL-LA_kozifb.gif</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/12-CL-PL-LA_kozifb</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cháy_Lá-Phỏng_Lá"/>
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vùng_bị_nhiễm_khô_như_bị_phỏng_đi_giống_như_là_đã_chín"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phiến lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604469979/LuanVan_CNTT/12-CL-PL-LA-01_jpukph.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/12-CL-PL-LA-01_jpukph</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cháy_Lá-Phỏng_Lá"/>
@@ -1005,7 +1012,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/12-CL
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_biến_đổi_giữa_màu_vàng_nhạt_và_nâu_tối"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hạt</DiseaseSite>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phiến lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/12-CL-PL_t7gtp1.gif</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/12-CL-PL_t7gtp1</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cháy_Lá-Phỏng_Lá"/>
@@ -1349,8 +1356,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/12-CL
         <Đặc_điểm_phát_sinh_và_phát_triển rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh phát sinh muộn, thường phát triển mạnh vào thời kỳ lúa trỗ, nở hoa. Bệnh hại trên cả lá già, lá non. Nấm bảo tồn trên hạt giống.</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Cercospora Janseana (Racib) O. Const
 - Bệnh phổ biến trên lúa ở các vùng trồng lúa trong nước và trên thế giới. Trên các giống nhiễm có thể bị bệnh nặng, thiệt hại tới 40% năng suất.</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604546434/LuanVan_CNTT/35-GNHL_01_nyalpj.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/35-GNHL_gejpas.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/35-GNHL_01_nyalpj,LuanVan_CNTT/35-GNHL_gejpas</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Gạch Nâu Hại Lúa</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gạch Nâu Hại Lúa</rdfs:label>
     </owl:NamedIndividual>
@@ -1360,7 +1366,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/35-GN
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_màu_nâu_nhạt_hoặc_sẫm_tùy_theo_giống"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bẹ lá</DiseaseSite>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phiến lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604546434/LuanVan_CNTT/35-GNHL_01_nyalpj.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/35-GNHL_01_nyalpj</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Gạch_Nâu_Hại_Lúa"/>
@@ -1368,7 +1374,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/35-GN
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_có_các_vết_sọc_vàng_nhỏ_ngăn_khác_nhau"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bẹ lá</DiseaseSite>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phiến lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/35-GNHL_gejpas.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/35-GNHL_gejpas</Image>
     </owl:Axiom>
     
 
@@ -1536,9 +1542,8 @@ Không để ruộng lúa quá ẩm, nước ngập quá sâu.Thường xuyên t
 -  Nấm tồn tại dưới dạng hạch, sợi nấm trong đất, tàn dư cây trồng, rơm rạ, cỏ, lúa chét. Hạch nấm có thể sống một thời gian dài sau khi thu hoạch lúa, thậm chí trong điều kiện ngập nước vẫn có tới 30% số hạch giữ được sức sống, nảy mầm thành sợi.</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh khô vằn hại lúa và ngô được phát hiện ở Nhật Bản (Miyake, 1910, Sawada, 1926). Địa bàn phân bố của bệnh khá rộng ở tất cả các nước trồng lúa vùng châu Á và các châu lục khác. Cây lúa có thể bị giảm năng suất 20 - 25% khi bệnh phát triển lên đến lá đòng (Hori, 1969). 
 - Trong các bệnh nấm hại lúa hiện nay ở nước ta bệnh khô vằn được xếp vào bệnh nghiêm trọng thứ 2 sau bệnh đạo ôn và là loài bệnh gây hại chủ yếu trên lúa hè thu và lúa mùa, đồng thời hại</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/03-KV-LA-01_qdicoe.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604470487/LuanVan_CNTT/03-KV-LA-02_ftaf1l.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604546616/LuanVan_CNTT/02-DSVK-4_jhfd2g.jpg,</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/03-KV-LA-01_qdicoe,
+LuanVan_CNTT/02-DSVK-4_jhfd2g,</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Khô Vằn</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Khô Vằn</rdfs:label>
     </owl:NamedIndividual>
@@ -1554,7 +1559,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604546616/LuanVan_CNTT/02-DS
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_có_dạng_đốm_loang_lổ_như_da_beo_màu_xanh_xám_viền_nâu_sũng_nước"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bẹ lá</DiseaseSite>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phiến lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604470487/LuanVan_CNTT/03-KV-LA-02_ftaf1l.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/03-KV-LA-02_ftaf1l</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Khô_Vằn"/>
@@ -1567,7 +1572,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604546616/LuanVan_CNTT/02-DS
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#vết_kéo_dài_bao_quanh_cổ_bông_hai_đầu_vết_bệnh_có_màu_xám_loang_ra_phần_giữa_vết_bệnh_màu_lục_sẫm_co_tóp_lại"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cổ bông</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604735092/LuanVan_CNTT/03-KV-LA-03_vm2ebq.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/03-KV-LA-03_vm2ebq</Image>
     </owl:Axiom>
     
 
@@ -1612,9 +1617,9 @@ Gieo cấy đúng thời vụ, với mật độ thích hợp.</Phòng_chống>
 - Thực tế đồng ruộng cho thấy vào giai đoạn trỗ chín của cây lúa nếu thời tiết mát mẻ, ẩm độ không khí cao, mưa nhiều và kéo dài... thì bệnh sẽ gây hại nhiều và nặng hơn so với thời tiết khô, nắng, ẩm độ không khí thấp. Trên các chân đất bị nhiễm phừn, nhiễm mặn, chân đất nghèo dinh dưỡng không được bón phân đầy đủ, hợp lý... cây lúa sinh trưởng kém thì dễ bị các nấm Hilminthosporium oryzae, Curvularia lunata gây hại trên lá thì cũng sẽ làm cho hạt lúa bị lem lép nhiều. những ruộng có nhiều cỏ dại, những ruộng bị bệnh đạo ôn cổ bông, bệnh đốm vằn, bệnh vàng lá chín sớm, bọ xít hôi... gây hại nhiều thì cũng là những ruộng bị bệnh lem lép hạt gây hại nhiều hơn những ruộng khác.</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Lem lép hạt lúa và tên gọi của một chứng bệnh có triệu chứng chung là trên vỏ trấu của hạt lúa có những vết lốm đốm màu nâu, nâu đen... nếu nặng những vết này có thể liên kết hòa lẫn lại với nhau chiếm gần hết hoặc hết cả vỏ trấu, làm cho hạt lúa bị lửng hoặc lép hoàn toàn 
 - Bệnh xuất hiện và gây hại khá phổ biến ở tất cả các vùng trồng lúa của nước ta cũng như những nước trồng lúa trong khu vực và thế giới. Bệnh có thể xẩy ra ở bất kỳ thời vụ nào với những mức độ khác nhau, hiện tại chưa có giống nào kháng hoặc chống chịu được với bệnh.</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/04-LLH_bigfcc.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/04-LLH-HAT_zbiypy.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604484867/LuanVan_CNTT/04-LLH-H_skf4ra.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/04-LLH_bigfcc,
+LuanVan_CNTT/04-LLH-HAT_zbiypy,
+LuanVan_CNTT/04-LLH-H_skf4ra</Image>
         <rdfs:comment>Bệnh Lem Lép Hạt</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lem Lép Hạt</rdfs:label>
     </owl:NamedIndividual>
@@ -1635,7 +1640,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604484867/LuanVan_CNTT/04-LL
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vỏ_hạt_lúa_và_hạt_gạo_bị_đổi_màu"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vỏ hạt</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/04-LLH_bigfcc.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/04-LLH_bigfcc</Image>
     </owl:Axiom>
     
 
@@ -1914,9 +1919,9 @@ và rầy nâu mang mầm bệnh</Phòng_chống>
 - Những kết quả nghiên cứu cũng ghi nhận vi rút lùn xoắn lá lúa không truyền lan qua hạt giống, đất, tiếp xúc cơ giới dịch cây, và không truyền bệnh qua trứng rầy nâu.</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Rice ragged stunt virus (RRSV)
 - Bệnh lúa lùn xoăn lá (Ragged stunt virus - RRSV) Reoviridae, bệnh phổ biến ở các nước Đông Nam Á trong đó có miền Nam Trung Bộ, Viêt Nam (Hà Vinh Trung và ctv). Virus dạng cầu, đường kính 65nm, thường gây bệnh trên các nhóm giống lúa Oryza latifolis, O. navara và O. Sativa - tạo hiện tượng xoăn ngọn lá lúa, biến vàng, và cây lúa bị tàn lụi. Virus truyền bằng bọ rày nâu Nilaparvata lugen, họ Delphacidae. Vius truyền bệnh theo kiểu bền vững.</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/14-LXL-LA_wlajh7.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/14-LXL_i7o7hf.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604756774/LuanVan_CNTT/14-LXL-HAT_k7380p.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/14-LXL-LA_wlajh7,
+LuanVan_CNTT/14-LXL_i7o7hf,
+LuanVan_CNTT/14-LXL-HAT_k7380p</Image>
         <rdfs:comment>Bệnh Lùn Xoắn Lá</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lùn Xoắn Lá</rdfs:label>
     </owl:NamedIndividual>
@@ -1931,7 +1936,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604756774/LuanVan_CNTT/14-LX
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chồi_phụ_mọc_từ_các_đốt_trên_bị_cong_xoắn_ở_trong_bẹ_lúa"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chồi</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/14-LXL_i7o7hf.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/14-LXL_i7o7hf</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xoắn_Lá"/>
@@ -1950,7 +1955,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604756774/LuanVan_CNTT/14-LX
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_có_nhiều_đốm_nâu"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hạt</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604756774/LuanVan_CNTT/14-LXL-HAT_k7380p.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/14-LXL-HAT_k7380p</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xoắn_Lá"/>
@@ -2007,10 +2012,10 @@ Giai đoạn đẻ nhánh – ôm đồng, sử dụng một trong các thuốc 
  Giai đoạn trỗ - chin sáp, sử dụng một trong các thuốc tiếp xúc trừ rầy như: Bonus-gold 500EC, Vitako 1.5GR, …Khi phun cần tiến hành rẽ hành phun, đảm bảo thuốc tiếp xúc với rầy.</Điều_trị>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: SRBSDV (Southern Rice Black-Streaked Dwarf Virus)
 - Để hạn chế tối đa ảnh hưởng,giảm mức thiệt hại do bệnh gây ra, người dân cần thiết áp dụng các biện pháp đồng bộ phòng trừ kịp thời ngay từ đầu vụ mới có thể đảm bảo năng suất lúa, ngô.</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/37-LXD_kb94uv.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604487496/LuanVan_CNTT/37-LXD-03_wrf60p.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604487499/LuanVan_CNTT/37-LXD-02_nxyxse.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/37-LXD-01_exsksg.png</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/37-LXD_kb94uv,
+LuanVan_CNTT/37-LXD-03_wrf60p,
+LuanVan_CNTT/37-LXD-02_nxyxse,
+LuanVan_CNTT/37-LXD-01_exsksg</Image>
         <rdfs:comment>Bệnh Lùn Xọc Đen</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lùn Xọc Đen</rdfs:label>
     </owl:NamedIndividual>
@@ -2025,7 +2030,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/37-LX
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_chồi_lúa_bị_bệnh_giảm_chiều_cao_bị_lùn_cây"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chồi</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/37-LXD_kb94uv.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/37-LXD_kb94uv</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xọc_Đen"/>
@@ -2038,7 +2043,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/37-LX
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_xoắn_lại"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/37-LXD-01_exsksg.png</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/37-LXD-01_exsksg</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lùn_Xọc_Đen"/>
@@ -2051,7 +2056,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/37-LX
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vỏ_hạt_lúa_và_hạt_gạo_bị_đổi_màu"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vỏ hạt</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604487496/LuanVan_CNTT/37-LXD-03_wrf60p.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/37-LXD-03_wrf60p</Image>
     </owl:Axiom>
     
 
@@ -2111,9 +2116,9 @@ Carban 50SC , pha 3 ml / 1 lít nước, ngâm cho 1 kg lúa giống trong kho�
 - Nấm bệnh có thể phát triển ở điều kiện nhiệt độ từ 10-37oC (thích hợp nhất ở điều kiện 24-32oC), ẩm độ cao và ánh sáng yếu. Trên đồng ruộng, bào tử phân sinh có thể tồn tại và sống trong đất từ 4-6 tháng. Nấm bệnh tồn tại chủ yếu dưới dạng sợi và bào tử hữu tính trên tàn dư cây lúa bị bệnh, trong đất và trong phôi hạt giống. Bệnh có thể lây truyền qua không khí, qua tàn dư của cây bị bệnh, nhưng chủ yếu là qua hạt giống.
 - Bón phân đạm quá cao tạo điều kiện thích hợp cho bệnh phát triển. Bệnh còn có thể lây truyền qua không khí, gió hoặc - nước, qua tàn dư của cây bị bệnh vụ trước (rơm rạ), nhưng chủ yếu là qua hạt giống, vì thế muốn hạn chế bệnh rất cần phải xử lý hạt giống trước khi gieo hạt. Các bộ phận ở phía dưới của cây như rễ, gốc thân dễ bị nhiễm bệnh hơn các bộ phận ở phía trên của cây như  bẹ lá, đốt thân. Thực tế đồng ruộng cho thấy ở giai đoạn mạ và thời kỳ đón  đòng, thường bị nhiễm bệnh mạnh nhất.</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh lúa von rất phổ biến và gây hại lớn ở nhiều nước trồng lúa trong những năm trước đây. Năm 1943, Bugnicourt là người đầu tiên nghiên cứu và xác định bệnh lúa von ở Việt Nam. Năm 1956, gây hại nặng trên diện rộng ở vùng đồng bằng sông Hồng, có nơi thiệt hại đến 2/3 sản lượng . Năm 1970, bệnh xuất hiện và phá hoại nặng ở 1 số tỉnh Hải Hưng, Thái Bình, Nam Hà,...</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/09-LV-02_guya2b.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/09-LV-CAY_b7oirs.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/09-LV_ckfxzc.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/09-LV-02_guya2b,
+LuanVan_CNTT/09-LV-CAY_b7oirs,
+LuanVan_CNTT/09-LV_ckfxzc</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Lúa Von</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lúa Von</rdfs:label>
     </owl:NamedIndividual>
@@ -2134,7 +2139,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/09-LV
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cây_phát_triển_cao_vọt__cong_keo_mảnh_khảnh"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quần thể</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/09-LV-CAY_b7oirs.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/09-LV-CAY_b7oirs</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von"/>
@@ -2159,7 +2164,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/09-LV
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dần_chuyển_sang_màu_vàng_nhạt_vàng_da_cam"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/09-LV-02_guya2b.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/09-LV-02_guya2b</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von"/>
@@ -2173,7 +2178,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/09-LV
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lớp_phấn_trắng_phớt_hồng_bao_quanh_đốt_thân"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hạt</DiseaseSite>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đốt</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/09-LV_ckfxzc.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/09-LV_ckfxzc</Image>
     </owl:Axiom>
     
 
@@ -2267,10 +2272,10 @@ Nhện gié sinh sản đơn tính không cần thụ tinh (không có con đự
 - Lớp Nhện (Arachnida), Bộ ve bét (Acarina)
 - Họ Tarsonemidae Canestrini và Fanzango, 1877
 - Loài Steneotarsonemus spinki Smiley, 1967</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG-01_un7oki.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG-HATjpg_z0toz4.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135792/LuanVan_CNTT/26-NG-THAN_xq5ata.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG_bma8pv.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/26-NG-01_un7oki,
+LuanVan_CNTT/26-NG-HATjpg_z0toz4,
+LuanVan_CNTT/26-NG-THAN_xq5ata,
+LuanVan_CNTT/26-NG_bma8pv</Image>
         <rdfs:comment>Bệnh do Nhện Gié gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nhện Gié</rdfs:label>
     </owl:NamedIndividual>
@@ -2285,14 +2290,14 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chồi_phụ_mọc_từ_các_đốt_trên_bị_cong_xoắn_ở_trong_bẹ_lúa"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chồi</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG-01_un7oki.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/26-NG-01_un7oki</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nhện_Gíe"/>
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_có_nhiều_đốm_nâu"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vỏ hạt</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG-HATjpg_z0toz4.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/26-NG-HATjpg_z0toz4</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nhện_Gíe"/>
@@ -2317,7 +2322,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/26-NG
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_hại_ban_đầu_là_các_chấm_nhỏ_màu_trắng_vàng_về_sau_thành_đám_màu_vàng_nâu_đến_nâu_đen"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135792/LuanVan_CNTT/26-NG-THAN_xq5ata.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/26-NG-THAN_xq5ata</Image>
     </owl:Axiom>
     
 
@@ -2686,8 +2691,8 @@ Giảm năng suất của vụ mùa</Tác_hại>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Sogatella furcifera Horvath
 - Họ: Delphacidae
 - Bộ: Homoptera</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135792/LuanVan_CNTT/27-RLT_ec74oq.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135792/LuanVan_CNTT/27-RLT-lf_qtaqhm.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/27-RLT_ec74oq,
+LuanVan_CNTT/27-RLT-lf_qtaqhm</Image>
         <rdfs:comment>Bệnh do Rầy Lưng Trắng gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rầy Lưng Trắng</rdfs:label>
     </owl:NamedIndividual>
@@ -2778,9 +2783,9 @@ Nibas 50ND…) và nhóm Chlorpyrifos Ethyl (Victory 585EC, Pyrifdaaic 500EC…)
 - Tên tiếng anh: Brown backed rice plant hopper
 - Họ: Delphacidae
 - Bộ: Homoptera</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135800/LuanVan_CNTT/18-RN-SAU_z14ctj.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135800/LuanVan_CNTT/18-RN-lf_z77hm8.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135800/LuanVan_CNTT/18-RN_n1xspz.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/18-RN-SAU_z14ctj,
+LuanVan_CNTT/18-RN-lf_z77hm8,
+LuanVan_CNTT/18-RN_n1xspz</Image>
         <rdfs:comment>Bệnh do Rầy Nâu gây ra</rdfs:comment>
         <rdfs:label>Rầy Nâu</rdfs:label>
     </owl:NamedIndividual>
@@ -2849,8 +2854,8 @@ ngắt dảnh héo, ổ trứng; bẫy đèn đồng loạt bắt bướm…</Đ
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Parnara guttata Bremer et Grey
 - Họ: Hesperiidae
 - Bộ: Lepidoptera</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/22-SCLL-LA_d2hpda.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/22-SCLL_akflcm.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/22-SCLL-LA_d2hpda,
+LuanVan_CNTT/22-SCLL_akflcm</Image>
         <rdfs:comment>Bệnh do Sâu Cuốn Lá Lớn gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Cuốn Lá Lớn</rdfs:label>
     </owl:NamedIndividual>
@@ -2871,7 +2876,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/22-SC
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dễ_bị_gãy_gặp"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/22-SCLL-LA_d2hpda.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/22-SCLL-LA_d2hpda</Image>
     </owl:Axiom>
     
 
@@ -2908,10 +2913,10 @@ Dùng các loại thuốc Padan 95SP, Regent 800WP, Sumithion 50EC, Karate 2.5EC
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Cnaphalocrosis medinalis
 - Họ: Pyralidae
 - Bộ: Lepidoptera</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135800/LuanVan_CNTT/16-SCLN-SAU_g7zl8c.webp,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/16-SCLN-LA_wl4lnr.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135800/LuanVan_CNTT/16-SCLN-lf_kcney9.webp,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/16-SCLN_wzqfrp.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/16-SCLN-SAU_g7zl8c,
+LuanVan_CNTT/16-SCLN-LA_wl4lnr,
+LuanVan_CNTT/16-SCLN-lf_kcney9,
+LuanVan_CNTT/16-SCLN_wzqfrp</Image>
         <rdfs:comment>Bệnh do Sâu Cuốn Lá Nhỏ gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Cuốn Lá Nhỏ</rdfs:label>
     </owl:NamedIndividual>
@@ -2926,7 +2931,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/16-SC
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Có_các_vệt_trắng_dài_trên_lá"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/16-SCLN-LA_wl4lnr.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/16-SCLN-LA_wl4lnr</Image>
     </owl:Axiom>
     
 
@@ -2963,9 +2968,9 @@ Sâu thường phá thời kỳ mạ, lúa đẻ nhánh, sâu thường phá r�
 - Tên tiếng anh: Rice case bearer
 - Họ: Pyralidae
 - Bộ: Lepidoptera</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/23-SP-01_xvhizx.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135789/LuanVan_CNTT/23-SP-LA_tilvev.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/23-SP_kp2kkv.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/23-SP-01_xvhizx,
+LuanVan_CNTT/23-SP-LA_tilvev,
+LuanVan_CNTT/23-SP_kp2kkv</Image>
         <rdfs:comment>Bệnh do Sâu Phao gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Phao</rdfs:label>
     </owl:NamedIndividual>
@@ -2974,7 +2979,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/23-SP
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_cắn_khuyết_từng_mảng_từng_đoạn_và_có_thể_trụi_lá"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135789/LuanVan_CNTT/23-SP-LA_tilvev.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/23-SP-LA_tilvev</Image>
     </owl:Axiom>
     
 
@@ -3020,8 +3025,8 @@ Gegent 800WP...</Điều_trị>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Chilo polychrysus Meyrik Chilo polychrysa Meyrik
 - Họ: Pyralidae
 - Bộ: Lepidoptera</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/20-SDT5V_d8vbxd.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/20-SDT5V-SAU_w8lru6.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/20-SDT5V_d8vbxd,
+LuanVan_CNTT/20-SDT5V-SAU_w8lru6</Image>
         <rdfs:comment>Bệnh do Sâu Đục Thân 5 Vạch gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Đục Thân 5 Vạch</rdfs:label>
     </owl:NamedIndividual>
@@ -3104,6 +3109,8 @@ tốt nhưng độ độc cao gây bộc phát rầy cuối vụ.</Điều_trị
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Scirpophaga incertulas Walker
 - Họ: Ngài sáng (Pyralidae)
 - Bộ: Cánh vảy (Lepidoptera)</Describe>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/17-SDTB2C-SAU_w8qlsz,
+LuanVan_CNTT/17-SDTB2C-la_sujbc6</Image>
         <rdfs:comment>Bệnh do Sâu Đục Thân Bướm 2 Chấm gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Đục Thân Bướm 2 Chấm</rdfs:label>
     </owl:NamedIndividual>
@@ -3112,7 +3119,7 @@ tốt nhưng độ độc cao gây bộc phát rầy cuối vụ.</Điều_trị
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bông_lép_trắng"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bông</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604478524/LuanVan_CNTT/17-SDTB2C-la_sujbc6.bmp</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/17-SDTB2C-la_sujbc6</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_Bướm_2_Chấm"/>
@@ -3125,7 +3132,7 @@ tốt nhưng độ độc cao gây bộc phát rầy cuối vụ.</Điều_trị
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_đục_qua_bẹ_phía_ngoài_vào_đến_nõn_giữa_phá_hại_làm_cho_dảnh_lúa_bị_héo"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thân</DiseaseSite>
-        <Image>https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/17-SDTB2C-SAU_w8qlsz.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/17-SDTB2C-SAU_w8qlsz</Image>
     </owl:Axiom>
     
 
@@ -3163,7 +3170,7 @@ Giảm năng suất của vụ mùa</Tác_hại>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Sesamia inferens Walker
 - Họ: Noctuidae
 - Bộ: Lepidoptera</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135801/LuanVan_CNTT/21-SDTBCM_rprxxb.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/21-SDTBCM_rprxxb</Image>
         <rdfs:comment>Bệnh do Sâu Đục Thân Bướm Cú Mèo gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Đục Thân Bướm Cứu Mèo</rdfs:label>
     </owl:NamedIndividual>
@@ -3238,8 +3245,9 @@ Giảm năng suất của vụ mùa</Tác_hại>
 Mặc dù hiếm gặp trong hệ thống lúa được tưới, nhưng thiệt hại do thiếu Ca là rất quan trọng trong suốt giai đoạn sinh trưởng của cây trồng.</description_symptoms>
         <Điều_trị rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tái sử dụng rơm rạ rải trên ruộng là cách để tận dụng nguồn Canxi có sẵn
 Bón phân YaraLiva Tropicote( CaNO3) trong cuối giai đoạn phát triển để tăng hàm lượng Ca trong cây.</Điều_trị>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604479195/LuanVan_CNTT/41-TCX-01_qgxen1.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/41-TCX_ma1k0q.jpg</Image>
+        <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canxi đóng vai trò quan trọng trong việc hình thành các hợp chất tạo nên màng tế bào và sự vững chắc của vách tế bào .Để bổ sung kiến thức về kỹ thuật trồng Lúa, bạn hãy đọc tiếp bài viết này.</Describe>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/41-TCX-01_qgxen1,
+LuanVan_CNTT/41-TCX_ma1k0q</Image>
         <rdfs:comment>Bệnh do thiếu Canxi</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thiếu Canxi</rdfs:label>
     </owl:NamedIndividual>
@@ -3254,7 +3262,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/41-TC
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Những_lá_già_chuyển_màu_nâu_và_chết"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604479195/LuanVan_CNTT/41-TCX-01_qgxen1.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/41-TCX-01_qgxen1</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Canxi"/>
@@ -3297,6 +3305,9 @@ Kali giúp các tế bào thực vật thêm cứng cáp hơn nhờ tham gia và
 - Các triệu chứng xuất hiện đầu tiên trên các lá già, sau đó dọc theo mép lá và cuối cùng là ở gốc lá. Các cây bị ảnh hưởng cũng sẽ có các lá phía trên ngắn và rũ xuống có màu xanh đậm &quot;bẩn&quot;. Đầu và mép lá cũng có thể bị khô.</description_symptoms>
         <Điều_trị rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Để lúa đạt năng suất từ 5-7 tấn/ha cần bón bổ sung 20-100K/ ha (24-120 K2O/ha) do đất hằng năm bị lấy đi đáng kể lượng kali qua rơm rạ và hạt lúa
 Lúa lai tạo luôn cần một lượng phân bón Kali (60-120 K2O/ha cho mọi loại đất) nhiều hơn các loại giống Lúa thuần khác.</Điều_trị>
+        <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kali có chức năng khác là thẩm thấu, kích hoạt Enzyme, điều hòa sự thoát hơi nước qua lá, thân qua khí khổng và quá trình vận chuyển các chất đồng hóa của cây.Kali giúp các tế bào thực vật thêm cứng cáp hơn nhờ tham gia vào quá trình hình thành màng tế bào cứng. Mặc dù Kali không tác động đến việc ra nhánh của Lúa nhưng nó có tác dụng tăng rõ rệt số lượng hạt trên bông, tỷ lệ hạt chắc và trọng lượng 1000 hạt.</Describe>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/40-TKL-DAU_y6lbh3,
+LuanVan_CNTT/40-TKL-la_vnyhmo</Image>
         <rdfs:comment>Bệnh do thiếu Kali</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thiếu Kali</rdfs:label>
     </owl:NamedIndividual>
@@ -3317,14 +3328,14 @@ Lúa lai tạo luôn cần một lượng phân bón Kali (60-120 K2O/ha cho m�
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Viền_có_màu_nâu_vàng"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604479545/LuanVan_CNTT/40-TKL-DAU_y6lbh3.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/40-TKL-DAU_y6lbh3</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Kali"/>
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_hoại_tử_nâu_sẫm_trên_đầu_lá_già"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604479546/LuanVan_CNTT/40-TKL-la_vnyhmo.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/40-TKL-la_vnyhmo</Image>
     </owl:Axiom>
     
 
@@ -3357,6 +3368,7 @@ Khuyến cáo bón phân Đạm (N) 2-3 lần (mùa mưa) hoặc 3-4 lần (mùa
 Lúa lai luôn đòi hỏi phải bón lót Đạm
 Lượng Đạm Nitơ cây cần nhiều nhất là giai đoạn giữa đẻ nhánh và hình thành bông
 Khác với Lân và Kali, hiệu lực tồn dư của Đạm là rất nhỏ</Điều_trị>
+        <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đạm (Nitơ) là yếu tố quan trọng giúp tăng năng suất cây Lúa. Ví dụ như: số lượng hạt trên bông, tỷ lệ hạt chắc, hàm lượng Protein trong gạo và do đó bón đủ lượng Đạm là rất quan trọng để Lúa đạt năng suất cao. Tuy nhiên, hiện nay tình trạng thiếu Nitơ (Đạm) ở cây Lúa vẫn còn phổ biến.</Describe>
         <rdfs:comment>Bệnh do thiếu Đạm</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thiếu Đạm</rdfs:label>
     </owl:NamedIndividual>
@@ -3416,10 +3428,10 @@ góc ruộng như: New Hinosan 30EC (1,2 l/ha); Ravral 50 WP (0,1 - 0,2 %);
 - Ở vụ mùa, bệnh thường phát sinh mạnh từ tháng 9 - 10 dương lịch khi nhiệt độ không khí 27 - 30 độ C. Ở vụ xuân, bệnh phát sinh mạnh từ tháng 5.</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Sclerotium oryzae Catt.
 - Là 1 trong số bệnh lúa tương đối nguy hiểm ở nước ta và cũng là bệnh phổ biến ở nhiều nước trồng lúa nước  trên thế giới. Ở Ấn Độ, bệnh tiêm hạch có khi làm chết đến 70 - 80% mạ. Ở Nam Bộ, theo Roger, bệnh thường phá hoại nghiêm trọng ở các tỉnh Bạc Liêu, Cần Thơ, Sóc Trăng. Ở miền Bắc nước ta, từ năm 1954 tới nay năm nào bệnh cũng xuất hiện, gây ra nhiều tổn thất.</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/11-THL-02_jhpfvn.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604471370/LuanVan_CNTT/11-THL-03_rycwte.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604471501/LuanVan_CNTT/11-THL-OR_cb2tng.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/11-THL_zyla11.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/11-THL-02_jhpfvn,
+LuanVan_CNTT/11-THL-03_rycwte,
+LuanVan_CNTT/11-THL-OR_cb2tng.jpg,
+LuanVan_CNTT/11-THL_zyla11</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Tiêm Hạch Lúa</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tiêm Hạch Lúa</rdfs:label>
     </owl:NamedIndividual>
@@ -3436,7 +3448,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/11-TH
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chấm_nâu_dần_chuyển_thành_nâu_đậm_rồi_sau_đen_hẳn."/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bẹ lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/11-THL_zyla11.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/11-THL_zyla11</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Hạch_Lúa"/>
@@ -3449,7 +3461,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/11-TH
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dần_chuyển_sang_màu_vàng_nhạt_vàng_da_cam"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604471370/LuanVan_CNTT/11-THL-03_rycwte.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/11-THL-03_rycwte</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Hạch_Lúa"/>
@@ -3462,7 +3474,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/11-TH
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Ống_rạ_phân_giải_thành_chất_nhầy_có_mùi_hôi"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ống rạ</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604471501/LuanVan_CNTT/11-THL-OR_cb2tng.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/11-THL-OR_cb2tng</Image>
     </owl:Axiom>
     
 
@@ -3503,9 +3515,9 @@ Chú ý việc chọn lọc giống như phơi khô, quạt sạch, chọn hạt
 - Bệnh gây hại chủ yếu trên các giống lúa dài ngày, thiếu dinh dưỡng và vào các thời kỳ khủng hoảng dinh dưỡng trong giai đoạn sinh trưởng của cây lúa (cuối mạ, lúa bị hạn, sau đẻ nhánh, đòng non,...)</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Bipolaris oryzeae
 - Bệnh tiêm lửa hại lúa (Bipolaris oryzeae ) có phạm vi phân bố rộng, phổ biến ở các nước trồng lúa thuộc Châu Á, châu Mỹ và Châu Phi. Hạt bị bệnh phẩm chất và phẩm chất và trọng lượng giảm 4,58 – 29,1%. Bệnh hại mức độ nhẹ, khi bệnh nặng vết bệnh làm lá sớm vàng và khô chết. Bệnh làm cháy lá mạ, lúa nhiễm bệnh vào lúc đòng non cho đến trỗ vỏ hạt thường bị đen, tỷ lệ hạt lửng và lép cao.</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604471957/LuanVan_CNTT/34-TLHL-01_ttphau.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/34-TLHL_kp12yu.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604548371/LuanVan_CNTT/34-TLHL-02_hks0yv.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/34-TLHL-01_ttphau,
+LuanVan_CNTT/34-TLHL_kp12yu,
+LuanVan_CNTT/34-TLHL-02_hks0yv</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Tiêm Lửa Hại Lúa</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tiêm Lửa Hại Lúa</rdfs:label>
     </owl:NamedIndividual>
@@ -3526,7 +3538,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604548371/LuanVan_CNTT/34-TL
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lúa_bị_đen"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hạt</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604741618/LuanVan_CNTT/34-TLHL-03_olgiup.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/34-TLHL-03_olgiup</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Lửa_Hại_Lúa"/>
@@ -3539,7 +3551,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604548371/LuanVan_CNTT/34-TL
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_lúa_có_màu_nâu_non_xung_quanh_có_quầng_vàng_hình_bầu_dục"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/34-TLHL_kp12yu.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/34-TLHL_kp12yu</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Lửa_Hại_Lúa"/>
@@ -3547,7 +3559,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604548371/LuanVan_CNTT/34-TL
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_chuyển_sang_màu_xanh_nâu"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cổ bông</DiseaseSite>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604471957/LuanVan_CNTT/34-TLHL-01_ttphau.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/34-TLHL-01_ttphau</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Lửa_Hại_Lúa"/>
@@ -3555,7 +3567,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604548371/LuanVan_CNTT/34-TL
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Xuất_hiện_nhiều_đốm_nâu_nhỏ_lớn_khác_nhau"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rễ</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604548371/LuanVan_CNTT/34-TLHL-02_hks0yv.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/34-TLHL-02_hks0yv</Image>
     </owl:Axiom>
     
 
@@ -3708,9 +3720,9 @@ Khi cây lúa bị bướu rễ, chất dinh dưỡng bị tắc nghẽn không 
 - Trên đất bỏ hoang tuyến trùng tồn tại trong điều kiện nhiệt độ cao 35 - 40 độ C và thấp nhất là 8 - 12 độ C.
 - Truyền lan qua nước tưới, mương máng và ruộng ngập nước, qua dụng cụ canh tác, qua ruộng mạ sang ruộng cấy. Xâm nhập và di chuyển vào rễ lúa qua mô sinh trưởng tạo ra các vết hoại tử cũng là điều kiện cho các vi sinh vật đất xâm nhiễm gây bệnh thối nâu rễ.</Đặc_điểm_hình_thái>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Hirshmanniella spp.</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604483326/LuanVan_CNTT/33-TTHRL-RE_luvuqw.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135793/LuanVan_CNTT/33-TTHRL-hd_ulwmny.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135793/LuanVan_CNTT/33-TTHRL_fylbsb.gif</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/33-TTHRL-RE_luvuqw,
+LuanVan_CNTT/33-TTHRL-hd_ulwmny,
+LuanVan_CNTT/33-TTHRL_fylbsb</Image>
         <rdfs:comment>Bệnh do Tuyến Trùng Hại Rễ Lúa gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tuyến Trùng Hại Rễ Lúa</rdfs:label>
     </owl:NamedIndividual>
@@ -3720,7 +3732,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135793/LuanVan_CNTT/33-TT
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Biến_màu_vàng_nâu_và_thối"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gốc</DiseaseSite>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rễ</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604483326/LuanVan_CNTT/33-TTHRL-RE_luvuqw.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/33-TTHRL-RE_luvuqw</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Rễ_Lúa"/>
@@ -3780,8 +3792,8 @@ thì vết bệnh xoắn ngọn chỉ xuất hiện sau cấy lúa 2 tháng.</T�
 - Ở điều kiện ngập úng, tuyến trùng mất khả năng hoạt động ít nhất là 4 tháng, song trên đất nhiễm tuyến trùng để khô trong 6 tuần thì vết bệnh xoắn ngọn chỉ xuất hiện sau cấy lúa 2 tháng.
 - Ở Việt Nam, hiện nay với sự chuyển đổi cơ cấu giống lúa thì hàng loạt các giống lúa lai nhập nội và trong nước đã xuất hiện trở lại triệu chứng do tuyến trùng D. Angutus thuộc nhiều tỉnh thành. Các giống như Q5, Khang mằn, Tạp giao 1, Tạp giao 5, Khang dân,.... trồng phổ biến ở nhiều vùng miền Bắc Việt Nam bị nhiễm trùng.</Đặc_điểm_hình_thái>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Ditylenchus angutus</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/15-TTHL-DONG_byxaa7.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604483518/LuanVan_CNTT/15-TTHL-LA_r7zem3.png</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/15-TTHL-DONG_byxaa7,
+LuanVan_CNTT/15-TTHL-LA_r7zem3</Image>
         <rdfs:comment>Bệnh do Tuyến Trùng Hại Thân Lúa gây ra</rdfs:comment>
     </owl:NamedIndividual>
     <owl:Axiom>
@@ -3789,7 +3801,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604483518/LuanVan_CNTT/15-TT
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_non_xoắn_và_không_trỗ_thoát_thậm_chí_bị_phá_hủy"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/15-TTHL-DONG_byxaa7.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/15-TTHL-DONG_byxaa7</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Thân_Lúa"/>
@@ -3803,7 +3815,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604483518/LuanVan_CNTT/15-TT
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_chuyển_sang_màu_xanh_nâu"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bông</DiseaseSite>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604483518/LuanVan_CNTT/15-TTHL-LA_r7zem3.png</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/15-TTHL-LA_r7zem3</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Thân_Lúa"/>
@@ -3853,8 +3865,8 @@ Hạt giống trước khi đưa vào sản xuất cần xử lý bằng nước
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Aphelenchoides beseyi Christie, 1942
 - Bệnh tuyến trùng khô đầu lá lúa có thể làm giảm năng suất từ 50 - 80 %.
 - Bệnh tuyến trùng khô đầu lá lúa xuất hiện trên nhiều nước trồng lúa khác nhau trên thế giới như Ấn Độ, Mỹ, Châu Phi, Brazil, Nga, Việt Nam … Ở nước ta bệnh được phát hiện từ những năm 1967 – 1968 do nhập các lô lúa giống từ Trung Quốc trên các giống như Trân châu lùn, bao thai lùn, mộc tuyền …</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604487858/LuanVan_CNTT/36-TTKDLL-01_pkgoz3.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/36-TTKDLL_smrcxt.png</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/36-TTKDLL-01_pkgoz3,
+LuanVan_CNTT/36-TTKDLL_smrcxt</Image>
         <rdfs:comment>Bệnh Tuyến Trùng Khô Đầu Lá Lúa</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tuyến Trùng Khô Đầu Lá Lúa</rdfs:label>
     </owl:NamedIndividual>
@@ -3875,7 +3887,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/36-TT
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Chồi_phụ_mọc_từ_các_đốt_trên_bị_cong_xoắn_ở_trong_bẹ_lúa"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chồi</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/36-TTKDLL_smrcxt.png</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/36-TTKDLL_smrcxt</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Khô_Đầu_Lá_Lúa"/>
@@ -3894,7 +3906,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135794/LuanVan_CNTT/36-TT
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_xoắn_lại"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604487858/LuanVan_CNTT/36-TTKDLL-01_pkgoz3.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/36-TTKDLL-01_pkgoz3</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Khô_Đầu_Lá_Lúa"/>
@@ -3981,9 +3993,9 @@ Thông thường bệnh sẽ bộc phát mạnh kèm sau các đợt dịch rầ
 - Thời gian lưu tồn bệnh vàng lùn: 3 – 30 ngày.</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Rice Grassy Stunt Virus (RGSV)
 - Tên tiếng anh: Rice grassy stunt virus</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135797/LuanVan_CNTT/08-VL-LA_vpyft2.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135797/LuanVan_CNTT/08-VL-LXL_kvakxn.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135797/LuanVan_CNTT/08-VL_amrml7.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/08-VL-LA_vpyft2,
+LuanVan_CNTT/08-VL-LXL_kvakxn,
+LuanVan_CNTT/08-VL_amrml7</Image>
         <rdfs:comment>Bệnh Vàng Lùn</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vàng Lùn</rdfs:label>
     </owl:NamedIndividual>
@@ -3998,7 +4010,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135797/LuanVan_CNTT/08-VL
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_lá_bị_bệnh_có_xu_hướng_xoè_ngang"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135797/LuanVan_CNTT/08-VL-LA_vpyft2.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/08-VL-LA_vpyft2</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
@@ -4011,7 +4023,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135797/LuanVan_CNTT/08-VL
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dần_chuyển_sang_màu_vàng_nhạt_vàng_da_cam"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135797/LuanVan_CNTT/08-VL_amrml7.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/08-VL_amrml7</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
@@ -4024,7 +4036,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135797/LuanVan_CNTT/08-VL
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_thể_ruộng_lúa_bị_bệnh_ngả_màu_vàng_chiều_cao_cây_lúa_không_đồng_đều."/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quần thể</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135797/LuanVan_CNTT/08-VL-LXL_kvakxn.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/08-VL-LXL_kvakxn</Image>
     </owl:Axiom>
     
 
@@ -4063,9 +4075,9 @@ Nếu phát hiện trên ruộng có dảnh bị nhiễm bệnh thì ngay lập 
 - Trên ruộng lúa lúc đầu có một số dảnh lúa bị bệnh, sau đó từ những dảnh này lan ra thành từng chòm và toàn ruộng. Sự phát triển và tác hại của bệnh có liên quan chặt chẽ với giống lúa, số lượng rầy và đặc điểm ruộng. Mức độ nhiểm bệnh lúa vàng lụi của các giống lúa rất khác nhau.</description_symptoms>
         <Điều_trị>Khi ruộng bị bệnh nhẹ và ở giai đoạn lúa đẻ nhánh, áp dụng các biện pháp thay nước ruộng, bón thêm vôi và phân lân kết hợp làm cỏ sục bùn, phun thuốc trừ rầy, sau đó khoảng 7-10 ngày bộ rễ lúa phát triển sẽ làm cho cây lúa hồi phục và cho năng suất bình thường.</Điều_trị>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Transitory yellowing</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604546813/LuanVan_CNTT/30-VL-03_lrszdr.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604489508/LuanVan_CNTT/30-VL_bxx8qf.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604489622/LuanVan_CNTT/30-VL-02_tby3dk.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/30-VL-03_lrszdr,
+LuanVan_CNTT/30-VL_bxx8qf,
+LuanVan_CNTT/30-VL-02_tby3dk</Image>
         <rdfs:comment>Bệnh Vàng Lụi</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vàng Lụi</rdfs:label>
     </owl:NamedIndividual>
@@ -4080,7 +4092,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604489622/LuanVan_CNTT/30-VL
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_chồi_lúa_bị_bệnh_giảm_chiều_cao_bị_lùn_cây"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chồi</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604489622/LuanVan_CNTT/30-VL-02_tby3dk.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/30-VL-02_tby3dk</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
@@ -4105,14 +4117,14 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604489622/LuanVan_CNTT/30-VL
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_có_các_vết_sọc_vàng_nhỏ_ngăn_khác_nhau"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604546813/LuanVan_CNTT/30-VL-03_lrszdr.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/30-VL-03_lrszdr</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dần_chuyển_sang_màu_vàng_nhạt_vàng_da_cam"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604489624/LuanVan_CNTT/30-VL-01_bbd3nu.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/30-VL-01_bbd3nu</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
@@ -4131,7 +4143,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604489622/LuanVan_CNTT/30-VL
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Quần_thể_ruộng_lúa_bị_bệnh_ngả_màu_vàng_chiều_cao_cây_lúa_không_đồng_đều."/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quần thể</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604489622/LuanVan_CNTT/30-VL-02_tby3dk.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/30-VL-02_tby3dk</Image>
     </owl:Axiom>
     
 
@@ -4162,8 +4174,8 @@ Bệnh làm giảm 20 – 30% năng suất lúa.</Tác_hại>
 hoặc Benlat 1,5 – 3 g/kg hạt.</Điều_trị>
         <Đặc_điểm_phát_sinh_và_phát_triển rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh thường xuất hiện vào thời kỳ cây lúa đang sinh trưởng, từ giai đoạn lúa ccon đứng gái, đứng cái đến đòng trỗ  (hại trên lá) thường vào tháng 3 – 4 trở đi (vụ lúa xuân) và tháng 8 – 9 (vụ lúa mùa), trong điều kiện nhiệt độ tương đối cao, tăng dần và có nắng, nhất là những ruộng có nước. Nấm bệnh bảo tồn trên tàn dư lá bệnh và ở trên hạt giống một thời gian lâu dài, có khi tới 11 năm (Mathur và Neergaard, 1985).</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Microdochium oryzae Samuels</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/13-VNLL-LA_h2dpin.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/13-VNLL_hpqrta.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/13-VNLL-LA_h2dpin,
+LuanVan_CNTT/13-VNLL_hpqrta</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Vàng Nâu Lá Lúa</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vàng Nâu Lá Lúa</rdfs:label>
     </owl:NamedIndividual>
@@ -4192,14 +4204,14 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/13-VN
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_lúa_có_nhiều_đường_vân_vòng_cung_nối_tiếp_nhau_loen_rộng_ra"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chóp lá</DiseaseSite>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phiến lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/13-VNLL_hpqrta.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/13-VNLL_hpqrta</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vân_Nâu_Lá_Lúa"/>
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vùng_bị_nhiễm_khô_như_bị_phỏng_đi_giống_như_là_đã_chín"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phiến lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135799/LuanVan_CNTT/13-VNLL-LA_h2dpin.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/13-VNLL-LA_h2dpin</Image>
     </owl:Axiom>
     
 
@@ -4460,11 +4472,11 @@ Khi phát hiện ổ bệnh trên đồng ruộng cần tiến hành phun thuố
 - Bệnh đạo ôn là một trong những bệnh phổ biến và gây hại có ý nghĩa kinh tế nhất ở các nước trồng lúa trên thế giới. Bệnh được phát hiện đầu tiên ở Italia năm 1560, sau đó là ở Trung Quốc năm 1906, và Ấn Độ năm 1913,vvv....Ở nước ta, Vincens (người pháp) đã phát hiện một số bệnh ở Nam Bộ ở Nam Bộ vào năm 1921. Nam 1951, Roger (người pháp) đã xác định sự xuất hiện và gây hại của bệnh ở vùng Bắc Bộ.. 
 - Hiện nay, bệnh đạo ôn hại lúa đã phát sinh phá hoại nghiêm trọng nhiều nơi ở miền Bắc nước ta như Hải Phòng, Thái Nguyên, Ninh Bình, Bắc Giang. Vụ đông xuân 1991 - 19922 ở miền Bắc diện tính lúa bi bệnh đạo ôn lá là 292.0000 ha, trong đó có tới 241.000 ha bị đạo ôn phá lên cổ bông. Ở miềm nam, diện tích bị bệnh đạo ôn năm 1992 là 165.000ha.
 - Theo Padmanabban (1965) khi lúa đạo ôn cổ bông 1% thì năng suất có thể bị giảm từ 0,7 - 17,4% tùy thuộc vào các yếu tố có liên quan tâm.</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604472492/LuanVan_CNTT/05-DO-CO_kjfoe1.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/05-DO-HAT_zwaeqg.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/05-DO-MA_pzt0q9.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/05-DO-THAN_xfzqrm.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/05-DO_jozj45.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/05-DO-CO_kjfoe1,
+LuanVan_CNTT/05-DO-HAT_zwaeqg,
+LuanVan_CNTT/05-DO-MA_pzt0q9,
+LuanVan_CNTT/05-DO-THAN_xfzqrm,
+LuanVan_CNTT/05-DO_jozj45</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Đạo Ôn</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đạo Ôn</rdfs:label>
     </owl:NamedIndividual>
@@ -4479,7 +4491,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/05-DO
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Cổ_bông_mọc_một_lớp_nấm_mốc_màu_xám_xanh_dễ_bị_gãy"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cổ bông</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604472492/LuanVan_CNTT/05-DO-CO_kjfoe1.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/05-DO-CO_kjfoe1</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
@@ -4510,14 +4522,14 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/05-DO
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_hạt_vết_bệnh_có_hình_tròn_viền_nâu_tâm_màu_xám_trắng"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hạt</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/05-DO-HAT_zwaeqg.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/05-DO-HAT_zwaeqg</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_lá_có_hình_thoi_những_đốm_to_thì_hai_đầu_nhọn_tâm_có_màu_xám_trắng"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/05-DO-MA_pzt0q9.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/05-DO-MA_pzt0q9</Image>
     </owl:Axiom>
     
 
@@ -4571,11 +4583,11 @@ Bệnh do nấm Bipolaris Oryzae, tồn tại chủ yếu từ hạt giống. Ph
         <Điều_trị>Khi ruộng có triệu chứng bị hại, cần phun thuốc TilSuper300EC. Một cốc TilSuper300EC pha đều trong bình 16 lít nước, phun cho 6 - 8 thước ruộng vào chiều mát không mưa. Phun 2 lần liên tục, lần 2 sau lần 1 từ 3 - 4 ngày.</Điều_trị>
         <Đặc_điểm_phát_sinh_và_phát_triển rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nguyên nhân do thời tiết có nhiều nắng nóng nhiệt cao, độ ẩm không khí cao thấp thất thường, cây lúa thường xuyên bị đói hoặc không được đáp ứng kịp thời các yếu tố dinh dưỡng và nước vì đặc điểm chân ruộng.</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Cercospora oyzae Myyake Sephaerulina oryzina Hara.</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/38-DN-HATjpg_rgrv75.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604472928/LuanVan_CNTT/38-DN-LA-01_xk6f7g.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604472940/LuanVan_CNTT/38-DN-LA_bmhqbk.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/38-DN_kgbdkp.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/38-DN-CAY_upxgm1.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/38-DN-HATjpg_rgrv75,
+LuanVan_CNTT/38-DN-LA-01_xk6f7g,
+LuanVan_CNTT/38-DN-LA_bmhqbk,
+LuanVan_CNTT/38-DN_kgbdkp,
+LuanVan_CNTT/38-DN-CAY_upxgm1</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Đốm Nâu</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đốm Nâu</rdfs:label>
     </owl:NamedIndividual>
@@ -4596,7 +4608,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/38-DN
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_có_nhiều_đốm_nâu"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hạt</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/38-DN-HATjpg_rgrv75.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/38-DN-HATjpg_rgrv75</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Nâu"/>
@@ -4609,14 +4621,14 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135795/LuanVan_CNTT/38-DN
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_nâu_tròn_bầu_dục_có_màu_nâu_xám_nhạt"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604472940/LuanVan_CNTT/38-DN-LA_bmhqbk.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/38-DN-LA_bmhqbk</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Nâu"/>
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Xuất_hiện_nhiều_đốm_nâu_nhỏ_lớn_khác_nhau"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604472928/LuanVan_CNTT/38-DN-LA-01_xk6f7g.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/38-DN-LA-01_xk6f7g</Image>
     </owl:Axiom>
     
 
@@ -4647,10 +4659,10 @@ Rắc vôi để hạn chế bệnh lây lan sang các cây khác</Điều_trị
 - Nguồn bệnh vi khuẩn bảo tồn, truyền qua hạt giống, tàn dư lá bệnh và nước tưới. Vi khuẩn cũng có thể gây bện, lưu tồn trên cây dại như lúa dại Oryza perennis.</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Xanthomonas oryzicola Fang
 - Bệnh phổ biến rất rộng ở nước ta và các nước châu Á nhiệt đới.</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135791/LuanVan_CNTT/02-DSVK-1_r6skl6.png,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135792/LuanVan_CNTT/02-DSVK-2_vvlzfr.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604486834/LuanVan_CNTT/02-DSVK-3_qbzcyw.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604546616/LuanVan_CNTT/02-DSVK-4_jhfd2g.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/02-DSVK-1_r6skl6,
+LuanVan_CNTT/02-DSVK-2_vvlzfr,
+LuanVan_CNTT/02-DSVK-3_qbzcyw,
+LuanVan_CNTT/02-DSVK-4_jhfd2g</Image>
         <rdfs:comment>Bệnh Đốm Sọc Vi Khuẩn</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đốm Sọc Vi Khuẩn</rdfs:label>
     </owl:NamedIndividual>
@@ -4665,14 +4677,14 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604546616/LuanVan_CNTT/02-DS
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Các_đốm_chạy_dọc_giữa_các_gân_lá_tạo_thành_các_sọc_nâu_hẹp"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604486834/LuanVan_CNTT/02-DSVK-3_qbzcyw.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/02-DSVK-3_qbzcyw</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Sọc_Vi_Khuẩn"/>
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_có_các_vết_sọc_vàng_nhỏ_ngăn_khác_nhau"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604546616/LuanVan_CNTT/02-DSVK-4_jhfd2g.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/02-DSVK-4_jhfd2g</Image>
     </owl:Axiom>
     
 
@@ -4707,8 +4719,8 @@ Bệnh nặng sẽ làm cây lúa chết và có thể gây thất thu năng su�
         <Điều_trị>Xử lý hạt với Dithane M-45 (Zineb) hay Ceresan, hoặc Rovral 50 WP ở nồng độ 0,2% hoặc bằng nước nóng (54°C).
 Phun Rovral 50 WP, nồng độ 0,2% từ khi lúa trổ trở về sau</Điều_trị>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Alternaria adwickii</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604548812/LuanVan_CNTT/10-DV-02_p8fak1.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/10-DV_zcwzot.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/10-DV-02_p8fak1,
+LuanVan_CNTT/10-DV_zcwzot</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Đốm Vòng</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đốm Vòng</rdfs:label>
     </owl:NamedIndividual>
@@ -4735,14 +4747,14 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/10-DV
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_bệnh_có_hình_ovan_đến_hình_tròn_xung_quanh_màu_vàng_nhạt_và_xám_có_đốm_đen_ở_giửa_tâm"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135798/LuanVan_CNTT/10-DV_zcwzot.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/10-DV_zcwzot</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_Vòng"/>
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Xuất_hiện_nhiều_điểm_trắng_nhỏ"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604548812/LuanVan_CNTT/10-DV-02_p8fak1.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/10-DV-02_p8fak1</Image>
     </owl:Axiom>
     
 
@@ -4811,8 +4823,8 @@ Sử dụng giống tốt có tỷ lệ nẩy mầm cao.</Phòng_chống>
 - Họ: Ampullariidae
 - Lớp Chân bụng: Gastropoda
 - Ngành Thân mềm: Mollusca</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604483120/LuanVan_CNTT/31-OBV_wdbkup.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604483133/LuanVan_CNTT/31-OBV-01_wpucmv.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/31-OBV_wdbkup,
+LuanVan_CNTT/31-OBV-01_wpucmv</Image>
         <rdfs:comment>Bệnh do Ốc Bươu Vàng gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ốc Bươm Vàng</rdfs:label>
     </owl:NamedIndividual>
@@ -4880,9 +4892,9 @@ Con non ngay sau khi nở đã bắt đầu phá hại. Trưởng thành hoạt 
 - Châu chấu (cào cào) tre lưng vàng: Ceracris spp
 - Họ: Acrididae
 - Bộ: Orthoptera</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135790/LuanVan_CNTT/25-CC-CC_dsbicc.jpg, 
-https://res.cloudinary.com/taoluanby/image/upload/v1604135790/LuanVan_CNTT/25-CC-CC-SAU_cxnmc9.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604475559/LuanVan_CNTT/25-CC-CC-LA_lp2oyh.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/25-CC-CC_dsbicc, 
+LuanVan_CNTT/25-CC-CC-SAU_cxnmc9,
+LuanVan_CNTT/25-CC-CC-LA_lp2oyh</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do Châu Chấu/Cào Cào gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Châu Chấu/Cào Cào</rdfs:label>
     </owl:NamedIndividual>
@@ -4891,7 +4903,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604475559/LuanVan_CNTT/25-CC
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_cắn_khuyết_từng_mảng_từng_đoạn_và_có_thể_trụi_lá"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604475559/LuanVan_CNTT/25-CC-CC-LA_lp2oyh.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/25-CC-CC-LA_lp2oyh</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Châu_Chấu/Cào_Cào"/>
@@ -4944,9 +4956,9 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604475559/LuanVan_CNTT/25-CC
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Dicladispa armigera
 - Họ: Chyrysomelidae
 - Bộ: Coleoptera</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135789/LuanVan_CNTT/24-SG-BG-LAJPG_slkdis.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135789/LuanVan_CNTT/24-SG-BG-LA_h4l9jk.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135790/LuanVan_CNTT/24-SG-BG-SAU_ivonek.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/24-SG-BG-LAJPG_slkdis,
+LuanVan_CNTT/24-SG-BG-LA_h4l9jk
+LuanVan_CNTT/24-SG-BG-SAU_ivonek</Image>
         <rdfs:comment>Bệnh do Sâu Gai hay Bọ Gai gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Gai/Bọ Gai</rdfs:label>
     </owl:NamedIndividual>
@@ -4967,7 +4979,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604135790/LuanVan_CNTT/24-SG
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mặt_trên_phiến_lá_bị_cắn_lỗ"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phiến lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135790/LuanVan_CNTT/24-SG-BG-SAU_ivonek.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/24-SG-BG-SAU_ivonek</Image>
     </owl:Axiom>
     
 
@@ -5002,9 +5014,9 @@ Nấm xâm nhiễm vào hạt, biến từng hạt riêng rẻ của bông lúa 
 + Kiểu 2: hạt bị bệnh khi chín, khi đó các bào tử tích tụ lại trên nhân hạt, phình to ra và ép vỏ hạt sang 1 phía.  Cuối cùng nấm tiếp xúc với với nội nhũ và sự sinh trưởng của nấm được đẩy nhanh, nấm chiếm chỗ và bao bọc toàn bộ hạt.</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Ustilaginoidea virens (Cooke) Taka
 - Bệnh phân bố rộng ở các vùng trồng lúa châu Á, châu Phi, châu Mỹ La - tinh. Bệnh đã gây thiệt hại cho lúa ở Philippin (Reinking, 1918) và Myanmar (Seth, 1935).</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135797/LuanVan_CNTT/07-TV-HC-HAT_k4osrt.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604135797/LuanVan_CNTT/07-TV-HC_dqotde.jpg,
-https://res.cloudinary.com/taoluanby/image/upload/v1604485297/LuanVan_CNTT/07-TV-HC-_hbzsig.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/07-TV-HC-HAT_k4osrt,
+LuanVan_CNTT/07-TV-HC_dqotde,
+LuanVan_CNTT/07-TV-HC-_hbzsig</Image>
         <rdfs:comment>Bệnh Than Vàng/Hoa Cúc</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Than Vàng/Hoa Cúc</rdfs:label>
     </owl:NamedIndividual>
@@ -5025,7 +5037,7 @@ https://res.cloudinary.com/taoluanby/image/upload/v1604485297/LuanVan_CNTT/07-TV
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Trên_hạt_có_bám_các_hạt_nắm_máu_vàng_phìn_to"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hạt</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604485297/LuanVan_CNTT/07-TV-HC-_hbzsig.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/07-TV-HC-_hbzsig</Image>
     </owl:Axiom>
     
 
@@ -5062,7 +5074,7 @@ Phun thuốc Nevo 330EC hay các sản phẩm có hoạt chất (Difenoconazole 
 - Sự xâm nhập và lan truyền bệnh: Vi khuẩn lưu tồn sẵn trong đất, nước, xâm nhập qua vết thương, làm nghẽn mạch, gây héo. Bệnh lan truyền rất nhanh, trường hợp thiệt hại nhẹ thì lúa chết từng chòm, trường hợp nặng có thể cả ruộng lúa chết rụi.
 - Bệnh thối thân có thể bộc phát thành dịch và gây hại nghiêm trọng nếu ruộng lúa bị ngộ độc hữu cơ, bị phèn, mặn, nhiễm rầy nâu hoặc nhiễm bệnh đạo ôn.</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Erwinia sp</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/06-TT_czt2j5.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/06-TT_czt2j5</Image>
         <rdfs:comment>Bệnh Thối Thân, Thối Rễ và Thối Bẹ</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thối Thân/Thối Rễ/Thối Bẹ</rdfs:label>
     </owl:NamedIndividual>
@@ -5087,7 +5099,7 @@ Phun thuốc Nevo 330EC hay các sản phẩm có hoạt chất (Difenoconazole 
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bẹ lá</DiseaseSite>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rễ</DiseaseSite>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thân</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://res.cloudinary.com/taoluanby/image/upload/v1604135796/LuanVan_CNTT/06-TT_czt2j5.jpg</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/06-TT_czt2j5</Image>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thối_Thân/Thối_Rễ/Thối_Bẹ"/>

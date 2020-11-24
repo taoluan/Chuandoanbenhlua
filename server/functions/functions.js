@@ -258,5 +258,21 @@ module.exports={
             }
         }
         return {rs : false , vt: i};;
+    },
+    handling_dsbenh: (data)=>{
+        return new Promise((res,rej)=>{
+            let dataset =[ { loaibenh: "Sâu" , benh:[]},
+                            { loaibenh: "Nắm" , benh:[]},
+                            { loaibenh: "Thiếu Chất Dinh Dưỡng" , benh:[]},
+                            { loaibenh: "Vi Khuẩn" , benh:[]},
+                            { loaibenh: "Virus" , benh:[]},
+                            { loaibenh: "Tuyến Trùng" , benh:[]}]
+            dataset.map(x=>{
+                data.map(y=>{
+                    (x.loaibenh == y.ten_loaibenh.value) && x.benh.push({ten_benh : y.ten_benh.value , uri_tenbenh: y.uri_benh.value})
+                })
+            })
+            res(dataset)
+        })
     }
 }

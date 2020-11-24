@@ -11,4 +11,6 @@ router.get('/timkiem',urlencodedParser,api_controllers.timkiem)
 router.get('/thongketheoloaibenh',api_controllers.thongketheoloaibenh)
 router.get('/thongketheokhuvuc',api_controllers.thongketheokhuvuc)
 router.get('/dscacbenh',api_controllers.dscacbenh)
+router.get('/dscacbenhNoType',api_controllers.dsbenhNoType)
+router.get('/gettrieuchung',api_controllers.getTrieuChung)
 module.exports = router;

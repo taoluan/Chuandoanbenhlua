@@ -194,5 +194,45 @@ module.exports = {
         } catch (err) {
             console.log(err)
         }
+    },
+    dsbenhNoType:async(req,res)=>{
+        try {
+            let data = await graphDBEndpoint.query(
+                `
+                select  ?ten_benh  ?uri_benh ?ten_loaibenh
+                WHERE { 
+                    ?uri_loaibenh rdfs:subClassOf data:Bệnh;
+                                rdfs:label ?ten_loaibenh.
+                    ?uri_benh rdf:type ?uri_loaibenh;
+                            rdfs:label ?ten_benh.
+                    
+                }orderby ?uri_loaibenh
+                `
+            )
+            let result = await functions.handling_dsbenh(data.results.bindings)
+            res.json(result)
+        } catch (err) {
+            console.log(err)
+        }
+    },
+    getTrieuChung:async(req,res)=>{
+        try {
+            let uri_benh = req.query.uri_benh
+            let data = await graphDBEndpoint.query(
+                `
+                select DISTINCT ?ten_trieuchung  ?uri_trieuchung ?vitri
+                WHERE { 
+                    ?uri_trieuchung data:isSymptomOf <${uri_benh}>;
+                                    rdfs:comment ?ten_trieuchung.
+                    ?annotation owl:annotatedSource <${uri_benh}>;
+                                owl:annotatedTarget  ?uri_trieuchung;
+                                data:DiseaseSite ?vitri.
+                }
+                `
+            )
+            res.json(data.results.bindings)
+        } catch (err) {
+            console.log(err)
+        }
     }
 }

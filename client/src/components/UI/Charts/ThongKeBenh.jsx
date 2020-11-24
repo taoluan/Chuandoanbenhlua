@@ -2,6 +2,8 @@ import React,{useState,useEffect} from 'react';
 import { HorizontalBar } from 'react-chartjs-2';
 import { MDBContainer } from 'mdbreact';
 import diseseaApi from '../../../api/diseseaApi'
+import {  useSelector , useDispatch} from 'react-redux'
+import {countDisesea} from '../../../actions/disesea'
 const data =()=>{
   let data = {
       labels: [],
@@ -33,6 +35,7 @@ const data =()=>{
   return data
 }
 const ThongKeBenh = (props)=> {
+  const  dispatch = useDispatch()
   const [dataHorizontal,setDataHorizontal] = useState(data);
   useEffect(() => {
     let unmounted = false;
@@ -46,6 +49,8 @@ const ThongKeBenh = (props)=> {
           labels:respose.label,
           datasets:dataset
         })
+        const action = countDisesea(respose)
+        dispatch(action)
       } catch (error) {
         console.log(error)
       }

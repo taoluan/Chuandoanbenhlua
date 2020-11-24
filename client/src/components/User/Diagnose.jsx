@@ -20,11 +20,11 @@ const top100Films = [
 const Dianose = () =>{
   let history = useHistory();
   const [textSearch, setTextSearch] = useState()
-  const [trieuchung,setTrieuChung] = useState()
+  const [benh,setBenh] = useState()
   const [check, setCheck] = useState(false)
-  const showBenh = (e,value)=>{
+  const showBenh = (value)=>{
     setCheck(true)
-    setTrieuChung(value)
+    setBenh(value)
   }
   const checkSearch = ()=>{
     (textSearch) ?  history.push("/chuandoan/"+textSearch) : alert(12)
@@ -62,7 +62,7 @@ const Dianose = () =>{
                   </header>
                 </MDBCol>
                 <MDBCol md="12" className=" pr-0 pl-0">
-                  {check ? <TimeLine/>:<ThongBao title="Chưa có thông tin về bệnh" subTitle="Vui lòng chọn bệnh phía bên phải"/> }
+                  {check ? <TimeLine uri_benh={benh}/>:<ThongBao title="Chưa có thông tin về bệnh" subTitle="Vui lòng chọn bệnh phía bên phải"/> }
                 </MDBCol>
               </MDBCol>
             </MDBRow>
