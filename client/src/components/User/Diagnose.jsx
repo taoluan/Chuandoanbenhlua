@@ -23,8 +23,11 @@ const Dianose = () =>{
   const [benh,setBenh] = useState()
   const [check, setCheck] = useState(false)
   const showBenh = (value)=>{
-    setCheck(true)
-    setBenh(value)
+    if(!Number.isInteger(value)){
+      setCheck(true)
+      setBenh(value)
+    }
+    
   }
   const checkSearch = ()=>{
     (textSearch) ?  history.push("/chuandoan/"+textSearch) : alert(12)
@@ -61,7 +64,7 @@ const Dianose = () =>{
                       <p className="title-2">Triệu chứng trên Lúa</p>
                   </header>
                 </MDBCol>
-                <MDBCol md="12" className=" pr-0 pl-0">
+                <MDBCol md="12" className=" pr-0 pl-0 d-flex justify-content-center align-items-center">
                   {check ? <TimeLine uri_benh={benh}/>:<ThongBao title="Chưa có thông tin về bệnh" subTitle="Vui lòng chọn bệnh phía bên phải"/> }
                 </MDBCol>
               </MDBCol>

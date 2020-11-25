@@ -4,15 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import TreeView from '@material-ui/lab/TreeView';
 import TreeItem from '@material-ui/lab/TreeItem';
 import Typography from '@material-ui/core/Typography';
-import BugReportIcon from '@material-ui/icons/BugReport';
-import GestureIcon from '@material-ui/icons/Gesture';
-import InfoIcon from '@material-ui/icons/Info';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
-import BubbleChartIcon from '@material-ui/icons/BubbleChart';
-import InvertColorsOffIcon from '@material-ui/icons/InvertColorsOff';
-import AdbIcon from '@material-ui/icons/Adb';
-import EmojiNatureIcon from '@material-ui/icons/EmojiNature';
 import Icon from '../UndrawDesigner/IconSVG'
 import diseseaApi from '../../../api/diseseaApi'
 import FetchTreeItem from './FetchTreeItem'
@@ -38,32 +31,33 @@ const GmailTreeView = ({show}) =>{
         defaultCollapseIcon={<ArrowDropDownIcon />}
         defaultExpandIcon={<ArrowRightIcon />}
         defaultEndIcon={<div style={{ width: 24 }} />}
+        onNodeSelect={(event, value)=>{show(value)}}
       >
         {
           dsbenh.map((x,key)=>{
             if(x.loaibenh === "Sâu"){
               return(
-                <FetchTreeItem key={key} dsbenh={x} icon={IconSau} evShow={show}/>
+                <FetchTreeItem key={key} value={key} dsbenh={x} icon={IconSau} evShow={show}/>
               )
             }else if(x.loaibenh ==="Nắm"){
               return(
-                <FetchTreeItem key={key} dsbenh={x} icon={IconNam} evShow={show}/>
+                <FetchTreeItem key={key} value={key} dsbenh={x} icon={IconNam} evShow={show}/>
               )
             }else if(x.loaibenh ==="Thiếu Chất Dinh Dưỡng"){
               return(
-                <FetchTreeItem key={key} dsbenh={x} icon={IconChatDD} evShow={show}/>
+                <FetchTreeItem key={key} value={key} dsbenh={x} icon={IconChatDD} evShow={show}/>
               )
             }else if(x.loaibenh === "Vi Khuẩn"){
               return(
-                <FetchTreeItem key={key} dsbenh={x} icon={IconVikhuan} evShow={show}/>
+                <FetchTreeItem key={key} value={key} dsbenh={x} icon={IconVikhuan} evShow={show}/>
               )
             }else if(x.loaibenh ==="Tuyến Trùng"){
               return(
-                <FetchTreeItem key={key} dsbenh={x} icon={IconTuyentrung} evShow={show}/>
+                <FetchTreeItem key={key} value={key} dsbenh={x} icon={IconTuyentrung} evShow={show}/>
               )
             }else {
               return(
-                <FetchTreeItem key={key} dsbenh={x} icon={IconVirus} evShow={show}/>
+                <FetchTreeItem key={key} value={key} dsbenh={x} icon={IconVirus} evShow={show}/>
               )
             }
           })

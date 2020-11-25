@@ -3,21 +3,22 @@ import { MDBView,MDBMask,MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,MDBC
 import UndrawDesigner from '../UI/UndrawDesigner/UndrawDesigner'
 import ChartThongKeBenh from '../UI/Charts/ThongKeBenh'
 import ChartMap from '../UI/Charts/Map'
-import TextField from '@material-ui/core/TextField';
+import {  useSelector , useDispatch} from 'react-redux'
 import Search from '../UI/Search/Search'
 import StepperHome from '../UI/Stepper/StepperHome'
 import TabListDisesea from '../UI/Tab/TabListDisesea'
 import '../../css/home.css'
 import Header from '../UI/Header/Header'
 import ChartThongKeKhuVuc from '../UI/Charts/ThongKeKhuVuc'
-require('dotenv').config()
+import diseseaApi from '../../api/diseseaApi'
+import {countDisesea} from '../../reduxToolkit/Slice/diseseaSlice' 
 const top100Films = [
   { title: 'The Shawshank Redemption', year: 1994 },
   { title: 'The Godfather', year: 1972 },
   { title: 'The Godfather: Part II', year: 1974 },
 ]
 const Home = ()=>{
-    const [test, settest] = useState([])
+    const [loaibenh, setLoaiBenh] = useState([])
     return(
         <>
         <Header url={true}/>

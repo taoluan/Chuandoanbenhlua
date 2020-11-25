@@ -3,7 +3,9 @@ import { HorizontalBar } from 'react-chartjs-2';
 import { MDBContainer } from 'mdbreact';
 import diseseaApi from '../../../api/diseseaApi'
 import {  useSelector , useDispatch} from 'react-redux'
-import {countDisesea} from '../../../actions/disesea'
+import {countDisesea , getCountBenh} from '../../../reduxToolkit/Slice/diseseaSlice'
+import { unwrapResult } from '@reduxjs/toolkit';
+//import {countDisesea} from '../../../actions/disesea'
 const data =()=>{
   let data = {
       labels: [],
@@ -35,13 +37,13 @@ const data =()=>{
   return data
 }
 const ThongKeBenh = (props)=> {
-  const  dispatch = useDispatch()
+  const dispatch = useDispatch()
   const [dataHorizontal,setDataHorizontal] = useState(data);
   useEffect(() => {
-    let unmounted = false;
     const fetchDiseseathongke_all = async ()=>{
       try {
         const respose = await diseseaApi.thongkeLoaiBenh()
+        await dispatch(getCountBenh())
         let dataset = dataHorizontal.datasets
         dataset[0].data = respose.dataset
         setDataHorizontal({
@@ -49,8 +51,7 @@ const ThongKeBenh = (props)=> {
           labels:respose.label,
           datasets:dataset
         })
-        const action = countDisesea(respose)
-        dispatch(action)
+        
       } catch (error) {
         console.log(error)
       }
@@ -88,8 +89,7 @@ const ThongKeBenh = (props)=> {
     (props.option === "all")
     ? fetchDiseseathongke_all()
     : fetchDiseseathongke_khuvuc(props.option)
-    return () => { unmounted = true };
-  },[])
+  },[props.option])
     return (
       <MDBContainer>
         <HorizontalBar

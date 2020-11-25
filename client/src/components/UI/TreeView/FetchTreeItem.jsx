@@ -6,7 +6,7 @@ import Icon from '../UndrawDesigner/IconSVG'
 
 const FetchTreeItem = (props) => {
     return(
-        <StyledTreeItem nodeId={props.dsbenh.loaibenh} labelText={props.dsbenh.loaibenh} labelIcon={props.icon} labelInfo={Number(props.dsbenh.benh.length)}  color="#03a9f4" bgColor="#e1f5fe">
+        <StyledTreeItem nodeId={props.value} labelText={props.dsbenh.loaibenh} labelIcon={props.icon} labelInfo={Number(props.dsbenh.benh.length)}  color="#03a9f4" bgColor="#e1f5fe">
             {
                 props.dsbenh.benh.map((x,key)=>{
                   return(
@@ -15,7 +15,6 @@ const FetchTreeItem = (props) => {
                       nodeId={x.uri_tenbenh}
                       labelText={x.ten_benh}
                       labelIcon={IconWarning}
-                      onClick={()=>{props.evShow(x.uri_tenbenh)}}
                     />
                   )
                 })            
