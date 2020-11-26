@@ -1,5 +1,5 @@
 /* eslint-disable no-use-before-define */
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import parse from 'autosuggest-highlight/parse';
@@ -7,30 +7,39 @@ import match from 'autosuggest-highlight/match';
 import { MDBBtn,MDBContainer, MDBCol } from 'mdbreact';
 import Icon from '../UndrawDesigner/IconSVG'
 import { useHistory ,useLocation } from 'react-router-dom';
-
-export default function Search() {
+import diseseaApi from '../../../api/diseseaApi'
+const Search = ()=> {
     const [textSearch, setTextSearch] = useState()
+    const [data,setData] = useState([])
     let location = useLocation();
     let history = useHistory();
     const checkSearch = ()=>{
         (textSearch)
-            ? history.push("/chuandoan/"+textSearch)
+            ? history.push("/chuandoan/"+textSearch.trieuchung+"/"+textSearch.vitri)
             : alert(12)
-      }
-    return (
+    }
+    useEffect(() => {
+        const fetchAllTrieuChung = async() =>{
+            const respose = await diseseaApi.getAllTrieuChung()
+            setData(respose)
+        }
+        fetchAllTrieuChung()
+    }, [])
+    if(data.length > 0){
+        return (
         <>
             <MDBCol md="9" sm="12" size="12" >
                 <Autocomplete
                 id="highlights-demo"
-                options={top100Films}
-                getOptionLabel={(option) => option.title}
-                onChange={(e,value)=>{setTextSearch(value.title)}}
+                options={data}
+                getOptionLabel={(option) => option.ten_trieuchung}
+                onChange={(e,value)=>{setTextSearch(value)}}
                 renderInput={(params) => (
                     <TextField {...params} label="Nhập triệu chứng trên lúa ?" variant="outlined" margin="normal" />
                 )}
                 renderOption={(option, { inputValue }) => {
-                    const matches = match(option.title, inputValue);
-                    const parts = parse(option.title, matches);
+                    const matches = match(option.ten_trieuchung, inputValue);
+                    const parts = parse(option.ten_trieuchung, matches);
 
                     return (
                     <div>
@@ -51,9 +60,15 @@ export default function Search() {
             </MDBCol>
         </>
     );
+    }else{
+        return(
+            <></>
+        )
+    }
+    
 }
 const top100Films = [
-  { title: 'Dangal', year: 2016 },
+  { title: 'Dangal', year: 2016 , uri:'Biến_màu_vàng_nâu_và_thối' },
   { title: 'The Sting', year: 1973 },
   { title: '2001: A Space Odyssey', year: 1968 },
   { title: "Singin' in the Rain", year: 1952 },
@@ -65,3 +80,4 @@ const top100Films = [
   { title: '3 Idiots', year: 2009 },
   { title: 'Monty Python and the Holy Grail', year: 1975 },
 ];
+export default React.memo(Search)

@@ -5,17 +5,51 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
+import {Image as ImageCloud} from 'cloudinary-react';
+
 function ShowImage(props){
+    const handleChange = (event) => {
+        console.log(event.target.value +""+props.value )
+       // props.oncheck({img: event.target.value})
+        
+      };
+    if(props.hinhanh.length > 1){
         return(
-                <MDBCol sm="4">
-                    <MDBCol sm="12">
-                    <img src="https://mdbootstrap.com/img/Others/documentation/1.jpg" className="img-fluid" alt="" />  
+            <RadioGroup aria-label="gender" name="gender1"  onChange={handleChange}>
+                <MDBRow>
+                    <MDBCol sm="6" className="d-flex justify-content-center">
+                        <MDBRow>
+                            <MDBCol sm="12" className="d-flex justify-content-center">
+                            <ImageCloud cloudName="taoluanby" publicId={props.hinhanh} width="350" height="200" crop="scale"/>  
+                            </MDBCol>
+                            <MDBCol sm="12" className="d-flex justify-content-center">
+                                <FormControlLabel  value={props.hinhanh} control={<Radio color="primary" />}labelPlacement="top"/>
+                            </MDBCol>
+                        </MDBRow>
                     </MDBCol>
-                    <MDBCol sm="12" className="d-flex justify-content-center">
-                        <FormControlLabel value={props.hinhanh} control={<Radio color="primary" />}labelPlacement="top"/>
-                    </MDBCol>
-                </MDBCol>
+                </MDBRow>
+            </RadioGroup>
+               
             )
+    }else{
+        return(
+            <RadioGroup aria-label="gender" name="gender1"  onChange={handleChange}>
+                <MDBRow>
+                    <MDBCol sm="6" className="d-flex justify-content-center">
+                        <MDBRow>
+                            <MDBCol sm="12" className="d-flex justify-content-center" style={{height:"200px"}}>
+                        
+                            </MDBCol>
+                            <MDBCol sm="12" className="d-flex justify-content-center">
+                                <FormControlLabel  value={props.hinhanh} control={<Radio color="primary" />} label="Không giống" labelPlacement="top"/>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBCol>
+                </MDBRow>
+            </RadioGroup>
+        )
+    }
+        
 
     
 }

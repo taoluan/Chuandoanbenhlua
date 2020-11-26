@@ -14,7 +14,7 @@ const User = ()=>{
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/chuandoan" exact component={Diagnose} />
-                <Route path="/chuandoan/:trieuchung" exact component={DiagnoseTag} />
+                <Route path="/chuandoan/:trieuchung/:vitri" exact component={DiagnoseTag} />
                 <Route path="/dubao" exact component={Forecast} />
                 <Route path="/benh" exact component={Disesea} />
                 <Route path="/benh/:benh" exact component={DiseseaTag} />

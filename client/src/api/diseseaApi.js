@@ -20,5 +20,17 @@ const diseseaApi ={
         const url = '/gettrieuchung'
         return axiosClient.get(url,{params})
     },
+    getAllTrieuChung: ()=>{
+        const url = '/timkiem'
+        return axiosClient.get(url)
+    },
+    getKetQua: (params)=>{
+        const url = '/ketqua'
+        return axiosClient.post(url,params)
+    },
+    chuandoan: (params)=>{
+        const url = '/chuandoan'
+        return axiosClient.post(url,params)
+    },
 }
 export default diseseaApi

@@ -18,35 +18,37 @@ const check = (arr,temp) =>{
     })
     return result
 }
-const QuestionForm = () => {
+const QuestionForm = (props) => {
     const [defaultInline3,setdefaultInline3] = useState(false)
-    const [test,setTest] = useState()
-    const [trieuchung,setTrieuChung]=useState([{
-            ten: "Vệt bệnh lang rộng hình bầu dục",
-            hinhanh: ["hinh1","hinh2"],
-            show: false
-        },
-        {
-            ten: "Vệt bệnh",
-            hinhanh: ["hinh3","hinh4","hinh5", "hinhh6"],
-            show: false
-        }    
-    ])
+
+    if(props.results.length > 0){
     return(
         <>
-        <MDBCol size="12" className="pt-1 ">
-            <MDBTypography  note noteColor='warning' noteTitle='Quan sát: '>
-            <span className="title-5 pb-0 mb-0"> Triệu chứng xuất hiện trên lá ? </span>
-            </MDBTypography>
-                <MDBRow>
-                    {
-                        trieuchung.map((trieuchung,key)=>{
-                           return ( <ShowQuestion key={key} data={trieuchung}/>)
-                        })
-                    }
-            </MDBRow>
-        </MDBCol>
+        {
+            props.results.map((x,key)=>{
+                return(
+                    <MDBCol key={key} size="12" className="pt-1 ">
+                        <MDBTypography  note noteColor='warning' noteTitle='Quan sát: '>
+                        <span className="title-5 pb-0 mb-0"> Triệu chứng xuất hiện trên {x.vi_tri} ? </span>
+                        </MDBTypography>
+                            <MDBRow>
+                                {
+                                    x.data.map((trieuchung,key)=>{
+                                    return ( <ShowQuestion key={key} data={trieuchung} vitri={x.vi_tri} />)
+                                    })
+                                }
+                        </MDBRow>
+                    </MDBCol>
+                )
+            })
+        }
+        
         </>
     )
+    }else{
+        return(
+            <></>
+        )
+    }
 }
 export default QuestionForm
