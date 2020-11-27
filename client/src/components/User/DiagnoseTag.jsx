@@ -13,7 +13,7 @@ import Icon from '../UI/UndrawDesigner/IconSVG'
 import Progress from '../UI/Progress/ProressTag'
 import QuestionForm from '../UI/Container/QuestionForm'
 import {  useSelector , useDispatch} from 'react-redux'
-import {chuandoanDisesea , addFirstTrieuChung} from '../../reduxToolkit/Slice/diseseaSlice'
+import {addDisesea , addFirstTrieuChung} from '../../reduxToolkit/Slice/diseseaSlice'
 import diseseaApi from '../../api/diseseaApi'
 import { useTabContext } from '@material-ui/lab';
 const DiagnoseTag = () =>{
@@ -32,11 +32,11 @@ const DiagnoseTag = () =>{
   useEffect(()=>{
     const fetchQuestion = async()=>{
       const repose = await diseseaApi.chuandoan({data: dsTrieuChung})
-      setQuestion(repose)
+        setQuestion(repose)
     }
     const fetchKetQua = async()=>{
-      const respose =await diseseaApi.getKetQua({data: dsTrieuChung})
-      setKetQua(respose)
+        const respose =await diseseaApi.getKetQua({data: dsTrieuChung})
+        setKetQua(respose)
     }
     if(dsTrieuChung.length>0){
       fetchQuestion()
@@ -58,7 +58,9 @@ const DiagnoseTag = () =>{
     }
     fetchKetQua()
     fetchQuestion()
-    console.log(ketqua)
+    if(FirstTrieuChung.ten_trieuchung !== undefined){
+       dispatch(addDisesea(FirstTrieuChung))
+    }
   }, [FirstTrieuChung])
   return(
       <>

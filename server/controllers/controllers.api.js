@@ -3,7 +3,8 @@ const graphDBEndpoint = require('../graphDB/ontology')
 module.exports = {
     chuandoan: async(req,res)=>{
         try {
-            let trieuchung_input = await functions.map_sysptom(req.body.data_input) 
+            let trieuchung_input = await functions.map_sysptom(req.body.data)
+            console.log(trieuchung_input)
             let rs_trieutung_new = await graphDBEndpoint.query(
                 `
                 SELECT DISTINCT  ?ten_trieuchung_moi ?uri_trieuchungmoi ?img ?vi_tri
@@ -25,12 +26,12 @@ module.exports = {
     			
                 }orderby ?vi_tri
                 `)
-            let resut = await functions.handling_chuandoan(rs_trieutung_new.results.bindings)
+            let result = await functions.handling_chuandoan(rs_trieutung_new.results.bindings)
             //let resut_count_benh = await functions.handling_count_benh(count_benh.results.bindings)
             //let resut_possibility = await functions.handling_possibility(resut_count_benh,rs_trieutung_new.results.bindings)
-            res.send(resut)
+            res.send(result)
         }catch(err){
-            console.log(err)
+            res.status(400).send(err.message)
         }
     },
     benh: async(req,res)=>{
@@ -55,22 +56,23 @@ module.exports = {
     },
     thongke: async(req,res)=>{
         try {
-            let trieuchung_input = await functions.map_sysptom(req.body.data_input) 
+            let trieuchung_input = await functions.map_sysptom(req.body.data) 
             let count_benh_all = await graphDBEndpoint.query(
             `
             SELECT DISTINCT ?ten_benh ?uri_benh ( COUNT( DISTINCT ?uri_trieuchung_all) AS ?so_trieuchung )
             WHERE {
-            ?uri_benh data:hasSymptom ?uri_trieuchung .
-            ?annotation owl:annotatedSource ?uri_benh;
-		  					owl:annotatedTarget  ?uri_trieuchung;
-         					data:DiseaseSite ?vitri.
-    		OPTIONAL {?annotation data:Image ?hinh.}
-            FILTER  (${trieuchung_input}).
-            ?uri_trieuchung_all data:isSymptomOf ?uri_benh.
-            ?uri_benh rdfs:comment ?ten_benh.
-            }
-            group by ?ten_benh ?uri_benh
-            order by desc(?so_trieuchung)
+                ?uri_benh data:hasSymptom ?uri_trieuchung.
+                ?uri_trieuchung rdfs:comment ?ten_trieuchung.
+                ?annotation owl:annotatedSource ?uri_benh;
+                                owl:annotatedTarget  ?uri_trieuchung;
+                                data:DiseaseSite ?vitri.
+                OPTIONAL {?annotation data:Image ?hinh.}
+                FILTER  (${trieuchung_input}).
+                ?uri_trieuchung_all data:isSymptomOf ?uri_benh.
+                ?uri_benh rdfs:comment ?ten_benh.
+                }
+                group by ?ten_benh ?uri_benh
+                order by desc(?so_trieuchung)
             `)
 
        // let resut_count_benh = await functions.handling_count_benh(count_benh_all.results.bindings)
@@ -113,16 +115,20 @@ module.exports = {
     },
     timkiem:async(req,res)=>{
         try {
-            let trieuchung = req.body.trieuchung
             let timkiem = await graphDBEndpoint.query(
                 `
-                select DISTINCT ?ten_trieuchung ?uri_trieuchung where { 
-                    ?x data:hasSymptom ?uri_trieuchung.
-                    ?uri_trieuchung rdfs:comment ?ten_trieuchung
-                    FILTER (regex(str(?ten_trieuchung),"${trieuchung}","i"))
-                }
+                select DISTINCT ?ten_trieuchung  ?vitri
+                WHERE { 
+                    ?uri_trieuchung rdf:type data:Triệu_Chứng;
+                                    rdfs:comment ?ten_trieuchung.
+                    ?uri_benh data:hasSymptom ?uri_trieuchung.
+                    ?annotation owl:annotatedSource ?uri_benh;
+                                owl:annotatedTarget  ?uri_trieuchung;
+                                data:DiseaseSite ?vitri.
+                    }
                 `)
-            res.send(timkiem.results.bindings)
+            let result =await functions.handling_timkiem(timkiem.results.bindings)
+            res.send(result)
         } catch (error) {
             
         }

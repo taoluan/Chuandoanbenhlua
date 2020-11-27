@@ -7,13 +7,21 @@ export const getCountBenh = createAsyncThunk('disesea/getCountBenh',async(params
 )
 const checkArray = (list, object)=>{
     let i;
-    console.log(list)
     for (i = 0; i < list.length; i++) {
         if (list[i].ten_trieuchung === object.ten_trieuchung && list[i].vitri === object.vitri) {
-            return true;
+            return {result: true , vitri:i};
         }
     }
-    return false;
+    return {result: false};
+}
+const checkArrayImage = (list, object)=>{
+    let i;
+    for (i = 0; i < list.length; i++) {
+        if (list[i].ten_trieuchung === object.ten_trieuchung && list[i].vitri === object.vitri && list[i].hinhanh === object.hinhanh) {
+            return {result: true , vitri:i};
+        }
+    }
+    return {result: false};
 }
 const diseseaSlice = createSlice({
     name: 'disesea',
@@ -28,10 +36,38 @@ const diseseaSlice = createSlice({
             state.sobenh = action.payload
         },
         addDisesea:(state,action)=>{
-            state.chuandoan.push(action.payload)
+            if(!checkArray(state.chuandoan,action.payload).result){
+                state.chuandoan.push(action.payload)
+            }
+            
+        },
+        addDiseseaImage:(state,action)=>{
+            if(!checkArray(state.chuandoan,action.payload).result){
+                state.chuandoan.push(action.payload)
+            }else{
+                let newArr = state.chuandoan
+                let vt = checkArray(state.chuandoan,action.payload).vitri
+                newArr[vt].hinhanh = action.payload.hinhanh
+                state.chuandoan = newArr 
+            }
+            
+        },
+        removeDisesea:(state,action)=>{
+            if(checkArray(state.chuandoan,action.payload).result){
+                let newArr = state.chuandoan
+                let vitri = checkArray(state.chuandoan,action.payload).vitri
+                newArr.splice(vitri,1)
+                state.chuandoan = newArr
+            }
         },
         addFirstTrieuChung:(state,action)=>{
-            state.trieuchungbandau = action.payload
+            if(state.trieuchungbandau !== undefined){
+                state.trieuchungbandau = action.payload,
+                state.chuandoan = []
+            }else{
+                state.trieuchungbandau = action.payload
+            }
+            
         }
     },
     extraReducers:{
@@ -41,5 +77,5 @@ const diseseaSlice = createSlice({
     }
 })
 const { actions, reducer} = diseseaSlice;
-export const {countDisesea ,addDisesea,addFirstTrieuChung} = actions;
+export const {countDisesea ,addDisesea,addFirstTrieuChung,removeDisesea , addDiseseaImage} = actions;
 export default reducer;

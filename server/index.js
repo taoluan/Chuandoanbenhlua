@@ -1,7 +1,9 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser');
+var morgan = require('morgan')
 require('dotenv').config()
+app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/public', express.static('public'));
 app.use(function(req, res, next) {

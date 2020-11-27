@@ -6,47 +6,33 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import {Image as ImageCloud} from 'cloudinary-react';
-
+import {addDisesea} from '../../../reduxToolkit/Slice/diseseaSlice'
+import {  useSelector , useDispatch} from 'react-redux'
 function ShowImage(props){
-    const handleChange = (event) => {
-        console.log(event.target.value +""+props.value )
-       // props.oncheck({img: event.target.value})
-        
-      };
-    if(props.hinhanh.length > 1){
+    if(props.hinhanh.length <= 1){
         return(
-            <RadioGroup aria-label="gender" name="gender1"  onChange={handleChange}>
-                <MDBRow>
-                    <MDBCol sm="6" className="d-flex justify-content-center">
-                        <MDBRow>
-                            <MDBCol sm="12" className="d-flex justify-content-center">
-                            <ImageCloud cloudName="taoluanby" publicId={props.hinhanh} width="350" height="200" crop="scale"/>  
-                            </MDBCol>
-                            <MDBCol sm="12" className="d-flex justify-content-center">
-                                <FormControlLabel  value={props.hinhanh} control={<Radio color="primary" />}labelPlacement="top"/>
-                            </MDBCol>
-                        </MDBRow>
+            <MDBCol sm="6" className="d-flex justify-content-center">
+            <MDBRow>
+                    <MDBCol sm="12" className="d-flex justify-content-center" style={{height:"200px"}}>
                     </MDBCol>
-                </MDBRow>
-            </RadioGroup>
-               
+                    <MDBCol sm="12" className="d-flex justify-content-center">
+                        <FormControlLabel  value='other' control={<Radio color="primary" />} label="Không giống" labelPlacement="top"/>
+                </MDBCol>
+            </MDBRow>
+        </MDBCol>
             )
     }else{
         return(
-            <RadioGroup aria-label="gender" name="gender1"  onChange={handleChange}>
+            <MDBCol sm="6" className="d-flex justify-content-center">
                 <MDBRow>
-                    <MDBCol sm="6" className="d-flex justify-content-center">
-                        <MDBRow>
-                            <MDBCol sm="12" className="d-flex justify-content-center" style={{height:"200px"}}>
-                        
-                            </MDBCol>
-                            <MDBCol sm="12" className="d-flex justify-content-center">
-                                <FormControlLabel  value={props.hinhanh} control={<Radio color="primary" />} label="Không giống" labelPlacement="top"/>
-                            </MDBCol>
-                        </MDBRow>
+                    <MDBCol sm="12" className="d-flex justify-content-center">
+                    <ImageCloud cloudName="taoluanby" publicId={props.hinhanh} width="350" height="200" crop="scale"/>  
+                    </MDBCol>
+                    <MDBCol sm="12" className="d-flex justify-content-center">
+                        <FormControlLabel  value={props.hinhanh} control={<Radio color="primary" />}labelPlacement="top"/>
                     </MDBCol>
                 </MDBRow>
-            </RadioGroup>
+            </MDBCol>
         )
     }
         

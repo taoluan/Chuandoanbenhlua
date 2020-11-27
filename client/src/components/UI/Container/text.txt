@@ -1,0 +1,41 @@
+if(props.data.img){
+        return(
+        <MDBCol md="12"  className=" pl-3 mb-0 pb-3 ">
+            <div className="custom-control custom-checkbox custom-control-inline pt-1 ml-2" style={{fontSize:"20px"}}>
+                <input type="checkbox" className="custom-control-input title-6" id={props.data.ten_trieuchung+props.vitri} value={props.data.ten_trieuchung} 
+                    onChange={handleCheckBox}
+                    checked={check}
+                />
+                <label className="custom-control-label title-6  mb-0 pb-0" htmlFor={props.data.ten_trieuchung+props.vitri} >{props.data.ten_trieuchung}</label>
+            </div>*/
+            <MDBCol md="12" className="mt-3" style={{ display: show ? "block" : "none" }} >
+                    <FormControl component="fieldset" className="d-flex justify-content-center">
+                        <MDBRow>
+                            <RadioGroup aria-label="gender" name="gender1" onChange={handleChange} className="w-100">
+                                <MDBRow>
+                                {
+                                    props.data.img.map((img,key)=>{
+                                        return( <ShowImage key={key} hinhanh={img} value={value} trieuchung={props.data.ten_trieuchung} vitri={props.vitri} />)
+                                    })
+                                }
+                                </MDBRow>
+                            </RadioGroup>
+                        </MDBRow>
+                    </FormControl>
+            </MDBCol>
+            
+        </MDBCol>
+    )
+    }else{
+        return(
+            <MDBCol md="12"  className=" pl-3 mb-0 pb-3 ">
+                <div className="custom-control custom-checkbox custom-control-inline pt-1 ml-2" style={{fontSize:"20px"}}>
+                    <input type="checkbox" className="custom-control-input title-6" id={props.data.ten_trieuchung} value={props.data.ten_trieuchung} 
+                    onChange={handleCheckBox} 
+                    checked={check}
+                    />
+                    <label className="custom-control-label title-6  mb-0 pb-0" htmlFor={props.data.ten_trieuchung} >{props.data.ten_trieuchung}</label>
+                </div>            
+        </MDBCol>
+        )
+    }

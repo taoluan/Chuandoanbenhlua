@@ -7,15 +7,24 @@ module.exports={
             arr_trieuchung.map((x,y)=>{
                     if(arr_trieuchung[y+1] != undefined){
                         (x.hinhanh)
-                        ? str += ` ( (?uri_trieuchung = <${x.uri_trieuchung}>) && (?vitri ="${x.vitri}")  && (?hinh = "${x.hinhanh}") )|| `
-                        : str += ` ( (?uri_trieuchung = <${x.uri_trieuchung}>) && (?vitri ="${x.vitri}") ) || `
+                        ? str += ` ( (regex(str(?ten_trieuchung),"${x.ten_trieuchung}","i")) && (?vitri ="${x.vitri}")  && (?hinh = "${x.hinhanh}") )|| `
+                        : str += ` ( (regex(str(?ten_trieuchung),"${x.ten_trieuchung}","i")) && (?vitri ="${x.vitri}") ) || `
                     }else{
                         (x.hinhanh)
-                        ? str += ` ( (?uri_trieuchung = <${x.uri_trieuchung}>) && (?vitri ="${x.vitri}") && (?hinh = "${x.hinhanh}") ) `
-                        : str += ` ( (?uri_trieuchung = <${x.uri_trieuchung}>) && (?vitri ="${x.vitri}") )`
+                        ? str += ` ( (regex(str(?ten_trieuchung),"${x.ten_trieuchung}","i")) && (?vitri ="${x.vitri}") && (?hinh = "${x.hinhanh}") ) `
+                        : str += ` ( (regex(str(?ten_trieuchung),"${x.ten_trieuchung}","i")) && (?vitri ="${x.vitri}") )`
                     } 
-                   
+                    
                     /*
+                     if(arr_trieuchung[y+1] != undefined){
+                        (x.hinhanh)
+                        ? str += ` ( (?ten_trieuchung = "${x.ten_trieuchung}") && (?vitri ="${x.vitri}")  && (?hinh = "${x.hinhanh}") )|| `
+                        : str += ` ( (?ten_trieuchung = "${x.ten_trieuchung}") && (?vitri ="${x.vitri}") ) || `
+                    }else{
+                        (x.hinhanh)
+                        ? str += ` ( (?ten_trieuchung = "${x.ten_trieuchung}") && (?vitri ="${x.vitri}") && (?hinh = "${x.hinhanh}") ) `
+                        : str += ` ( (?ten_trieuchung = "${x.ten_trieuchung}") && (?vitri ="${x.vitri}") )`
+                    } 
                     if(arr_trieuchung[y+1] != undefined){
                         if(x.hinh){
                          str += `( regex(str(?ten_trieuchung), "${x}", "i") && (?vitri =${x.vitri}) && (?hinh = ${x.hinhanh}) )|| ` }
@@ -131,7 +140,8 @@ module.exports={
                `
                 SELECT DISTINCT  ?ten_benh ?uri_benh ( COUNT( ?uri_trieuchung) AS ?so_trieuchung )
                 WHERE {
-                ?uri_benh data:hasSymptom ?uri_trieuchung .
+                ?uri_benh data:hasSymptom ?uri_trieuchung.
+                ?uri_trieuchung rdfs:comment ?ten_trieuchung.
                 ?annotation owl:annotatedSource ?uri_benh;
                                  owl:annotatedTarget  ?uri_trieuchung;
                                 data:DiseaseSite ?vitri.
@@ -141,7 +151,7 @@ module.exports={
                 }
                    groupby ?ten_benh ?uri_benh
                    orderby DESC(?so_trieuchung)
-                   limit 8
+                   limit 6
                `)
                let results = []
                rs_count.results.bindings.map(x=>{
@@ -244,7 +254,7 @@ module.exports={
     check_vitri: (obj, list)=> {
         let i;
         for (i = 0; i < list.length; i++) {
-            if (list[i].vi_tri === obj) {
+            if (list[i].vi_tri.toLocaleUpperCase() === obj.toLocaleUpperCase()) {
                 return true;
             }
         }
@@ -273,6 +283,19 @@ module.exports={
                 })
             })
             res(dataset)
+        })
+    },
+    handling_timkiem: (data)=>{
+        return new Promise((res,rej)=>{
+            let results = []
+            data.map(x=>{
+                results.push({
+                    ten_trieuchung: `${x.ten_trieuchung.value} vị trí trên ${x.vitri.value}`,
+                    vitri: x.vitri.value,
+                    trieuchung: x.ten_trieuchung.value
+                })
+            })
+            res(results)
         })
     }
 }
