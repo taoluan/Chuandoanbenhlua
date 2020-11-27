@@ -4,7 +4,6 @@ module.exports = {
     chuandoan: async(req,res)=>{
         try {
             let trieuchung_input = await functions.map_sysptom(req.body.data)
-            console.log(trieuchung_input)
             let rs_trieutung_new = await graphDBEndpoint.query(
                 `
                 SELECT DISTINCT  ?ten_trieuchung_moi ?uri_trieuchungmoi ?img ?vi_tri
