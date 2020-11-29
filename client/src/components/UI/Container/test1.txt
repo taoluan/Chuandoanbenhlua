@@ -22,12 +22,12 @@ const ShowQuestion = (props) => {
             ten_trieuchung: props.data.ten_trieuchung,
             vitri: props.vitri
         }
-        if(checkArray(dstrieuchung,checkdata)){
-                // setcheckedOk({
-                //     ...checkedOk,
-                //     checked:true
-                // })
-                setCheck(true)
+        if(checkArray(dstrieuchung,checkedOk)){
+                setcheckedOk({
+                    ...checkedOk,
+                    checked:true
+                })
+               // setCheck(true)
                 setShow(true)
             }
         /*let hasImage = {
@@ -38,7 +38,7 @@ const ShowQuestion = (props) => {
             setCheck(true)
             setShow(true)
         }*/
-    }, [dstrieuchung]);
+    }, [props.data.ten_trieuchung]);
     const handleCheckBox = (e)=>{
         if(!props.data.img){
           if(e.target.checked){
@@ -55,8 +55,15 @@ const ShowQuestion = (props) => {
             let data = {ten_trieuchung: props.data.ten_trieuchung , vitri: props.vitri}
             dispatch(removeDisesea(data))
         }
-        //console.log(checkedOk)
-        setCheck(e.target.checked)
+        if(e.target.value === checkedOk.ten_trieuchung){
+            setcheckedOk({
+                ...checkedOk,
+                checked: true
+            })
+            console.log(checkedOk)
+        }
+        console.log(checkedOk)
+        //setCheck(e.target.checked)
     }
     const handleChange = (e) => {
         if(e.target.checked){
@@ -72,7 +79,7 @@ const ShowQuestion = (props) => {
         return(
         <MDBCol md="12"  className=" pl-3 mb-0 ">
             <FormControlLabel
-                control={<Checkbox checked={check} color="primary" value={props.data.ten_trieuchung} onChange={handleCheckBox}/>}
+                control={<Checkbox checked={checkedOk.checked} color="primary" value={props.data.ten_trieuchung} onChange={handleCheckBox}/>}
                 label={props.data.ten_trieuchung}
             />
             <MDBCol md="12" className="mt-3" style={{ display: show ? "block" : "none" }} >
@@ -97,7 +104,7 @@ const ShowQuestion = (props) => {
         return(
             <MDBCol md="12"  className=" pl-3 mb-0  ">
                 <FormControlLabel
-                control={<Checkbox checked={check} color="primary" value={props.data.ten_trieuchung} onChange={handleCheckBox} name={props.data.ten_trieuchung} />}
+                control={<Checkbox checked={checkedOk.checked} color="primary" value={props.data.ten_trieuchung} onChange={handleCheckBox} name={props.data.ten_trieuchung} />}
                 label={props.data.ten_trieuchung}
             />           
         </MDBCol>

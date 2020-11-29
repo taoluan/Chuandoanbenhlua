@@ -11,12 +11,14 @@ import diseseaApi from '../../../api/diseseaApi'
 const Search = ()=> {
     const [textSearch, setTextSearch] = useState()
     const [data,setData] = useState([])
-    let location = useLocation();
     let history = useHistory();
     const checkSearch = ()=>{
-        (textSearch)
-            ? history.push("/chuandoan/"+textSearch.trieuchung+"/"+textSearch.vitri)
-            : alert(12)
+        if(textSearch){
+            history.push("/chuandoan/"+textSearch.trieuchung+"/"+textSearch.vitri)
+            window.location.reload();
+        }else{
+            alert(12)
+        }
     }
     useEffect(() => {
         const fetchAllTrieuChung = async() =>{
@@ -67,17 +69,4 @@ const Search = ()=> {
     }
     
 }
-const top100Films = [
-  { title: 'Dangal', year: 2016 , uri:'Biến_màu_vàng_nâu_và_thối' },
-  { title: 'The Sting', year: 1973 },
-  { title: '2001: A Space Odyssey', year: 1968 },
-  { title: "Singin' in the Rain", year: 1952 },
-  { title: 'Toy Story', year: 1995 },
-  { title: 'Bicycle Thieves', year: 1948 },
-  { title: 'The Kid', year: 1921 },
-  { title: 'Inglourious Basterds', year: 2009 },
-  { title: 'Snatch', year: 2000 },
-  { title: '3 Idiots', year: 2009 },
-  { title: 'Monty Python and the Holy Grail', year: 1975 },
-];
 export default React.memo(Search)

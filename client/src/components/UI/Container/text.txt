@@ -39,3 +39,210 @@ if(props.data.img){
         </MDBCol>
         )
     }
+    /////
+     if(checkArrayTest(test,{ten_trieuchung: e.target.value , vitri: props.vitri}).result){
+            let vitri = checkArrayTest(test,{ten_trieuchung: e.target.value , vitri: props.vitri}).vitri
+            let makeArr = [...test]
+            let newArr = test[vitri]
+            newArr.checked = true
+            makeArr[vitri] = newArr
+            setTest(makeArr)
+            //console.log(test)
+        }
+        /////
+
+        import React , {useState,useEffect} from 'react'
+import { MDBTypography,MDBInput, MDBRow, MDBCol } from 'mdbreact';
+import ShowImage from './ShowImage'
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import {addDisesea , removeDisesea , addDiseseaImage} from '../../../reduxToolkit/Slice/diseseaSlice'
+import {  useSelector , useDispatch} from 'react-redux'
+const checkArrayTest = (list, object)=>{
+    console.log(list)
+    console.log(object)
+    let i;
+    for (i = 0; i < list.length; i++) {
+        if (list[i].ten_trieuchung === object.ten_trieuchung) {
+            return {result: true , vitri:i};
+        }
+    }
+    return {result: false};
+}
+const ShowQuestion = (props) => {
+    const  dispatch = useDispatch()
+    const dstrieuchung = useSelector(state=>state.disesea.chuandoan)
+    const [value, setValue] = useState([])
+    const [show,setShow] = useState(false)
+    const [changeimg, setChangeimg] = useState()
+    const [check, setCheck] = useState(false)
+    const [test, setTest] = useState(props.data)
+    const [checkedOk, setcheckedOk] = useState({
+        ten_trieuchung : props.data.ten_trieuchung,
+        vitri: props.vitri,
+    })
+    useEffect(() => {
+        // let checkdata = {
+        //     ten_trieuchung: props.data.ten_trieuchung,
+        //     vitri: props.vitri
+        // }
+        if(checkArray(dstrieuchung,checkedOk)){
+                setCheck(true)
+                setShow(true)
+            }
+        /*let hasImage = {
+            ten_trieuchung: props.data.ten_trieuchung,
+            vitri: props.vitri
+        }
+        if(checkArray(dstrieuchung,checkdata)){
+            setCheck(true)
+            setShow(true)
+        }*/
+       // console.log(test)
+        return(()=>{
+            
+        })
+    }, [props.data.ten_trieuchung]);
+    const handleCheckBox = (e)=>{
+        if(!props.data.img){
+          if(e.target.checked){
+            let data = {ten_trieuchung: e.target.value, vitri: props.vitri}
+            dispatch(addDisesea(data))
+
+          }else{
+            let data = {ten_trieuchung: e.target.value, vitri: props.vitri}
+            dispatch(removeDisesea(data))
+          }
+          
+        }else{
+            setShow(!show)
+            console.log(show)
+            let data = {ten_trieuchung: props.data.ten_trieuchung , vitri: props.vitri}
+            dispatch(removeDisesea(data))
+        }
+        //console.log(checkArrayTest(test,{ten_trieuchung: e.target.value , vitri: props.vitri}).result)
+        if(checkArrayTest(test,{ten_trieuchung: e.target.value , vitri: props.vitri}).result){
+            let vitri = checkArrayTest(test,{ten_trieuchung: e.target.value , vitri: props.vitri}).vitri
+            let makeArr = [...test]
+            let newArr = test[vitri]
+            newArr.checked = true
+            makeArr[vitri] = newArr
+            setTest(makeArr)
+            //console.log(test)
+        }
+        //setCheck(e.target.checked)
+    }
+    const handleChange = (e) => {
+        if(e.target.checked){
+            let data = {ten_trieuchung: props.data.ten_trieuchung ,hinhanh: e.target.value, vitri: props.vitri}
+            dispatch(addDiseseaImage(data))
+            setChangeimg(e.target.value)
+        }else{
+            let data = {ten_trieuchung: props.data.ten_trieuchung ,hinhanh: e.target.value, vitri: props.vitri}
+            dispatch(removeDisesea(data))
+        }
+    };
+    return(
+        <>
+        { 
+            test.map((x,key)=>{
+                value.push(x)
+                if(props.data.img){
+                    return(
+                    <MDBCol md="12"  className=" pl-3 mb-0 ">
+                        <FormControlLabel
+                            control={<Checkbox checked={x.checked} color="primary" value={x.ten_trieuchung} onChange={handleCheckBox}/>}
+                            label={x.ten_trieuchung}
+                        />
+                        <MDBCol md="12" className="mt-3" style={{ display: show ? "block" : "none" }} >
+                                <FormControl component="fieldset" className="d-flex justify-content-center">
+                                    <MDBRow>
+                                        <RadioGroup aria-label="gender" name="gender1" onChange={handleChange} className="w-100">
+                                            <MDBRow>
+                                            {
+                                                x.img.map((img,key)=>{
+                                                    return( <ShowImage key={key} hinhanh={img} value={changeimg} trieuchung={x.ten_trieuchung} vitri={props.vitri} />)
+                                                })
+                                            }
+                                            </MDBRow>
+                                        </RadioGroup>
+                                    </MDBRow>
+                                </FormControl>
+                        </MDBCol>
+                        
+                    </MDBCol>
+                )
+                }else{
+                    return(
+                        <MDBCol md="12"  className=" pl-3 mb-0  ">
+                            <FormControlLabel
+                            control={<Checkbox checked={x.checked} color="primary" value={x.ten_trieuchung} onChange={handleCheckBox} name={x.ten_trieuchung} />}
+                            label={x.ten_trieuchung}
+                        />           
+                    </MDBCol>
+                    )
+                }
+            })
+        }
+        </>
+    )
+    // if(props.data.img){
+    //     return(
+    //     <MDBCol md="12"  className=" pl-3 mb-0 ">
+    //         <FormControlLabel
+    //             control={<Checkbox checked={check} color="primary" value={props.data.ten_trieuchung} onChange={handleCheckBox}/>}
+    //             label={props.data.ten_trieuchung}
+    //         />
+    //         <MDBCol md="12" className="mt-3" style={{ display: show ? "block" : "none" }} >
+    //                 <FormControl component="fieldset" className="d-flex justify-content-center">
+    //                     <MDBRow>
+    //                         <RadioGroup aria-label="gender" name="gender1" onChange={handleChange} className="w-100">
+    //                             <MDBRow>
+    //                             {
+    //                                 props.data.img.map((img,key)=>{
+    //                                     return( <ShowImage key={key} hinhanh={img} value={changeimg} trieuchung={props.data.ten_trieuchung} vitri={props.vitri} />)
+    //                                 })
+    //                             }
+    //                             </MDBRow>
+    //                         </RadioGroup>
+    //                     </MDBRow>
+    //                 </FormControl>
+    //         </MDBCol>
+            
+    //     </MDBCol>
+    // )
+    // }else{
+    //     return(
+    //         <MDBCol md="12"  className=" pl-3 mb-0  ">
+    //             <FormControlLabel
+    //             control={<Checkbox checked={check} color="primary" value={props.data.ten_trieuchung} onChange={handleCheckBox} name={props.data.ten_trieuchung} />}
+    //             label={props.data.ten_trieuchung}
+    //         />           
+    //     </MDBCol>
+    //     )
+    // }
+    
+}
+const checkArray = (list, object)=>{
+    let i;
+    for (i = 0; i < list.length; i++) {
+        if (list[i].ten_trieuchung === object.ten_trieuchung && list[i].vitri === object.vitri) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// const checkArrayhasImahe = (list, object)=>{
+//     let i;
+//     for (i = 0; i < list.length; i++) {
+//         if (list[i].ten_trieuchung === object.ten_trieuchung && list[i].vitri === object.vitri && list[i].hinhanh === object.hinhanh) {
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+export default React.memo(ShowQuestion)

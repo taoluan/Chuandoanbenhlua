@@ -92,19 +92,21 @@ module.exports = {
             }
             let tra_cuu = await graphDBEndpoint.query(
                 `
-                SELECT DISTINCT ?tenbenh  ?uri_benh ?hinh ?mota ?giongkhangbenh
+                SELECT DISTINCT ?tenbenh ?ten_loai  ?hinh ?giongkhangbenh
                 WHERE {
                 ?uri_benh data:diseaseSeason ?uri_Season ;
                         data:inArea ?uri_Area;
                         data:diseaseStage ?uri_State;
-                FILTER (?uri_Season = data:${data.vumua} && ?uri_Area = data:${data.khuvuc} && ?uri_State = data:${data.giaidoan} ).
-                ?uri_benh rdfs:comment ?tenbenh;
+                FILTER (?uri_Season = <${data.vumua}> && ?uri_Area = <${data.khuvuc}> && ?uri_State = <${data.giaidoan}> ).
+                ?uri_benh rdfs:label ?tenbenh;
                         data:Image ?hinh;
-                        data:Describe ?mota.
-                OPTIONAL {?uri_benh data:hasResistantVarieties ?uri_giong ; bind( if(?uri_giong = data:${data.giong},"Khang benh","Khang benh") as ?giongkhangbenh )}
-                }
+                OPTIONAL {?uri_benh data:hasResistantVarieties ?uri_giong ; bind( if(?uri_giong = <${data.giong}>,"Khang benh","Khang benh") as ?giongkhangbenh )}
+                ?uri_benh rdf:type ?thuocloaibenh.
+                ?thuocloaibenh rdfs:label ?ten_loai 
+                }order by ?ten_loai
                 `)
             let results =await functions.handling_tracuu(tra_cuu.results.bindings)
+            console.log(results)
             res.send(results)
         } catch (error) {
             
@@ -232,6 +234,21 @@ module.exports = {
                     ?annotation owl:annotatedSource <${uri_benh}>;
                                 owl:annotatedTarget  ?uri_trieuchung;
                                 data:DiseaseSite ?vitri.
+                }
+                `
+            )
+            res.json(data.results.bindings)
+        } catch (err) {
+            console.log(err)
+        }
+    },
+    getGiongLua:async(req,res)=>{
+        try {
+            let data = await graphDBEndpoint.query(
+                `
+                select DISTINCT ?uri ?title where { 
+                    ?uri rdf:type <http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa>;
+                          rdfs:label ?title
                 }
                 `
             )

@@ -29,7 +29,7 @@ function ShowImage(props){
                     <ImageCloud cloudName="taoluanby" publicId={props.hinhanh} width="350" height="200" crop="scale"/>  
                     </MDBCol>
                     <MDBCol sm="12" className="d-flex justify-content-center">
-                        <FormControlLabel  value={props.hinhanh} control={<Radio color="primary" />}labelPlacement="top"/>
+                        <FormControlLabel   control={<Radio color="primary" value={props.hinhanh} />}labelPlacement="top"/>
                     </MDBCol>
                 </MDBRow>
             </MDBCol>

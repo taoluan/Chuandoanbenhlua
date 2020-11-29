@@ -29,15 +29,20 @@ const diseseaSlice = createSlice({
         benh: [],
         sobenh: {},
         chuandoan: [],
-        trieuchungbandau: {}
+        trieuchungbandau: {},
+        data:[]
     },
     reducers:{
+        addData:(state,action)=>{
+            state.data = action.payload
+        },
         countDisesea:(state,action)=>{
             state.sobenh = action.payload
         },
         addDisesea:(state,action)=>{
             if(!checkArray(state.chuandoan,action.payload).result){
-                state.chuandoan.push(action.payload)
+                let newObj = action.payload
+                state.chuandoan.push(newObj)
             }
             
         },
@@ -62,12 +67,18 @@ const diseseaSlice = createSlice({
         },
         addFirstTrieuChung:(state,action)=>{
             if(state.trieuchungbandau !== undefined){
-                state.trieuchungbandau = action.payload,
                 state.chuandoan = []
+                state.trieuchungbandau = action.payload
+                
             }else{
+                state.chuandoan = []
                 state.trieuchungbandau = action.payload
             }
             
+        },
+        resetDisessea:(state,action)=>{
+            state.chuandoan = []
+            state.chuandoan.push(action.payload)
         }
     },
     extraReducers:{
@@ -77,5 +88,5 @@ const diseseaSlice = createSlice({
     }
 })
 const { actions, reducer} = diseseaSlice;
-export const {countDisesea ,addDisesea,addFirstTrieuChung,removeDisesea , addDiseseaImage} = actions;
+export const {countDisesea ,addDisesea,addFirstTrieuChung,removeDisesea , addDiseseaImage,resetDisessea, addData } = actions;
 export default reducer;

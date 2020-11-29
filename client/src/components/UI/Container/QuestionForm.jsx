@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect} from 'react'
 import { MDBTypography,MDBInput, MDBRow, MDBCol } from 'mdbreact';
 import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
@@ -11,27 +11,46 @@ import FormLabel from '@material-ui/core/FormLabel';
 import ShowQuestion from './ShowQuestion'
 import { Hidden } from '@material-ui/core';
 import LightboxPage from './LightboxPage';
+import {  useSelector , useDispatch} from 'react-redux'
 
 const QuestionForm = (props) => {
-    const [defaultInline3,setdefaultInline3] = useState(false)
+    //const dstrieuchung = useSelector(state=>state.disesea.chuandoan)
+    const [data , setData] = useState([])
+    //console.log(data)
     const classes = useStyles();
+    // useEffect(() => {
+    //     if(checkArray(dstrieuchung,checkdata)){
+    //         setCheck(true)
+    //         setShow(true)
+    //     }
+    //     /*let hasImage = {
+    //         ten_trieuchung: props.data.ten_trieuchung,
+    //         vitri: props.vitri
+    //     }
+    //     if(checkArray(dstrieuchung,checkdata)){
+    //         setCheck(true)
+    //         setShow(true)
+    //     }*/
+
+    // }, [dstrieuchung]);
     if(props.results.length > 0){
     return(
         <>
-        {
+        {   
             props.results.map((x,key)=>{
                 return(
                     <MDBCol key={key} size="12" className="pt-1 ">
                         <MDBTypography  note noteColor='warning' noteTitle='Quan sát: '>
-                        <span className="title-5 pb-0 mb-0"> Triệu chứng xuất hiện trên {x.vi_tri} ? </span>
+                        <span className="title-5 pb-0 mb-0"> Triệu chứng xuất hiện trên <span className="font-weight-bold text-muted">{x.vi_tri}</span>  ? </span>
                         </MDBTypography>
                         <MDBRow>
-                        <FormControl component="fieldset" className="mt-0" className={classes.formControl}>
+                        <FormControl  className="mt-0" className={classes.formControl}>
                             <FormGroup>
-                                <MDBRow > 
+                                <MDBRow >
+                                {/* <ShowQuestion key={key} data={x.data} vitri={x.vi_tri} /> */}
                                 {
                                     x.data.map((trieuchung,key)=>{
-                                    return ( <ShowQuestion key={key} data={trieuchung} vitri={x.vi_tri} />)
+                                        return ( <ShowQuestion key={key} data={trieuchung} vitri={x.vi_tri} />)
                                     })
                                 }
                                 </MDBRow>

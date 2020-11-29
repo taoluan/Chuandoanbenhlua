@@ -79,8 +79,8 @@ module.exports={
                     if( x.vi_tri == y.vi_tri.value){
                         if(x.data.length === 0){
                             (y.img)
-                                && x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value, img: [y.img.value] })
-                                || x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value})
+                                && x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value, img: [y.img.value] , checked : false })
+                                || x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value  , checked : false })
                         }else{
                                 let check =  module.exports.check_ten(y.ten_trieuchung_moi.value,x.data) 
                                 if(check.rs){
@@ -89,8 +89,8 @@ module.exports={
                                             || x.data[check.vt].img.push(" ") 
                                 }else{
                                      (y.img)
-                                            && x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value, img: [y.img.value] })
-                                            || x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value})
+                                            && x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value, img: [y.img.value] , checked : false })
+                                            || x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value , checked : false })
                                 }
                         } 
                     }
@@ -201,11 +201,24 @@ module.exports={
         return new Promise((res,rej)=>{
             let results = [] , img
             arr_benh.map(x=>{
-                img = x.hinh.value.substring(0,x.hinh.value.indexOf(','))
-                if(x.giongkhangbenh){
-                 results.push({tenbenh:x.tenbenh.value, uri_benh: x.uri_benh.value,mota: x.mota.value,hinh:img,khangbenh: x.giongkhangbenh.value})}
-                else{results.push({tenbenh:x.tenbenh.value, uri_benh: x.uri_benh.value,hinh: img,mota: x.mota.value})}
-            }) 
+                (!module.exports.check_loaibenh(x.ten_loai.value,results))
+                && results.push({ten_loai:x.ten_loai.value ,data :[] })
+            })
+            results.map(x=>{ 
+                arr_benh.map( y=>{
+                    if( x.ten_loai == y.ten_loai.value){
+                        img = y.hinh.value.substring(0,y.hinh.value.indexOf(','))
+                        x.data.push({tenbenh: y.tenbenh.value ,hinh: img , khangbenh: y.giongkhangbenh ? y.giongkhangbenh.value : '' })
+                    }
+                })
+            })
+            // arr_benh.map(x=>{
+            //     img = x.hinh.value.substring(0,x.hinh.value.indexOf(','))
+            //     if(x.giongkhangbenh){
+            //      results.push({tenbenh:x.tenbenh.value,loaibenh: x.ten_loai.value,hinh:img,khangbenh: x.giongkhangbenh.value})}
+            //     else{
+            //     results.push({tenbenh:x.tenbenh.value,hinh: img,loaibenh: x.ten_loai.value})}
+            // }) 
             res(results)
         })
        
@@ -255,6 +268,15 @@ module.exports={
         let i;
         for (i = 0; i < list.length; i++) {
             if (list[i].vi_tri.toLocaleUpperCase() === obj.toLocaleUpperCase()) {
+                return true;
+            }
+        }
+        return false;
+    },
+    check_loaibenh: (obj, list)=> {
+        let i;
+        for (i = 0; i < list.length; i++) {
+            if (list[i].ten_loai.toLocaleUpperCase() === obj.toLocaleUpperCase()) {
                 return true;
             }
         }

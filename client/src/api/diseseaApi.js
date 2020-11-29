@@ -32,5 +32,13 @@ const diseseaApi ={
         const url = '/chuandoan'
         return axiosClient.post(url,params)
     },
+    getGiongLua: ()=>{
+        const url = '/getgionglua'
+        return axiosClient.get(url)
+    },
+    duBao: (params)=>{
+        const url = '/tracuu'
+        return axiosClient.post(url,params)
+    },
 }
 export default diseseaApi

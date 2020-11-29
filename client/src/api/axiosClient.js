@@ -2,7 +2,7 @@ import axios from 'axios';
 import queryString from 'query-string';
 const axiosClient = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
-    timeout:20000,
+    timeout: 20000,
     headers: {
     'content-type': 'application/json',
     },

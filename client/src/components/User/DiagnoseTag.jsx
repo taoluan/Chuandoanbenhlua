@@ -13,11 +13,10 @@ import Icon from '../UI/UndrawDesigner/IconSVG'
 import Progress from '../UI/Progress/ProressTag'
 import QuestionForm from '../UI/Container/QuestionForm'
 import {  useSelector , useDispatch} from 'react-redux'
-import {addDisesea , addFirstTrieuChung} from '../../reduxToolkit/Slice/diseseaSlice'
+import {addData , addFirstTrieuChung,resetDisessea} from '../../reduxToolkit/Slice/diseseaSlice'
 import diseseaApi from '../../api/diseseaApi'
 import { useTabContext } from '@material-ui/lab';
 const DiagnoseTag = () =>{
-  let history = useHistory();
   let dispatch = useDispatch()
  // let ketqua = useSelector(state=>state.disesea.chuandoan)
   let FirstTrieuChung = useSelector(state=>state.disesea.trieuchungbandau)
@@ -26,12 +25,9 @@ const DiagnoseTag = () =>{
   const [ketqua,setKetQua] = useState([])
   const [question, setQuestion] = useState([])
   const Params = useParams();
-  const showTrieuChung = (e,value)=>{
-    setTrieuChung(value)
-  }
   useEffect(()=>{
     const fetchQuestion = async()=>{
-      const repose = await diseseaApi.chuandoan({data: dsTrieuChung})
+        const repose = await diseseaApi.chuandoan({data: dsTrieuChung})
         setQuestion(repose)
     }
     const fetchKetQua = async()=>{
@@ -41,13 +37,13 @@ const DiagnoseTag = () =>{
     if(dsTrieuChung.length>0){
       fetchQuestion()
       fetchKetQua()
+     // dispatch(addData(question))
     }
   },[dsTrieuChung])
   useEffect(() => {
     dispatch(addFirstTrieuChung({ten_trieuchung:Params.trieuchung, vitri: Params.vitri}))
   }, [Params]);
   useEffect(() => {
-    //dispatch(chuandoanDisesea({ten_trieuchung:Params.trieuchung, vitri: Params.vitri}))
     const fetchKetQua = async()=>{
       const respose =await diseseaApi.getKetQua({data: [{ten_trieuchung: Params.trieuchung, vitri: Params.vitri}]})
       setKetQua(respose)
@@ -58,8 +54,9 @@ const DiagnoseTag = () =>{
     }
     fetchKetQua()
     fetchQuestion()
+   // dispatch(addData(question))
     if(FirstTrieuChung.ten_trieuchung !== undefined){
-       dispatch(addDisesea(FirstTrieuChung))
+       dispatch(resetDisessea(FirstTrieuChung))
     }
   }, [FirstTrieuChung])
   return(
@@ -84,7 +81,7 @@ const DiagnoseTag = () =>{
             </MDBRow>
             <MDBRow >
               <MDBCol sm="3" size="12" className=" pr-0 pl-0 border-right"  >
-                <MDBRow>
+                <MDBRow >
                   <MDBCol size="12">
                     <header className=" align-self-md-center" style={{height:"40px" , backgroundColor:"#2067dd "}}>
                       <p className="title-2">Kết quả chuẩn đoán</p>
