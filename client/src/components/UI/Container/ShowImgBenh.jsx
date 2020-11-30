@@ -1,62 +1,49 @@
 import React from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
-import Lightbox from "react-image-lightbox";
-import "./Lightbox.css";
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import { Link } from 'react-router-dom';
 
+import Lightbox from "react-image-lightbox";
+import {Image as ImageCloud} from 'cloudinary-react';
+import './Lightbox.css'
 class LightboxPage extends React.Component {
   state = {
     photoIndex: 0,
     isOpen: false,
-    images: [
-      'https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(58).jpg',
-      'https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(61).jpg',
-      'https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(62).jpg',
-      'https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(60).jpg',
-      'https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(66).jpg',
-      'https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(70).jpg',
-      'https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(74).jpg',
-      'https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(64).jpg',
-      'https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(77).jpg',
-      'https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(78).jpg',
-      'https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(76).jpg',
-    ],
-    colWidth: [3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3]
+    images: this.props.img
   }
-
   renderImages = () => {
     let photoIndex = -1;
     const { images } = this.state;
-
-    return images.map((imageSrc, index) => {
-      photoIndex++;
-      const privateKey = photoIndex;
-      return (
-        <MDBCol md={this.state.colWidth[index]} key={photoIndex}>
-          <figure>
-            <img
-              src={imageSrc}
-              alt="Gallery"
-              className="img-fluid z-depth-1"
-              onClick={() =>
-                this.setState({ photoIndex: privateKey, isOpen: true })
-              }
-            />
-          </figure>
-        </MDBCol>
+  return images.map(imageSrc => {
+    photoIndex++;
+    const privateKey = photoIndex;
+    return (
+      <MDBCol md="4" key={photoIndex}>
+        <figure>
+          <Link target="_blank" to={{ pathname: "https://res.cloudinary.com/taoluanby/image/upload/"+imageSrc}} >
+        <ImageCloud cloudName="taoluanby" publicId={imageSrc} width="450" height="300" crop="scale"
+          className="img-fluid" 
+          // onClick={()=>
+          //   <Redirect to={{}} />
+          // //this.setState({ photoIndex: privateKey, isOpen: true })
+          // }
+        />
+        </Link>
+        </figure>
+      </MDBCol>
       );
     })
   }
-
   render() {
-    const { photoIndex, isOpen, images } = this.state;
+  const { photoIndex, isOpen, images } = this.state;
     return (
-      <MDBContainer className="mt-5 p-3" >
-        <div className="mdb-lightbox p-3">
-          <MDBRow>
-            {this.renderImages()}
-          </MDBRow>
-        </div>
-        {isOpen && (
+        <MDBContainer className="mt-5 ">
+          <div className="mdb-lightbox no-margin ">
+            <MDBRow>
+              {this.renderImages()}
+            </MDBRow>
+          </div>
+          {isOpen && (
           <Lightbox
             mainSrc={images[photoIndex]}
             nextSrc={images[(photoIndex + 1) % images.length]}
@@ -72,12 +59,12 @@ class LightboxPage extends React.Component {
               this.setState({
                 photoIndex: (photoIndex + 1) % images.length
               })
-            }
-          />
-        )}
-      </MDBContainer >
-    );
+              }
+            />
+          )}
+        </MDBContainer>
+      );
+    }
   }
-}
 
 export default LightboxPage;

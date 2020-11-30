@@ -1,18 +1,31 @@
 import { MDBContainer, MDBRow ,MDBCol,MDBTypography, MDBBox ,MDBBtn} from 'mdbreact';
-import React,{useEffect} from 'react'
-import {useParams} from "react-router-dom";
+import React,{useEffect,useState} from 'react'
+import {useParams,useLocation} from "react-router-dom";
 import Disesea from './Disesea'
 import CarouselPage from '../UI/Container/ShowImgBenh'
 import SpeedScroll from '../UI/Container/SpeedScroll'
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
-import AppBar from '@material-ui/core/AppBar';
+import diseseaApi from '../../api/diseseaApi'
 
 const DiseseaTag = () =>{
     const Params = useParams()
+    let location = useLocation();
+    const [data, setData] = useState([]);
     useEffect(() => {
+        
         document.querySelector('#benh').scrollIntoView({ behavior: 'smooth', block: 'start' })
     })
+    
+    useEffect(()=>{
+        const fetchThongTinBenh = async()=>{
+            const respose = await diseseaApi.getThongTinBenh({uri_benh: Params.benh})
+            setData(respose)
+            console.log(data)
+        }
+        if(Params.benh){
+            fetchThongTinBenh()
+        }
+    },[Params])
+    if(data.mota){
     return(
         <div className="rgba-blue-slight" style={{position: "relative"}} id="timkiem">
         <Disesea />
@@ -28,7 +41,7 @@ const DiseseaTag = () =>{
                     <MDBCol sm="12" className="d-flex justify-content-center">
                         <MDBRow>
                         <MDBCol sm="12" className="d-flex justify-content-center">
-                            <p className="title mt-4 mb-0">BỆNH BẠC LÁ</p>
+                            <p className="title mt-4 mb-0">BỆNH {Params.benh}</p>
                         </MDBCol>
                         <MDBCol sm="12" className="d-flex justify-content-center">
                             <span className="line-2 mt-0 pt-0"></span>
@@ -48,9 +61,7 @@ const DiseseaTag = () =>{
                     <MDBCol md="8" size="12" className=" d-flex justify-content-center mt-1">
                         <MDBTypography blockquote bqColor="primary" className="text-center mt-0 pt-0">
                             <MDBBox tag="p" mb={0}>
-                            - Tên khoa học: Xanthomonas campestris pv. Oryzae Dowson
-                            - Bệnh bạc lá lúa được phát hiện đầu tiên tại Nhật Bản vào khoảng năm 1884 - 1885. Bệnh phổ biến ở hầu khắp các nước trồng lúa trên thế giới, đặc biệt ở Nhật Bản, Trung Quốc, Philippines, Ấn Độ, Xaaylan. Ở Việt Nam, bệnh bạc lá lúa đã đươc phát hiện từ lâu trên các giống lúa mùa cũ. Đặc biệt, từ năm 1965 - 1966 trở lại đây, bệnh thường xuyên phá hoại một cách nghiêm trọng ở các vùng trồng lúa trên các giống nhập nội có năng suất cao cấy trong vụ chiêm xuân và đặc biệt ở vụ mùa. 
-                            - Mức độ, tác hại của bệnh phụ thuộc vào giống, thời kỳ bị bệnh của cây sớm hay muộn và mức độ bị bệnh nặng hay nhẹ, bệnh làm cho lá lúa đặc biệt là lá đòng sớm tàn, nhanh chóng chết khô, bộ lá sơ xác, tỷ lệ hạt lép cao, năng suất giảm sút rõ rệt.
+                                {data.mota.value}
                             </MDBBox>
                         </MDBTypography>
                     </MDBCol>
@@ -62,15 +73,18 @@ const DiseseaTag = () =>{
                     </MDBCol>
                     <MDBCol size="12" className=" d-flex justify-content-start mt-1">
                     <MDBTypography note noteColor='warning' className="trieuchung">
-                    <li>Bệnh bạc lá lúa phát sinh phá hại suốt thời kỳ mạ đến khi lúa chín, nhưng có triệu chứng điển hình là thời kỳ lúa cấy tren ruộng từ sau khi lúa đẻ - trỗ - chín - sữa. </li>
-                    <li>Vết bệnh triệu chứng bạc lá lúa giai đoạn mạ: Triệu chứng gây bệnh không đặc trưng như trên lúa, do đó dễ nhầm lẫn với các hiện tượng khô đầu lá lúa do sinh lý. Vi khuẩn hại mạ gây ra triệu chứng ở mép lá, mút lá với những vệt có độ dài ngắn khác nhau, có màu xanh vàng, nâu bạc rồi khô xác. </li>
-                    <li>Vết bệnh triệu trứng bạc lá lúa trên cây lúa giai đoạn sinh trưởng: Triệu chứng bệnh biểu hiện rõ dệt hơn, tuy nhiên nó có thể biến đổi ít nhiều tùy theo giống và điều kiện ngoại cảnh. Vết bệnh từ mép lá, mút ls lan dần vào trong phiến lá hoặc kéo dài theo gân chính, nhưng cũng có vết bệnh từ ngay giữa phiến lá lan rộng ra. Vết bệnh lan rộng theo đường gợn sóng màu vàng, mô bệnh xanh tái, vàng lục, lá nâu bạc, khô xác. </li>
+                        {data.trieuchung.value.map(x=>{
+                            if(x !== ""){
+                                return( <li>{x}</li>)
+                            }
+                           
+                        })}
                     </MDBTypography>
                     </MDBCol>
                 </MDBRow>
                 <MDBRow id="hinhanh"> 
                     <MDBCol sm="12">
-                    <CarouselPage/>
+                    <CarouselPage img={data.hinhanh.img}/>
                     </MDBCol>
                 </MDBRow>
                 <MDBRow className="d-flex justify-content-center" id="tachai">
@@ -82,13 +96,22 @@ const DiseseaTag = () =>{
                                 </div>
                             </MDBCol>
                             <MDBCol size="12" className=" d-flex justify-content-center mt-1">
-                                <p className="title-9 mb-0">Đặc điểm phát sinh và phát triển</p>
+                                {
+                                    (data.ddpspt === undefined &&  data.ddshgh === undefined)
+                                    ? <p className="title-9 mb-0">Chưa có thông tin</p>
+                                    :<p className="title-9 mb-0">{data.ddpspt ? data.ddpspt.type : data.ddshgh.type}</p>
+                                }
+                                
                             </MDBCol>
                             <MDBCol md="8" size="12" className=" d-flex justify-content-center mt-1">
                                 <MDBTypography blockquote bqColor="primary" className="text-center mt-0 pt-0">
                                     <MDBBox tag="p" mb={0}>
-                                    - Tên khoa học: Xanthomonas campestris pv. Oryzae Dowson
-                                    - Bệnh bạc lá lúa được phát hiện đầu tiên tại Nhật Bản vào khoảng năm 1884 - 1885.  bệnh bạc lá lúa đã đươc phát hiện từ lâu trên các giống lúa mùa cũ. Đặc biệt, 
+                                        {
+                                            (data.ddpspt === undefined && data.ddshgh === undefined )
+                                            ?  <p>Chưa có thông tin</p> 
+                                            : -`${data.ddpspt ? data.ddpspt.value.replace(/[-]/gi,' ') : data.ddshgh.value.replace(/[-]/gi,' ')}`
+                                        }
+                                    
                                     </MDBBox>
                                 </MDBTypography>
                             </MDBCol>
@@ -106,7 +129,7 @@ const DiseseaTag = () =>{
                             </MDBCol>
                             <MDBCol size="12" className=" d-flex justify-content-center mt-1">
                                 <MDBTypography note noteColor='primary' className="text-center mt-0 pt-0" className="trieuchung">
-                                    Bệnh không những làm giảm năng suất, sản lượng lúa mà còn làm giảm phẩm chất của hạt gạo, nếu bán sẽ mất giá từ đó gây thất thu về mặt kinh tế cho bà con nông dân. Ngoài ra, nếu dùng làm giống thì chất lượng của hạt giống cũng kém, ảnh hưởng nhiều đến sinh trưởng và phát triển của cây lúa ở vụ sau, và đây cũng là nguồn bệnh ban đầu gây cho lúa ở vụ sau.
+                                {data.tachai ? data.tachai.value : ''}
                                 </MDBTypography>
                             </MDBCol>
                         </MDBRow>
@@ -121,8 +144,7 @@ const DiseseaTag = () =>{
                             </MDBCol>
                             <MDBCol size="12" className=" d-flex justify-content-center mt-1">
                                 <MDBTypography note noteColor='primary' className="text-center mt-0 pt-0" className="trieuchung">
-                                    - Tên khoa học: Xanthomonas campestris pv. Oryzae Dowson
-                                    - Mức độ, tác hại của bệnh phụ thuộc vào giống, thời kỳ bị bệnh của cây sớm hay muộn và mức độ bị bệnh nặng hay nhẹ, bệnh làm cho lá lúa đặc biệt là lá đòng sớm tàn, nhanh chóng chết khô, bộ lá sơ xác, tỷ lệ hạt lép cao, năng suất giảm sút rõ rệt.
+                                    {data.phongchong.value}
                                 </MDBTypography>
                             </MDBCol>
                         </MDBRow>
@@ -138,9 +160,7 @@ const DiseseaTag = () =>{
                             <MDBCol md="8" size="12" className=" d-flex justify-content-center mt-1">
                                 <MDBTypography blockquote bqColor="primary" className="text-center mt-0 pt-0">
                                     <MDBBox tag="p" mb={0}>
-                                    - Tên khoa học: Xanthomonas campestris pv. Oryzae Dowson
-                                    - Bệnh bạc lá lúa được phát hiện đầu tiên tại Nhật Bản vào khoảng năm 1884 - 1885. Bệnh phổ biến ở hầu khắp các nước trồng lúa trên thế giới, đặc biệt ở Nhật Bản, Trung Quốc, Philippines, Ấn Độ, Xaaylan. Ở Việt Nam, bệnh bạc lá lúa đã đươc phát hiện từ lâu trên các giống lúa mùa cũ. Đặc biệt, từ năm 1965 - 1966 trở lại đây, bệnh thường xuyên phá hoại một cách nghiêm trọng ở các vùng trồng lúa trên các giống nhập nội có năng suất cao cấy trong vụ chiêm xuân và đặc biệt ở vụ mùa. 
-                                    - Mức độ, tác hại của bệnh phụ thuộc vào giống, thời kỳ bị bệnh của cây sớm hay muộn và mức độ bị bệnh nặng hay nhẹ, bệnh làm cho lá lúa đặc biệt là lá đòng sớm tàn, nhanh chóng chết khô, bộ lá sơ xác, tỷ lệ hạt lép cao, năng suất giảm sút rõ rệt.
+                                        {data.dieutri.value}
                                     </MDBBox>
                                 </MDBTypography>
                             </MDBCol>
@@ -152,5 +172,11 @@ const DiseseaTag = () =>{
         </main>
         </div>
     )
+    }else{
+        return (
+        <>
+        <div id="benh"></div>
+        </>)
+    }
 }
 export default DiseseaTag;

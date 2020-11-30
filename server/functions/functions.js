@@ -208,7 +208,7 @@ module.exports={
                 arr_benh.map( y=>{
                     if( x.ten_loai == y.ten_loai.value){
                         img = y.hinh.value.substring(0,y.hinh.value.indexOf(','))
-                        x.data.push({tenbenh: y.tenbenh.value ,hinh: img , khangbenh: y.giongkhangbenh ? y.giongkhangbenh.value : '' })
+                        x.data.push({tenbenh: y.tenbenh.value ,hinh: img ,uri_benh: y.uri_benh.value, khangbenh: y.giongkhangbenh ? y.giongkhangbenh.value : '' })
                     }
                 })
             })
@@ -319,5 +319,53 @@ module.exports={
             })
             res(results)
         })
-    }
+    },
+    handling_benh: (data)=>{
+        return new Promise((res,rej)=>{
+            let result = []
+            let temp = {}
+            data.map(x=>{
+               // result.push({type: x.data.value , value: x.value.value})
+                if(x.data.value === "Cách phòng chống"){
+                    temp.phongchong = {type: x.data.value , value: x.value.value}
+                }else if(x.data.value === "Tác hại"){
+                    temp.tachai =  {type: x.data.value , value: x.value.value}
+                }else if( x.data.value === "Đặc điểm phát sinh và phát triển"){
+                    temp.ddpspt =  {type: x.data.value , value: x.value.value}
+                }else if( x.data.value === "Triệu chứng cụ thể"){
+                    temp.trieuchung =  {type: x.data.value , value: x.value.value.split('-')}
+                }else if( x.data.value === 	"Đặc điểm hình thái"){
+                    temp.ddht =  {type: x.data.value , value: x.value.value}
+                }else if( x.data.value === 	"Cách điều trị"){
+                    temp.dieutri =  {type: x.data.value , value: x.value.value}
+                }else if( x.data.value === 	"Đặc điểm sinh học và gây hại"){
+                    temp.ddshgh =  {type: x.data.value , value: x.value.value}
+                }else if( x.data.value === 	"Nguyên nhân"){
+                    temp.nguyennhan =  {type: x.data.value , value: x.value.value}
+                }
+            })
+            if(data[0].hinhanh !== undefined){
+               let hinhanh = data[0].hinhanh.value 
+                let arr = hinhanh.split(',')
+                let arrNew = []
+                arr.map(x=>{
+                    arrNew.push(x.replace(/[\n]/gi,''))
+                })
+                temp.hinhanh = {type: 'Hình ảnh' , img: arrNew} 
+            }
+            temp.mota = {type:'Mô tả' , value: data[0].mota.value}
+            //result.push({type: "Mô tả" , value: data[0].mota.value})
+           // result.push({hinhanh: data[0].hinhanh.value})
+            res(temp)
+        })
+    },
+    handling_dsbenh: (data)=>{
+        return new Promise((res,rej)=>{
+            let result = []
+            data.map(x=>{
+                result.push({ten_trieuchung: x.ten_benh.value})
+            })
+            res(result)
+        })
+    },
 }

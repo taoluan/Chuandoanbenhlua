@@ -35,21 +35,25 @@ module.exports = {
     },
     benh: async(req,res)=>{
         try {
-            let uri_benh = req.body.uri_benh
+            let uri_benh = req.query.uri_benh
             let rs_data_benh = await graphDBEndpoint.query(
             `
-            select ?data ?rs where { 
-                <${uri_benh}> ?p ?rs .
-                ?p rdfs:comment ?data.
-                {?p a owl:DatatypeProperty .}
-                UNION 
-                {?p a owl:AnnotationProperty .}
-            } limit 100 
+            select ?data ?value ?hinhanh ?mota where { 
+                ?x rdf:type data:Bệnh;
+                    rdfs:label ?label;
+                    data:Describe ?mota
+                FILTER( regex(?label, "${uri_benh}","i")).
+                ?x ?p ?value .
+                ?p a owl:DatatypeProperty .
+                ?x data:Image ?hinhanh.
+                ?p rdfs:comment ?data
+            }
         
             `)
-        res.send(rs_data_benh.results.bindings)
+        const result = await functions.handling_benh(rs_data_benh.results.bindings)
+        res.send(result)
         } catch (error) {
-            
+            console.log(error)
         }
         
     },
@@ -92,7 +96,7 @@ module.exports = {
             }
             let tra_cuu = await graphDBEndpoint.query(
                 `
-                SELECT DISTINCT ?tenbenh ?ten_loai  ?hinh ?giongkhangbenh
+                SELECT DISTINCT ?tenbenh ?ten_loai  ?hinh ?giongkhangbenh ?uri_benh
                 WHERE {
                 ?uri_benh data:diseaseSeason ?uri_Season ;
                         data:inArea ?uri_Area;
@@ -106,7 +110,7 @@ module.exports = {
                 }order by ?ten_loai
                 `)
             let results =await functions.handling_tracuu(tra_cuu.results.bindings)
-            console.log(results)
+            
             res.send(results)
         } catch (error) {
             
@@ -253,6 +257,25 @@ module.exports = {
                 `
             )
             res.json(data.results.bindings)
+        } catch (err) {
+            console.log(err)
+        }
+    },
+    getAlldsbenh:async(req,res)=>{
+        try {
+            let data = await graphDBEndpoint.query(
+                `
+                select  ?ten_benh  
+                WHERE { 
+                    ?uri_loaibenh rdfs:subClassOf data:Bệnh.
+                    ?uri_benh rdf:type ?uri_loaibenh;
+                            rdfs:label ?ten_benh.
+                    
+                }orderby ?uri_loaibenh
+                `
+            )
+            const results =await functions.handling_dsbenh(data.results.bindings)
+            res.json(results)
         } catch (err) {
             console.log(err)
         }

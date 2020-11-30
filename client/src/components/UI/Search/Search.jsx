@@ -12,6 +12,7 @@ const Search = ()=> {
     const [textSearch, setTextSearch] = useState()
     const [data,setData] = useState([])
     let history = useHistory();
+    let location = useLocation();
     const checkSearch = ()=>{
         if(textSearch){
             history.push("/chuandoan/"+textSearch.trieuchung+"/"+textSearch.vitri)

@@ -40,5 +40,13 @@ const diseseaApi ={
         const url = '/tracuu'
         return axiosClient.post(url,params)
     },
+    getThongTinBenh: (params)=>{
+        const url = '/benh'
+        return axiosClient.get(url,{params})
+    },
+    getAllBenh: ()=>{
+        const url = '/getalldsbenh'
+        return axiosClient.get(url)
+    },
 }
 export default diseseaApi
