@@ -10,6 +10,8 @@ import TabListDisesea from '../UI/Tab/TabListDisesea'
 import '../../css/home.css'
 import Header from '../UI/Header/Header'
 import ChartThongKeKhuVuc from '../UI/Charts/ThongKeKhuVuc'
+import {Helmet} from "react-helmet";
+
 import diseseaApi from '../../api/diseseaApi'
 import {countDisesea} from '../../reduxToolkit/Slice/diseseaSlice' 
 const top100Films = [
@@ -21,6 +23,9 @@ const Home = ()=>{
     const [loaibenh, setLoaiBenh] = useState([])
     return(
         <>
+        <Helmet>
+            <title>Dr-Rice - Trang chủ </title>
+        </Helmet>
         <Header url={true}/>
         <MDBView src={process.env.PUBLIC_URL + '/img/mbr-1920x1281.jpg'} className="pb-0 mb-0">
             <MDBMask className="flex-center flex-column text-white text-center d-flex align-items-center bd-highlight mb-3 example-parent">

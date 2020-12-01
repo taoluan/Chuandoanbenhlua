@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -23,9 +23,11 @@ export default function ImgMediaCard(props) {
           </Typography>
         </CardContent>
       <CardActions>
-        <Button size="small" color="primary">
-          Xem thông tin chi tiếc
-        </Button>
+        <Link target="_blank" to={{ pathname: "/benh/"+props.item.ten_benh.value }}>
+          <Button size="small" color="primary">
+            Xem thông tin chi tiếc
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );

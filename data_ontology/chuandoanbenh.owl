@@ -89,6 +89,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OWLObjectProperty_33ac0f82_de71_455f_aa84_dd32a8d12cd8 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OWLObjectProperty_33ac0f82_de71_455f_aa84_dd32a8d12cd8">
+        <rdfs:label xml:lang="en">hasReason</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#diseaseSeason -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#diseaseSeason">
@@ -185,6 +193,25 @@
     
 
 
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mô_tả_triệu_chứng -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mô_tả_triệu_chứng">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Triệu chứng cụ thể</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8">
+        <rdfs:label>Nguyên nhân</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phòng_chống -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phòng_chống">
@@ -201,17 +228,6 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tác hại</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#description_symptoms -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#description_symptoms">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Triệu chứng cụ thể</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -578,13 +594,15 @@
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
         <isDisease rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bạc_Lá"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh bạc lá lúa phát sinh phá hại suốt thời kỳ mạ đến khi lúa chín, nhưng có triệu chứng điển hình là thời kỳ lúa cấy tren ruộng từ sau khi lúa đẻ , trỗ , chín , sữa. 
+- Vết bệnh triệu chứng bạc lá lúa giai đoạn mạ: Triệu chứng gây bệnh không đặc trưng như trên lúa, do đó dễ nhầm lẫn với các hiện tượng khô đầu lá lúa do sinh lý. Vi khuẩn hại mạ gây ra triệu chứng ở mép lá, mút lá với những vệt có độ dài ngắn khác nhau, có màu xanh vàng, nâu bạc rồi khô xác.
+- Vết bệnh triệu trứng bạc lá lúa trên cây lúa giai đoạn sinh trưởng: Triệu chứng bệnh biểu hiện rõ dệt hơn, tuy nhiên nó có thể biến đổi ít nhiều tùy theo giống và điều kiện ngoại cảnh. Vết bệnh từ mép lá, mút ls lan dần vào trong phiến lá hoặc kéo dài theo gân chính, nhưng cũng có vết bệnh từ ngay giữa phiến lá lan rộng ra. Vết bệnh lan rộng theo đường gợn sóng màu vàng, mô bệnh xanh tái, vàng lục, lá nâu bạc, khô xác. 
+- Thông thường ranh giới giữa mô bệnh và mô khỏe được phân biệt rõ ràng, có giới hạn theo đường gợn sóng màu vàng hoặc không vàng, có khi chỉ là một đường viền màu nâu đứt quãng hay không đứt quãng.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Vi khuẩn gây bệnh bạc lá lúa trước đây có tên là Pseudomonas oryzae, hoặc Phytomona ozyzae, về sau Downson đặt tên là Xanthomonas oryzae Dowson. 
+- Trong điều kiện mưa ẩm thuận lợi cho sự phát triển của vi khuẩn, trên bề mặt vết bệnh tiết ra những giọt dịch vi khuẩn. Thông qua sự va chạm giữa các lá lúa, nhờ mưa gió truyền lan bệnh sang các lá khác để tiến hành xâm nhiễm lặp lại lặp lại nhiều lần trong thời kỳ sinh trưởng của cây lúa. Cho nên, bệnh bạc lá lúa tuy là một loại bệnh có cự ly truyền lan hẹp song nó còn tùy thuộc vào mưa bão xảy ra vào cuối vụ chiêm xuân và trong vụ mùa mà bệnh có thể truyền lan với phạm vi không gian tương đối rộng, giọt keo vi khuẩn hình thành nhiều, đó là 1 trong những nguyên nhân quan trọng làm cho bệnh bạc lá phát sinh phát triển mạnh sau những đợt mưa xảy ra trong vụ chiêm xuân và vụ mùa.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Khi phát hiện bệnh, cần dừng ngay việc bón phân đạm.
 Sử dụng một số loại thuốc để phun phòng bệnh</Phòng_chống>
         <Tác_hại>Bệnh bạc lá phát triển mạnh trong điều kiện thời tiết nóng ẩm,nắng mua thất thường và thường gây hại trong vụ lúa mùa.Vi khuẩn có thể tồn tại trong hạt giống, tàn dư cây bệnh hay ở trong cỏ dại.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh bạc lá lúa phát sinh phá hại suốt thời kỳ mạ đến khi lúa chín, nhưng có triệu chứng điển hình là thời kỳ lúa cấy tren ruộng từ sau khi lúa đẻ - trỗ - chín - sữa. 
-- Vết bệnh triệu chứng bạc lá lúa giai đoạn mạ: Triệu chứng gây bệnh không đặc trưng như trên lúa, do đó dễ nhầm lẫn với các hiện tượng khô đầu lá lúa do sinh lý. Vi khuẩn hại mạ gây ra triệu chứng ở mép lá, mút lá với những vệt có độ dài ngắn khác nhau, có màu xanh vàng, nâu bạc rồi khô xác.
-- Vết bệnh triệu trứng bạc lá lúa trên cây lúa giai đoạn sinh trưởng: Triệu chứng bệnh biểu hiện rõ dệt hơn, tuy nhiên nó có thể biến đổi ít nhiều tùy theo giống và điều kiện ngoại cảnh. Vết bệnh từ mép lá, mút ls lan dần vào trong phiến lá hoặc kéo dài theo gân chính, nhưng cũng có vết bệnh từ ngay giữa phiến lá lan rộng ra. Vết bệnh lan rộng theo đường gợn sóng màu vàng, mô bệnh xanh tái, vàng lục, lá nâu bạc, khô xác. 
-- Thông thường ranh giới giữa mô bệnh và mô khỏe được phân biệt rõ ràng, có giới hạn theo đường gợn sóng màu vàng hoặc không vàng, có khi chỉ là một đường viền màu nâu đứt quãng hay không đứt quãng.</description_symptoms>
         <Điều_trị>Khi phát hiện bệnh, cần dừng ngay việc bón phân đạm
 Sử dụng một số loại thuốc để phun phòng bệnh</Điều_trị>
         <Đặc_điểm_phát_sinh_và_phát_triển rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Ở miền Bắc nước, bệnh có thể phát sinh phát triển ở tất cả các vụ trồng lúa. Vụ chiêm xuân, bệnh thường phát sinh vào tháng 3 - 4, phát triển mạnh hơn vào tháng 5 - 6 khi mà lúa chiêm xuân trỗ và chín, xong ở vụ chiêm xuân trỗ và chín, song ở vụ chiêm xuân mức độ bị bệnh thường nhẹ hơn, tác hại ít hơn so với vụ mùa trừ 1 số giống lúa xuân cấy muộn, nhiễm bệnh ngay từ khi lúa làm đòng thì tác hại của bệnh có thể sẽ lớn. 
@@ -683,6 +701,8 @@ LuanVan_CNTT/01-BL_vbt977</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bọ trĩ trưởng thành và non đều hút nhựa lá làm cho lá có màu vàng đỏ. Khi mật độ thấp xuất hiện những chấm nhỏ xếp theo hàng dọc trên lá, lá non hầu như bị quăn lại, không hồi phục được.
+Bọ trĩ gây hại ngay từ khi cây lúa xuất hiện, mật độ tăng dần từ khi lúa hồi xanh đến đẻ nhánh sau đó giảm dần tới lúc lúa trỗ. Trời mưa lớn là bất lợi cho bọ trĩ. Bọ trĩ thường hại nặng những ruộng thiếu nước.</Mô_tả_triệu_chứng>
         <Phòng_chống>Dùng giống kháng hoặc ít nhiễm rầy. Nếu thuận lợi nên dùng giống ngắn ngày
  thay cho giống dài ngày.
  Không bón phân đạm quá nhiều, không sạ cấy quá dày.
@@ -699,8 +719,6 @@ và khô vàng đi. Khi bị hại nghiêm trọng thì xuất hiện màu vàng
 Có nhiều triệu chứng lúa bị vàng đọt giống bọ trĩ gây hại, nên cần nhận biết bọ trĩ để xác định vì chúng rất nhỏ. Nhận biết bằng cách
  đặt lòng bàn tay xuống nước cho ướt rồi dùng lòng bàn tay quét trên ngọn các cây lúa. Sau đó đưa lòng bàn tay gần mắt để quan 
 sát kỹ. Nếu đúng bọ trĩ gây hại, thì trên lòng bàn tay những con bọ trĩ rất nhỏ màu đen (khoảng 1,5 mm) nhảy hoặc bò chậm chạp vì dính nước trên lòng bàn tay.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bọ trĩ trưởng thành và non đều hút nhựa lá làm cho lá có màu vàng đỏ. Khi mật độ thấp xuất hiện những chấm nhỏ xếp theo hàng dọc trên lá, lá non hầu như bị quăn lại, không hồi phục được.
-Bọ trĩ gây hại ngay từ khi cây lúa xuất hiện, mật độ tăng dần từ khi lúa hồi xanh đến đẻ nhánh sau đó giảm dần tới lúc lúa trỗ. Trời mưa lớn là bất lợi cho bọ trĩ. Bọ trĩ thường hại nặng những ruộng thiếu nước.</description_symptoms>
         <Điều_trị>Thường xuyên kiểm tra đồng ruộng phát hiện và phun tuốc kịp thời.
  Dùng các loại thuốc Regent 800WG, Hopsan 75EC, Selecron 500EC hoặc Actara 25WP phun khi bọ trĩ phát sinh rộ.</Điều_trị>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Selenothrips rubrocinctus</Describe>
@@ -759,12 +777,12 @@ LuanVan_CNTT/19-BT_rdo7hd</Image>
         <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt_lép"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bông lúa non bị bọ xít trích hút, hạt lúa bị hại lửng lép hoặc bạc trắng, giảm năng suất</Mô_tả_triệu_chứng>
         <Phòng_chống>Vệ sinh đồng ruộng, dọn sạch cỏ ở các bờ ruộng hoặc sơn bờ ruộng.
 Tập trung cấy đúng thời vụ trên từng vùng rộng lớn để có kế hoạch theo dõi, tổ chức phòng trừ.
  Có thể tổ chức đốt đuốc để bẫy bọ xít trưởng thành ra rộ, sử dụng các bó lá xoan ngâm nước giải một ngày, cắm lên các cọc bố trí quanh ruộng để tập trung tiêu diệt bọ xít...</Phòng_chống>
         <Tác_hại>Bọ xít non hay trưởng thành đều trích hút hạt lúa non làm cho hạt bị lép trắng, làm giảm phẩm chất và năng suất (có thể lên đến 50%).
 Bọ xít thường gây hại nặng ở tất cả các giai đoạn sinh trưởng của cây lúa, quan trọng nhất là thời kỳ trỗ, bông lúa bị hại lửng lép hoặc bạc trắng, giảm năng suất. Ruộng lúa gần bìa rừng, gần ruộng rau màu và có nhiều cỏ dại thường bị hại nặng.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bông lúa non bị bọ xít trích hút, hạt lúa bị hại lửng lép hoặc bạc trắng, giảm năng suất</description_symptoms>
         <Điều_trị>Sử dụng các loại thuốc hóa học lưu dẫn, có vị độc, tiếp xúc như Ofatox 400EC, Fastac 5EC…</Điều_trị>
         <Đặc_điểm_hình_thái rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Trứng hình bầu dục, có vết lõm ở giữa, mới đẻ có màu trắng đục, sau chuyển dần màu nâu.
 - Bọ xít non có hình dáng giống trưởng thành, có màu vàng lục.
@@ -835,7 +853,7 @@ Thành trùng có hình dạng tương tự như bọ xít xanh nhưng có một
 + Bọ xít xanh vai vàng: Piezodorus rubrofasciatus
 - Họ: Pentatomidae
 - Bộ: Hemiptera</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/28-BXX_w1b1z3</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/28-BXX_w1b1z3,</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do Bọ Xích Xanh gây ra</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bọ Xích Xanh</rdfs:label>
     </owl:NamedIndividual>
@@ -878,11 +896,11 @@ Thành trùng có hình dạng tương tự như bọ xít xanh nhưng có một
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bọ xít đen có thể gây hại ở các vụ lúa trong năm, tuy nhiên gây hại nặng nhất ở vụ hè thu có điều kiện thời tiết nóng và ẩm. Bọ thường gây hại nặng ở giai đoạn lúa đẻ nhánh rộ đến làm đòng và thường tập trung chích hút ở mắt thân lúa.Hàng năm bọ xít có thể hình thành 2 lứa. Lứa từ tháng 3 - 5 và lứa từ tháng 8 - 9. Bọ xít đen trước đây chỉ xuất hiện rải rác và gây hại không đáng kể, nhưng những năm gần đây chúng xuất hiện và gây hại nhiều hơn, trên các giống lúa mùa cũng như các giống lúa ngắn ngày. Thực tế đồng ruộng cho thấy những giống nào không kháng được rầy nâu, thì thường là những giống bị bọ xít đen gây hại nhiều hơn những giống khác.</Mô_tả_triệu_chứng>
         <Phòng_chống>Vệ sinh đồng ruộng, diệt trừ cỏ dại là ký chủ phụ của bọ xít.
 Cấy gọn thời vụ. Phát hiện sớm, thu gom ổ trứng để diệt, vợt bắt bọ xít trưởng thành.
 Ở những cánh đồng có điều kiện tưới tiêu thuận tiện thì vào thời kỳ bọ xít đẻ trứng rộ có thể hạ mức nước trong ruộng để bọ xít đẻ trứng ở vị trí thấp hơn, sau đó cứ cách 4 ngày một lần cho nước vào cao hơn vị trí ban đầu, ngâm 24 giờ. Làm 2 - 3 lần như vậy có thể tiêu diệt được nhiều trứng bọ xít.</Phòng_chống>
         <Tác_hại>Bọ thường gây hại nặng ở giai đoạn lúa đẻ nhánh rộ đến làm đòng và thường tập trung chích hút ở mắt thân lúa.Hàng năm bọ xít có thể hình thành 2 lứa. Lứa từ tháng 3 - 5 và lứa từ tháng 8 - 9. Bọ xít đen trước đây chỉ xuất hiện rải rác và gây hại không đáng kể, nhưng những năm gần đây chúng xuất hiện và gây hại nhiều hơn, trên các giống lúa mùa cũng như các giống lúa ngắn ngày. Thực tế đồng ruộng cho thấy những giống nào không kháng được rầy nâu, thì thường là những giống bị bọ xít đen gây hại nhiều hơn những giống khác.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bọ xít đen có thể gây hại ở các vụ lúa trong năm, tuy nhiên gây hại nặng nhất ở vụ hè thu có điều kiện thời tiết nóng và ẩm. Bọ thường gây hại nặng ở giai đoạn lúa đẻ nhánh rộ đến làm đòng và thường tập trung chích hút ở mắt thân lúa.Hàng năm bọ xít có thể hình thành 2 lứa. Lứa từ tháng 3 - 5 và lứa từ tháng 8 - 9. Bọ xít đen trước đây chỉ xuất hiện rải rác và gây hại không đáng kể, nhưng những năm gần đây chúng xuất hiện và gây hại nhiều hơn, trên các giống lúa mùa cũng như các giống lúa ngắn ngày. Thực tế đồng ruộng cho thấy những giống nào không kháng được rầy nâu, thì thường là những giống bị bọ xít đen gây hại nhiều hơn những giống khác.</description_symptoms>
         <Điều_trị>Dùng các loại thuốc Ofatox 400EC,Actara 25WP, Bassa… phun khi bọ xít phát sinh rộ.</Điều_trị>
         <Đặc_điểm_hình_thái rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Trưởng thành: Con cái trưởng thành thân dài 9-9,5mm, con đực dài 8,5mm. Chiều rộng khoảng 5-6mm. Thân hình bầu dục, lưng và bụng nhô ra như nhau. Phiến mai dài tới cối bụng nhưng bề ngang không che hết bụng. Phiến giữa và phiến cạnh của đầu dài bằng nhau. Góc trước mảnh lưng ngực trước mọc ngang ra một gai lông không dài, không nhọn. góc cạnh mảnh lưng ngực trước có một mấu lồi ngắn không nhọn. Mắt đơn màu đỏ nhạt. Bàn chân và râu màu nâu tro. Toàn thân nhìn chung màu đen.
 - Bọ xít non: mới nở kích thước cơ thể khoảng 1-2 mm, mầu nâu đỏ, chưa có cánh, di chuyển chậm chạp. Khi lớn có mầu tro nâu. Thời gian ấu trùng kéo dài khoảng một tháng.
@@ -977,11 +995,12 @@ Cấy gọn thời vụ. Phát hiện sớm, thu gom ổ trứng để diệt, v
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Triệu chứng biểu hiện giống như là bệnh bỏng lá và biến đổi phụ thuộc vào tuổi, giai đoạn của cây trồng, phương pháp canh tác và mật độ cây trồng. Triệu chứng ban đầu phát triển trên đỉnh hoặc ở gờ của phiến lá, diện tích vết bệnh ước tính khoảng 1-2 cm2.
+- Vết bệnh có màu xanh xám, xuất hiện khi ngâm trong nước. Triệu chứng vết bệnh biến đổi giữa màu vàng nhạt và nâu tối. Vùng bị nhiễm khô đi giống như là đã chín, đây chính là sự chuyển biến từ dạng khoanh màu đến dạng bỏng.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Microdochium oryzae là tác nhân gây bệnh cháy lá lúa và có mặt trong tất cả các giai đoạn của vụ mùa. Hạt giống được coi là nguồn chính của chất cấy. Loại nấm này được phân lập từ hạt bị bệnh thu được từ cây trồng thương mại ở tỉnh Corrientes, Argentina. Tác nhân gây bệnh được truyền từ hạt sang các ngọn thân mềm ở cây con không có triệu chứng với tỷ lệ 2,18%. Khả năng gây bệnh của nấm được xác nhận bằng cách phun hỗn dịch bào tử lên cây lúa 15 ngày tuổi khỏe mạnh.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Chọn giống kháng bệnh
 Không bón quá nhiều phân đạm, Đốt rơm lúa bệnh để diệt nguồn lưu tồn</Phòng_chống>
         <Tác_hại>Nấm lưu tồn trên hạt hay xác lá lúa bệnh khô. Cỏ lồng vực (Echinochloa crus-galli) cũng là ký chủ phụ của mầm bệnh.Khoảng 3 ngày sau khi xâm nhiễn, các đài có nhánh ngắn sẽ phát triển ở khí khổng và sinh đính bào tử. gây thất thu năng suất</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Triệu chứng biểu hiện giống như là bệnh bỏng lá và biến đổi phụ thuộc vào tuổi, giai đoạn của cây trồng, phương pháp canh tác và mật độ cây trồng. Triệu chứng ban đầu phát triển trên đỉnh hoặc ở gờ của phiến lá, diện tích vết bệnh ước tính khoảng 1-2 cm2.
-- Vết bệnh có màu xanh xám, xuất hiện khi ngâm trong nước. Triệu chứng vết bệnh biến đổi giữa màu vàng nhạt và nâu tối. Vùng bị nhiễm khô đi giống như là đã chín, đây chính là sự chuyển biến từ dạng khoanh màu đến dạng bỏng.</description_symptoms>
         <Điều_trị>Phun các thuốc gốc đồng như hỗn hợp Bordeaux, Copper Zinc, Copper B
 , hoặc Hinosan 40 EC</Điều_trị>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Microdochium oryzae</Describe>
@@ -1202,7 +1221,7 @@ LuanVan_CNTT/12-CL-PL_t7gtp1</Image>
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thân"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thối_Thân/Thối_Rễ/Thối_Bẹ"/>
-        <rdfs:comment>Có đốm đen như bị thối ở trên bẹ lá</rdfs:comment>
+        <rdfs:comment>Có đốm đen như bị thối</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1349,9 +1368,10 @@ LuanVan_CNTT/12-CL-PL_t7gtp1</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh chủ yếu ở phiến lá (có khi ở bẹ và vỏ hạt). Vết bệnh là những sọc ngắn như một nét gạch bút chì dọc theo gân lá dài 2 – 10 mm, rộng 1 – 2 mm, có màu nâu nhạt hoặc sẫm tùy theo giống.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nấm bệnh tạo ra trờn vết bệnh nhiều bào tử phân sinh đùi trống dài, thon ở 1 đầu, đa bào khụng màu, kích thước từ 20 – 60 x 5 micromet.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Sử dụng giống kháng bênh. Chỉ xử lý hạt giống hoặc phun thuốc trên đồng ruộng như các bệnh đốm nâu, tiêm lửa trong trường hợp cần thiết.</Phòng_chống>
         <Tác_hại>Bệnh phổ biến trên lúa ở các vùng trồng lúa trong nước và trên thế giới. Trên các giống nhiễm có thể bị bệnh nặng, thiệt hại tới 40% năng suất. Bệnh phát sinh muộn, thường phát triển mạnh vào thời kỳ lúa trỗ, nở hoa. Bệnh hại trên cả lá già, lá non. Nấm bảo tồn trên hạt giống.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh chủ yếu ở phiến lá (có khi ở bẹ và vỏ hạt). Vết bệnh là những sọc ngắn như một nét gạch bút chì dọc theo gân lá dài 2 – 10 mm, rộng 1 – 2 mm, có màu nâu nhạt hoặc sẫm tùy theo giống.</description_symptoms>
         <Điều_trị>Có thể sử dụng các thuốc như: Dithane M – 45, Carbendazim 0,2%, Bonazan 100DD, Cyproconazole (0,3 – 0,4 lít) hoặc Tilt super 300ND (0,3 lít/ha nồng độ 0,1%).</Điều_trị>
         <Đặc_điểm_phát_sinh_và_phát_triển rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh phát sinh muộn, thường phát triển mạnh vào thời kỳ lúa trỗ, nở hoa. Bệnh hại trên cả lá già, lá non. Nấm bảo tồn trên hạt giống.</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Cercospora Janseana (Racib) O. Const
@@ -1443,6 +1463,7 @@ LuanVan_CNTT/12-CL-PL_t7gtp1</Image>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Dài"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Xanh"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Xích_Đen"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hạt chuyển sang màu nâu bạc</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1527,15 +1548,17 @@ LuanVan_CNTT/12-CL-PL_t7gtp1</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Là loại bệnh hại toàn thân, bệnh gây hại bẹ lá, phiến lá và cổ bông. Các bẹ lá sát mặt nước hoặc bẹ lá già ở dưới gốc thường là nơi phát sinh bệnh đầu tiên.
+- Trên bẹ lá xuất hiện các vết đốm hình bầu dục màu lục tối hoặc xám nhạt, sau lan rộng ra thành dạng vết vằn da hổ dạng đám mây. Khi bị nặng, cả bẹ lá và lá phía trên bị chết lụi.
+- Vết bệnh lá tương tự như ở bẹ lá, thường vết bệnh lan rộng rất nhanh chiếm hết bề rộng ở phiến lá tạo ra từng mảng vân mây hoặc vằn da hổ. Các lá già ở dưới hoặc lá sát mặt nước là nơi phát sinh trước sau đó lan lên các lá phía trên.
+- Vết bệnh ở cổ bông thường là vết kéo dài bao quanh cổ bông, hai đầu vết bệnh có màu xám loang ra, phần giữa vết bệnh màu lục sẫm co tóp lại.
+- Trên vết bệnh ở các vị trí gây hại đều xuất hiện hạch nấm màu nâu, hình tròn dẹt hoặc hình bầu dục nằm rải rác hoặc thành từng đám nhỏ trên vết bệnh. Hạch nấm rất dễ dàng rơi ra khỏi vết bệnh và nổi trên mặt nước ruộng.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh đốm vằn do nấm Rhizoctonia solani sống trong đất gây ra. Ngoài lúa, nấm còn gây hại trên rau cải, ngô, bầu bí, dưa, cà rốt, ớt… mầm bệnh lây lan qua nước tưới, đất mang mầm bệnh và tàn dư thực vật của cây trồng bị bệnh vụ trước.
+- Nấm sinh trưởng thích hợp ở nhiệt độ 28 - 32 độ C. Nhiệt độ dưới 10 độ C và cao hơn 38 độ C nấm ngừng sinh trưởng. Hạch nấm hình thành nhiều ở nhiệt độ 30 - 32 độ C. Khi nhiệt độ quá thấp &lt;12 độ C và quá cao (&gt;40 độ C) nấm không hình thành hạch.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Dọn sạch rơm rạ, lúa chét, cỏ dại, tàn dư thực vật sau khi thu hoạch.
 Không gieo cấy quá dầy, chăm bón cân đối. Không để ruộng lúa quá ẩm, nước ngập quá sâu.
 Không để ruộng lúa quá ẩm, nước ngập quá sâu.Thường xuyên theo dõi, phát hiện bệnh để xử lý sớm.</Phòng_chống>
         <Tác_hại>Khi bệnh năng, nấm bệnh ăn tới lá đòng thì năng suất có thể giảm tới 50%, hạt không đẹp, lúa bị lép, lửng, khi xay dễ bể.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Là loại bệnh hại toàn thân, bệnh gây hại bẹ lá, phiến lá và cổ bông. Các bẹ lá sát mặt nước hoặc bẹ lá già ở dưới gốc thường là nơi phát sinh bệnh đầu tiên.
-- Trên bẹ lá xuất hiện các vết đốm hình bầu dục màu lục tối hoặc xám nhạt, sau lan rộng ra thành dạng vết vằn da hổ dạng đám mây. Khi bị nặng, cả bẹ lá và lá phía trên bị chết lụi.
-- Vết bệnh lá tương tự như ở bẹ lá, thường vết bệnh lan rộng rất nhanh chiếm hết bề rộng ở phiến lá tạo ra từng mảng vân mây hoặc vằn da hổ. Các lá già ở dưới hoặc lá sát mặt nước là nơi phát sinh trước sau đó lan lên các lá phía trên.
-- Vết bệnh ở cổ bông thường là vết kéo dài bao quanh cổ bông, hai đầu vết bệnh có màu xám loang ra, phần giữa vết bệnh màu lục sẫm co tóp lại.
-- Trên vết bệnh ở các vị trí gây hại đều xuất hiện hạch nấm màu nâu, hình tròn dẹt hoặc hình bầu dục nằm rải rác hoặc thành từng đám nhỏ trên vết bệnh. Hạch nấm rất dễ dàng rơi ra khỏi vết bệnh và nổi trên mặt nước ruộng.</description_symptoms>
         <Điều_trị>Từ giai đoạn lúa đứng cái trở đi, cần chú ý điều tra phát hiện, khi thấy tỷ lệ bệnh từ 5-7% số dảnh bị bệnh trở lên cần sử dụng một trong các loại thuốc để phun như: Anvil 5SC, Tilt super 300EC, Amistar Top 325SC, Nevo 330EC.</Điều_trị>
         <Đặc_điểm_phát_sinh_và_phát_triển rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Điều kiện thời tiết : Bệnh phát sinh mạnh trong điều kiện nhiệt độ cao, ẩm độ cao. Bệnh thường phát sinh trước tiên ở các bẹ lá và lá già sát mặt nước hoặc ở dưới gốc. Tốc độ lây lan lên các lá phía trên phụ thuộc rất nhiều vào thời tiết mưa nhiều, lượng nước trên ruộng quá cao, đặc biệt ở vùng cấy dày. Giai đoạn đòng trỗ đến chín sáp là thời kỳ nhiễm bệnh nặng nhất.
 - Ảnh hưởng của phân bón : Bón thừa đạm, bón đạm muộn, bón không cân đối N-P-K cùng với cấy mật độ cao tạo điều kiện cho bệnh phát triển mạnh.
@@ -1604,12 +1627,13 @@ LuanVan_CNTT/02-DSVK-4_jhfd2g,</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
         <isDisease rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lem_Lép_Hạt"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Lem lép hạt lúa và tên gọi của một chứng bệnh có triệu chứng chung là trên vỏ trấu của hạt lúa có những vết lốm đốm màu nâu, nâu đen... nếu nặng những vết này có thể liên kết hòa lẫn lại với nhau chiếm gần hết hoặc hết cả vỏ trấu, làm cho hạt lúa bị lửng hoặc lép hoàn toàn 
+- Bệnh xuất hiện và gây hại khá phổ biến ở tất cả các vùng trồng lúa của nước ta cũng như những nước trồng lúa trong khu vực và thế giới. Bệnh có thể xẩy ra ở bất kỳ thời vụ nào với những mức độ khác nhau, hiện tại chưa có giống nào kháng hoặc chống chịu được với bệnh.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Theo kết quả nghiên cứu của các nhà khoa học trong và ngoài nước thì bệnh do nhiều nguyên nhân gây ra như vi khuẩn, nhện gié, bọ xít hôi chích hút... nhưng chủ yếu là do nấm, người ta đã xác định có đến trên chục loài nấm bệnh có mặt trên vỏ trấu của những hạt lúa bị lem lép như: Alternaria padwickii, Helminthosporium oryzae, Nifrospora oryzae, Bipolaris oryzae, Fusarium oniliforme, Curvularia lunata, Pyrcularia oryzae, Microdochium oryzae, Saroladium oryzae, Septoria sp., Tilletia barclayana, Ustilagonoides virens. Những nấm này không chỉ gây bệnh cho hạt lúa trên đồng ruộng mà còn tồn tại trên vỏ trấu để tiếp tục gây hại cho hạt lúa sau khi thu hoạch ở giai đoạn hát lúa còn ẩm chưa kịp phơi khô để đưa vào kho tồn trữ.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Gieo cấy đúng thời vụ, với mật độ thích hợp.
 Bón phân đầy đủ và cân đối, cung cấp thêm các loại trung, vi lượng.
 Gieo cấy đúng thời vụ, với mật độ thích hợp.</Phòng_chống>
         <Tác_hại rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh không những làm giảm năng suất, sản lượng lúa mà còn làm giảm phẩm chất của hạt gạo, nếu bán sẽ mất giá từ đó gây thất thu về mặt kinh tế cho bà con nông dân. Ngoài ra, nếu dùng làm giống thì chất lượng của hạt giống cũng kém, ảnh hưởng nhiều đến sinh trưởng và phát triển của cây lúa ở vụ sau, và đây cũng là nguồn bệnh ban đầu gây cho lúa ở vụ sau.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Lem lép hạt lúa và tên gọi của một chứng bệnh có triệu chứng chung là trên vỏ trấu của hạt lúa có những vết lốm đốm màu nâu, nâu đen... nếu nặng những vết này có thể liên kết hòa lẫn lại với nhau chiếm gần hết hoặc hết cả vỏ trấu, làm cho hạt lúa bị lửng hoặc lép hoàn toàn 
-- Bệnh xuất hiện và gây hại khá phổ biến ở tất cả các vùng trồng lúa của nước ta cũng như những nước trồng lúa trong khu vực và thế giới. Bệnh có thể xẩy ra ở bất kỳ thời vụ nào với những mức độ khác nhau, hiện tại chưa có giống nào kháng hoặc chống chịu được với bệnh.</description_symptoms>
         <Điều_trị>Khi điều kiện thời tiết thích hợp cho bệnh hại và nhện gié phát triển thì phun phòng ngừa một trong các loại thuốc sau vào giai đoạn trước trổ và sau khi trổ đều:
 + Vụ Hè Thu với các loại thuốc trừ nấm bệnh như Dipomate 430SC, bệnh bạc lá như Saipan 2SL, bệnh khô vằn như Saizole 5SC; nhện gié như Sulox 80WP/ Saromite 73EC
 + Vụ Đông Xuân với các loại thuốc đạo ôn như Trizole 400SC, Sagograin 300EC</Điều_trị>
@@ -1710,8 +1734,8 @@ LuanVan_CNTT/04-LLH-H_skf4ra</Image>
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bọ_Trĩ"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Nâu"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai-Bọ_Gai"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
-        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai/Bọ_Gai"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thối_Thân/Thối_Rễ/Thối_Bẹ"/>
         <rdfs:comment>Lá bị héo</rdfs:comment>
     </owl:NamedIndividual>
@@ -1850,13 +1874,13 @@ LuanVan_CNTT/04-LLH-H_skf4ra</Image>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lúa_Von"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Lưng_Trắng"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Nâu"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai-Bọ_Gai"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Đục_Thân_5_Vạch"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Hạch_Lúa"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tiêm_Lửa_Hại_Lúa"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lùn"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vàng_Lụi"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đạo_Ôn"/>
-        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai/Bọ_Gai"/>
         <rdfs:comment>Lá vàng, khô và chết dần</rdfs:comment>
     </owl:NamedIndividual>
     
@@ -1907,13 +1931,15 @@ LuanVan_CNTT/04-LLH-H_skf4ra</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh lúa lùn xoăn lá (Ragged stunt virus - RRSV) Reoviridae, bệnh phổ biến ở các nước Đông Nam Á trong đó có miền Nam Trung Bộ, Viêt Nam (Hà Vinh Trung và ctv). Virus dạng cầu, đường kính 65nm, thường gây bệnh trên các nhóm giống lúa Oryza latifolis, O. navara và O. Sativa - tạo hiện tượng xoăn ngọn lá lúa, biến vàng, và cây lúa bị tàn lụi. Virus truyền bằng bọ rày nâu Nilaparvata lugen, họ Delphacidae. Vius truyền bệnh theo kiểu bền vững.
+- Cây lúa bị bệnh lùn xoắn lá sinh trưởng cằn cọc, cây thấp lùn, thân lúa lùn cứng hơn bình thường, chiều cao cây, chiều dài lá, rễ, cổ áo đều bị giảm sút, co ngắn lại khoảng 40 - 60% so cây khoẻ. Số dảnh/khóm tuy có nhiều song hầu hết không có bông hoặc trỗ bông muộn, trỗ bông không thoát. Lúa trỗ muộn, bông lúa ngắn, ít hạt, lép lửng, hạt có nhiều đốm nâu, dẫn đến thất thu hoặc giảm năng suất nghiêm trọng.
+- Ở thể nhẹ lá cứng, dày và có màu xanh đậm, gân lá bị phồng, mép lá có răng cưa. Đốt thân ngắn lại, thường đâm chồi và rễ bên trong bẹ lá, thân dày cứng. Ở các đốt trên, rễ mọc ngược bên trên ở bên trong bẹ lá. Chồi phụ mọc từ các đốt trên bị cong xoắn ở trong bẹ lúa.
+- Ở thể nặng lá lúa ngắn, xoắn như mũi khoan, trên lá bệnh có nhiều vết đốm nâu. Lúa hoàn toàn không trỗ được.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh do virus Rice ragged stunt virus (RRSV) gây ra. Môi giới truyền bệnh là rầy nâu (Nilaparvata lugens), một cá thể rầy nâu mang virus gây bệnh chích hút trên cây lúa một vài giờ là khiến cho cây lúa bị bệnh.
+- Do đó, thường hay thấy ở thời gian nào, ở một nơi nào có nhiều rầy nâu gây hại thì ở nơi đó xuất hiện bệnh lúa lùn xoắn lá.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Sử dụng thuốc hóa học theo nguyên tắc 4 đúng để hạn chế tối đa mật độ rầy nâu
 và rầy nâu mang mầm bệnh</Phòng_chống>
         <Tác_hại>Bệnh do virus Rice ragged stunt virus (RRSV) gây ra. Môi giới truyền bệnh là rầy nâu (Nilaparvata lugens), một cá thể rầy nâu mang virus gây bệnh chích hút trên cây lúa một vài giờ là khiến cho cây lúa bị bệnh.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh lúa lùn xoăn lá (Ragged stunt virus - RRSV) Reoviridae, bệnh phổ biến ở các nước Đông Nam Á trong đó có miền Nam Trung Bộ, Viêt Nam (Hà Vinh Trung và ctv). Virus dạng cầu, đường kính 65nm, thường gây bệnh trên các nhóm giống lúa Oryza latifolis, O. navara và O. Sativa - tạo hiện tượng xoăn ngọn lá lúa, biến vàng, và cây lúa bị tàn lụi. Virus truyền bằng bọ rày nâu Nilaparvata lugen, họ Delphacidae. Vius truyền bệnh theo kiểu bền vững.
-- Cây lúa bị bệnh lùn xoắn lá sinh trưởng cằn cọc, cây thấp lùn, thân lúa lùn cứng hơn bình thường, chiều cao cây, chiều dài lá, rễ, cổ áo đều bị giảm sút, co ngắn lại khoảng 40 - 60% so cây khoẻ. Số dảnh/khóm tuy có nhiều song hầu hết không có bông hoặc trỗ bông muộn, trỗ bông không thoát. Lúa trỗ muộn, bông lúa ngắn, ít hạt, lép lửng, hạt có nhiều đốm nâu, dẫn đến thất thu hoặc giảm năng suất nghiêm trọng.
-- Ở thể nhẹ lá cứng, dày và có màu xanh đậm, gân lá bị phồng, mép lá có răng cưa. Đốt thân ngắn lại, thường đâm chồi và rễ bên trong bẹ lá, thân dày cứng. Ở các đốt trên, rễ mọc ngược bên trên ở bên trong bẹ lá. Chồi phụ mọc từ các đốt trên bị cong xoắn ở trong bẹ lúa.
-- Ở thể nặng lá lúa ngắn, xoắn như mũi khoan, trên lá bệnh có nhiều vết đốm nâu. Lúa hoàn toàn không trỗ được.</description_symptoms>
         <Điều_trị>Đối với ruộng lúa giai đoạn đòng đến trổ, vận động nhổ, vùi cây lúa nhiễm bệnh phun thuốc trừ rầy nâu theo hướng dẫn nếu phát hiện rầy có số &gt;3 con/tép, rầy đang tuổi 1-2. Các loại thuốc cho hiệu quả cao là Actara 25WG, Chess 50WG.</Điều_trị>
         <Đặc_điểm_phát_sinh_và_phát_triển rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Cỏ lồng vực (Echinochloa Crus-galli) và cỏ đuôi phượng (Leptochloa chinensis) là 2 loại ký chủ trung gian quan trọng của bệnh. Do đó trừ các loài cỏ này cũng góp phần hạn chế nguồn bệnh lùn xoắn lá trên đồng ruộng.
 - Những kết quả nghiên cứu cũng ghi nhận vi rút lùn xoắn lá lúa không truyền lan qua hạt giống, đất, tiếp xúc cơ giới dịch cây, và không truyền bệnh qua trứng rầy nâu.</Đặc_điểm_phát_sinh_và_phát_triển>
@@ -1998,15 +2024,17 @@ LuanVan_CNTT/14-LXL-HAT_k7380p</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Lúa bị bệnh lùn sọc đen, khi bùng phát có triệu chứng chung là thấp lùn; lá xanh đậm hơn bình thường và có thể xoăn ở đầu lá hoặc toàn bộ lá; gân lá ở mặt sau và gân chính trên bẹ lá của cây non bị sưng phồng. Giai đoạn lúa làm đòng cho đến khi có lóng, cây bị bệnh thường nảy chồi trên đốt thân và mọc nhiều rễ bất định. Ở bẹ và lóng thân xuất hiện nhiều u sáp và sọc đen. Nếu bị nặng lúa không trỗ bông hoặc trỗ bông không thoát và hạt thường bị đen.
+- Rầy lưng trắng, cả rầy non và rầy trưởng thành là yếu tố môi giới lây truyền virus gây bệnh (vector truyền bệnh). Rầy sau khi nhiễm vi rút có thể truyền bệnh cho đến khi chết. Vi rút gây bệnh không truyền qua trứng rầy, hạt giống lúa, đất và không truyền từ cây bệnh sang cây không nhiễm bệnh nếu không có rầy lưng trắng môi giới.
+- Vi rút tồn tại trong cơ thể rầy lưng trắng lưu từ vụ này sang vụ khác, có thể di chuyển rất xa nhờ gió.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Gây bệnh lùn sọc đen hại lúa, ngô là virus lùn sọc đen phương Nam, môi giới truyền bệnh là rầy nâu nhỏ, rầy lưng trắng.
+- Rầy lưng trắng và rầy nâu nhỏ mang virus có thể truyền sang các cây ký chủ khi trên đồng ruộng chưa có cây trồng lúa, ngô.. Virus tồn tại trong cơ thể rầy và di chuyển rất xa theo gió, bão gây bệnh cho lúa và một rồi cây trồng khác ở các vùng lân cận khác.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Làm đất kỹ, đất được làm ải vụ xuân, làm giầm vụ mùa tùy theo từng điều kiện canh tác khác nhau. Diệt các mầm bệnh ở các cây ký chủ khác trên đồng ruộng như dọn sạch tan dư, ký chủ phụ, không cho lúa chét tái sinh để hạn chế nguồn bệnh.
 Trước khi gieo giống cần tiến hành xử lý hạt giống bằng một số thuốc như Cruiser Plus 312.5FS, Pre-pat 412.5F, Sunato 540FS, Regent 5SC, …; xử lý theo khuyến cáo của nhà sản xuất.
  Cần tiến hành gieo mạ tập trung, che phủ 100% nilong, vừa chủ động chống rét vụ xuân vừa hạn chế rầy xâm nhập, lây bệnh trên cây mạ.
 Trên ruộng mạ nếu phát sinh rầy lưng trắng, rầy nâu nhỏ cần tiến hành phun thuốc trừ rầy bằng một số thuốc tiếp xúc như Virtako 1.5 GR, Nibas 50EC, … phun theo hướng dẫn của nhà sản xuất.</Phòng_chống>
         <Tác_hại>Bệnh lùn sọc đen do virus lùn sọc đen phương Nam có tên SRBSDV (Southern Rice Black-Streaked Dwarf Virus) gây nên. Hiện nay chưa có thuốc đặc hiệu chữa bệnh lùn sọc đen. 
 Rầy lưng trắng và rầy nâu nhỏ mang virus có thể truyền sang các cây ký chủ khi trên đồng ruộng chưa có cây trồng lúa, ngô.. Virus tồn tại trong cơ thể rầy và di chuyển rất xa theo gió, bão gây bệnh cho lúa và một rồi cây trồng khác ở các vùng lân cận khác.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Lúa bị bệnh lùn sọc đen, khi bùng phát có triệu chứng chung là thấp lùn; lá xanh đậm hơn bình thường và có thể xoăn ở đầu lá hoặc toàn bộ lá; gân lá ở mặt sau và gân chính trên bẹ lá của cây non bị sưng phồng. Giai đoạn lúa làm đòng cho đến khi có lóng, cây bị bệnh thường nảy chồi trên đốt thân và mọc nhiều rễ bất định. Ở bẹ và lóng thân xuất hiện nhiều u sáp và sọc đen. Nếu bị nặng lúa không trỗ bông hoặc trỗ bông không thoát và hạt thường bị đen.
-- Rầy lưng trắng, cả rầy non và rầy trưởng thành là yếu tố môi giới lây truyền virus gây bệnh (vector truyền bệnh). Rầy sau khi nhiễm vi rút có thể truyền bệnh cho đến khi chết. Vi rút gây bệnh không truyền qua trứng rầy, hạt giống lúa, đất và không truyền từ cây bệnh sang cây không nhiễm bệnh nếu không có rầy lưng trắng môi giới.
-- Vi rút tồn tại trong cơ thể rầy lưng trắng lưu từ vụ này sang vụ khác, có thể di chuyển rất xa nhờ gió.</description_symptoms>
         <Điều_trị>Giai đoạn sau cấy: Cần thường xuyên công tác kiểm tra đồng ruộng, nếu phát hiện có biểu hiện bệnh cần tiến hành nhổ và vùi sâu.
 Giai đoạn đẻ nhánh – ôm đồng, sử dụng một trong các thuốc nội hấp trừ rầy như: Cheesta 50WP, Amira 25WG, Actara 25WG… phun đúng nồng độ khuyến cáo.
  Giai đoạn trỗ - chin sáp, sử dụng một trong các thuốc tiếp xúc trừ rầy như: Bonus-gold 500EC, Vitako 1.5GR, …Khi phun cần tiến hành rẽ hành phun, đảm bảo thuốc tiếp xúc với rầy.</Điều_trị>
@@ -2095,6 +2123,12 @@ LuanVan_CNTT/37-LXD-01_exsksg</Image>
         <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng_khô_và_chết_dần"/>
         <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lớp_phấn_trắng_phớt_hồng_bao_quanh_đốt_thân"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Triệu chứng chung nhất của cây bị bệnh lúa von là cây phát triển cao vọt, cong keo mảnh khảnh. Lá lúa từ màu xanh lục chuyển dần sang màu xanh nhạt rồi vàng gạch cua, cứng giòn và chết nhanh chóng.
+- Lóng thân cây bệnh phát triển dài ra, thường mọc nhiều rễ phụ ở đốt (rễ gió) và có thể thấy lớp phấn trắng phớt hồng bao quanh đốt thân và vị trí xung quanh đốt thân.
+- Nếu bị nhiễm muộn, lá bị khô, giảm số chồi. Nếu nhiễm vào giai đoạn trước khi đâm chồi, cây mạ bị chết khô. Trường hợp sống sót, trỗ bông với toàn hạt lép hoặc lững. Chính những hạt lép lửng này, mang mầm bệnh. Vỏ hạt màu xám, nếu thời tiết ẩm ướt, trên vỏ hạt có thể xuất hiện lớp phấn trắng phớt hồng. Nếu thời tiết khô, trên đốt thân và vỏ hạt có nhiều chấm nhỏ li ti màu xanh đen.
+- Phần lớn cây bị bệnh sẽ chết do thối gốc. Nếu cây lúa bị bệnh sống đến giai đoạn làm đòng, trỗ bông thì lóng cây vươn dài, rễ bất định mọc ở các đốt phía dưới gần gốc lúa; có thể quan sát thấy lớp nấm màu phấn trắng hoặc phớt hồng bao quanh trên vỏ hạt nếu thời tiết ẩm ướt, nếu khô trên đốt thân và vỏ hạt có nhiều chấm nhỏ li ti mầu xanh đen, đó chính là quả thể nấm. Cây bị bệnh sống được, có thể trỗ bông nhưng hạt bị lép hoặc lửng. Các bộ phận ở phía dưới mặt đất của cây (rễ, gốc thân) dễ bị nhiễm bệnh hơn các bộ phận ở phía trên mặt đất (bẹ lá, đốt thân...). Bệnh lúa von cũng có loại giống kháng hoặc giống nhiễm.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh lúa von là loại bệnh do loài nấm Fusarium moniliforme Shel gây nên do nguyên nhân truyền nhiễm hoặc lây nhiễm.
+- Nấm phát triển thích hợp ở nhiệt độ 25 - 30 độ C, tối thiểu là 10 độ C. Bào tử phân sinh dạng bào tử hậu bào tử có thể tồn tại và giữ sức sống trong đất 4 - 6 tháng trong điều kiện đồng ruộng, nhưng trong phòng bào tử hữu tính trên tàn dư cây bệnh ở trong đất và ở hạt giống.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Không sử dụng hạt lúa ở những ruộng đã bị bệnh làm giống cho vụ sau.
 Đối với lúa cấy, khi nhổ mạ cần chú ý tránh làm đứt chồi, rễ, tránh dập nát cây mạ, để hạn chế sự xâm nhập của nấm bệnh vào bên trong cây.
 Kiểm tra ruộng lúa thường xuyên để phát hiện và nhổ bỏ kịp thời những cây bị bệnh, đem ra khỏi ruộng tiêu hủy.
@@ -2103,10 +2137,6 @@ Bệnh chủ yếu lây qua hạt giống và lưu tồn trong đất. chính v�
         <Tác_hại>Nếu bị nhiễm muộn, lá bị khô, giảm số chồi. Nếu nhiễm vào giai đoạn trước khi đâm chồi, cây mạ bị chết khô. Trường hợp sống sót, trỗ bông với toàn hạt lép hoặc lững
 Lá lúa từ màu xanh lục chuyển dần sang màu xanh nhạt rồi vàng gạch cua, cứng giòn và chết nhanh chóng.
 Phần lớn cây bị bệnh sẽ chết do thối gốc</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Triệu chứng chung nhất của cây bị bệnh lúa von là cây phát triển cao vọt, cong keo mảnh khảnh. Lá lúa từ màu xanh lục chuyển dần sang màu xanh nhạt rồi vàng gạch cua, cứng giòn và chết nhanh chóng.
-- Lóng thân cây bệnh phát triển dài ra, thường mọc nhiều rễ phụ ở đốt (rễ gió) và có thể thấy lớp phấn trắng phớt hồng bao quanh đốt thân và vị trí xung quanh đốt thân.
-- Nếu bị nhiễm muộn, lá bị khô, giảm số chồi. Nếu nhiễm vào giai đoạn trước khi đâm chồi, cây mạ bị chết khô. Trường hợp sống sót, trỗ bông với toàn hạt lép hoặc lững. Chính những hạt lép lửng này, mang mầm bệnh. Vỏ hạt màu xám, nếu thời tiết ẩm ướt, trên vỏ hạt có thể xuất hiện lớp phấn trắng phớt hồng. Nếu thời tiết khô, trên đốt thân và vỏ hạt có nhiều chấm nhỏ li ti màu xanh đen.
-- Phần lớn cây bị bệnh sẽ chết do thối gốc. Nếu cây lúa bị bệnh sống đến giai đoạn làm đòng, trỗ bông thì lóng cây vươn dài, rễ bất định mọc ở các đốt phía dưới gần gốc lúa; có thể quan sát thấy lớp nấm màu phấn trắng hoặc phớt hồng bao quanh trên vỏ hạt nếu thời tiết ẩm ướt, nếu khô trên đốt thân và vỏ hạt có nhiều chấm nhỏ li ti mầu xanh đen, đó chính là quả thể nấm. Cây bị bệnh sống được, có thể trỗ bông nhưng hạt bị lép hoặc lửng. Các bộ phận ở phía dưới mặt đất của cây (rễ, gốc thân) dễ bị nhiễm bệnh hơn các bộ phận ở phía trên mặt đất (bẹ lá, đốt thân...). Bệnh lúa von cũng có loại giống kháng hoặc giống nhiễm.</description_symptoms>
         <Điều_trị>Dùng VICARBEN 50HP: Ngâm hạt giống cho vừa nhú mộng, cho vào nước thuốc  theo tỷ lệ 0,1%. Ngâm  trong 2 giờ, vớt ra tiếp tục ngâm ủ cho đến khi gieo được. Hoặc xử lý khô ở tỷ lệ 0,5 – 1% theo trọng lượng hạt. Sau đó tiến hành ngâm ủ  như bình thường.Ở những ruộng sản xuất giống, đặc biệt trên giống Jasmine, khi lúa đã nhiễm bệnh, có thể khống chế bằng cách:
 Carban 50SC , pha 3 ml / 1 lít nước, ngâm cho 1 kg lúa giống trong khoảng 24 giờ.
 Ở những ruộng sản xuất giống, đặc biệt trên giống Jasmine, khi lúa đã nhiễm bệnh, có thể khống chế bằng cách:
@@ -2219,7 +2249,7 @@ LuanVan_CNTT/09-LV_ckfxzc</Image>
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Phiến_Lá"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
-        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai/Bọ_Gai"/>
+        <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai-Bọ_Gai"/>
         <rdfs:comment>Mặt trên phiến lá bị cắn lỗ</rdfs:comment>
     </owl:NamedIndividual>
     
@@ -2243,6 +2273,9 @@ LuanVan_CNTT/09-LV_ckfxzc</Image>
         <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Những_đốm_nhỏ_màu_vàng_nhạt_về_sau_vết_chích_kéo_dài_thành_hình_chữ_nhật_và_dần_dần_biến_sang_nâu_đen."/>
         <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vết_hại_ban_đầu_là_các_chấm_nhỏ_màu_trắng_vàng_về_sau_thành_đám_màu_vàng_nâu_đến_nâu_đen"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Nhện gây thiệt hại trên ruộng lúa trực tiếp khi ăn phá các mô lá bên trong bẹ lá lúa và gây thiệt hại nặng từ giai đoạn phát triển hạt đến giai đoạn lúa ngậm sữa. Khi nhện ăn phá, chúng hút dinh dưỡng làm ảnh hưởng sinh trưởng của cây. Chúng tạo ra các vết đục hình tròn, tam giác, đa giác. Tại vị trí gây hại, tụ tập thành nhóm để cùng phát triển làm lúa trổ không thoát, nghẹn đòng và toàn bộ hạt đen lép.
+- Trên hạt lúa, triệu chứng nhện gié gây hại là nhánh gié và vỏ trấu bị biến dạng, hạt lép có màu nâu đen do nhện chích hút nhụy cái nên không thụ phấn được. Mở vỏ trấu ra xem không thấy mầm hạt gạo.
+- Nhện gây thiệt hại trên ruộng lúa trực tiếp khi ăn phá các mô lá bên trong bẹ lá lúa và gây thiệt hại nặng từ giai đoạn phát triển hạt đến giai đoạn lúa ngậm sữa. Khi nhện ăn phá, chúng hút dinh dưỡng làm ảnh hưởng sinh trưởng của cây. Chúng tạo ra các vết đục hình tròn, tam giác, đa giác. Tại vị trí gây hại, tụ tập thành nhóm để cùng phát triển làm lúa trổ không thoát, nghẹn đòng và toàn bộ hạt đen lép.</Mô_tả_triệu_chứng>
         <Phòng_chống>Sau khi thu hoạch lúa, rải rơm đốt đồng trước khi làm đất nếu là vùng thường xuyên có nhện gié xuất hiện.
 Cày ải phơi đất, vệ sinh đồng ruộng, phun thuốc diệt sạch cỏ bờ, lúa chét, lúa rày.
  Sạ lúa theo hàng với mật độ vừa phải, bón phân cân đối giữa đạm-lân-kali.
@@ -2333,6 +2366,7 @@ LuanVan_CNTT/26-NG_bma8pv</Image>
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hạt"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Triệu_Chứng"/>
         <isSymptomOf rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Than_Vàng/Hoa_Cúc"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Những khổi nắm màu hồng bảo phủ cả vỏ hạt</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -2668,6 +2702,7 @@ LuanVan_CNTT/26-NG_bma8pv</Image>
         <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng_khô_và_chết_dần"/>
         <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Số_lượng_bông_và_chiều_dài_bông_giảm"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ruộng bị rầy cây vàng, úa, còi cọc, chết khô, gọi là hiện tượng “cháy rầy”, lúc đầu là từng đám, sau cháy cả vạt, có thể lan rộng ra cả ruộng và cả cánh đồng nếu không phòng trừ kịp thời.</Mô_tả_triệu_chứng>
         <Phòng_chống>Không trồng lúa liên tục trong năm, bảo đảm thời gian cách ly giữa hai vụ lúa ít nhất 20-30 ngày, không để vụ lúa chét.
 Sử dụng các giống lúa kháng rầy.
  Không gieo cấy quá dày, bón cân đối NPK, tránh bón thừa phân đạm.
@@ -2675,7 +2710,6 @@ Sử dụng các giống lúa kháng rầy.
         <Tác_hại>Rầy lưng trắng hại nặng trên các giống lúa nhiễm rầy, lúa lai; ruộng lúa cấy dày, bón nhiều đạm.
 Rầy lưng trắng là môi giới chính truyền bệnh vi rút lùn sọc đen cho lúa.
 Giảm năng suất của vụ mùa</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ruộng bị rầy cây vàng, úa, còi cọc, chết khô, gọi là hiện tượng “cháy rầy”, lúc đầu là từng đám, sau cháy cả vạt, có thể lan rộng ra cả ruộng và cả cánh đồng nếu không phòng trừ kịp thời.</description_symptoms>
         <Điều_trị>Khi phát hiện rầy nâu trên đồng ruộng với mật độ ≥ 2.000 con/m2(giai đoạn lúa đẻ nhánh – làm đòng) hoặc ≥ 3.000 con/m2(giai đoạn lúa làm đòng – trỗ) thì phải phun thuốc trừ rầy. Khi phun thuốc phải tuân thủ theo nguyên tắc “4 đúng”: đúng thuốc, đúng liều lượng, đúng lúc và đúng cách.</Điều_trị>
         <Đặc_điểm_hình_thái rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Rầy lưng trắng trưởng thành cánh dài: Có một vệt trắng rõ ràng trên lưng ngực và một chấm đen trên mép cánh.
 - Rầy lưng trắng trưởng thành cánh ngắn: Màu xám, bụng thon hơn rầy nâu.
@@ -2712,7 +2746,7 @@ LuanVan_CNTT/27-RLT-lf_qtaqhm</Image>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Lưng_Trắng"/>
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng_khô_và_chết_dần"/>
-        <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hạt</DiseaseSite>
+        <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Rầy_Lưng_Trắng"/>
@@ -2750,6 +2784,7 @@ LuanVan_CNTT/27-RLT-lf_qtaqhm</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rầy nâu dùng vòi để chích hút nhựa cây làm cho cây lúa bị khô héo. Khi rầy nâu chích vào lúa, chúng để lại trên lá, thân một vệt nâu cứng, cản trở sự luân chuyển nước và chất dinh dưỡng làm thân, lá bị khô héo. Mật độ cao gây ra hiện tượng cháy rầy.</Mô_tả_triệu_chứng>
         <Phòng_chống>Dùng giống kháng hoặc ít nhiễm rầy. Nếu thuận lợi nên dùng giống ngắn ngày
  thay cho giống dài ngày.
 Không bón phân đạm quá nhiều, không sạ cấy quá dày.
@@ -2765,7 +2800,6 @@ Cả rầy non và trưởng thành đều không thích ánh sáng trực xạ 
 rầy trưởng thành mới có ở trên mặt tán lá. 
 Ngoài ra rầy nâu còn là môi giới truyền bệnh virus trên lúa như bệnh lúa cỏ, lùn xoắn lá. Phân của rầy nâu chứa nhiều đường là môi
  trường cho các loại nấm phát triển gây nên bệnh bồ hóng ở gốc lúa làm cản trở quang hợp</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rầy nâu dùng vòi để chích hút nhựa cây làm cho cây lúa bị khô héo. Khi rầy nâu chích vào lúa, chúng để lại trên lá, thân một vệt nâu cứng, cản trở sự luân chuyển nước và chất dinh dưỡng làm thân, lá bị khô héo. Mật độ cao gây ra hiện tượng cháy rầy.</description_symptoms>
         <Điều_trị>Phun thuốc khi trứng nở được 80% với mật độ &gt; 50 con/khóm
  Giai đoạn đẻ nhánh - đòng: Dùng các loại thuốc nội hấp và thuốc ức chế sinh
  trưởng: Cytoc 250WP, Conphai 10WP, Actara 25WG, Asarasuper 250WDG, 
@@ -2837,11 +2871,11 @@ LuanVan_CNTT/18-RN_n1xspz</Image>
         <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dễ_bị_gãy_gặp"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu non ăn khuyết lá, có thể ăn trụi bộ lá, làm ảnh hưởng đến sinh trưởng phát triển của cây lúa. Cây lúa bị hại thường thấp nhỏ, có đòng ngắn, nếu trỗ thoát thì thời gian chín của cây lúa kéo dài hoặc đòng bị uốn cong, không trỗ thoát hay bị gẫy gập, không nở hoa kết hạt.</Mô_tả_triệu_chứng>
         <Phòng_chống>Vệ sinh đồng ruộng, làm sạch cỏ dại, tiêu diệt lúa chét,
 Điều chỉnh mật độ cấy phù hợp,Bón phân cân đối, hợp lý, đặc biệt bón phân đạm vừa phải. 
 Bảo vệ các thiên địch trên đồng ruộng.</Phòng_chống>
         <Tác_hại>Sâu cuốn lá lớn phát sinh, gây hại từ giai đoạn lúa mới cấy cho đến khi lúa chín. Vào những năm mưa nhiều, thời tiết mát mẻ, sâu phát sinh nặng. Sâu cuốn lá lớn phân bố ở tất cả các vùng trồng lúa ở trong nước và trên thế giới. Ở Việt Nam, vùng trung du và miền núi bị hại nặng hơn vùng đồng bằng, vùng có bố trí cơ cấu cây trồng phức tạp cũng dễ bị hại nặng.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu non ăn khuyết lá, có thể ăn trụi bộ lá, làm ảnh hưởng đến sinh trưởng phát triển của cây lúa. Cây lúa bị hại thường thấp nhỏ, có đòng ngắn, nếu trỗ thoát thì thời gian chín của cây lúa kéo dài hoặc đòng bị uốn cong, không trỗ thoát hay bị gẫy gập, không nở hoa kết hạt.</description_symptoms>
         <Điều_trị>Phun các loại thuốc lưu dẫn, vị độc, tiếp xúc, nội hập như: Padan 95SP, Gegent 800WP...
 ngắt dảnh héo, ổ trứng; bẫy đèn đồng loạt bắt bướm…</Điều_trị>
         <Đặc_điểm_hình_thái rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Ngài: thân có màu đen lẫn vàng kim; đầu và ngực to bằng nhau; râu đầu mọc gần cánh mắt kép và có hình gậy (phía cuối phình to có một móc câu); cánh trước màu nâu tối, gần giữa có 8 chấm trắng to nhỏ khác nhau xếp hình vòng cung; cánh sau có màu nâu đen, gần mép ngoài có 4 đốm tắng xếp thành một đường.
@@ -2895,11 +2929,11 @@ LuanVan_CNTT/22-SCLL_akflcm</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng>Lá lúa bị cuốn, sâu non ăn biểu bì mặt trên và diệp lục của lá dọc theo gân lá tạo thành những vệt trắng dài, các vệt này có thể nối liền với nhau thành từng mảng làm giảm diện tích quang hợp và đặc biệt là trên lá đòng hoặc lá công năng sẽ làm giảm năng suất rõ rệt.</Mô_tả_triệu_chứng>
         <Phòng_chống>Vệ sinh đồng ruộng, làm sạch cỏ dại,
 Điều chỉnh mật độ cấy phù hợp
 Bón phân cân đối, hợp lý, đặc biệt bón phân đạm vừa phải.</Phòng_chống>
         <Tác_hại>Lá lúa bị cuốn, sâu non ăn biểu bì mặt trên và diệp lục của lá dọc theo gân lá tạo thành những vệt trắng dài, các vệt này có thể nối liền với nhau thành từng mảng làm giảm diện tích quang hợp và đặc biệt là trên lá đòng hoặc lá công năng sẽ làm giảm năng suất rõ rệt.</Tác_hại>
-        <description_symptoms>Lá lúa bị cuốn, sâu non ăn biểu bì mặt trên và diệp lục của lá dọc theo gân lá tạo thành những vệt trắng dài, các vệt này có thể nối liền với nhau thành từng mảng làm giảm diện tích quang hợp và đặc biệt là trên lá đòng hoặc lá công năng sẽ làm giảm năng suất rõ rệt.</description_symptoms>
         <Điều_trị>Chú ý bảo vệ hoặc bổ sung thiên địch như ong mắt đỏ Trichogramma sp., 
 nấm… Ký sinh thiên địch của sâu cuốn lá nhỏ rất đa dạng từ các loài ong
 , nấm, các loài ăn thịt… 
@@ -2936,6 +2970,66 @@ LuanVan_CNTT/16-SCLN_wzqfrp</Image>
     
 
 
+    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai-Bọ_Gai -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai-Bọ_Gai">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
+        <diseaseSeason rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mùa"/>
+        <diseaseSeason rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đông_Xuân"/>
+        <diseaseStage rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_làm_đồng"/>
+        <diseaseStage rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_trổ-chín"/>
+        <diseaseStage rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_đẻ_nhánh"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_héo"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng_khô_và_chết_dần"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mặt_trên_phiến_lá_bị_cắn_lỗ"/>
+        <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
+        <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
+        <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu gai ăn phần diệp lục giữa hai lớp biểu bì tạo thành những đường hầm không đều nhau. Con trưởng thành ăn mặt trên phiến lá, để lại lớp biểu bì phía dưới. Khi bọ gai xuất hiện với mật số cao, lá lúa bị vàng khô, cây héo và chết. Sự thiệt hại bắt đầu từ chỗ đẻ trứng, gần chóp lá và lan dần xuống dưới phiến lá.</Mô_tả_triệu_chứng>
+        <Phòng_chống>Vệ sinh đồng ruộng, diệt cỏ dại trong và xung quanh ruộng.
+ Không cấy dày. Quan sát đồng ruộng và nhặt bỏ thành trùng, ấu trùng và trứng trên lá lúa khi mật số bọ gai còn ít.</Phòng_chống>
+        <Tác_hại>Sâu non đục lá, ăn phần diệp lục giữa hai lớp biểu bì tạo thành những đường hầm không đều nhau. Con trưởng thành ăn mặt trên phiến lá, để lại lớp biểu bì phía dưới. Sâu gai phân bố ở khắp các vùng trồng lúa trong nước, đặc biệt những vùng trồng lúa năng suất cao.</Tác_hại>
+        <Điều_trị>Sử dụng các loại thuốc hóa học thông thường: Regent 800WG, Padan 95SP hoặc Actara 25WG khi sâu phát sinh rộ.
+ Dùng dây thừng nhúng vào dầu lửa và nước, mỗi thứ 1 phần bằng nhau, 2 người kéo trên tán lá lúa dọc theo ruộng.</Điều_trị>
+        <Đặc_điểm_hình_thái rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Trứng sâu gai thường được đẻ ở ngọn lá lúa.
+- Sâu non mới nở màu vàng xám, cơ thể dẹt. Một đời sâu non có thể phá hại 123,4mm2.
+- Nhộng: là loại nhộng trần, có cơ thể dẹt, màu nâu. Giai đoạn nhộng thường hoàn thành trong đường đục của sâu non.
+- Con trưởng thành: có cơ thể nhỏ, màu đen bón, có nhiều gai</Đặc_điểm_hình_thái>
+        <Đặc_điểm_sinh_học_và_gây_hại rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Con trưởng thành thường xuất hiện vào sáng sớm và ẩn nấp ở phần thấp của cây lúa suốt ngày và phá hại mạnh vào buổi sáng. Con trưởng thành của sâu gai cũng ăn lá lúa, chúng ăn từ ngọn lá xuống phía dưới và thích ăn phần mô non hơn. Một con cái đẻ khoảng 55 quả trứng, trứng thường đẻ ở ngọn lá.
+- Số lứa sâu gai phụ thuộc vào điều kiện tự nhiên và số lượng vụ lúa canh tác: 1 lứa vào tháng 2 trong vụ lúa xuân, 1 lứa vào tháng 4-5 trên cỏ, 1 lứa trên lúa cạn và 3 lứa còn lại phát sinh trên lúa mùa từ tháng 7-10. Con trưởng thành xuất hiện từ tháng 2 và tăng dần quần thể cho đến tháng 6-7 cùng với lúc sâu non gây hại nặng trên lúa non. Mật độ sâu non và trưởng thành bắt đầu giảm sau tháng 8.
+- Sâu non đục lá, ăn phần diệp lục giữa hai lớp biểu bì tạo thành những đường hầm không đều nhau. Con trưởng thành ăn mặt trên phiến lá, để lại lớp biểu bì phía dưới. Sâu gai phân bố ở khắp các vùng trồng lúa trong nước, đặc biệt những vùng trồng lúa năng suất cao.</Đặc_điểm_sinh_học_và_gây_hại>
+        <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Dicladispa armigera
+- Họ: Chyrysomelidae
+- Bộ: Coleoptera</Describe>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/24-SG-BG-LAJPG_slkdis,
+LuanVan_CNTT/24-SG-BG-LA_h4l9jk
+LuanVan_CNTT/24-SG-BG-SAU_ivonek</Image>
+        <rdfs:comment>Bệnh do Sâu Gai hay Bọ Gai gây ra</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Gai - Bọ Gai</rdfs:label>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai-Bọ_Gai"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_héo"/>
+        <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai-Bọ_Gai"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng_khô_và_chết_dần"/>
+        <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai-Bọ_Gai"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mặt_trên_phiến_lá_bị_cắn_lỗ"/>
+        <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phiến lá</DiseaseSite>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/24-SG-BG-SAU_ivonek</Image>
+    </owl:Axiom>
+    
+
+
     <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Phao -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Phao">
@@ -2949,12 +3043,12 @@ LuanVan_CNTT/16-SCLN_wzqfrp</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu phao gây hại lúa ở giai đoạn ấu trùng, cắn lá cây lúa non thành từng đoạn, rồi cuộn lại sống trong ống lá rơi xuống mặt nước được gọi là sâu “phao”.</Mô_tả_triệu_chứng>
         <Phòng_chống>Cho nước vào ngập ruộng dùng rỗ vớt hết các phao sâu.
 Giữ nương mạ không bị ngập nước.
 Thoát nước nhiều ngày có thể diệt được sâu phao nhưng cỏ dại mọc nhiều.</Phòng_chống>
         <Tác_hại>Sâu làm nhộng ở các khe nứt nẽ, vùng đất xung quanh gốc lúa.
 Sâu thường phá thời kỳ mạ, lúa đẻ nhánh, sâu thường phá rất nhanh có thể cắn trụi ruộng này sang ruộng khác, những năm mưa nhiều ngập úng sâu thường phá mạnh.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu phao gây hại lúa ở giai đoạn ấu trùng, cắn lá cây lúa non thành từng đoạn, rồi cuộn lại sống trong ống lá rơi xuống mặt nước được gọi là sâu “phao”.</description_symptoms>
         <Điều_trị>Để phòng trừ khi mật độ cao dùng các loại thuốc như Padan, Netoxin, Regent, các loại thuốc thuộc nhóm Pyrethroid …</Điều_trị>
         <Đặc_điểm_hình_thái rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Ngài nhỏ, mỏng manh, màu trắng tuyết với những đốm vàng nâu nhạt ở cả 2 cánh.
 - Trứng tròn, vàng nhạt, đẻ thành 1 – 2 hàng ở bẹ lá hoặc mặt dưới lá gần mặt nước.
@@ -3001,17 +3095,17 @@ LuanVan_CNTT/23-SP_kp2kkv</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Thời kỳ mạ: từ khi còn nhỏ bị phá hại có thể bị chết khô, nếu cây mạ đã lớn bị hại thì dễ bị đứt gốc khi nhổ mạ
+- Thời kỳ đẻ nhánh: cây lúa bị hại có biểu hiện rõ: sâu đục vào phần dưới của thân, cắt đứt tổ chức bên trong phá hại chức năng dẫn nhựa làm cho lá non trước tiên bị cuốn dọc, có màu xanh tái sẫm, dần dần chuyển thành màu vàng và héo khô
+- Thời kỳ đẻ nhánh hữu hiệu: cây lúa bị hại tuy có thể hình thành dảnh mới và thành bông nhưng trọng lượng ngàn hạt đều kém so với cây khỏe
+- Thời kỳ lúa đứng cái và đòng non: sâu tập chung phá hại phía trong bẹ và dịch vào ống, có khi phá nát đòng non.
+- Cuối thời kỳ làm đòng và bắt đầu trỗ: sâu đục vào phần cuống đòng cắt đứt sự vận chuyển dinh dưỡng của bông lúa, hoặc nếu sâu non tuổi nhỏ tập chung cắn nát đòng thì bông lúa không trỗ.</Mô_tả_triệu_chứng>
         <Phòng_chống>Bón cân đối NPK, không nên bón quá nhiều đạm và bón đạm kéo dài.
 Bố trí cơ cấu mùa vụ thích hợp. Sau khi gặt lúa, cày lật gốc rạ, phơi ải hoặc
  ngâm nước (làm dầm) để diệt nhộng.
 Dùng các biện pháp thủ công: ngắt dảnh héo, ổ trứng; bẫy đèn đồng loạt bắt bướm…</Phòng_chống>
         <Tác_hại>Ngài của sâu đục thân 5 vạch đầu đen có tính hướng sáng yếu hơn sâu đục thân bướm 2 chấm và vũ hóa về đêm và sau đó giao phối ngay trong đêm đó hoặc đêm sau và sau khi giao phối 1 đêm thì bắt đầu đẻ trứng. Mỗi ngài cái có thể đẻ từ tới 480 trứng trong 3 ngày, một ổ trứng có từ 7-150 quả trứng/ổ và trứng có tỉ lệ nở rất cao. Một năm sâu đục thân 5 vạch đầu đen phát sinh 6 lứa. Điều kiện nhiệt độ ấm nóng và ẩm độ cao thích hợp cho sâu phát sinh gây hại.
 Sâu non xâm nhập vào bẹ lá vào thân cắt đứt đường vận chuyển dinh dưỡng làm héo đỉnh sinh trưởng, làm chế cây ở giai đoạn lúa non hoặc bông bạc, ảnh hưởng trực tiếp đến năng suất lúa. Nhộng làm ổ bên trong thân lúa và bướm vũ hóa từ đấy.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Thời kỳ mạ: từ khi còn nhỏ bị phá hại có thể bị chết khô, nếu cây mạ đã lớn bị hại thì dễ bị đứt gốc khi nhổ mạ
-- Thời kỳ đẻ nhánh: cây lúa bị hại có biểu hiện rõ: sâu đục vào phần dưới của thân, cắt đứt tổ chức bên trong phá hại chức năng dẫn nhựa làm cho lá non trước tiên bị cuốn dọc, có màu xanh tái sẫm, dần dần chuyển thành màu vàng và héo khô
-- Thời kỳ đẻ nhánh hữu hiệu: cây lúa bị hại tuy có thể hình thành dảnh mới và thành bông nhưng trọng lượng ngàn hạt đều kém so với cây khỏe
-- Thời kỳ lúa đứng cái và đòng non: sâu tập chung phá hại phía trong bẹ và dịch vào ống, có khi phá nát đòng non.
-- Cuối thời kỳ làm đòng và bắt đầu trỗ: sâu đục vào phần cuống đòng cắt đứt sự vận chuyển dinh dưỡng của bông lúa, hoặc nếu sâu non tuổi nhỏ tập chung cắn nát đòng thì bông lúa không trỗ.</description_symptoms>
         <Điều_trị>Phun các loại thuốc lưu dẫn, vị độc, tiếp xúc, nội hấp như: Padan 95SP, 
 Gegent 800WP...</Điều_trị>
         <Đặc_điểm_hình_thái rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Ngài đực: có đầu ngực màu nâu vàng có điểm màu nâu tối; bụng màu nâu xám; râu hình răng cưa; cánh trước màu vàng nâu có phẩy màu nâu đậm, giữa cánh có 4 đốm nâu thẫm óng ánh xếp theo hình ”&gt;” và trên các đốm có pha các vảy óng ánh bạc và vàng kim; phía trong và ngoài buồng giữa cánh có một số phiến vảy nâu ánh kim; cùng với đường vân ngoài của cánh có một vệt đai rộng màu nâu, ở đường vân phụ ngoài có dãy chấm đen, nâu đậm, ở vị trí đường mép ngoài cánh có 7 chấm đen. Cánh sau màu nâu vàng nhạt, lông viền cánh màu bạch trắng.
@@ -3075,6 +3169,11 @@ LuanVan_CNTT/20-SDT5V-SAU_w8lru6</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Sâu đục thân gây hại biến đổi tùy theo giai đoạn sinh trưởng của cây lúa và tuổi phát dục của sâu.
+- Sâu đục thân bướm 2 chấm và biện pháp phòng trị
+- Thời kỳ mạ: Sâu đục qua bẹ phía ngoài vào đến nõn giữa phá hại làm cho dảnh lúa bị héo.
+- Cây lúa ở thời kỳ đẻ nhánh: sâu đục vào phần dưới của thân, cắt đứt tổ chức bên trong phá hại chức năng dẫn nhựa làm cho lá non trước tiên bị cuốn dọc, có màu xanh tái sẫm, dần chuyển sang màu vàng và héo khô.
+- Thời kỳ sắp trỗ hoặc mới trỗ: sâu đục qua lá bao của đòng chui vào giữa rồi bò xuống đục ăn điểm sinh trưởng, cắt đứt các mạch dẫn dinh dưỡng làm cho bông lép trắng.</Mô_tả_triệu_chứng>
         <Phòng_chống>Cày lật gốc rạ, ngâm nước, làm dầm kịp thời (đặc biệt đối với lúa vụ mùa sau
  khi gặt). Tránh tình trạng để tới tháng 1 - 2 đầu năm mới tiến hành cày.
 Khi thu hoạch lúa cần cắt sát gốc rạ. Rơm rạ trên ruộng sau khi gặt cần
@@ -3084,11 +3183,6 @@ Theo dõi các đợt bướm ra quanh năm tổ chức đốt đèn bẫy bư�
 Ngắt ổ trứng sâu gom lại và đem tiêu hủy.
 Phát huy tác dụng của nhóm thiên địch nhất là ong ký sinh trứng.</Phòng_chống>
         <Tác_hại>Do 2 đối tượng chính gây nên là sâu đục thân và bướm 2 chấm, chúng sẽ cắn phá cây lúa làm chết cây và làm giảm năng sức của vụ mùa</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Sâu đục thân gây hại biến đổi tùy theo giai đoạn sinh trưởng của cây lúa và tuổi phát dục của sâu.
-- Sâu đục thân bướm 2 chấm và biện pháp phòng trị
-- Thời kỳ mạ: Sâu đục qua bẹ phía ngoài vào đến nõn giữa phá hại làm cho dảnh lúa bị héo.
-- Cây lúa ở thời kỳ đẻ nhánh: sâu đục vào phần dưới của thân, cắt đứt tổ chức bên trong phá hại chức năng dẫn nhựa làm cho lá non trước tiên bị cuốn dọc, có màu xanh tái sẫm, dần chuyển sang màu vàng và héo khô.
-- Thời kỳ sắp trỗ hoặc mới trỗ: sâu đục qua lá bao của đòng chui vào giữa rồi bò xuống đục ăn điểm sinh trưởng, cắt đứt các mạch dẫn dinh dưỡng làm cho bông lép trắng.</description_symptoms>
         <Điều_trị>Thuốc trừ sâu đục thân đặc hiệu hiện nay chủ yếu có 2 nhóm: 
 Nhóm chlorantranliprole (DupontTM Prevathon, Virtako,Voliam targo.
 Nhóm này có tác dụng nội hấp.
@@ -3154,11 +3248,11 @@ LuanVan_CNTT/17-SDTB2C-la_sujbc6</Image>
         <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Nõn_lúa_bị_héo"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu non đục vào thân gây nõn héo/bông bạc. Đôi khi sâu non chỉ hại mặt trong bẹ lá gây úa vàng làm bông lúa bị lép lửng.</Mô_tả_triệu_chứng>
         <Phòng_chống>Bón cân đối NPK, không nên bón quá nhiều đạm và bón đạm kéo dài.
  Bố trí cơ cấu mùa vụ thích hợp. Sau khi gặt lúa, cày lật gốc rạ, phơi ải hoặc ngâm nước (làm dầm) để diệt nhộng.</Phòng_chống>
         <Tác_hại>Sâu đục thân 5 vạch đầu đen phát sinh gây hại nặng ở vụ lúa thu đến vụ mùa, xuân chính vụ bị hại nhẹ hơn xuân muộn. Đặc điểm của loài sâu này chịu nóng và chịu lạnh khỏe nên ở vùng núi và trung du sâu này gây hại nặng. Loại sâu này phân bố ở khắp các vùng trồng lúa trong nước và trên thế giới.
 Giảm năng suất của vụ mùa</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu non đục vào thân gây nõn héo/bông bạc. Đôi khi sâu non chỉ hại mặt trong bẹ lá gây úa vàng làm bông lúa bị lép lửng.</description_symptoms>
         <Điều_trị>Phun các loại thuốc lưu dẫn, vị độc, tiếp xúc, nội hập như: Padan 95SP, Gegent 800WP... ngắt dảnh héo, ổ trứng; bẫy đèn đồng loạt bắt bướm…</Điều_trị>
         <Đặc_điểm_hình_thái rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Ngài: có đầu ngực màu vàng tro, bụng màu nâu nhạt. Râu đầu ngài đực ngắn hình răng lược, ngài cái có hình sợi chỉ. Cánh trước tựa hình chữ nhật nâu nhạt, gần mép ngoài cánh màu hơi đậm. Chính giữa cánh có một vân dọc màu nâu tối. Trên dưới đường vân có 2 điểm đen nhỏ, cánh sau màu trắng bạc, mép ngoài cánh hơi nâu nhạt.
 - Trứng: hình bánh bao dục dẹt, đỉnh hơi lõm, bề mặt trứng có khía dạng mạng nhện, mới đẻ màu trắng, gần nở màu tím. Trứng đẻ thành ổ dạng đai xếp thành 2-3 hàng trong bẹ lá.
@@ -3240,9 +3334,10 @@ Giảm năng suất của vụ mùa</Tác_hại>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thiếu Canxi (Ca) làm suy giảm chức năng của rễ và khiến cây bị nhiễm độc sắt. Nó làm còi cọc và chết các điểm đang phát triển.
+Mặc dù hiếm gặp trong hệ thống lúa được tưới, nhưng thiệt hại do thiếu Ca là rất quan trọng trong suốt giai đoạn sinh trưởng của cây trồng.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Thiếu Canxi Đa số trường hợp rối loạn có liên quan đến Ca là do điều kiện canh tác chứ không phải do cung cấp không đủ Ca cho rễ cây. Ca đi vào dòng bốc thoát hơi nước của cây và tích tụ chủ yếu ở các lá già. Hiện tượng thiếu được tìm thấy ở các lá non và đỉnh sinh trưởng, là những nơi có mức độ bốc thoát hơi thấp.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Tác_hại rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sự thiếu hụt Canxi ảnh khiến sự phát triển và chức năng của rễ bị suy giảm. Thêm vào đó, cây Lúa có thể dễ bị nhiễm độc Sắt. Nên để nâng cao kỹ thuật trồng Lúa, bạn cần bổ sung thêm kiến thức về phần dưỡng chất này.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thiếu Canxi (Ca) làm suy giảm chức năng của rễ và khiến cây bị nhiễm độc sắt. Nó làm còi cọc và chết các điểm đang phát triển.
-Mặc dù hiếm gặp trong hệ thống lúa được tưới, nhưng thiệt hại do thiếu Ca là rất quan trọng trong suốt giai đoạn sinh trưởng của cây trồng.</description_symptoms>
         <Điều_trị rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tái sử dụng rơm rạ rải trên ruộng là cách để tận dụng nguồn Canxi có sẵn
 Bón phân YaraLiva Tropicote( CaNO3) trong cuối giai đoạn phát triển để tăng hàm lượng Ca trong cây.</Điều_trị>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canxi đóng vai trò quan trọng trong việc hình thành các hợp chất tạo nên màng tế bào và sự vững chắc của vách tế bào .Để bổ sung kiến thức về kỹ thuật trồng Lúa, bạn hãy đọc tiếp bài viết này.</Describe>
@@ -3297,12 +3392,13 @@ LuanVan_CNTT/41-TCX_ma1k0q</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
-        <Tác_hại rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kali có chức năng khác là thẩm thấu, kích hoạt Enzyme, điều hòa sự thoát hơi nước qua lá, thân qua khí khổng và quá trình vận chuyển các chất đồng hóa của cây.
-Kali giúp các tế bào thực vật thêm cứng cáp hơn nhờ tham gia vào quá trình hình thành màng tế bào cứng. Mặc dù Kali không tác động đến việc ra nhánh của Lúa nhưng nó có tác dụng tăng rõ rệt số lượng hạt trên bông, tỷ lệ hạt chắc và trọng lượng 1000 hạt.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- cây xanh đậm với mép lá màu nâu vàng hoặc đốm hoại tử màu nâu sẫm xuất hiện đầu tiên trên đầu các lá già.
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- cây xanh đậm với mép lá màu nâu vàng hoặc đốm hoại tử màu nâu sẫm xuất hiện đầu tiên trên đầu các lá già.
 - Đầu lá màu nâu vàng, khi thiếu K nghiêm trọng
 - Sọc vàng có thể xuất hiện dọc theo các kẽ lá và các lá phía dưới có thể uốn cong xuống
-- Các triệu chứng xuất hiện đầu tiên trên các lá già, sau đó dọc theo mép lá và cuối cùng là ở gốc lá. Các cây bị ảnh hưởng cũng sẽ có các lá phía trên ngắn và rũ xuống có màu xanh đậm &quot;bẩn&quot;. Đầu và mép lá cũng có thể bị khô.</description_symptoms>
+- Các triệu chứng xuất hiện đầu tiên trên các lá già, sau đó dọc theo mép lá và cuối cùng là ở gốc lá. Các cây bị ảnh hưởng cũng sẽ có các lá phía trên ngắn và rũ xuống có màu xanh đậm &quot;bẩn&quot;. Đầu và mép lá cũng có thể bị khô.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Thiếu Kali (bệnh &quot;Pansulkh&quot; ở bang Punjab, Ấn độ). Thiếu Kali có thể là do - khả năng cung cấp K từ đất thấp - do rơm rạ lấy đi - do K bị cố định trong đất - mất do trực di - do tỉ lệ N:K, Mg:K hay Ca:K cao, và trong điều kiện nhiều Na/nhiễm mặn - nhu cầu K cao của giống lúa lai.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
+        <Tác_hại rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kali có chức năng khác là thẩm thấu, kích hoạt Enzyme, điều hòa sự thoát hơi nước qua lá, thân qua khí khổng và quá trình vận chuyển các chất đồng hóa của cây.
+Kali giúp các tế bào thực vật thêm cứng cáp hơn nhờ tham gia vào quá trình hình thành màng tế bào cứng. Mặc dù Kali không tác động đến việc ra nhánh của Lúa nhưng nó có tác dụng tăng rõ rệt số lượng hạt trên bông, tỷ lệ hạt chắc và trọng lượng 1000 hạt.</Tác_hại>
         <Điều_trị rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Để lúa đạt năng suất từ 5-7 tấn/ha cần bón bổ sung 20-100K/ ha (24-120 K2O/ha) do đất hằng năm bị lấy đi đáng kể lượng kali qua rơm rạ và hạt lúa
 Lúa lai tạo luôn cần một lượng phân bón Kali (60-120 K2O/ha cho mọi loại đất) nhiều hơn các loại giống Lúa thuần khác.</Điều_trị>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kali có chức năng khác là thẩm thấu, kích hoạt Enzyme, điều hòa sự thoát hơi nước qua lá, thân qua khí khổng và quá trình vận chuyển các chất đồng hóa của cây.Kali giúp các tế bào thực vật thêm cứng cáp hơn nhờ tham gia vào quá trình hình thành màng tế bào cứng. Mặc dù Kali không tác động đến việc ra nhánh của Lúa nhưng nó có tác dụng tăng rõ rệt số lượng hạt trên bông, tỷ lệ hạt chắc và trọng lượng 1000 hạt.</Describe>
@@ -3311,6 +3407,13 @@ LuanVan_CNTT/40-TKL-la_vnyhmo</Image>
         <rdfs:comment>Bệnh do thiếu Kali</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thiếu Kali</rdfs:label>
     </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Kali"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_hoại_tử_nâu_sẫm_trên_đầu_lá_già"/>
+        <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/40-TKL-la_vnyhmo</Image>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Kali"/>
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
@@ -3329,13 +3432,6 @@ LuanVan_CNTT/40-TKL-la_vnyhmo</Image>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Viền_có_màu_nâu_vàng"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/40-TKL-DAU_y6lbh3</Image>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Kali"/>
-        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
-        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đốm_hoại_tử_nâu_sẫm_trên_đầu_lá_già"/>
-        <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/40-TKL-la_vnyhmo</Image>
     </owl:Axiom>
     
 
@@ -3356,12 +3452,13 @@ LuanVan_CNTT/40-TKL-la_vnyhmo</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
-        <Tác_hại rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nitơ (Đạm) là chất dinh dưỡng quan trọng khi giúp cây tổng hợp các Axit Amin, Axit Nucleic và diệp lục. Nên khi thiếu Nitơ (Đạm), cây sẽ còi cọc và vàng lá.
-Nhìn chung, Nitơ (Đạm) có ảnh hưởng lớn đến năng suất lúa so với các loại dưỡng chất khác.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Trừ lá non còn xanh, các lá già chuyển sang màu vàng nhạt, lá lúa ngắn, thẳng, bàn lá hẹp, lá có màu xanh vàng.
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Trừ lá non còn xanh, các lá già chuyển sang màu vàng nhạt, lá lúa ngắn, thẳng, bàn lá hẹp, lá có màu xanh vàng.
 - Cây lúa phát triển kém, thấp lùn, nẩy chồi kém.
 - Toàn bộ ruộng có màu vàng nhạt.
-- Năng suất giảm.</description_symptoms>
+- Năng suất giảm.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bón nhiều đạm hoặc trong điều kiện ruộng thừa chất dinh dưỡng thì cây lúa thường dễ hút đạm, dinh dưỡng thừa đạm sẽ làm cho lá lúa to, dài, phiến lá mỏng, nhánh lúa vô hiệu nhiều; lúa sẽ trỗ muộn, cây cao vóng dẫn đến hiện tượng lúa lốp, đổ non dẫn đến năng suất, hiệu suất lúa không cao. Cây lúa hút đạm nhiều nhất vào hai thời kỳ: thời kỳ đẻ nhánh và thời kỳ làm đòng.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
+        <Tác_hại rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nitơ (Đạm) là chất dinh dưỡng quan trọng khi giúp cây tổng hợp các Axit Amin, Axit Nucleic và diệp lục. Nên khi thiếu Nitơ (Đạm), cây sẽ còi cọc và vàng lá.
+Nhìn chung, Nitơ (Đạm) có ảnh hưởng lớn đến năng suất lúa so với các loại dưỡng chất khác.</Tác_hại>
         <Điều_trị rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bón 15-20 kg Đạm (N) trên mỗi tấn thóc thu hoạch N / t (mùa mưa thu hoạch ít hơn so với mùa khô).
 Khuyến cáo bón phân Đạm (N) 2-3 lần (mùa mưa) hoặc 3-4 lần (mùa khô).
 Đất màu mỡ (đạt &gt; 3,4 tấn/ ha năng suất thường không cần bón lót Đạm
@@ -3369,15 +3466,10 @@ Lúa lai luôn đòi hỏi phải bón lót Đạm
 Lượng Đạm Nitơ cây cần nhiều nhất là giai đoạn giữa đẻ nhánh và hình thành bông
 Khác với Lân và Kali, hiệu lực tồn dư của Đạm là rất nhỏ</Điều_trị>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đạm (Nitơ) là yếu tố quan trọng giúp tăng năng suất cây Lúa. Ví dụ như: số lượng hạt trên bông, tỷ lệ hạt chắc, hàm lượng Protein trong gạo và do đó bón đủ lượng Đạm là rất quan trọng để Lúa đạt năng suất cao. Tuy nhiên, hiện nay tình trạng thiếu Nitơ (Đạm) ở cây Lúa vẫn còn phổ biến.</Describe>
+        <Image>LuanVan_CNTT/42-TD_a0jnrf</Image>
         <rdfs:comment>Bệnh do thiếu Đạm</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thiếu Đạm</rdfs:label>
     </owl:NamedIndividual>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Đạm"/>
-        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
-        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Toàn_bộ_đồng_ruộng_có_màu_vàng_nhạt"/>
-        <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quần thể</DiseaseSite>
-    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Đạm"/>
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
@@ -3389,6 +3481,12 @@ Khác với Lân và Kali, hiệu lực tồn dư của Đạm là rất nhỏ</
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_dần_chuyển_sang_màu_vàng_nhạt_vàng_da_cam"/>
         <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thiếu_Đạm"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Toàn_bộ_đồng_ruộng_có_màu_vàng_nhạt"/>
+        <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quần thể</DiseaseSite>
     </owl:Axiom>
     
 
@@ -3411,11 +3509,16 @@ Khác với Lân và Kali, hiệu lực tồn dư của Đạm là rất nhỏ</
         <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng_khô_và_chết_dần"/>
         <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Ống_rạ_phân_giải_thành_chất_nhầy_có_mùi_hôi"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Thay đổi tùy theo điều kiện ngoại cảnh. Trước hết là vết bệnh xuất hiện ở phần bẹ dưới thấp rồi lan dần ra. Vết bệnh đầu tiên là những chấm nâu, dần chuyển thành nâu đậm, rồi sau đen hẳn.
+- Lúc mới hình thành vết bệnh hình tròn sau hình thành bầu dục và phát triển dài ra, ăn sâu vào trong phá hoại nhu mô bẹ và ống ra làm cho bộ phận bị thối nhũn.
+- Cây lúa bị tiêm hạch lá vàng úa, khô chết. Khi cây bị nhẹ cây lúa có thể trỗ nhưng hạt lép nhiều. Vào cuối thời kỳ sinh trưởng, hạch nấm thường hình thành ở mặt trong ống rạ gần mặt nước, ống rạ bị bệnh thường phân giải thành chất nhầy, có mùi hôi. Khi ống dạ thối nhũn thì toàn bộ cây bị lụn xuống, lúc này rễ cây lúa bị thối đen.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Phát hiện bệnh tiêm hạch do nấm Selerotium Oryzae lần đầu tiên vào năm 1876.
+- Sợi nấm Sclerotium oryzae Catt. mảnh, không màu, đa bào, nhiều nhánh, thường không hình thành vòi hút. Sợi nấm già có màu vàng và thắt lại ở các ngăn ngang, thường hình thành nhiều bào tử hậu hình tròn màu nâu đậm, vỏ dày.
+- Hạch nấm hình cầu hoặc bầu dục rất nhỏ, hạch non màu trắng chuyển sang màu vàng nâu, hạch màu đen bóng, trơn, kích thước trung bình của hạt hạch 384 micromet.
+- Hạch nấm Sclerotium oryzae Catt. thường được hình thành trong mô bẹ lá và phần thân cây phần trên sát mặt nước. 
+ Hạch nấm Sclerotium oryzae Catt. mọc rất mạnh trên các môi trường pH 6,5 - 8. Dung dịch lọc môi trường cấy nấm có tác dụng kích thích sinh trưởng của lúa.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Dọn sạch rơm rạ, gốc rạ bị bệnh đem đốt, không nên đánh đóng hoặc dùng để phủ đất các loại cây trồng khác ngoài đồng ruộng
 Chọn giống lúa chống bệnh. Nhóm giống lúa Japonica có khả năng chống bệnh cao hơn nhóm giống lúa Indica</Phòng_chống>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Thay đổi tùy theo điều kiện ngoại cảnh. Trước hết là vết bệnh xuất hiện ở phần bẹ dưới thấp rồi lan dần ra. Vết bệnh đầu tiên là những chấm nâu, dần chuyển thành nâu đậm, rồi sau đen hẳn.
-- Lúc mới hình thành vết bệnh hình tròn sau hình thành bầu dục và phát triển dài ra, ăn sâu vào trong phá hoại nhu mô bẹ và ống ra làm cho bộ phận bị thối nhũn.
-- Cây lúa bị tiêm hạch lá vàng úa, khô chết. Khi cây bị nhẹ cây lúa có thể trỗ nhưng hạt lép nhiều. Vào cuối thời kỳ sinh trưởng, hạch nấm thường hình thành ở mặt trong ống rạ gần mặt nước, ống rạ bị bệnh thường phân giải thành chất nhầy, có mùi hôi. Khi ống dạ thối nhũn thì toàn bộ cây bị lụn xuống, lúc này rễ cây lúa bị thối đen.</description_symptoms>
         <Điều_trị>Có thể sử dụng thuốc để diệt ổ bệnh trung tâm khi bệnh chỉ xuất hiện ở 1 
 góc ruộng như: New Hinosan 30EC (1,2 l/ha); Ravral 50 WP (0,1 - 0,2 %);
  Dithan M45 - 80WP (1,5 - 2 kg/ha) kết hợp với thay đổi mức nước trong
@@ -3498,16 +3601,18 @@ LuanVan_CNTT/11-THL_zyla11</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh tiêm lửa hại lúa có thể xuất hiện trên lá mầm, bẹ lá, lá và hạt.
+- Khi hạt nhiễm bệnh, vết bệnh là các đốm nhỏ màu nâu trên lá mầm và các rễ non cũng có thể bị bệnh dưới dạng các vết đen nhạt.
+- Vết bệnh ban đầu trên lá, là chấm nhỏ màu vàng, sau đó chuyển sang màu nâu nhạt và vết bệnh điển hình có hình bầu dục giống hạt vừng, có màu nâu non, xung quanh có quầng vàng.
+- Đôi khi bệnh phát triển mạnh làm lá khô vàng và chết. Kích thước, số lượng vết bệnh tùy thuộc vào thời tiết và giống. Trên các giống mẫn cảm vết bệnh lớn và nhiều, ngược lại trên các giống lúa chịu hoặc kháng vết bệnh nhỏ và ít. 
+- Vết bệnh trên bẹ lá đòng và trên vỏ hạt lúa có mùa nâu không có hình dạng nhất định, khi bệnh nặng nấm có thể phát triển và bao phủ hoàn toàn lơp svor hạt và xâm nhập vào nội nhũ.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh do nấm Bipolaris oryzae gây ra (Breda de Haan) Shoem. gây ra, tên khác Helminthosporium oryzae . 
+- Nấm sinh trưởng trong phạm vi nhiệt độ khá rộng. Nhiệt độ thích hợp nhất cho nấm sinh trưởng là 27 – 30 độ C, cho bào tử nảy mầm là 25 - 30 độ C trong điều kiện ẩm độ 60 - 100%. Bào tử hình thành ở nhiệt độ từ 5 - 38 độ C, pH 4 - 10. Bào tử chết ở nhiệt độ 50 - 51 độ C, sợi nấm chết ở nhiệt độ 48 - 50 độ trong 10 phút. Trong điều kiện thuận lợi nấm xâm nhập vào cây trong 4h.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Vệ sinh đồng ruộng, dọn dẹp sạch cỏ dại và tàn dư rơm rạ, cấy đúng thời vụ, bón phân đúng kỹ thuật, đảm bảo đủ nước cho lúa, luân canh và cải tạo đất.
 Đảm bảo cung cấp đầy đủ dinh dưỡng cho lúa.
 Chú ý việc chọn lọc giống như phơi khô, quạt sạch, chọn hạt mẩy, sáng bóng, không có vết đốm nâu.
  Có thể sử dụng biện pháp sử  lý hạt giống bằng nước nóng 54 độ C trong 10 phút hoặc sử lý bằng thuốc diệt nấm rồi đãi cho sạch đem ủ cho thóc nảy mầm và gieo.</Phòng_chống>
         <Tác_hại>Hạt bị bệnh phẩm chất và phẩm chất và trọng lượng giảm 4,58 – 29,1%. Bệnh hại mức độ nhẹ, khi bệnh nặng vết bệnh làm lá sớm vàng và khô chết. Bệnh làm cháy lá mạ, lúa nhiễm bệnh vào lúc đòng non cho đến trỗ vỏ hạt thường bị đen, tỷ lệ hạt lửng và lép cao.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh tiêm lửa hại lúa có thể xuất hiện trên lá mầm, bẹ lá, lá và hạt.
-- Khi hạt nhiễm bệnh, vết bệnh là các đốm nhỏ màu nâu trên lá mầm và các rễ non cũng có thể bị bệnh dưới dạng các vết đen nhạt.
-- Vết bệnh ban đầu trên lá, là chấm nhỏ màu vàng, sau đó chuyển sang màu nâu nhạt và vết bệnh điển hình có hình bầu dục giống hạt vừng, có màu nâu non, xung quanh có quầng vàng.
-- Đôi khi bệnh phát triển mạnh làm lá khô vàng và chết. Kích thước, số lượng vết bệnh tùy thuộc vào thời tiết và giống. Trên các giống mẫn cảm vết bệnh lớn và nhiều, ngược lại trên các giống lúa chịu hoặc kháng vết bệnh nhỏ và ít. 
-- Vết bệnh trên bẹ lá đòng và trên vỏ hạt lúa có mùa nâu không có hình dạng nhất định, khi bệnh nặng nấm có thể phát triển và bao phủ hoàn toàn lơp svor hạt và xâm nhập vào nội nhũ.</description_symptoms>
         <Điều_trị>Trong trường hợp cần thiết có thể phun thuốc trừ nấm như: New Hinosan 30EC (1,2 l/1ha); Kitazin 50EC ( 1 - 5l/ha); Rovral 50 WP (0,1 - 0,2%); Zineb 80WP (1kg/ha).</Điều_trị>
         <Đặc_điểm_phát_sinh_và_phát_triển rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Nấm có thể tồn tại trong rơm rạ, trong đất và sống sót trên hạt giống trong bảo quản dưới dạng bào tử hoặc sợi nấm tiềm sinh trong khoảng thời gian từ 2 – 3 năm.
 - Nguồn bệnh đầu tiên thường từ hạt giống nhiễm bệnh, nấm gây bệnh trên chồi non và rễ làm giảm tỷ lệ nảy nầm khoảng 11 – 29% và giảm sức sống của cây con.
@@ -3703,15 +3808,15 @@ LuanVan_CNTT/34-TLHL-02_hks0yv</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Lúa bị tuyến trùng gây hại khó biểu hiện triệu chứng trên cây ngay ngoài đồng ruộng.
+- Bệnh xuất hiện sớm ở giai đoạn sinh trưởng và phát triển và phát triển của cây lúa làm giảm chồi gốc, đẻ nhánh ít, cây lúa chuyển màu vàng, hoa ra chậm tới 14 ngày.
+- Khi tuyến trùng xâm nhập rễ lúa biến màu vàng nâu và thối.</Mô_tả_triệu_chứng>
         <Phòng_chống>Vệ sinh đồng ruộng sạch sẽ.
  Để nước ngập trong ruộng vài ngày trước khi làm đất chuẩn bị gieo sạ.
 Giữ nước trong ruộng, không để khô hạn lâu, nhất là giai đoạn lúa còn nhỏ.
 Cần cho nước vào ruộng khoảng 3 - 5cm và giữ liên tục 5 - 7 ngày.</Phòng_chống>
         <Tác_hại>Tuyến trùng đục lỗ chui vào sinh sống trong rễ ngay từ khi mới gieo sạ và hình thành bướu trên rễ rất sớm (từ 5 ngày sau sạ). 
 Khi cây lúa bị bướu rễ, chất dinh dưỡng bị tắc nghẽn không vận chuyển nuôi thân lá được, do vậy sau thời gian bị nhiễm bệnh cây lúa sẽ có triệu chứng vàng lá, cháy khô từ chóp xuống, lúa phát triển kém, chồi nhiễm bệnh bị lùn, trổ sớm và có rất ít hạt, hạt bị lửng lép nhiều.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Lúa bị tuyến trùng gây hại khó biểu hiện triệu chứng trên cây ngay ngoài đồng ruộng.
-- Bệnh xuất hiện sớm ở giai đoạn sinh trưởng và phát triển và phát triển của cây lúa làm giảm chồi gốc, đẻ nhánh ít, cây lúa chuyển màu vàng, hoa ra chậm tới 14 ngày.
-- Khi tuyến trùng xâm nhập rễ lúa biến màu vàng nâu và thối.</description_symptoms>
         <Điều_trị>Sử dụng một số chế phẩm cải tạo đất và tăng cường khả năng ra rễ mới cho lúa như Rhizomyx 2,5G (trộn với phân chuồng hoai mục nếu có) kết hợp phun các loại phân bón hữu cơ qua lá như DS80, Humix, Biogen... để giúp lúa nhanh hồi phục ra lá, ra rễ nhanh hơn.</Điều_trị>
         <Đặc_điểm_hình_thái rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Là loại nội ký sinh di động trong rễ.
 - Tuyến trùng xuyên qua mô cây gây hại tạo ra các khoảng trống và gây thắt phần rễ gây hiện tượng hoại tử một vài khoảng cách trong rễ.
@@ -3773,6 +3878,9 @@ LuanVan_CNTT/33-TTHRL_fylbsb</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Trong suốt giai đoạn sinh trưởng của cây lúa, tuyến trùng gây hại tạo ra các vết bệnh làm trắng lá và từ phần đọt bông hoặc gốc lá trở lên.
+- Vết bệnh trên lá hoặc đọt bông chuyển sang màu xanh nâu, sau thành nâu thẫm và xoắn lại.
+- Lá non xoắn và không trỗ thoát, thậm chí bị phá hủy, phần phía dưới chun xuống trông giống vết sâu năn.</Mô_tả_triệu_chứng>
         <Phòng_chống>Đốt tàn dư sau thu hoạch ở những chân ruộng bị nhiễm nặng.
 Sử dụng cây luân canh không phải là ký chủ của loài D. Angutus
 Chọn đất không nhiễm tuyến trùng để gieo mạ. Tránh để gốc rạ trên đồng ruộng
@@ -3781,9 +3889,6 @@ Không tưới nước theo rãnh, hoặc mương máng chảy tràn làm lây l
         <Tác_hại>D. Angutus là loài ngoại ký sinh, sử dụng thức ăn ở các bộ phận cây còn non. Ở giai đoạn mạ, có thể tìm thấy tuyến trùng xung quanh phần ngọn mới phát triển của lúa, trên đất trũng có thể tìm thấy chúng ở tất cả các bộ phận của cây.
 Ở điều kiện ngập úng, tuyến trùng mất khả năng hoạt động ít nhất là 4 tháng, song trên đất nhiễm tuyến trùng để khô trong 6 tuần
 thì vết bệnh xoắn ngọn chỉ xuất hiện sau cấy lúa 2 tháng.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Trong suốt giai đoạn sinh trưởng của cây lúa, tuyến trùng gây hại tạo ra các vết bệnh làm trắng lá và từ phần đọt bông hoặc gốc lá trở lên.
-- Vết bệnh trên lá hoặc đọt bông chuyển sang màu xanh nâu, sau thành nâu thẫm và xoắn lại.
-- Lá non xoắn và không trỗ thoát, thậm chí bị phá hủy, phần phía dưới chun xuống trông giống vết sâu năn.</description_symptoms>
         <Điều_trị>Sử dụng các loại thuốc để phòng ngừa tuyến trùng. Các loại thuốc đã có
  hiệu quả phòng trừ như: Cabofuran, Mocap, Monocrotophos, phenazine, ..</Điều_trị>
         <Đặc_điểm_hình_thái rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- D. Angutus là loài ngoại ký sinh, sử dụng thức ăn ở các bộ phận cây còn non. Ở giai đoạn mạ, có thể tìm thấy tuyến trùng xung quanh phần ngọn mới phát triển của lúa, trên đất trũng có thể tìm thấy chúng ở tất cả các bộ phận của cây.
@@ -3795,6 +3900,7 @@ thì vết bệnh xoắn ngọn chỉ xuất hiện sau cấy lúa 2 tháng.</T�
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/15-TTHL-DONG_byxaa7,
 LuanVan_CNTT/15-TTHL-LA_r7zem3</Image>
         <rdfs:comment>Bệnh do Tuyến Trùng Hại Thân Lúa gây ra</rdfs:comment>
+        <rdfs:label>Tuyến Trùng Hại Thân Lúa</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Tuyến_Trùng_Hại_Thân_Lúa"/>
@@ -3851,14 +3957,14 @@ LuanVan_CNTT/15-TTHL-LA_r7zem3</Image>
         <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đầu_lá_bị_khô_tóp"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh tuyến trùng khô đầu lá lúa xuất hiện trên nhiều nước trồng lúa khác nhau trên thế giới như Ấn Độ, Mỹ, Châu Phi, Brazil, Nga, Việt Nam … Ở nước ta bệnh được phát hiện từ những năm 1967 – 1968 do nhập các lô lúa giống từ Trung Quốc trên các giống như Trân châu lùn, bao thai lùn, mộc tuyền …
+-  Khi cây nhiễm bệnh cây phát triển không bình thường, lùn, lá biến dạng: đầu lá bị khô tóp, chót lá chuyển màu trắng xám, lá xoắn lại, giai đoạn làm đòng thì lá đòng cổ bông xoắn, ghẹt đòng, bông ngắn, trỗ không thoát, hạt lép. Tuyến trùng gây hai trên lá lúa, phần ngọn lúa, biểu hiện đặc trưng nhất ở thời kỳ lúa đứng cái – trỗ đòng. Đầu tiên tuyến trùng chui vào nách lá di chuyển lên trên hoa sau đó chi vào hạt làm bông kém phát triển, cổ bông chun lại, bông nhỏ, hạt có thể không chin được, gây giảm năng suất tới 50 – 80%.</Mô_tả_triệu_chứng>
         <Phòng_chống>Chọn lọc hạt giống sạch bệnh: không lấy hạt ở các ruộng, các vùng đang có bệnh
 Sử dụng hạt giống kháng tuyến trùng và kết hợp các biện pháp canh tác hạn chế tác hại của chúng dưới ngưỡn gây hại kinh tế
 Tiêu huỷ các tàn dư cây bệnh tránh lây lan từ rơm rạ
 Hạt giống trước khi đưa vào sản xuất cần xử lý bằng nước nóng  52 - 54oC trong 15 phút, phơi lúa dưới ánh sáng mặt trời hoặc sấy khô ở nhiệt độ 30 – 35oC trước khi bảo quản.</Phòng_chống>
         <Tác_hại>Từ giai đoạn này đến khi lúa trỗ tuyến trùng sinh sản nhanh, nằm trong nách lá, bẹn lá và dùng kim chích hút vào mô lấy chất dinh tưỡng theo kiểu ngoại ký sinh. Theo sự phát triển của cây lúa, tuyến trùng di chuyển dần lên phía trên vào ngọn cây tới đòng, bao phấn của bông lúa dẫn tới khả năng tồn tại của tuyến trùng ở trong hạt, đến khi lúa chin thì trên thân (rơm rạ)hầu như không có tuyến trùng, chúng chui vào hạt nằm cuộn tròn dưới lớp vỏ trấu và sống tiềm sinh ẩn. Hạt thóc trở thành môi giới nhiễm tuyến trùng và bệnh được lây lan nhờ hạt giống nhiễm bệnh.
  gây giảm năng suất tới 50 – 80%.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh tuyến trùng khô đầu lá lúa xuất hiện trên nhiều nước trồng lúa khác nhau trên thế giới như Ấn Độ, Mỹ, Châu Phi, Brazil, Nga, Việt Nam … Ở nước ta bệnh được phát hiện từ những năm 1967 – 1968 do nhập các lô lúa giống từ Trung Quốc trên các giống như Trân châu lùn, bao thai lùn, mộc tuyền …
--  Khi cây nhiễm bệnh cây phát triển không bình thường, lùn, lá biến dạng: đầu lá bị khô tóp, chót lá chuyển màu trắng xám, lá xoắn lại, giai đoạn làm đòng thì lá đòng cổ bông xoắn, ghẹt đòng, bông ngắn, trỗ không thoát, hạt lép. Tuyến trùng gây hai trên lá lúa, phần ngọn lúa, biểu hiện đặc trưng nhất ở thời kỳ lúa đứng cái – trỗ đòng. Đầu tiên tuyến trùng chui vào nách lá di chuyển lên trên hoa sau đó chi vào hạt làm bông kém phát triển, cổ bông chun lại, bông nhỏ, hạt có thể không chin được, gây giảm năng suất tới 50 – 80%.</description_symptoms>
         <Điều_trị>Biện pháp hoá học: Sử dụng các thuốc xử lý hạt giống như: Fensulfothian, Carbofuran, Aldicarb, Methomyl … Có thể xử lý xông hơi mằng Metyl bromide: 567g/28,094 m3 trong 6 giờ</Điều_trị>
         <Đặc_điểm_hình_thái rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Là dạng tuyến trùng có tính chuyên hoá hẹp, ký sinh thực sự, luôn sống trên cây và không rời khỏi cây lý chủ. Đất chỉ là yếu tố hỗ trợ cho chúng lan truyền và chuyển sang trạng thái hoạt động sau khi tiềm ẩn trong hạt giống (nằm trú ngụ giữa phần bỏ và hạt gạo). Tuyến trùng có thể ở trạng thái tiềm sinh từ 8 tháng đến 3 năm sau khi thu hoạch. Tuyến trùng tồn tại qua hạt giống ở trạng thái tiềm sinh có thể kéo dài tới 2 – 3 năm hoặc nhiều hơn, đây cũng là nguồn bệnh ban đầu. Hạt lúa nhiễm tuyến trùng không khác biệt so với hạt khoẻ mạnh. Sau khi gieo hạt và đất tuyến trùng ở trong hạt vươn theo mầm ra khỏi vỏ hạt, di chuyển nằm trong lá nõn cuốn tròn. Từ giai đoạn này đến khi lúa trỗ tuyến trùng sinh sản nhanh, nằm trong nách lá, bẹn lá và dùng kim chích hút vào mô lấy chất dinh tưỡng theo kiểu ngoại ký sinh. Theo sự phát triển của cây lúa, tuyến trùng di chuyển dần lên phía trên vào ngọn cây tới đòng, bao phấn của bông lúa dẫn tới khả năng tồn tại của tuyến trùng ở trong hạt, đến khi lúa chin thì trên thân (rơm rạ)hầu như không có tuyến trùng, chúng chui vào hạt nằm cuộn tròn dưới lớp vỏ trấu và sống tiềm sinh ẩn. Hạt thóc trở thành môi giới nhiễm tuyến trùng và bệnh được lây lan nhờ hạt giống nhiễm bệnh.
 - Tuyến trùng phát triển ở nhiệt độ thích hợp là 20oC, tối thiểu là 13oC và tối đa là 43oC, vòng đời từ 3 – 6 ngày ở nhiệt độ 25 – 31oC và 9 – 24 ngày ở nhiệt độ 14 – 20oC. Tuyến trùng chết ở nhiệt độ 54oC trong 10 phút, ở nhiệt độ 44oC trong 4 giờ. Ẩm độ thích hợp cho tuyến trùng phát triển 70 – 90 %; ẩm độ 100% hoặc mưa ẩm thuận lợi cho sự di chuyển lan truyền từ cây này sang cây nọ.</Đặc_điểm_hình_thái>
@@ -3978,14 +4084,16 @@ LuanVan_CNTT/36-TTKDLL_smrcxt</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Triệu chứng vàng lùn: Lá lúa từ màu xanh nhạt chuyển dần sang màu vàng nhạt, vàng da cam rồi vàng khô. Vị trí các lá bị vàng lan dần từ các lá bên dưới lên các lá phía trên. Vết vàng trên lá xuất hiện từ chóp lá, lan dần vào phía bẹ lá. Tất cả các lá bị bệnh có xu hướng xoè ngang. Các chồi lúa bị bệnh giảm chiều cao và bệnh cũng làm giảm số chồi trên bụi lúa mắc bệnh. Quần thể ruộng lúa bị bệnh ngả màu vàng, chiều cao cây lúa không đồng đều.
+- Triệu chứng lúa cỏ: bụi lúa lùn, cho ra nhiều chồi mọc thẳng, có dạng giống như bụi cỏ. Lá lúa ngắn, hẹp, màu xanh vàng hoặc màu vàng cam. Tại các lá non có nhiều đốm gỉ sắt hoặc màu vàng đỏ. Khi trỗ thường không có gié hoặc gié có hạt lép.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh vàng lùn do virus Rice Grassy Stunt Virus (RGSV) gây ra. Virus này xâm nhập vào cây lúa và gây bệnh thông qua môi giới là Rầy nâu ( Nilaparvata lugens). Bệnh có thể làm giảm năng suất lúa trên những giống mẫn cảm và khi mật độ rầy trên ruộng cao.
+- Rầy nâu truyền virus gây bệnh từ cây này sang cây khác, từ ruộng này sang ruộng khác. Rầy có khả năng truyền bệnh trong suốt quá trình sống của nó sau khi tiếp nhận mầm bệnh khoảng 1 giờ.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Đối với ruộng lúa giai đoạn mạ đến đòng, nhiễm nhẹ, vận động nhổ, cày vùi cây lúa nhiễm bệnh.
 Đối với ruộng lúa giai đoạn mạ đến đòng, nhiễm nặng, vận động nông dân tiêu hủy lúa nhiễm bệnh hoặc phòng trừ rầy nâu theo hướng dẫn.</Phòng_chống>
         <Tác_hại>Bệnh xuất hiện nặng từ 30 ngày sau khi sạ. Bệnh xuất hiện càng trễ thì khả năng thiệt hại càng cao. 
 Cây lúa bị nhiễm bệnh, thân lá thấp, phiến lá ngắn hay cong xoắn, có khả năng nảy chồi mạnh như sẽ mất khả năng trổ vì vậy năng suất sẽ bị thất thu nghiệm trọng.
 Bệnh có khuynh hướng phát sinh và phát triển theo chu kỳ của rầy nâu.
 Thông thường bệnh sẽ bộc phát mạnh kèm sau các đợt dịch rầy.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Triệu chứng vàng lùn: Lá lúa từ màu xanh nhạt chuyển dần sang màu vàng nhạt, vàng da cam rồi vàng khô. Vị trí các lá bị vàng lan dần từ các lá bên dưới lên các lá phía trên. Vết vàng trên lá xuất hiện từ chóp lá, lan dần vào phía bẹ lá. Tất cả các lá bị bệnh có xu hướng xoè ngang. Các chồi lúa bị bệnh giảm chiều cao và bệnh cũng làm giảm số chồi trên bụi lúa mắc bệnh. Quần thể ruộng lúa bị bệnh ngả màu vàng, chiều cao cây lúa không đồng đều.
-- Triệu chứng lúa cỏ: bụi lúa lùn, cho ra nhiều chồi mọc thẳng, có dạng giống như bụi cỏ. Lá lúa ngắn, hẹp, màu xanh vàng hoặc màu vàng cam. Tại các lá non có nhiều đốm gỉ sắt hoặc màu vàng đỏ. Khi trỗ thường không có gié hoặc gié có hạt lép.</description_symptoms>
         <Điều_trị>Đối với ruộng lúa giai đoạn đòng đến trổ, vận động nhổ, vùi cây lúa nhiễm bệnh phun thuốc trừ rầy nâu theo hướng dẫn nếu phát hiện rầy có số &gt;3 con/tép, rầy đang tuổi 1-2. Các loại thuốc cho hiệu quả cao là Actara 25WG, Chess 50WG.</Điều_trị>
         <Đặc_điểm_phát_sinh_và_phát_triển rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Triệu chứng bệnh vàng lùn vi virus lúa cỏ xuất hiện khoảng 30 ngày sau khi nhiễm bệnh.
 - Thời gian ủ bệnh khoảng 20 ngày.
@@ -4065,14 +4173,15 @@ LuanVan_CNTT/08-VL_amrml7</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
-        <Phòng_chống>Sử dụng các giống lúa kháng bệnh.
-Nếu phát hiện trên ruộng có dảnh bị nhiễm bệnh thì ngay lập tức phải nhổ bỏ và phun thuốc trừ rầy.</Phòng_chống>
-        <Tác_hại>Bệnh vàng lụi (còn gọi là bệnh vàng tạm thời hoặc bệnh vàng lá di động) là loại bệnh do virus Transitory yellowing gây lên và môi giới truyền bệnh là rầy xanh (Nephotettix cincticeps, N. Nigropictus và N. Viresent). Bệnh này xuất hiện từ năm 1958 và chủ yếu chỉ có ở các tỉnh phía Bắc Việt Nam.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Cây bị bệnh lùn, lá bị vàng bắt đầu từ những lá phía dưới. Lá biến thành màu vàng da cam từ mép lá và chóp lá trở vào. Lá lúa co ngắn lại và xoè ngang ra giống như lá cây gừng.
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Cây bị bệnh lùn, lá bị vàng bắt đầu từ những lá phía dưới. Lá biến thành màu vàng da cam từ mép lá và chóp lá trở vào. Lá lúa co ngắn lại và xoè ngang ra giống như lá cây gừng.
 - Lá non thường có màu xanh nhạt lốm đốm hoặc thành sọc dài ngắn khác nhau chạy song song với gân lá. Cây lúa lùn hẳn xuống, bộ rễ kém phát triển có màu đen và tanh.
 - Khi cây lúa bị vàng lá nặng và bị sớm có thể lụi chết trước khỉ trỗ. Nếu bị nhiễm bệnh muộn thì mức độ bệnh nhẹ, nếu không chữa trị thì cây lúa có thể sống đến khi trỗ bông nhưng trỗ muộn, bông lúa nhỏ, nhiều hạt lép và thường trỗ không thoát. Hạt lúa bị  lửng và nhẹ, vỏ trấu có vệ nâu đậm hoặc biến màu.
 - Cây nhiễm bệnh muộn có thể không biểu hiện triệu chứng trước khi thu hoạch nhưng cây lúa chét mọclên thường biểu hiện bệnh rõ rệt từ đầu. Nếu bệnh nhẹ và được chữa trị tích cực, kịp thời thì có thể hồi phục và cho năng suất bình thường.
-- Trên ruộng lúa lúc đầu có một số dảnh lúa bị bệnh, sau đó từ những dảnh này lan ra thành từng chòm và toàn ruộng. Sự phát triển và tác hại của bệnh có liên quan chặt chẽ với giống lúa, số lượng rầy và đặc điểm ruộng. Mức độ nhiểm bệnh lúa vàng lụi của các giống lúa rất khác nhau.</description_symptoms>
+- Trên ruộng lúa lúc đầu có một số dảnh lúa bị bệnh, sau đó từ những dảnh này lan ra thành từng chòm và toàn ruộng. Sự phát triển và tác hại của bệnh có liên quan chặt chẽ với giống lúa, số lượng rầy và đặc điểm ruộng. Mức độ nhiểm bệnh lúa vàng lụi của các giống lúa rất khác nhau.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh vàng lụi (còn gọi là bệnh vàng tạm thời hoặc bệnh vàng lá di động) là loại bệnh do virus Transitory yellowing gây lên và môi giới truyền bệnh là rầy xanh (Nephotettix cincticeps, N. Nigropictus và N. Viresent). Bệnh này xuất hiện từ năm 1958 và chủ yếu chỉ có ở các tỉnh phía Bắc Việt Nam.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
+        <Phòng_chống>Sử dụng các giống lúa kháng bệnh.
+Nếu phát hiện trên ruộng có dảnh bị nhiễm bệnh thì ngay lập tức phải nhổ bỏ và phun thuốc trừ rầy.</Phòng_chống>
+        <Tác_hại>Bệnh vàng lụi (còn gọi là bệnh vàng tạm thời hoặc bệnh vàng lá di động) là loại bệnh do virus Transitory yellowing gây lên và môi giới truyền bệnh là rầy xanh (Nephotettix cincticeps, N. Nigropictus và N. Viresent). Bệnh này xuất hiện từ năm 1958 và chủ yếu chỉ có ở các tỉnh phía Bắc Việt Nam.</Tác_hại>
         <Điều_trị>Khi ruộng bị bệnh nhẹ và ở giai đoạn lúa đẻ nhánh, áp dụng các biện pháp thay nước ruộng, bón thêm vôi và phân lân kết hợp làm cỏ sục bùn, phun thuốc trừ rầy, sau đó khoảng 7-10 ngày bộ rễ lúa phát triển sẽ làm cho cây lúa hồi phục và cho năng suất bình thường.</Điều_trị>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Transitory yellowing</Describe>
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/30-VL-03_lrszdr,
@@ -4165,19 +4274,20 @@ LuanVan_CNTT/30-VL-02_tby3dk</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh hại chủ yếu trên các lá già, các lá có chóp lá chạm mặt ruộng nước. Vết bệnh tạo thành nhiều đường vân vòng cung nối tiếp nhau loen rộng ra, bắt đầu từ chóp lá loen rộng vào giữa phiến lá hoặc bắt đầu từ mép lá loen rộng vào trong. Các đường vân cung có màu nâu, nâu nhạt, chiều dài 1 – 5 cm, chiều rộng 0,5 – 1 cm, chiều rộng 0,5 – 1 cm (chiếm cả chiều rộng lá). Cuối cùng lá lúa bị khô táp gọi là bỏng lá lúa
+- Trên bẹ lá tạo ra những đốm nhỏ hình bầu dục, hình chữ nhật, màu nâu đỏ, tím đen, về sau vết đốm to dần chuyển sang màu nâu, xám. Bệnh có thể hại trên cổ bông và trên hạt làm biến đổi màu vỏ hạt. Bệnh làm giảm 20 – 30% năng suất lúa.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Nấm có sợi đa bào, tản nấm dầy xốp màu trắng mọc nhanh trên môi trường. Bào tử phân sinh hình trăng khuyết cong có 1 – 3 ngăn ngang nhưng thông thuồng là 2 tế bào, không màu (khi tụ lại thành hình khối bào tử có màu hồng nhạt).</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Tác_hại>Nấm có sợi đa bào, tản nấm dầy xốp màu trắng mọc nhanh trên môi trường. Bào tử phân sinh hình trăng khuyết cong có 1 – 3 ngăn
  ngang nhưng thông thuồng là 2 tế bào, không màu (khi tụ lại thành hình khối bào tử có màu hồng nhạt).
 Bệnh làm giảm 20 – 30% năng suất lúa.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh hại chủ yếu trên các lá già, các lá có chóp lá chạm mặt ruộng nước. Vết bệnh tạo thành nhiều đường vân vòng cung nối tiếp nhau loen rộng ra, bắt đầu từ chóp lá loen rộng vào giữa phiến lá hoặc bắt đầu từ mép lá loen rộng vào trong. Các đường vân cung có màu nâu, nâu nhạt, chiều dài 1 – 5 cm, chiều rộng 0,5 – 1 cm, chiều rộng 0,5 – 1 cm (chiếm cả chiều rộng lá). Cuối cùng lá lúa bị khô táp gọi là bỏng lá lúa
-- Trên bẹ lá tạo ra những đốm nhỏ hình bầu dục, hình chữ nhật, màu nâu đỏ, tím đen, về sau vết đốm to dần chuyển sang màu nâu, xám. Bệnh có thể hại trên cổ bông và trên hạt làm biến đổi màu vỏ hạt. Bệnh làm giảm 20 – 30% năng suất lúa.</description_symptoms>
         <Điều_trị>Phun thuốc và sử lý hạt giống bằng Dithane M – 45, Carbendazim (Bavistin) 
 hoặc Benlat 1,5 – 3 g/kg hạt.</Điều_trị>
         <Đặc_điểm_phát_sinh_và_phát_triển rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh thường xuất hiện vào thời kỳ cây lúa đang sinh trưởng, từ giai đoạn lúa ccon đứng gái, đứng cái đến đòng trỗ  (hại trên lá) thường vào tháng 3 – 4 trở đi (vụ lúa xuân) và tháng 8 – 9 (vụ lúa mùa), trong điều kiện nhiệt độ tương đối cao, tăng dần và có nắng, nhất là những ruộng có nước. Nấm bệnh bảo tồn trên tàn dư lá bệnh và ở trên hạt giống một thời gian lâu dài, có khi tới 11 năm (Mathur và Neergaard, 1985).</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Microdochium oryzae Samuels</Describe>
         <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/13-VNLL-LA_h2dpin,
 LuanVan_CNTT/13-VNLL_hpqrta</Image>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Vàng Nâu Lá Lúa</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vàng Nâu Lá Lúa</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh Vân Nâu Lá Lúa</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vân Nâu Lá Lúa</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Vân_Nâu_Lá_Lúa"/>
@@ -4449,19 +4559,22 @@ LuanVan_CNTT/13-VNLL_hpqrta</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
-        <Phòng_chống>Bón phân NPK hợp lý, đúng giai đoạn, không bón đạm tập trung vào thời kỳ lúa dễ nhiễm bệnh. 
-Khi có bệnh phải tạm ngừng bón thúc đạm và tiến hành phun thuốc phòng trừ.</Phòng_chống>
-        <Tác_hại>Bệnh gây hại ngay từ trên ruộng mạ nhưng gây hại nặng từ giai đoạn lúa đẻ nhánh rộ trở đi. bệnh sẽ phát sinh, lây lan nhanh trên diện rộng và có thể gây cháy lụi nếu không được phòng trừ kịp thời. Phần lớn các giống lúa đều nhiễm bệnh.Bệnh thích hợp thời tiết nắng ấm, trời âm u, ẩm độ cao, sương mù, gieo sạ dầy, hay bón nhiều đạm…
-Đạo ôn cổ bông phát sinh và gây hại nặng ở điều kiện ẩm độ cao, mưa kéo dài.
-Trong điều kiện trời nắng, ẩm độ thấp thì sự gây hại của bệnh không đáng kể.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+ Vết bệnh trên mạ lúc đầu hình bầu dục sau tạo thành hình thoi nhỏ hoặc dạng tương tự hình thoi, màu nâu hồng hoặc nâu vàng.
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+ Vết bệnh trên mạ lúc đầu hình bầu dục sau tạo thành hình thoi nhỏ hoặc dạng tương tự hình thoi, màu nâu hồng hoặc nâu vàng.
 + Khi Bệnh nặng, từng đám vết bệnh kế tiếp nhau làm cho cây mạ có thể héo khô hoặc chết.
 + Thông thường vết bệnh đạo ôn trên lá lúa lúc đầu là những chấm nhỏ màu xanh lục hoặc mờ vết dầu, sau đó chuyển sang màu xám nhạt.
 + Trên các giống lúa mẫn cảm các vết bệnh to hình thoi, dày màu nâu nhạt, có khi có quầng màu vàng nhạt, phần giữa vết bệnh có màu nâu xám.
 + Trên các giống chống chịu, vết bệnh là các vết chấm rất nhỏ hình dạng không đặc trưng. 
 + Các vị trí khác nhau của bông lúa đều có thể bị bệnh với các triệu chứng các vết màu nâu xám hơi teo thắt lại.
 + Vết bệnh trên cổ bông xuất hiện sớm thì bông lúa bị lép, nếu bệnh xuất hiện muộn khi hạt đã vào chắc thì gây hiện tượng gẫy cổ bông.
-+ Vết bệnh ở hạt không định hình, có màu nâu xám hoặc nâu đen. Nấm ký sinh ở vỏ trấu và có thể ở bên trong hạt. Hạt giống bị bệnh là nguồn truyền bệnh từ vụ này qua vụ khác.</description_symptoms>
++ Vết bệnh ở hạt không định hình, có màu nâu xám hoặc nâu đen. Nấm ký sinh ở vỏ trấu và có thể ở bên trong hạt. Hạt giống bị bệnh là nguồn truyền bệnh từ vụ này qua vụ khác.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tác nhân gây hại là nấm Pyricularia oryzae Cav. hay P. grisea (Cook )Sacc. .
+- Cành bào tử phân sinh hình trụ, đa bào không phân nhánh, đầu cành nhọn và hơi gấp khúc. Nấm thường sinh ra cacsc cụm cành từ 3 - 5 chiếc.
+- Bào tử phân sinh hình quả lê hoặc hình nụ sen, thường có từ 2 - 3 ngăn ngang, bào tử không màu, kích thước trung bình của bào tử nấm là 19 - 23 x 10 - 12 micromet.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
+        <Phòng_chống>Bón phân NPK hợp lý, đúng giai đoạn, không bón đạm tập trung vào thời kỳ lúa dễ nhiễm bệnh. 
+Khi có bệnh phải tạm ngừng bón thúc đạm và tiến hành phun thuốc phòng trừ.</Phòng_chống>
+        <Tác_hại>Bệnh gây hại ngay từ trên ruộng mạ nhưng gây hại nặng từ giai đoạn lúa đẻ nhánh rộ trở đi. bệnh sẽ phát sinh, lây lan nhanh trên diện rộng và có thể gây cháy lụi nếu không được phòng trừ kịp thời. Phần lớn các giống lúa đều nhiễm bệnh.Bệnh thích hợp thời tiết nắng ấm, trời âm u, ẩm độ cao, sương mù, gieo sạ dầy, hay bón nhiều đạm…
+Đạo ôn cổ bông phát sinh và gây hại nặng ở điều kiện ẩm độ cao, mưa kéo dài.
+Trong điều kiện trời nắng, ẩm độ thấp thì sự gây hại của bệnh không đáng kể.</Tác_hại>
         <Điều_trị>Giữ nước thường xuyên cho ruộng lúa nhất là khi có dịch bệnh
 Khi phát hiện ổ bệnh trên đồng ruộng cần tiến hành phun thuốc trừ sớm và nhanh.  Một số loại thuốc hoá học sử dụng để phòng trừ bệnh như Fuji –one 40WP, Bump 650WP, Filia 525SE, Kasai-S 92SC, Kabim 30WP, abum 650WP, Bankan 600WP, Bemsuper 75WP, Katana 20SC, Fu-army 40EC,…</Điều_trị>
         <Đặc_điểm_phát_sinh_và_phát_triển rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh này thường phát triển mạnh trong điều kiện khí hậu mát mẽ, ấm độ cao, mưa nhỏ kéo dài, đêm sương mù nhiều.
@@ -4574,12 +4687,13 @@ LuanVan_CNTT/05-DO_jozj45</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Vết bệnh là những chấm to nhỏ không đều nhau, xuất hiện nhiều ở cả 2 mặt của các lá - phần nửa cuối, theo từng đám khắp cả ruộng; ban đầu có màu nâu nhạt sau đó chuyển sang màu đậm hơn. Nhổ cây lúa lên quan sát thấy bộ rễ kém phát triển.
+- Những đám có nhiều vết bệnh và bị nặng thì cả phần lá đó sẽ bị cháy vàng, ảnh hưởng đến làm đòng - năng suất và chất lượng gạo sau này.
+- Cây mầm nhiễm bệnh dễ dàng quan sát thấy những vết nâu tròn, bầu dục trên lá mầm, làm biến dạng lá mầm. Bệnh còn làm cho rễ mầm biến màu và thối đen. Đa số cây mầm bị nhiễm bệnh nặng thường bị chết hoăc phát triển không bình thường.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh do nấm Bipolaris Oryzae, tồn tại chủ yếu từ hạt giống. Phát sinh gây hại trên giống (KM 18, Bắc thơm 7, Tám xoan Điện Biên), chân ruộng được đánh giá là xấu nghèo dinh dưỡng và không đậu nước.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Cần thăm đồng thường xuyên để nhận diện và không nhầm lẫn với bệnh đạo ôn. Đồng thời tập trung chăm sóc và duy trì đầu tư nước tưới hợp lý từ 2 - 5cm, bón đủ và cân đối NPK theo đúng thời kỳ sinh trưởng phát triển để cây lúa khỏe mạnh và hạn chế sự phát sinh gây hại của nấm bệnh.</Phòng_chống>
         <Tác_hại>Do thời tiết có nhiều nắng nóng nhiệt cao, độ ẩm không khí cao thấp thất thường, cây lúa thường xuyên bị đói hoặc không được đáp ứng kịp thời các yếu tố dinh dưỡng và nước vì đặc điểm chân ruộng.
 Bệnh do nấm Bipolaris Oryzae, tồn tại chủ yếu từ hạt giống. Phát sinh gây hại trên giống (KM 18, Bắc thơm 7, Tám xoan Điện Biên), chân ruộng được đánh giá là xấu nghèo dinh dưỡng và không đậu nước.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Vết bệnh là những chấm to nhỏ không đều nhau, xuất hiện nhiều ở cả 2 mặt của các lá - phần nửa cuối, theo từng đám khắp cả ruộng; ban đầu có màu nâu nhạt sau đó chuyển sang màu đậm hơn. Nhổ cây lúa lên quan sát thấy bộ rễ kém phát triển.
-- Những đám có nhiều vết bệnh và bị nặng thì cả phần lá đó sẽ bị cháy vàng, ảnh hưởng đến làm đòng - năng suất và chất lượng gạo sau này.
-- Cây mầm nhiễm bệnh dễ dàng quan sát thấy những vết nâu tròn, bầu dục trên lá mầm, làm biến dạng lá mầm. Bệnh còn làm cho rễ mầm biến màu và thối đen. Đa số cây mầm bị nhiễm bệnh nặng thường bị chết hoăc phát triển không bình thường.</description_symptoms>
         <Điều_trị>Khi ruộng có triệu chứng bị hại, cần phun thuốc TilSuper300EC. Một cốc TilSuper300EC pha đều trong bình 16 lít nước, phun cho 6 - 8 thước ruộng vào chiều mát không mưa. Phun 2 lần liên tục, lần 2 sau lần 1 từ 3 - 4 ngày.</Điều_trị>
         <Đặc_điểm_phát_sinh_và_phát_triển rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nguyên nhân do thời tiết có nhiều nắng nóng nhiệt cao, độ ẩm không khí cao thấp thất thường, cây lúa thường xuyên bị đói hoặc không được đáp ứng kịp thời các yếu tố dinh dưỡng và nước vì đặc điểm chân ruộng.</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Cercospora oyzae Myyake Sephaerulina oryzina Hara.</Describe>
@@ -4648,11 +4762,13 @@ LuanVan_CNTT/38-DN-CAY_upxgm1</Image>
         <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_có_các_vết_sọc_vàng_nhỏ_ngăn_khác_nhau"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh thường xuất hiện ở trên lá là những sọc ngắn khác nhau, chạy dọc giữa các gân lá, lúc đầu vết sọc xanh trong giọt dầu, dần chuyển dần chuyển sang màu nâu, tạo thành các sọc nâu hẹp, xung quanh sọc nâu, tạo thành các sọc nâu hẹp, xung quanh sọc nâu có thể có quầng vàng nhỏ trên các giống rất mẫn cảm bệnh.
+- Trong điều kiện ẩm ướt về buổi sáng trên bề mặt sọc nâu tiết ra những giọt dịch nhỏ, tròn màu vàng đục, về sau khô rắn thành viên kẹo vi khuẩn trong như hạt trứng cá, dễ dàng rơi khỏi mặt lá xuống nước ruộng hoặc dễ dàng nhờ mưa đưa đi xa truyền lan bệnh. Cuối cùng lá bệnh khô táp tương tự như bệnh bạc lá vi khuẩn.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Vi khuẩn gây bệnh X. Oryzicola Fang. Là loại hình gậy ngắn có kích thước 0,4 – 0,6x 1x2,5 micromet. Chuyển động, có lông roi ở 1 đầu.
+- Gram âm, khuẩn lạc tròn nhỏ 1mm vàng nhạt, nhẵn bóng. Có khả năng thủy phân tinh bột. Không khử Nitrat. Đặc điểm khác biệt với X. Oryzae là X. Oryzicola có thể sinh trưởng trên môi trường có alanin và không sinh trưởng được khi có 0,001% CuNO3 còn X. Oryzae thì ngược lại.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Tiến hành vệ sinh đồng rộng và hạn chế cấy các giồng mầm mẫn cảm với bệnh</Phòng_chống>
         <Tác_hại>Bệnh đốm sọc vi khuẩn do vi khuẩn Xanhthomonas Oryzicola gây nên, thường phát sinh trong điều kiện thời tiết thất thường, 
 gây giảm quang hợp làm giảm năng suất lúa.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh thường xuất hiện ở trên lá là những sọc ngắn khác nhau, chạy dọc giữa các gân lá, lúc đầu vết sọc xanh trong giọt dầu, dần chuyển dần chuyển sang màu nâu, tạo thành các sọc nâu hẹp, xung quanh sọc nâu, tạo thành các sọc nâu hẹp, xung quanh sọc nâu có thể có quầng vàng nhỏ trên các giống rất mẫn cảm bệnh.
-- Trong điều kiện ẩm ướt về buổi sáng trên bề mặt sọc nâu tiết ra những giọt dịch nhỏ, tròn màu vàng đục, về sau khô rắn thành viên kẹo vi khuẩn trong như hạt trứng cá, dễ dàng rơi khỏi mặt lá xuống nước ruộng hoặc dễ dàng nhờ mưa đưa đi xa truyền lan bệnh. Cuối cùng lá bệnh khô táp tương tự như bệnh bạc lá vi khuẩn.</description_symptoms>
         <Điều_trị>Cần rút nước, tháo nước để khô trong  2-3 ngày
 Rắc vôi để hạn chế bệnh lây lan sang các cây khác</Điều_trị>
         <Đặc_điểm_phát_sinh_và_phát_triển rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh phát sinh phát triển ở các vùng đồng bằng, trung du, song phổ biến ở các vùng đồng bằng, ven biển. Bệnh phát triển mạnh trong điều kiện nóng ẩm, nhiệt độ cao, thích hợp nhất 30 độ C, ẩm độ cao 80%. Vi khuẩn xâm nhiễm vào cây qua qua lỗ khí khổng và qua vết thương cơ giới, phát triển ở trong nhu mô lá. Bệnh truyền lan trên đồng ruộng chủ yếu nhờ nước tưới, mưa, gió và tiếp xúc cọ sát giữa các lá, các cây trong ruộng.
@@ -4708,14 +4824,15 @@ LuanVan_CNTT/02-DSVK-4_jhfd2g</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Nấm xâm nhập và gây ra các vết chết hoại trên lá bao mầm, các lá phía trên của cây con và cây trưởng thành. Vết hoại tử trên lá thường có hình ôvan đến hình tròn, đường kính từ 3- 10 mm. Vết bệnh mới có màu vàng nhạt, vết bệnh già có màu xám-trắng, viền vết bệnh có màu nâu tối và hẹp. Hạch nấm có đốm màu đen, nhỏ và nằm ở giữa trung tâm vết bệnh.
+- Vết bệnh ở trên vỏ hạt cũng tương tự như là vết bệnh gây hại ở trến lá, song thỉnh thoảng có đường viền vết bệnh lớn hơn.
+- Rễ của cây con cũng có triệu chứng vết bệnh tương tự. Nấm xâm nhiễm gây hại nặng dẫn đến mầm bị héo, gây thối ở các mô bào rễ, thối, thậm chí cây có thể bị chết. Nấm xâm nhập vào bên trong hạt gây nên các đốm màu đen nâu hoặc là các vết bẩn, hạt nhăn lại, biến màu và dễ vỡ.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Nấm xâm nhập và gây ra các vết chết hoại trên lá bao mầm, các lá phía trên của cây con và cây trưởng thành. Vết hoại tử trên lá thường có hình ôvan đến hình tròn, đường kính từ 3- 10 mm. Vết bệnh mới có màu vàng nhạt, vết bệnh già có màu xám-trắng, viền vết bệnh có màu nâu tối và hẹp. Hạch nấm có đốm màu đen, nhỏ và nằm ở giữa trung tâm vết bệnh.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Không lấy giống ở ruộng có nhiều hạt bị đốm nâu đen
 Vệ sinh ruộng trồng.
 Xử lý hạt với Dithane M-45 (Zineb) hay Ceresan, hoặc Rovral 50 WP ở nồng độ 0,2% hoặc bằng nước nóng (54°C).</Phòng_chống>
         <Tác_hại>Bệnh nhẹ thì làm tăng tỷ lệ lem lép hạt, gây đổ ngã, làm giảm năng suất.
 Bệnh nặng sẽ làm cây lúa chết và có thể gây thất thu năng suất lên đến 25%</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Nấm xâm nhập và gây ra các vết chết hoại trên lá bao mầm, các lá phía trên của cây con và cây trưởng thành. Vết hoại tử trên lá thường có hình ôvan đến hình tròn, đường kính từ 3- 10 mm. Vết bệnh mới có màu vàng nhạt, vết bệnh già có màu xám-trắng, viền vết bệnh có màu nâu tối và hẹp. Hạch nấm có đốm màu đen, nhỏ và nằm ở giữa trung tâm vết bệnh.
-- Vết bệnh ở trên vỏ hạt cũng tương tự như là vết bệnh gây hại ở trến lá, song thỉnh thoảng có đường viền vết bệnh lớn hơn.
-- Rễ của cây con cũng có triệu chứng vết bệnh tương tự. Nấm xâm nhiễm gây hại nặng dẫn đến mầm bị héo, gây thối ở các mô bào rễ, thối, thậm chí cây có thể bị chết. Nấm xâm nhập vào bên trong hạt gây nên các đốm màu đen nâu hoặc là các vết bẩn, hạt nhăn lại, biến màu và dễ vỡ.</description_symptoms>
         <Điều_trị>Xử lý hạt với Dithane M-45 (Zineb) hay Ceresan, hoặc Rovral 50 WP ở nồng độ 0,2% hoặc bằng nước nóng (54°C).
 Phun Rovral 50 WP, nồng độ 0,2% từ khi lúa trổ trở về sau</Điều_trị>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Alternaria adwickii</Describe>
@@ -4871,12 +4988,12 @@ LuanVan_CNTT/31-OBV-01_wpucmv</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Châu chấu (cào cào) di chuyển thành đàn, cả con trưởng thành và con non đều gây hại, chúng gặm cả lá non và lá già, làm khuyết từng mảng hoặc thủng lá, lá bị hại nặng còn trơ lại gân lá. Khi di chuyển thành đàn lớn chúng gây thành dịch, có thể phá hại toàn bộ ruộng ngô, lúa hoặc hoa màu cả vùng. Châu chấu (cào cào) xuất hiện quanh năm và cũng tùy thuộc vào số lượng mà có thể gây tác hại lớn hay nhỏ. Chúng hoạt động mạnh vào lúc trời mát mẻ thường từ 7 – 10 giờ sáng và 3 – 5 giờ chiều.</Mô_tả_triệu_chứng>
         <Phòng_chống>Dọn sạch cỏ ở các bờ ruộng hoặc sơn bờ ruộng.
 Theo dõi sát tình hình mật độ châu chấu (cào cào) trên lúa mùa, nếu mật độ cao có thể tổ chức phát động nông dân dùng vợt bắt trước khi vào vụ sản xuất.
 Châu chấu (cào cào) có xu tính bay vào ánh lửa sáng vào ban đêm, do vậy những vùng có mật độ cao có thể đốt lửa vào ban đêm để tiêu diệt nhằm giảm mật độ trên đồng ruộng.</Phòng_chống>
         <Tác_hại>Châu chấu (cào cào) phân bố phổ biến ở khắp các vùng trồng lúa và hoa màu của Việt Nam và trên thế giới. Cả trưởng thành và sâu non đều gây hại và gây hại tất cả các thời kỳ phát triển của cây trồng.
 Con non ngay sau khi nở đã bắt đầu phá hại. Trưởng thành hoạt động mạnh vào 7-10 giờ và 16-17 giờ. Ban đêm châu chấu (cào cào) có xu hướng bay vào ánh lửa sáng hoặc đèn tia tử ngoại, khi nhảy xuống mặt nước có thể bơi. Châu chấu (cào cào) phá hại quanh năm, đặc biệt là những nơi cấy cả vụ sớm và muộn.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Châu chấu (cào cào) di chuyển thành đàn, cả con trưởng thành và con non đều gây hại, chúng gặm cả lá non và lá già, làm khuyết từng mảng hoặc thủng lá, lá bị hại nặng còn trơ lại gân lá. Khi di chuyển thành đàn lớn chúng gây thành dịch, có thể phá hại toàn bộ ruộng ngô, lúa hoặc hoa màu cả vùng. Châu chấu (cào cào) xuất hiện quanh năm và cũng tùy thuộc vào số lượng mà có thể gây tác hại lớn hay nhỏ. Chúng hoạt động mạnh vào lúc trời mát mẻ thường từ 7 – 10 giờ sáng và 3 – 5 giờ chiều.</description_symptoms>
         <Điều_trị>Dùng các loại thuốc có vị độc, tiếp xúc như: Sherpa 25EC, Fastac 5EC... Có thể dùng hỗn hợp thuốc lân hữu cơ và cúc tổng hợp có hiệu quả cao nhất: Bà con có thể tự pha trộn hoặc dùng các thuốc đã hỗn hợp sẵn như Dragon, Fenbis, Sherzol… Ngoài ra, cũng có thể dùng một số thuốc khác như Gà Nòi, Pyrinex, Sagosuper… 
  Sử dụng các chế phẩm nấm sinh học Metarhizum để phòng trừ, tuy nhiên hiệu quả chậm. Điểm mặt của phương pháp này là hiệu quả lâu dài, an toàn, bảo vệ thiên địch và môi trường.</Điều_trị>
         <Đặc_điểm_hình_thái rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Trứng hình ống hơi cong ở giữa, một đầu hơi to màu vàng đậm, ổ trứng hình túi, trong đó trứng xếp xiên hai hàng. Trứng đẻ thành ổ từ 10-30 quả trong thân lúa, nếp gấp của lá lúa và trong những bụi cỏ trên mặt nước.
@@ -4896,7 +5013,7 @@ Con non ngay sau khi nở đã bắt đầu phá hại. Trưởng thành hoạt 
 LuanVan_CNTT/25-CC-CC-SAU_cxnmc9,
 LuanVan_CNTT/25-CC-CC-LA_lp2oyh</Image>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bệnh do Châu Chấu/Cào Cào gây ra</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Châu Chấu/Cào Cào</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Châu Chấu - Cào Cào</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Châu_Chấu/Cào_Cào"/>
@@ -4924,66 +5041,6 @@ LuanVan_CNTT/25-CC-CC-LA_lp2oyh</Image>
     
 
 
-    <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai/Bọ_Gai -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai/Bọ_Gai">
-        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Hại"/>
-        <diseaseSeason rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mùa"/>
-        <diseaseSeason rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đông_Xuân"/>
-        <diseaseStage rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_làm_đồng"/>
-        <diseaseStage rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_trổ-chín"/>
-        <diseaseStage rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_đẻ_nhánh"/>
-        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_héo"/>
-        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng_khô_và_chết_dần"/>
-        <hasSymptom rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mặt_trên_phiến_lá_bị_cắn_lỗ"/>
-        <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
-        <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
-        <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
-        <Phòng_chống>Vệ sinh đồng ruộng, diệt cỏ dại trong và xung quanh ruộng.
- Không cấy dày. Quan sát đồng ruộng và nhặt bỏ thành trùng, ấu trùng và trứng trên lá lúa khi mật số bọ gai còn ít.</Phòng_chống>
-        <Tác_hại>Sâu non đục lá, ăn phần diệp lục giữa hai lớp biểu bì tạo thành những đường hầm không đều nhau. Con trưởng thành ăn mặt trên phiến lá, để lại lớp biểu bì phía dưới. Sâu gai phân bố ở khắp các vùng trồng lúa trong nước, đặc biệt những vùng trồng lúa năng suất cao.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu gai ăn phần diệp lục giữa hai lớp biểu bì tạo thành những đường hầm không đều nhau. Con trưởng thành ăn mặt trên phiến lá, để lại lớp biểu bì phía dưới. Khi bọ gai xuất hiện với mật số cao, lá lúa bị vàng khô, cây héo và chết. Sự thiệt hại bắt đầu từ chỗ đẻ trứng, gần chóp lá và lan dần xuống dưới phiến lá.</description_symptoms>
-        <Điều_trị>Sử dụng các loại thuốc hóa học thông thường: Regent 800WG, Padan 95SP hoặc Actara 25WG khi sâu phát sinh rộ.
- Dùng dây thừng nhúng vào dầu lửa và nước, mỗi thứ 1 phần bằng nhau, 2 người kéo trên tán lá lúa dọc theo ruộng.</Điều_trị>
-        <Đặc_điểm_hình_thái rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Trứng sâu gai thường được đẻ ở ngọn lá lúa.
-- Sâu non mới nở màu vàng xám, cơ thể dẹt. Một đời sâu non có thể phá hại 123,4mm2.
-- Nhộng: là loại nhộng trần, có cơ thể dẹt, màu nâu. Giai đoạn nhộng thường hoàn thành trong đường đục của sâu non.
-- Con trưởng thành: có cơ thể nhỏ, màu đen bón, có nhiều gai</Đặc_điểm_hình_thái>
-        <Đặc_điểm_sinh_học_và_gây_hại rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Con trưởng thành thường xuất hiện vào sáng sớm và ẩn nấp ở phần thấp của cây lúa suốt ngày và phá hại mạnh vào buổi sáng. Con trưởng thành của sâu gai cũng ăn lá lúa, chúng ăn từ ngọn lá xuống phía dưới và thích ăn phần mô non hơn. Một con cái đẻ khoảng 55 quả trứng, trứng thường đẻ ở ngọn lá.
-- Số lứa sâu gai phụ thuộc vào điều kiện tự nhiên và số lượng vụ lúa canh tác: 1 lứa vào tháng 2 trong vụ lúa xuân, 1 lứa vào tháng 4-5 trên cỏ, 1 lứa trên lúa cạn và 3 lứa còn lại phát sinh trên lúa mùa từ tháng 7-10. Con trưởng thành xuất hiện từ tháng 2 và tăng dần quần thể cho đến tháng 6-7 cùng với lúc sâu non gây hại nặng trên lúa non. Mật độ sâu non và trưởng thành bắt đầu giảm sau tháng 8.
-- Sâu non đục lá, ăn phần diệp lục giữa hai lớp biểu bì tạo thành những đường hầm không đều nhau. Con trưởng thành ăn mặt trên phiến lá, để lại lớp biểu bì phía dưới. Sâu gai phân bố ở khắp các vùng trồng lúa trong nước, đặc biệt những vùng trồng lúa năng suất cao.</Đặc_điểm_sinh_học_và_gây_hại>
-        <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Tên khoa học: Dicladispa armigera
-- Họ: Chyrysomelidae
-- Bộ: Coleoptera</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/24-SG-BG-LAJPG_slkdis,
-LuanVan_CNTT/24-SG-BG-LA_h4l9jk
-LuanVan_CNTT/24-SG-BG-SAU_ivonek</Image>
-        <rdfs:comment>Bệnh do Sâu Gai hay Bọ Gai gây ra</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sâu Gai/Bọ Gai</rdfs:label>
-    </owl:NamedIndividual>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai/Bọ_Gai"/>
-        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
-        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_bị_héo"/>
-        <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai/Bọ_Gai"/>
-        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
-        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Lá_vàng_khô_và_chết_dần"/>
-        <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lá</DiseaseSite>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Sâu_Gai/Bọ_Gai"/>
-        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#hasSymptom"/>
-        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mặt_trên_phiến_lá_bị_cắn_lỗ"/>
-        <DiseaseSite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phiến lá</DiseaseSite>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/24-SG-BG-SAU_ivonek</Image>
-    </owl:Axiom>
-    
-
-
     <!-- http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Than_Vàng/Hoa_Cúc -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Than_Vàng/Hoa_Cúc">
@@ -4999,15 +5056,17 @@ LuanVan_CNTT/24-SG-BG-SAU_ivonek</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
         <isDisease rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Than_Vàng/Hoa_Cúc"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh phân bố rộng ở các vùng trồng lúa châu Á, châu Phi, châu Mỹ La - tinh. Bệnh đã gây thiệt hại cho lúa ở Philippin (Reinking, 1918) và Myanmar (Seth, 1935).
+- Bệnh hoa cúc phát sinh gây hại từ giai đoạn lúa phơi màu cho tới khi lúa chín. Bệnh gây hại trên vỏ trấu, bệnh trong hạt. Triệu chứng bệnh là những khối nấm hồng bao phủ cả vỏ hạt. Bệnh nặng làm toàn thể hạt gạo bên trong bị lép, biến màu, đôi khi có mùi mốc.... 
+- Nấm xâm nhiễm vào hạt, biến từng hạt riêng rẻ của bông lúa thành khối bào tử hình tròn dạng nhung mịn. Khối bào tử lúc đầu nhỏ, sau đó to dần và đạt tới đường kính có thể 1cm, khối bào tử này được bao phủ bởi màng mỏng, trơn nhẵn màu vàng, màng bị vỡ rách do khối bào tử tiếp tục sinh trưởng khi đó khối bào tử có màu có màu vàng da cam sau đó biến thành màu xanh nâu hoặc đen xanh nhạt. 
+- Ở thời kỳ này bề mặt khối bào tử bị nứt nẻ. Thông thường chỉ một vài hạt trên bông lúa bị bệnh, khi bệnh nặng có nhiều hạt trên bông lúa bị bệnh.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh do loài nấm Ustilaginoidea viens (Cooke) Taka gây hại, Cook mô tả lần đầu tiên tại Ấn Độ năm 1878. Bệnh gây hại phổ biến ở Ấn Độ , Myanma và Philippines.
+- Một số khối bào tử phát triển 1 - 4 hạch ở trung tâm, các hạch đó qua đông ở ngoài ruộng và sinh sản ra các tản nấm có cuống trong mùa hè hoặc mùa thu năm sau. Đỉnh cuống của tản nấm phình to hình cầu hoặc gần tròn và chứa các quả tử nang ở vòng ngoại vi. Mỗi quả tử nang chứa khoảng 300 bào tử nang.</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Không sử dụng hạt giống ở những ruộng bị bệnh. Xử lí hạt giống bằng nước nóng 54OC.
 Chăm sóc hợp lý làm cho cây khoẻ, tăng cường khả năng chống bệnh. Vệ sinh đồng ruộng, phơi ải, ngâm dầm để tiêu diệt bào tử và hạch nấm. Không gieo cấy những giống lúa mẫn cảm với bệnh.</Phòng_chống>
         <Tác_hại>Bệnh hoa cúc phát sinh gây hại từ giai đoạn lúa phơi màu cho tới khi lúa chín. Bệnh gây hại trên vỏ trấu, bệnh trong hạt. Triệu chứng bệnh là những khối nấm hồng bao phủ cả vỏ hạt. Bệnh nặng làm toàn thể hạt gạo bên trong bị lép, biến màu, đôi khi có mùi mốc.... 
 Nấm xâm nhiễm vào hạt, biến từng hạt riêng rẻ của bông lúa thành khối bào tử hình tròn dạng nhung mịn. Khối bào tử lúc đầu nhỏ, sau đó to dần và đạt tới đường kính có thể 1cm, khối bào tử này được bao phủ bởi màng mỏng, trơn nhẵn màu vàng, màng bị vỡ rách do khối bào tử tiếp tục sinh trưởng khi đó khối bào tử có màu có màu vàng da cam sau đó biến thành màu xanh nâu hoặc đen xanh nhạt. 
 Ở thời kỳ này bề mặt khối bào tử bị nứt nẻ. Thông thường chỉ một vài hạt trên bông lúa bị bệnh, khi bệnh nặng có nhiều hạt trên bông lúa bị bệnh.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh phân bố rộng ở các vùng trồng lúa châu Á, châu Phi, châu Mỹ La - tinh. Bệnh đã gây thiệt hại cho lúa ở Philippin (Reinking, 1918) và Myanmar (Seth, 1935).
-- Bệnh hoa cúc phát sinh gây hại từ giai đoạn lúa phơi màu cho tới khi lúa chín. Bệnh gây hại trên vỏ trấu, bệnh trong hạt. Triệu chứng bệnh là những khối nấm hồng bao phủ cả vỏ hạt. Bệnh nặng làm toàn thể hạt gạo bên trong bị lép, biến màu, đôi khi có mùi mốc.... 
-- Nấm xâm nhiễm vào hạt, biến từng hạt riêng rẻ của bông lúa thành khối bào tử hình tròn dạng nhung mịn. Khối bào tử lúc đầu nhỏ, sau đó to dần và đạt tới đường kính có thể 1cm, khối bào tử này được bao phủ bởi màng mỏng, trơn nhẵn màu vàng, màng bị vỡ rách do khối bào tử tiếp tục sinh trưởng khi đó khối bào tử có màu có màu vàng da cam sau đó biến thành màu xanh nâu hoặc đen xanh nhạt. 
-- Ở thời kỳ này bề mặt khối bào tử bị nứt nẻ. Thông thường chỉ một vài hạt trên bông lúa bị bệnh, khi bệnh nặng có nhiều hạt trên bông lúa bị bệnh.</description_symptoms>
         <Điều_trị>Sử dụng thuốc trừ bệnh đúng thời điểm. Nên phun thuốc trước trổ 5-7 ngày và sau dứt trổ 5-7 ngày: Diboxylin 2 SL; Rovral 50 WP; Tilral 500 WP  với nồng độ theo khuyến cáo; thuốc trừ bệnh nhóm gốc đồng như: Oxyt clorua đồng, Bordeaux, Copper Zine (sử dụng 40-45 g/bình phun 8 lít nước).</Điều_trị>
         <Đặc_điểm_phát_sinh_và_phát_triển rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Theo kết quả nghiên cứu của Raychaudhuri đã nhận xét về quá trình nhiễm bệnh hoa cúc, tác giả ghi nhận có 2 kiểu gây bệnh. 
 + Kiểu 1: Hạt bị nhiễm bệnh sớm, ngay từ lúc lúa mới bắt đầu phơi màu, cả bầu hoa bị phá hủy, nhưng các cuống nhụy, đầu nhụy, và các thùy bao phấn vẫn còn nguyên vẹn. 
@@ -5018,7 +5077,7 @@ Nấm xâm nhiễm vào hạt, biến từng hạt riêng rẻ của bông lúa 
 LuanVan_CNTT/07-TV-HC_dqotde,
 LuanVan_CNTT/07-TV-HC-_hbzsig</Image>
         <rdfs:comment>Bệnh Than Vàng/Hoa Cúc</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Than Vàng/Hoa Cúc</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Than Vàng - Hoa Cúc</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Than_Vàng/Hoa_Cúc"/>
@@ -5059,6 +5118,8 @@ LuanVan_CNTT/07-TV-HC-_hbzsig</Image>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long"/>
         <inArea rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng"/>
+        <Mô_tả_triệu_chứng rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đầu tiên lúa bị héo, màu lá vẫn còn xanh, bẹ mọng nước trước tiên sau đó là chết vàng từng chồi lúa, nặng hơn rụi lá từng chòm. Nhổ lên thì chồi bị đứt ngay gốc và ngửi thấy có mùi thối. Thời điểm gây chết rụi thường vào giai đoạn lúa đẻ nhánh tối đa.</Mô_tả_triệu_chứng>
+        <OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh thối thân lúa do vi khuẩn Erwinia sp gây ra</OWLDataProperty_859001f3_ec69_4090_93d8_631ac274f0f8>
         <Phòng_chống>Vệ sinh đồng ruộng dọn sạch tàn dư cây trồng và cỏ dại, làm đất kỹ
 Gieo sạ đúng thời vụ và tập trung
 Không hoặc hạn chế sử dụng các giống ghi nhận đã nhiễm thối thân nặng, 
@@ -5067,16 +5128,15 @@ Sạ hàng, sạ thưa (100-120kg/ha).</Phòng_chống>
         <Tác_hại>Đây là những bệnh phổ biến và gây hại nghiêm trọng trên cây lúa trong thời gian gần đây. 
 Đặc biệt gây hại nặng trên những diện tích bón nhiều phân đạm, sạ dày, đất bị yếm khí, sử dụng giống nhiễm ML48, ML68, AN 26, AN 13…
 Bệnh gây hại trên cây lúa từ giai đoạn đẻ nhánh nhưng nặng nhất từ làm đòng đến sau trổ, làm thất thu năng suất rất lớn nếu không phát hiện và phòng trừ kịp thời.</Tác_hại>
-        <description_symptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đầu tiên lúa bị héo, màu lá vẫn còn xanh, bẹ mọng nước trước tiên sau đó là chết vàng từng chồi lúa, nặng hơn rụi lá từng chòm. Nhổ lên thì chồi bị đứt ngay gốc và ngửi thấy có mùi thối. Thời điểm gây chết rụi thường vào giai đoạn lúa đẻ nhánh tối đa.</description_symptoms>
         <Điều_trị>Bón phân đủ và cân đối N-P-K. 
 Phun thuốc Nevo 330EC hay các sản phẩm có hoạt chất (Difenoconazole + Propiconazole)</Điều_trị>
         <Đặc_điểm_phát_sinh_và_phát_triển rdf:datatype="http://www.w3.org/2001/XMLSchema#string">- Bệnh gây hại trên lúa vụ hè thu nhiều hơn vụ đông xuân do thời tiết ẩm ướt, nhiều sương mù, độ ẩm không khí cao.
 - Sự xâm nhập và lan truyền bệnh: Vi khuẩn lưu tồn sẵn trong đất, nước, xâm nhập qua vết thương, làm nghẽn mạch, gây héo. Bệnh lan truyền rất nhanh, trường hợp thiệt hại nhẹ thì lúa chết từng chòm, trường hợp nặng có thể cả ruộng lúa chết rụi.
 - Bệnh thối thân có thể bộc phát thành dịch và gây hại nghiêm trọng nếu ruộng lúa bị ngộ độc hữu cơ, bị phèn, mặn, nhiễm rầy nâu hoặc nhiễm bệnh đạo ôn.</Đặc_điểm_phát_sinh_và_phát_triển>
         <Describe rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tên khoa học: Erwinia sp</Describe>
-        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/06-TT_czt2j5</Image>
+        <Image rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuanVan_CNTT/06-TT_czt2j5,</Image>
         <rdfs:comment>Bệnh Thối Thân, Thối Rễ và Thối Bẹ</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thối Thân/Thối Rễ/Thối Bẹ</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thối Thân - Thối Rễ - Thối Bẹ</rdfs:label>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Thối_Thân/Thối_Rễ/Thối_Bẹ"/>

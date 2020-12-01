@@ -38,10 +38,11 @@ module.exports = {
             let uri_benh = req.query.uri_benh
             let rs_data_benh = await graphDBEndpoint.query(
             `
-            select ?data ?value ?hinhanh ?mota where { 
+            select ?data ?value ?hinhanh ?mota ?ten_benh where { 
                 ?x rdf:type data:Bệnh;
                     rdfs:label ?label;
-                    data:Describe ?mota
+                    data:Describe ?mota;
+                    rdfs:comment ?ten_benh.
                 FILTER( regex(?label, "${uri_benh}","i")).
                 ?x ?p ?value .
                 ?p a owl:DatatypeProperty .
@@ -77,7 +78,7 @@ module.exports = {
                 group by ?ten_benh ?uri_benh
                 order by desc(?so_trieuchung)
             `)
-
+        
        // let resut_count_benh = await functions.handling_count_benh(count_benh_all.results.bindings)
         let result_tyle = await functions.count_benh_mac(trieuchung_input,count_benh_all.results.bindings)
         res.send(result_tyle)
@@ -96,14 +97,15 @@ module.exports = {
             }
             let tra_cuu = await graphDBEndpoint.query(
                 `
-                SELECT DISTINCT ?tenbenh ?ten_loai  ?hinh ?giongkhangbenh ?uri_benh
+                SELECT DISTINCT ?tenbenh ?ten_loai  ?hinh ?giongkhangbenh ?uri_benh ?ten_benh_label
                 WHERE {
                 ?uri_benh data:diseaseSeason ?uri_Season ;
                         data:inArea ?uri_Area;
                         data:diseaseStage ?uri_State;
                 FILTER (?uri_Season = <${data.vumua}> && ?uri_Area = <${data.khuvuc}> && ?uri_State = <${data.giaidoan}> ).
-                ?uri_benh rdfs:label ?tenbenh;
-                        data:Image ?hinh;
+                ?uri_benh   rdfs:label ?tenbenh;
+                            data:Image ?hinh;
+                            rdfs:comment ?ten_benh_label.
                 OPTIONAL {?uri_benh data:hasResistantVarieties ?uri_giong ; bind( if(?uri_giong = <${data.giong}>,"Khang benh","Khang benh") as ?giongkhangbenh )}
                 ?uri_benh rdf:type ?thuocloaibenh.
                 ?thuocloaibenh rdfs:label ?ten_loai 
@@ -274,7 +276,7 @@ module.exports = {
                 }orderby ?uri_loaibenh
                 `
             )
-            const results =await functions.handling_dsbenh(data.results.bindings)
+            const results =await functions.handling_dsbenhall(data.results.bindings)
             res.json(results)
         } catch (err) {
             console.log(err)

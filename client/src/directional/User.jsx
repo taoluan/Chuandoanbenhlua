@@ -19,7 +19,6 @@ const User = ()=>{
                 <Route path="/benh" exact component={Disesea} />
                 <Route path="/benh/:benh" exact component={DiseseaTag} />
             </Switch>
-            <Footer/>
         </BrowserRouter>
     )
 }

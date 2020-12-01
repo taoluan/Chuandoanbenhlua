@@ -11,21 +11,19 @@ const DiseseaTag = () =>{
     let location = useLocation();
     const [data, setData] = useState([]);
     useEffect(() => {
-        
         document.querySelector('#benh').scrollIntoView({ behavior: 'smooth', block: 'start' })
     })
-    
     useEffect(()=>{
         const fetchThongTinBenh = async()=>{
             const respose = await diseseaApi.getThongTinBenh({uri_benh: Params.benh})
             setData(respose)
-            console.log(data)
         }
         if(Params.benh){
             fetchThongTinBenh()
         }
-    },[Params])
+    },[location.pathname])
     if(data.mota){
+        console.log(data)
     return(
         <div className="rgba-blue-slight" style={{position: "relative"}} id="timkiem">
         <Disesea />
@@ -41,7 +39,7 @@ const DiseseaTag = () =>{
                     <MDBCol sm="12" className="d-flex justify-content-center">
                         <MDBRow>
                         <MDBCol sm="12" className="d-flex justify-content-center">
-                            <p className="title mt-4 mb-0">BỆNH {Params.benh}</p>
+                            <p className="title mt-4 mb-0">{data.tenbenh.value}</p>
                         </MDBCol>
                         <MDBCol sm="12" className="d-flex justify-content-center">
                             <span className="line-2 mt-0 pt-0"></span>
@@ -59,9 +57,14 @@ const DiseseaTag = () =>{
                         <p className="title-9 mb-0">Mô tả</p>
                     </MDBCol>
                     <MDBCol md="8" size="12" className=" d-flex justify-content-center mt-1">
-                        <MDBTypography blockquote bqColor="primary" className="text-center mt-0 pt-0">
+                        <MDBTypography blockquote bqColor="primary" className="mt-0 pt-0">
                             <MDBBox tag="p" mb={0}>
-                                {data.mota.value}
+                                 {data.mota.value.map(x=>{
+                                    if(x !== ""){
+                                        return( <p className="mb-0 mt-0 p-0">- {x.replace(/[-]/gi,' ')}</p>)
+                                    }
+                                
+                                })}
                             </MDBBox>
                         </MDBTypography>
                     </MDBCol>
@@ -75,7 +78,7 @@ const DiseseaTag = () =>{
                     <MDBTypography note noteColor='warning' className="trieuchung">
                         {data.trieuchung.value.map(x=>{
                             if(x !== ""){
-                                return( <li>{x}</li>)
+                                return( <p className="mb-1"> <li>{x.replace(/[-,+]/gi,' ')}</li></p>)
                             }
                            
                         })}
@@ -83,40 +86,112 @@ const DiseseaTag = () =>{
                     </MDBCol>
                 </MDBRow>
                 <MDBRow id="hinhanh"> 
+                {
+                        (data.ddht !== undefined)
+                        ? (
+                            <MDBCol sm="12">
+                                <MDBRow className="d-flex justify-content-center">
+                                    <MDBCol size="12" className=" d-flex justify-content-center mt-5"> 
+                                        <div className=" d-flex justify-content-center align-items-center" style={{height:"40px" , width:"40px"}}>
+                                            <img src={process.env.PUBLIC_URL + '/img/share.png'} height="40px" width="40px" alt=""/>
+                                        </div>
+                                    </MDBCol>
+                                    <MDBCol size="12" className=" d-flex justify-content-center mt-1">
+                                    <p className="title-9 mb-0">{data.ddht.type}</p>
+                                    </MDBCol>
+                                    <MDBCol md="12" size="12" className=" d-flex justify-content-center mt-1">
+                                        <MDBTypography blockquote bqColor="primary" className=" mt-0 pt-0">
+                                            <MDBBox tag="p" mb={0}>
+                                            -{data.ddht.value.replace(/[-]/gi,' ')}
+                                            </MDBBox>
+                                        </MDBTypography>
+                                    </MDBCol>
+                                </MDBRow>
+                            </MDBCol>
+                        )
+                        : (data.nguyennhan !== undefined)
+                        && (
+                            <MDBCol sm="12">
+                                <MDBRow className="d-flex justify-content-center">
+                                    <MDBCol size="12" className=" d-flex justify-content-center mt-5"> 
+                                        <div className=" d-flex justify-content-center align-items-center" style={{height:"40px" , width:"40px"}}>
+                                            <img src={process.env.PUBLIC_URL + '/img/share.png'} height="40px" width="40px" alt=""/>
+                                        </div>
+                                    </MDBCol>
+                                    <MDBCol size="12" className=" d-flex justify-content-center mt-1">
+                                    <p className="title-9 mb-0">{data.nguyennhan.type}</p>
+                                    </MDBCol>
+                                    <MDBCol md="8" size="12" className=" d-flex justify-content-center mt-1">
+                                        <MDBTypography blockquote bqColor="primary" className=" mt-0 pt-0">
+                                            <MDBBox tag="p" mb={0}>
+                                            {data.nguyennhan.value.map(x=>{
+                                                    if(x !== ""){
+                                                        return( <p className="mb-0 mt-0 p-0">- {x.replace(/[-]/gi,' ')}</p>)
+                                                    }
+                                                
+                                                })}
+                                            </MDBBox>
+                                        </MDBTypography>
+                                    </MDBCol>
+                                </MDBRow>
+                            </MDBCol>
+                        )
+                    }
                     <MDBCol sm="12">
-                    <CarouselPage img={data.hinhanh.img}/>
+                        <MDBCol size="12" className=" d-flex justify-content-center mt-5"> 
+                            <p className="title-9 mb-0 pb-0">Một số hình ảnh</p>
+                        </MDBCol>
+                        <CarouselPage img={data.hinhanh.img}/>
                     </MDBCol>
                 </MDBRow>
                 <MDBRow className="d-flex justify-content-center" id="tachai">
-                    <MDBCol sm="12">
-                        <MDBRow className="d-flex justify-content-center">
-                            <MDBCol size="12" className=" d-flex justify-content-center mt-5"> 
-                                <div className=" d-flex justify-content-center align-items-center" style={{height:"40px" , width:"40px"}}>
-                                    <img src={process.env.PUBLIC_URL + '/img/program.png'} height="40px" width="40px" alt=""/>
-                                </div>
+                    {
+                        (data.ddpspt !== undefined)
+                        ? (
+                            <MDBCol sm="12">
+                                    <MDBRow className="d-flex justify-content-center">
+                                        <MDBCol size="12" className=" d-flex justify-content-center mt-5"> 
+                                            <div className=" d-flex justify-content-center align-items-center" style={{height:"40px" , width:"40px"}}>
+                                                <img src={process.env.PUBLIC_URL + '/img/program.png'} height="40px" width="40px" alt=""/>
+                                            </div>
+                                        </MDBCol>
+                                        <MDBCol size="12" className=" d-flex justify-content-center mt-1">
+                                        <p className="title-9 mb-0">{data.ddpspt.type}</p>
+                                        </MDBCol>
+                                        <MDBCol md="8" size="12" className=" d-flex justify-content-center mt-1">
+                                            <MDBTypography blockquote bqColor="primary" className="mt-0 pt-0">
+                                                <MDBBox tag="p" mb={0}>
+                                                    -{data.ddpspt.value.replace(/[-]/gi,' ')}
+                                                </MDBBox>
+                                            </MDBTypography>
+                                        </MDBCol>
+                                    </MDBRow>
+                                </MDBCol>
+                        )
+                        : (data.ddshgh !== undefined) 
+                        && (
+                            <MDBCol sm="12">
+                                <MDBRow className="d-flex justify-content-center">
+                                    <MDBCol size="12" className=" d-flex justify-content-center mt-5"> 
+                                        <div className=" d-flex justify-content-center align-items-center" style={{height:"40px" , width:"40px"}}>
+                                            <img src={process.env.PUBLIC_URL + '/img/program.png'} height="40px" width="40px" alt=""/>
+                                        </div>
+                                    </MDBCol>
+                                    <MDBCol size="12" className=" d-flex justify-content-center mt-1">
+                                    <p className="title-9 mb-0">{data.ddshgh.type}</p>
+                                    </MDBCol>
+                                    <MDBCol md="10" size="12" className=" d-flex justify-content-center mt-1">
+                                        <MDBTypography blockquote bqColor="primary" className=" mt-0 pt-0">
+                                            <MDBBox tag="p" mb={0}>
+                                            -{data.ddshgh.value.replace(/[-]/gi,' ')}
+                                            </MDBBox>
+                                        </MDBTypography>
+                                    </MDBCol>
+                                </MDBRow>
                             </MDBCol>
-                            <MDBCol size="12" className=" d-flex justify-content-center mt-1">
-                                {
-                                    (data.ddpspt === undefined &&  data.ddshgh === undefined)
-                                    ? <p className="title-9 mb-0">Chưa có thông tin</p>
-                                    :<p className="title-9 mb-0">{data.ddpspt ? data.ddpspt.type : data.ddshgh.type}</p>
-                                }
-                                
-                            </MDBCol>
-                            <MDBCol md="8" size="12" className=" d-flex justify-content-center mt-1">
-                                <MDBTypography blockquote bqColor="primary" className="text-center mt-0 pt-0">
-                                    <MDBBox tag="p" mb={0}>
-                                        {
-                                            (data.ddpspt === undefined && data.ddshgh === undefined )
-                                            ?  <p>Chưa có thông tin</p> 
-                                            : -`${data.ddpspt ? data.ddpspt.value.replace(/[-]/gi,' ') : data.ddshgh.value.replace(/[-]/gi,' ')}`
-                                        }
-                                    
-                                    </MDBBox>
-                                </MDBTypography>
-                            </MDBCol>
-                        </MDBRow>
-                    </MDBCol>
+                        )
+                    }
+                    
                     <MDBCol sm="6">
                         <MDBRow>
                             <MDBCol size="12" className=" d-flex justify-content-center mt-5"> 
@@ -158,7 +233,7 @@ const DiseseaTag = () =>{
                                 <p className="title-9 mb-0">Điều Trị</p>
                             </MDBCol>
                             <MDBCol md="8" size="12" className=" d-flex justify-content-center mt-1">
-                                <MDBTypography blockquote bqColor="primary" className="text-center mt-0 pt-0">
+                                <MDBTypography blockquote bqColor="success" className="text-center mt-0 pt-0">
                                     <MDBBox tag="p" mb={0}>
                                         {data.dieutri.value}
                                     </MDBBox>

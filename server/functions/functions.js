@@ -7,12 +7,12 @@ module.exports={
             arr_trieuchung.map((x,y)=>{
                     if(arr_trieuchung[y+1] != undefined){
                         (x.hinhanh)
-                        ? str += ` ( (regex(str(?ten_trieuchung),"${x.ten_trieuchung}","i")) && (?vitri ="${x.vitri}")  && (?hinh = "${x.hinhanh}") )|| `
-                        : str += ` ( (regex(str(?ten_trieuchung),"${x.ten_trieuchung}","i")) && (?vitri ="${x.vitri}") ) || `
+                        ? str += ` ( (regex(str(?ten_trieuchung),"${x.ten_trieuchung}","i")) && (regex(str(?vitri),"${x.vitri}","i"))  && (?hinh = "${x.hinhanh}") )|| `
+                        : str += ` ( (regex(str(?ten_trieuchung),"${x.ten_trieuchung}","i")) && (regex(str(?vitri),"${x.vitri}","i")) ) || `
                     }else{
                         (x.hinhanh)
-                        ? str += ` ( (regex(str(?ten_trieuchung),"${x.ten_trieuchung}","i")) && (?vitri ="${x.vitri}") && (?hinh = "${x.hinhanh}") ) `
-                        : str += ` ( (regex(str(?ten_trieuchung),"${x.ten_trieuchung}","i")) && (?vitri ="${x.vitri}") )`
+                        ? str += ` ( (regex(str(?ten_trieuchung),"${x.ten_trieuchung}","i")) && (regex(str(?vitri),"${x.vitri}","i")) && (?hinh = "${x.hinhanh}") ) `
+                        : str += ` ( (regex(str(?ten_trieuchung),"${x.ten_trieuchung}","i")) && (regex(str(?vitri),"${x.vitri}","i")) )`
                     } 
                     
                     /*
@@ -136,34 +136,34 @@ module.exports={
     },
     count_benh_mac: (arr_trieuchung,count_benh_all)=>{
         return new Promise(async (res,rej)=>{
-               let rs_count = await graphDBEndpoint.query(
-               `
-                SELECT DISTINCT  ?ten_benh ?uri_benh ( COUNT( ?uri_trieuchung) AS ?so_trieuchung )
-                WHERE {
-                ?uri_benh data:hasSymptom ?uri_trieuchung.
-                ?uri_trieuchung rdfs:comment ?ten_trieuchung.
-                ?annotation owl:annotatedSource ?uri_benh;
-                                 owl:annotatedTarget  ?uri_trieuchung;
-                                data:DiseaseSite ?vitri.
-                OPTIONAL {?annotation data:Image ?hinh.}
-                FILTER  (${arr_trieuchung}).     
-                ?uri_benh rdfs:comment ?ten_benh.           
-                }
-                   groupby ?ten_benh ?uri_benh
-                   orderby DESC(?so_trieuchung)
-                   limit 6
-               `)
-               let results = []
-               rs_count.results.bindings.map(x=>{
-                   count_benh_all.map(y=>{
-                        (x.ten_benh.value == y.ten_benh.value) 
-                        && results.push({tenbenh: x.ten_benh.value ,uri_benh: x.uri_benh.value ,tyle: Math.round((x.so_trieuchung.value / y.so_trieuchung.value )*100)})
-                        
-                   })
-               })
-                results.sort((a,b)=> b.tyle - a.tyle )
-                res(results)
-           })
+            let rs_count = await graphDBEndpoint.query(
+            `
+             SELECT DISTINCT  ?ten_benh ?uri_benh ( COUNT( ?uri_trieuchung) AS ?so_trieuchung )
+             WHERE {
+             ?uri_benh data:hasSymptom ?uri_trieuchung.
+             ?uri_trieuchung rdfs:comment ?ten_trieuchung.
+             ?annotation owl:annotatedSource ?uri_benh;
+                              owl:annotatedTarget  ?uri_trieuchung;
+                             data:DiseaseSite ?vitri.
+             OPTIONAL {?annotation data:Image ?hinh.}
+             FILTER  (${arr_trieuchung}).     
+             ?uri_benh rdfs:comment ?ten_benh.           
+             }
+                groupby ?ten_benh ?uri_benh
+                orderby DESC(?so_trieuchung)
+                limit 6
+            `)
+            let results = []
+            rs_count.results.bindings.map(x=>{
+                count_benh_all.map(y=>{
+                     (x.ten_benh.value.toLocaleUpperCase() == y.ten_benh.value.toLocaleUpperCase()) 
+                     && results.push({tenbenh: x.ten_benh.value ,uri_benh: x.uri_benh.value ,tyle: Math.round((x.so_trieuchung.value / y.so_trieuchung.value )*100)})
+                     
+                })
+            })
+             results.sort((a,b)=> b.tyle - a.tyle )
+             res(results)
+        })
     },
     get_data_benh: (trieuchung_input,arr_benh)=>{
         return new Promise(async (res,rej)=>{
@@ -208,7 +208,7 @@ module.exports={
                 arr_benh.map( y=>{
                     if( x.ten_loai == y.ten_loai.value){
                         img = y.hinh.value.substring(0,y.hinh.value.indexOf(','))
-                        x.data.push({tenbenh: y.tenbenh.value ,hinh: img ,uri_benh: y.uri_benh.value, khangbenh: y.giongkhangbenh ? y.giongkhangbenh.value : '' })
+                        x.data.push({tenbenh: y.tenbenh.value, tenbenhlabel: y.ten_benh_label.value ,hinh: img ,uri_benh: y.uri_benh.value, khangbenh: y.giongkhangbenh ? y.giongkhangbenh.value : '' })
                     }
                 })
             })
@@ -333,7 +333,7 @@ module.exports={
                 }else if( x.data.value === "Đặc điểm phát sinh và phát triển"){
                     temp.ddpspt =  {type: x.data.value , value: x.value.value}
                 }else if( x.data.value === "Triệu chứng cụ thể"){
-                    temp.trieuchung =  {type: x.data.value , value: x.value.value.split('-')}
+                    temp.trieuchung =  {type: x.data.value , value: x.value.value.split('\n')}
                 }else if( x.data.value === 	"Đặc điểm hình thái"){
                     temp.ddht =  {type: x.data.value , value: x.value.value}
                 }else if( x.data.value === 	"Cách điều trị"){
@@ -353,13 +353,14 @@ module.exports={
                 })
                 temp.hinhanh = {type: 'Hình ảnh' , img: arrNew} 
             }
-            temp.mota = {type:'Mô tả' , value: data[0].mota.value}
+            temp.tenbenh = {value: data[0].ten_benh.value}
+            temp.mota = {type:'Mô tả' , value: data[0].mota.value.split('\n')}
             //result.push({type: "Mô tả" , value: data[0].mota.value})
            // result.push({hinhanh: data[0].hinhanh.value})
             res(temp)
         })
     },
-    handling_dsbenh: (data)=>{
+    handling_dsbenhall: (data)=>{
         return new Promise((res,rej)=>{
             let result = []
             data.map(x=>{

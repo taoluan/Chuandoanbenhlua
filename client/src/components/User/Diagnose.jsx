@@ -12,11 +12,8 @@ import TextField from '@material-ui/core/TextField';
 import Search from '../UI/Search/Search'
 import Icon from '../UI/UndrawDesigner/IconSVG'
 import ThongBao from '../UI/UndrawDesigner/BgSVG'
-const top100Films = [
-  { title: 'The Shawshank Redemption', year: 1994 },
-  { title: 'The Godfather', year: 1972 },
-  { title: 'The Godfather: Part II', year: 1974 },
-]
+import {Helmet} from "react-helmet";
+
 const Dianose = () =>{
   let history = useHistory();
   const [textSearch, setTextSearch] = useState()
@@ -34,6 +31,9 @@ const Dianose = () =>{
   }
     return(
       <>
+        <Helmet>
+            <title>Dr-Rice - Chuẩn đoán </title>
+        </Helmet>
         <Header url={false}/>
         <main className="grey lighten-4 pb-3">
         <MDBContainer fluid style={{paddingTop:"100px" }}>

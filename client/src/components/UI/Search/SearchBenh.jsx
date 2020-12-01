@@ -14,11 +14,14 @@ export default function SearchBenh() {
     let history = useHistory();
     const [data,setData] = useState([])
     const checkSearch = ()=>{
-        (textSearch)
-            ? history.push("/benh/"+textSearch)
-            : alert(12)
+        if(textSearch){
+                history.push("/benh/"+textSearch)
+                window.location.reload();
+            }else{
+                 alert(12)
+            }
       }
-      useEffect(() => {
+    useEffect(() => {
         const fetchAllTrieuChung = async() =>{
             const respose = await diseseaApi.getAllBenh()
             setData(respose)
