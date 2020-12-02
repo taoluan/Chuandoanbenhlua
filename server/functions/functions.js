@@ -79,8 +79,8 @@ module.exports={
                     if( x.vi_tri == y.vi_tri.value){
                         if(x.data.length === 0){
                             (y.img)
-                                && x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value, img: [y.img.value] , checked : false })
-                                || x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value  , checked : false })
+                                && x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value,vitri: y.vi_tri.value,uri_trieuchung: y.uri_trieuchungmoi.value, img: [y.img.value] , checked : false })
+                                || x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value,vitri: y.vi_tri.value, uri_trieuchung: y.uri_trieuchungmoi.value  , checked : false })
                         }else{
                                 let check =  module.exports.check_ten(y.ten_trieuchung_moi.value,x.data) 
                                 if(check.rs){
@@ -89,8 +89,8 @@ module.exports={
                                             || x.data[check.vt].img.push(" ") 
                                 }else{
                                      (y.img)
-                                            && x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value, img: [y.img.value] , checked : false })
-                                            || x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value, uri_trieuchung: y.uri_trieuchungmoi.value , checked : false })
+                                            && x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value,vitri: y.vi_tri.value, uri_trieuchung: y.uri_trieuchungmoi.value, img: [y.img.value] , checked : false })
+                                            || x.data.push({ten_trieuchung: y.ten_trieuchung_moi.value,vitri: y.vi_tri.value, uri_trieuchung: y.uri_trieuchungmoi.value , checked : false })
                                 }
                         } 
                     }
@@ -341,7 +341,7 @@ module.exports={
                 }else if( x.data.value === 	"Đặc điểm sinh học và gây hại"){
                     temp.ddshgh =  {type: x.data.value , value: x.value.value}
                 }else if( x.data.value === 	"Nguyên nhân"){
-                    temp.nguyennhan =  {type: x.data.value , value: x.value.value}
+                    temp.nguyennhan =  {type: x.data.value , value: x.value.value.split('\n')}
                 }
             })
             if(data[0].hinhanh !== undefined){

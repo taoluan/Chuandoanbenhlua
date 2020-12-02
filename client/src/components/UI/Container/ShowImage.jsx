@@ -9,17 +9,17 @@ import {Image as ImageCloud} from 'cloudinary-react';
 import {addDisesea} from '../../../reduxToolkit/Slice/diseseaSlice'
 import {  useSelector , useDispatch} from 'react-redux'
 function ShowImage(props){
-    if(props.hinhanh.length <= 1){
+    if(props.hinhanh  === ""){
         return(
             <MDBCol sm="6" className="d-flex justify-content-center">
-            <MDBRow>
-                    <MDBCol sm="12" className="d-flex justify-content-center" style={{height:"200px"}}>
+                <MDBRow>
+                        <MDBCol sm="12" className="d-flex justify-content-center" style={{height:"200px"}}>
+                        </MDBCol>
+                        <MDBCol sm="12" className="d-flex justify-content-center">
+                            <FormControlLabel  value='other' control={<Radio color="primary" />} label="Không giống" labelPlacement="top"/>
                     </MDBCol>
-                    <MDBCol sm="12" className="d-flex justify-content-center">
-                        <FormControlLabel  value='other' control={<Radio color="primary" />} label="Không giống" labelPlacement="top"/>
-                </MDBCol>
-            </MDBRow>
-        </MDBCol>
+                </MDBRow>
+            </MDBCol>
             )
     }else{
         return(

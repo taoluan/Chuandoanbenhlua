@@ -17,28 +17,29 @@ const ShowQuestion = (props) => {
     const [changeimg, setChangeimg] = useState()
     const [check, setCheck] = useState(false)
     const [checkedOk, setcheckedOk] = useState(props.data)
-    useEffect(() => {
-        let checkdata = {
-            ten_trieuchung: props.data.ten_trieuchung,
-            vitri: props.vitri
-        }
-        if(checkArray(dstrieuchung,checkdata)){
-                // setcheckedOk({
-                //     ...checkedOk,
-                //     checked:true
-                // })
-                setCheck(true)
-                setShow(true)
-            }
-        /*let hasImage = {
-            ten_trieuchung: props.data.ten_trieuchung,
-            vitri: props.vitri
-        }
-        if(checkArray(dstrieuchung,checkdata)){
-            setCheck(true)
-            setShow(true)
-        }*/
-    }, [dstrieuchung]);
+    const [data , setData] = useState([])
+    // useEffect(() => {
+    //     let checkdata = {
+    //         ten_trieuchung: props.data.ten_trieuchung,
+    //         vitri: props.vitri
+    //     }
+    //     if(checkArray(dstrieuchung,checkdata)){
+    //             // setcheckedOk({
+    //             //     ...checkedOk,
+    //             //     checked:true
+    //             // })
+    //             setCheck(true)
+    //             setShow(true)
+    //         }
+    //     /*let hasImage = {
+    //         ten_trieuchung: props.data.ten_trieuchung,
+    //         vitri: props.vitri
+    //     }
+    //     if(checkArray(dstrieuchung,checkdata)){
+    //         setCheck(true)
+    //         setShow(true)
+    //     }*/
+    // }, [dstrieuchung]);
     const handleCheckBox = (e)=>{
         if(!props.data.img){
           if(e.target.checked){
@@ -72,14 +73,13 @@ const ShowQuestion = (props) => {
         return(
         <MDBCol md="12"  className=" pl-3 mb-0 ">
             <FormControlLabel
-                control={<Checkbox checked={check} color="primary" value={props.data.ten_trieuchung} onChange={handleCheckBox}/>}
+                control={<Checkbox checked={props.data.checked} color="primary" value={props.data.ten_trieuchung} onChange={handleCheckBox}/>}
                 label={props.data.ten_trieuchung}
             />
             <MDBCol md="12" className="mt-3" style={{ display: show ? "block" : "none" }} >
                     <FormControl component="fieldset" className="d-flex justify-content-center">
-                        <MDBRow>
                             <RadioGroup aria-label="gender" name="gender1" onChange={handleChange} className="w-100">
-                                <MDBRow>
+                                <MDBRow className="d-flex justify-content-center">
                                 {
                                     props.data.img.map((img,key)=>{
                                         return( <ShowImage key={key} hinhanh={img} value={changeimg} trieuchung={props.data.ten_trieuchung} vitri={props.vitri} />)
@@ -87,7 +87,6 @@ const ShowQuestion = (props) => {
                                 }
                                 </MDBRow>
                             </RadioGroup>
-                        </MDBRow>
                     </FormControl>
             </MDBCol>
             
@@ -97,7 +96,7 @@ const ShowQuestion = (props) => {
         return(
             <MDBCol md="12"  className=" pl-3 mb-0  ">
                 <FormControlLabel
-                control={<Checkbox checked={check} color="primary" value={props.data.ten_trieuchung} onChange={handleCheckBox} name={props.data.ten_trieuchung} />}
+                control={<Checkbox checked={props.data.checked} color="primary" value={props.data.ten_trieuchung} onChange={handleCheckBox} name={props.data.ten_trieuchung} />}
                 label={props.data.ten_trieuchung}
             />           
         </MDBCol>

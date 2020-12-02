@@ -77,37 +77,38 @@ const ProgressTag = (props) => {
                 }}
                 percent={props.results.tyle}
               />
-              
-              {(data.length > 0)
-              && (<Popover content={
-                <div>
-                    {
-                      
-                      data.map((x,key)=>{
-                            if(x.check === true){
-                                return (
-                                    <p key={key} className="text-success"><img src={process.env.PUBLIC_URL + '/img/tick.png'} height="15" width="15" className="mb-1"/>   {x.ten_trieuchung} vị trí {x.vitri}</p>
-                                )
-                            }else{
-                                return (
-                                    <p key={key} className="text-danger"> <img src={process.env.PUBLIC_URL + '/img/negative.png'} height="15" width="15" className="mb-1"/> {x.ten_trieuchung} vị trí {x.vitri}</p>
-                                )
-                            }
-                        })
-                    }
-                </div>
-                    } title={<p className="mb-0"> Các triệu chứng <span className="text-primary float-right">{props.results.tyle} %</span></p>}>
-                              <Button size="small" type="link"  style={{backgroundColor: "rgba(0, 0, 0, 0.0)"}} shape="circle" icon={<Icon.Warning height="19" width="19" mr="pb-1"/>} />
-               </Popover>)
-               } 
+           {(data.length > 0)
+                  && (<Popover content={
+                    <div>
+                        {
+                          
+                          data.map((x,key)=>{
+                                if(x.check === true){
+                                    return (
+                                        <p key={key} className="text-success"><img src={process.env.PUBLIC_URL + '/img/tick.png'} height="15" width="15" className="mb-1"/>   {x.ten_trieuchung} vị trí {x.vitri}</p>
+                                    )
+                                }else{
+                                    return (
+                                        <p key={key} className="text-danger"> <img src={process.env.PUBLIC_URL + '/img/negative.png'} height="15" width="15" className="mb-1"/> {x.ten_trieuchung} vị trí {x.vitri}</p>
+                                    )
+                                }
+                            })
+                        }
+                    </div>
+                        } title={<p className="mb-0"> Các triệu chứng <span className="text-primary float-right">{props.results.tyle} %</span></p>}>
+                                  <Button size="small" type="link"  style={{backgroundColor: "rgba(0, 0, 0, 0.0)"}} shape="circle" icon={<Icon.Warning height="19" width="19" mr="pb-1"/>} />
+                  </Popover>)
+                  }
           </MDBCol>
           <MDBCol sm="12" className="d-flex justify-content-center">
             <Link target="_blank"
-            to={{
-              pathname: `/benh/${props.results.tenbenhlabel}`,
-            }}
-            ><p className="title-4">{props.results.tenbenh} </p>  </Link>
-          
+              to={{
+                pathname: `/benh/${props.results.tenbenhlabel}`,
+              }}
+              ><p className="title-4">{props.results.tenbenh}  
+                </p>  
+            </Link>
+
         </MDBCol>
       </MDBRow>
     {/* <MDBContainer>

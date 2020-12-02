@@ -219,7 +219,7 @@ const DiseseaTag = () =>{
                             </MDBCol>
                             <MDBCol size="12" className=" d-flex justify-content-center mt-1">
                                 <MDBTypography note noteColor='primary' className="text-center mt-0 pt-0" className="trieuchung">
-                                    {data.phongchong.value}
+                                    {data.phongchong ? data.phongchong.value : "Hiện nay chưa có cách phòng chống"}
                                 </MDBTypography>
                             </MDBCol>
                         </MDBRow>

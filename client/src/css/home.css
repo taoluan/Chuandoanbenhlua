@@ -74,6 +74,10 @@
     text-align: left;
     font-size: 18px;
 }
+.title-5-1{
+    text-align: left;
+    font-size: 18px;
+}
 .title-6{
     line-height: 25px;
     padding-bottom: 5px;
@@ -118,4 +122,11 @@
 }
 .trieuchung {
     font-size: medium
+}
+.MuiAccordionSummary-content{
+    margin: 0!important;
+    padding: 0!important;
+}
+.Mui-expanded{
+    min-height: 0px!important;
 }

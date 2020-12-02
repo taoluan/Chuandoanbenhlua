@@ -35,6 +35,7 @@ const DiagnoseTag = () =>{
         setKetQua(respose)
     }
     if(dsTrieuChung.length>0){
+      console.log(question)
       fetchQuestion()
       fetchKetQua()
      // dispatch(addData(question))
@@ -104,7 +105,12 @@ const DiagnoseTag = () =>{
                     <p className="title-2">Hãy quan sát thêm các triệu chứng tiếp theo <Icon.ExclamationIcon/></p>
                 </header>
                 <MDBRow>
-                 <QuestionForm results={question}/>
+                {
+                  question.map((x,key)=>{
+                    return (<QuestionForm key={key} results={x}/>)
+                  })
+                }
+                 {/* <QuestionForm results={question}/> */}
                 </MDBRow>
               </MDBCol>
             </MDBRow>
