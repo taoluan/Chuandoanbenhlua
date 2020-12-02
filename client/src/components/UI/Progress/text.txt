@@ -1,0 +1,56 @@
+useEffect(() => {
+        const fetchTrieuChung = async ()=>{
+            const respose = await diseseaApi.getTrieuChung({uri_benh: props.results.uri_benh})
+            let arr = []
+            respose.map(x=>{
+                arr.push({ten_trieuchung : x.ten_trieuchung.value , vitri: x.vitri.value , check : false})
+            })
+            setdata(arr)
+            setdataResult(arr)
+        }
+        fetchTrieuChung()
+        
+        let arrNew = [...data]
+        dataRidux.map(x=>{
+            if(checkArray(data,x).result){
+                let vitri = checkArray(data,x).vitri
+                let temp = data[vitri]
+                temp.check = true
+                arrNew[vitri] = temp
+            }
+        })
+        setdata(arrNew)
+        setdataResult(arrNew)
+    }, [props.results]);
+     useEffect(() => {
+        let arrNew = [...data]
+        dataRidux.map(x=>{
+            if(checkArray(data,x).result){
+                let vitri = checkArray(data,x).vitri
+                let temp = data[vitri]
+                temp.check = true
+                arrNew[vitri] = temp
+            }
+        })
+        setdata(arrNew)
+        setdataResult(arrNew)
+    }, [dataRidux]);
+    ///////
+     const fetchTrieuChung = async ()=>{
+            const respose = await diseseaApi.getTrieuChung({uri_benh: props.results.uri_benh})
+            let arr = []
+            respose.map(x=>{
+                arr.push({ten_trieuchung : x.ten_trieuchung.value , vitri: x.vitri.value , check : false})
+            })
+            let arrNew = [...arr]
+            dataRidux.map(x=>{
+                if(checkArray(arrNew,x).result){
+                    let vitri = checkArray(arrNew,x).vitri
+                    let temp = arrNew[vitri]
+                    temp.check = true
+                    arrNew[vitri] = temp
+                }
+            })
+            setdata(arrNew)
+        }
+        fetchTrieuChung()

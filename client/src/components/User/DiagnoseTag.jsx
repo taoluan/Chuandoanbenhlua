@@ -88,7 +88,14 @@ const DiagnoseTag = () =>{
                     </header>
                   </MDBCol>
                   <MDBCol size="12" className="d-flex align-items-center">
-                    <Progress results={ketqua}/>
+                    <MDBContainer>
+                      {
+                        ketqua.map((x,key)=>{
+                          return (<Progress key={key} results={x}/>)
+                        })
+                      }
+                    </MDBContainer>
+                    {/* <Progress results={ketqua}/> */}
                   </MDBCol>
                 </MDBRow>
               </MDBCol>

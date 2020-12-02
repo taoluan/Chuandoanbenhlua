@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {Image as ImageCloud} from 'cloudinary-react';
 export default function ImgMediaCard(props) {
+  console.log(props)
   return (
     <Card >
         <CardMedia>
@@ -19,7 +20,7 @@ export default function ImgMediaCard(props) {
             {props.item.ten_benh.value}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="span">
-          <strong>Mô tả: </strong> across all continents except Antarctica
+          <strong>Mô tả: </strong> {props.item.mota.value.replace(/[-]/gi,' ').substring(0,40)}
           </Typography>
         </CardContent>
       <CardActions>
