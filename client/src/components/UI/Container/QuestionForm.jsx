@@ -58,18 +58,18 @@ const QuestionForm = (props) => {
     // }, [dstrieuchung]);
     // console.log(props.results)
     // if(props.results.length > 0){
-    useEffect(() => {
-        let arrNew = [...props.results.data]
-        dstrieuchung.map(x=>{
-            if(checkArray(arrNew,x).result){
-                let vitri = checkArray(arrNew,x).vitri
-                let temp = arrNew[vitri]
-                temp.checked = true
-                arrNew[vitri] = temp
-            }
-        })
-        setData(arrNew)
-    },[props.results])
+    // useEffect(() => {
+    //     let arrNew = [...props.results.data]
+    //     dstrieuchung.map(x=>{
+    //         if(checkArray(arrNew,x).result){
+    //             let vitri = checkArray(arrNew,x).vitri
+    //             let temp = arrNew[vitri]
+    //             temp.checked = true
+    //             arrNew[vitri] = temp
+    //         }
+    //     })
+    //     setData(arrNew)
+    // },[props.results])
     return(
         // <>
         // {   
@@ -95,7 +95,7 @@ const QuestionForm = (props) => {
                                         
                                         {/* <ShowQuestion key={key} data={x.data} vitri={x.vi_tri} /> */}
                                         {
-                                            data.map((trieuchung,key)=>{
+                                            props.results.data.map((trieuchung,key)=>{
                                                 return ( <ShowQuestion key={key} data={trieuchung} vitri={props.results.vi_tri} />)
                                             })
                                         }

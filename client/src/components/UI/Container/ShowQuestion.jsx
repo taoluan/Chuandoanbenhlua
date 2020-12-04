@@ -8,7 +8,15 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import {addDisesea , removeDisesea , addDiseseaImage} from '../../../reduxToolkit/Slice/diseseaSlice'
 import {  useSelector , useDispatch} from 'react-redux'
-
+const checkArray = (list, object)=>{
+    let i;
+    for (i = 0; i < list.length; i++) {
+        if (list[i].ten_trieuchung === object.ten_trieuchung && list[i].vitri === object.vitri) {
+            return true;
+        }
+    }
+    return false;
+}
 const ShowQuestion = (props) => {
     const  dispatch = useDispatch()
     const dstrieuchung = useSelector(state=>state.disesea.chuandoan)
@@ -17,7 +25,16 @@ const ShowQuestion = (props) => {
     const [changeimg, setChangeimg] = useState()
     const [check, setCheck] = useState(false)
     const [checkedOk, setcheckedOk] = useState(props.data)
-    const [data , setData] = useState([])
+    const [data , setData] = useState()
+    useEffect(() => {
+        // dstrieuchung.map(x=>{
+            let objtrieuchung = props.data
+            if(checkArray(dstrieuchung,objtrieuchung)){
+                objtrieuchung.checked = true   
+            }
+            setData(objtrieuchung)
+        // })
+    },[props.data])
     // useEffect(() => {
     //     let checkdata = {
     //         ten_trieuchung: props.data.ten_trieuchung,
@@ -69,50 +86,45 @@ const ShowQuestion = (props) => {
             dispatch(removeDisesea(data))
         }
     };
-    if(props.data.img){
-        return(
-        <MDBCol md="12"  className=" pl-3 mb-0 ">
-            <FormControlLabel
-                control={<Checkbox checked={props.data.checked} color="primary" value={props.data.ten_trieuchung} onChange={handleCheckBox}/>}
-                label={props.data.ten_trieuchung}
-            />
-            <MDBCol md="12" className="mt-3" style={{ display: show ? "block" : "none" }} >
-                    <FormControl component="fieldset" className="d-flex justify-content-center">
-                            <RadioGroup aria-label="gender" name="gender1" onChange={handleChange} className="w-100">
-                                <MDBRow className="d-flex justify-content-center">
-                                {
-                                    props.data.img.map((img,key)=>{
-                                        return( <ShowImage key={key} hinhanh={img} value={changeimg} trieuchung={props.data.ten_trieuchung} vitri={props.vitri} />)
-                                    })
-                                }
-                                </MDBRow>
-                            </RadioGroup>
-                    </FormControl>
-            </MDBCol>
-            
-        </MDBCol>
-    )
-    }else{
-        return(
-            <MDBCol md="12"  className=" pl-3 mb-0  ">
+    if(data !== undefined){
+        if(data.img){
+            return(
+            <MDBCol md="12"  className=" pl-3 mb-0 ">
                 <FormControlLabel
-                control={<Checkbox checked={props.data.checked} color="primary" value={props.data.ten_trieuchung} onChange={handleCheckBox} name={props.data.ten_trieuchung} />}
-                label={props.data.ten_trieuchung}
-            />           
-        </MDBCol>
+                    control={<Checkbox checked={data.checked} color="primary" value={data.ten_trieuchung} onChange={handleCheckBox}/>}
+                    label={data.ten_trieuchung}
+                />
+                <MDBCol md="12" className="mt-3" style={{ display: show ? "block" : "none" }} >
+                        <FormControl component="fieldset" className="d-flex justify-content-center">
+                                <RadioGroup aria-label="gender" name="gender1" onChange={handleChange} className="w-100">
+                                    <MDBRow className="d-flex justify-content-center">
+                                    {
+                                        data.img.map((img,key)=>{
+                                            return( <ShowImage key={key} hinhanh={img} value={changeimg} trieuchung={data.ten_trieuchung} vitri={props.vitri} />)
+                                        })
+                                    }
+                                    </MDBRow>
+                                </RadioGroup>
+                        </FormControl>
+                </MDBCol>
+                
+            </MDBCol>
         )
-    }
-    
-}
-const checkArray = (list, object)=>{
-    let i;
-    for (i = 0; i < list.length; i++) {
-        if (list[i].ten_trieuchung === object.ten_trieuchung && list[i].vitri === object.vitri) {
-            return true;
+        }else{
+            return(
+                <MDBCol md="12"  className=" pl-3 mb-0  ">
+                    <FormControlLabel
+                    control={<Checkbox checked={data.checked} color="primary" value={data.ten_trieuchung} onChange={handleCheckBox} name={data.ten_trieuchung} />}
+                    label={data.ten_trieuchung}
+                />           
+            </MDBCol>
+            )
         }
+    }else{
+        return (<></>)
     }
-    return false;
 }
+
 
 // const checkArrayhasImahe = (list, object)=>{
 //     let i;

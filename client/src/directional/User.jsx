@@ -8,6 +8,7 @@ import Footer from '../components/UI/Header/Footer'
 import DiagnoseTag from '../components/User/DiagnoseTag'
 import Forecast from '../components/User/Forecast'
 import DiseseaTag from '../components/User/ListDisesea'
+import Loading from '../components/User/Loading'
 const User = ()=>{
     return(
         <BrowserRouter>

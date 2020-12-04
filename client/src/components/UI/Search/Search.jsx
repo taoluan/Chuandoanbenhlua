@@ -4,21 +4,31 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import parse from 'autosuggest-highlight/parse';
 import match from 'autosuggest-highlight/match';
-import { MDBBtn,MDBContainer, MDBCol } from 'mdbreact';
+import { MDBBtn , MDBCol } from 'mdbreact';
 import Icon from '../UndrawDesigner/IconSVG'
 import { useHistory ,useLocation } from 'react-router-dom';
 import diseseaApi from '../../../api/diseseaApi'
+import {message } from 'antd';
+
 const Search = ()=> {
     const [textSearch, setTextSearch] = useState()
     const [data,setData] = useState([])
     let history = useHistory();
     let location = useLocation();
+
     const checkSearch = ()=>{
         if(textSearch){
             history.push("/chuandoan/"+textSearch.trieuchung+"/"+textSearch.vitri)
-            window.location.reload();
+            //window.location.reload();
         }else{
-            alert(12)
+            message.config({
+                top: 80,
+                duration: 2,
+                maxCount: 3,
+                rtl: true,
+                prefixCls: 'ant-message',
+              });
+            message.error('Vui lòng nhập thông tin');
         }
     }
     useEffect(() => {

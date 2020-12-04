@@ -32,7 +32,7 @@ const Dianose = () =>{
     return(
       <>
         <Helmet>
-            <title>Dr-Rice - Chuẩn đoán </title>
+            <title>Dr.Rice - Chuẩn đoán </title>
         </Helmet>
         <Header url={false}/>
         <main className="grey lighten-4 pb-3">

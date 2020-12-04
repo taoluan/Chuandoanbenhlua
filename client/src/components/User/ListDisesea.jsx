@@ -5,7 +5,7 @@ import Disesea from './Disesea'
 import CarouselPage from '../UI/Container/ShowImgBenh'
 import SpeedScroll from '../UI/Container/SpeedScroll'
 import diseseaApi from '../../api/diseseaApi'
-
+import { Route } from 'react-router-dom';
 const DiseseaTag = () =>{
     const Params = useParams()
     let location = useLocation();
@@ -23,8 +23,8 @@ const DiseseaTag = () =>{
         }
     },[location.pathname])
     if(data.mota){
-        console.log(data)
     return(
+        <Route>
         <div className="rgba-blue-slight" style={{position: "relative"}} id="timkiem">
         <Disesea />
         <SpeedScroll />
@@ -246,6 +246,7 @@ const DiseseaTag = () =>{
             
         </main>
         </div>
+        </Route>
     )
     }else{
         return (

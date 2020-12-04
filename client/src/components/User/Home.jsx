@@ -11,20 +11,23 @@ import '../../css/home.css'
 import Header from '../UI/Header/Header'
 import ChartThongKeKhuVuc from '../UI/Charts/ThongKeKhuVuc'
 import {Helmet} from "react-helmet";
-
 import diseseaApi from '../../api/diseseaApi'
 import {countDisesea} from '../../reduxToolkit/Slice/diseseaSlice' 
-const top100Films = [
-  { title: 'The Shawshank Redemption', year: 1994 },
-  { title: 'The Godfather', year: 1972 },
-  { title: 'The Godfather: Part II', year: 1974 },
-]
+import Loading from './Loading'
 const Home = ()=>{
-    const [loaibenh, setLoaiBenh] = useState([])
-    return(
+    const [loading, setloading] = useState(true);
+    useEffect(() => {
+      setTimeout(() => setloading(false), 1000)
+    }, []);
+    if(loading){
+      return (
+        <Loading/>
+      )
+    }else{
+      return(
         <>
         <Helmet>
-            <title>Dr-Rice - Trang chủ </title>
+            <title>Dr.Rice - Trang chủ </title>
         </Helmet>
         <Header url={true}/>
         <MDBView src={process.env.PUBLIC_URL + '/img/mbr-1920x1281.jpg'} className="pb-0 mb-0">
@@ -110,8 +113,10 @@ const Home = ()=>{
             </MDBCol>
           </MDBRow>
         </MDBContainer>
-      </main>
+        </main>
       </>
     )
+    }
+    
 }
 export default  Home;

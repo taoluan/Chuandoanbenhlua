@@ -9,11 +9,10 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {Image as ImageCloud} from 'cloudinary-react';
 export default function ImgMediaCard(props) {
-  console.log(props)
   return (
     <Card >
         <CardMedia>
-          <ImageCloud cloudName="taoluanby" publicId={props.item.image.value.includes(',') ? props.item.image.value.substring(0,props.item.image.value.indexOf(',')) : props.item.image.value} width="350" height="200" crop="scale"/>
+          <ImageCloud cloudName="taoluanby" publicId={props.item.image.value.includes(',') ? props.item.image.value.substring(0,props.item.image.value.indexOf(',')) : props.item.image.value} width="400" height="200" crop="scale"/>
         </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h6" component="h2">

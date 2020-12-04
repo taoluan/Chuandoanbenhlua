@@ -8,6 +8,8 @@ import { MDBBtn,MDBContainer, MDBCol } from 'mdbreact';
 import Icon from '../UndrawDesigner/IconSVG'
 import { useHistory ,useLocation } from 'react-router-dom';
 import diseseaApi from '../../../api/diseseaApi'
+import {message } from 'antd';
+
 export default function SearchBenh() {
     const [textSearch, setTextSearch] = useState()
     let location = useLocation();
@@ -16,9 +18,16 @@ export default function SearchBenh() {
     const checkSearch = ()=>{
         if(textSearch){
                 history.push("/benh/"+textSearch)
-                window.location.reload();
+                //window.location.reload();
             }else{
-                 alert(12)
+                message.config({
+                    top: 80,
+                    duration: 2,
+                    maxCount: 3,
+                    rtl: true,
+                    prefixCls: 'ant-message',
+                  });
+                message.error('Vui lòng nhập thông tin');
             }
       }
     useEffect(() => {

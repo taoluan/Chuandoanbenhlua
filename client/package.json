@@ -4,6 +4,7 @@
   "private": true,
   "// If You want to install mdbreact from our GitLab repository, please replace '4.27.0' with gitURL provided here ->": "git+https://oauth2:<YOUR-TOKEN-GOES-HERE>@git.mdbootstrap.com/mdb/react/re-pro.git",
   "dependencies": {
+    "@agney/react-loading": "^0.1.2",
     "@devexpress/dx-react-chart": "^2.7.3",
     "@devexpress/dx-react-chart-material-ui": "^2.7.3",
     "@devexpress/dx-react-core": "^2.7.3",

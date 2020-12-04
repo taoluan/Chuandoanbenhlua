@@ -12,6 +12,7 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import Button from '@material-ui/core/Button';
 import DuBaoBenh from '../UI/Container/CtnDuBaoBenh'
 import diseseaApi from '../../api/diseseaApi'
+import {message } from 'antd';
 const khuVuc = [
   { title: 'Đồng bằng Sông Cửu Long', uri: 'http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long' },
   { title: 'Đồng bằng Sông Hồng', uri: 'http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng' },
@@ -27,11 +28,6 @@ const vuMua = [
     { title: 'Đẻ Nhánh', uri: 'http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_đẻ_nhánh' },
     { title: 'Làm Đồng', uri: 'http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_làm_đồng' },
     { title: 'Trổ Chính', uri: 'http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_trổ-chín' },
-  ]
-  const giongLua = [
-    { title: 'OM1903', uri: 1994 },
-    { title: 'OM1239', uri: 1972 },
-    { title: 'OM1230', uri: 1974 },
   ]
 const Forecast = () =>{
     const [show, setShow] = useState(false)
@@ -51,13 +47,20 @@ const Forecast = () =>{
       fetchGiongLua()
     }, [])
     const handelClick = async(e)=>{
-      if(thongtin.vumua !== undefined && thongtin.giong !== undefined && thongtin.khuvuc !== undefined && thongtin.giaidoan !== undefined){
+      if(thongtin.vumua.title !== undefined && thongtin.giong.title !== undefined && thongtin.khuvuc.title !== undefined && thongtin.giaidoan.title !== undefined){
         const respose = await diseseaApi.duBao({khuvuc: thongtin.khuvuc.uri, giaidoan: thongtin.giaidoan.uri , vumua: thongtin.vumua.uri , giong: thongtin.giong.uri.value})
         setData(respose)
         await setShow(true)
         document.querySelector('#onBottom').scrollIntoView({ behavior: 'smooth', block: 'start' })
       }else{
-        alert("no no no")
+        message.config({
+          top: 80,
+          duration: 2,
+          maxCount: 3,
+          rtl: true,
+          prefixCls: 'ant-message',
+        });
+      message.error('Vui lòng nhập đầy đủ thông tin');
       } 
     }
     return(
