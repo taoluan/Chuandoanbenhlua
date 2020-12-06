@@ -16,7 +16,6 @@ const AdminCardSection1 = () => {
     fetchData()
   }, []);
   if(data.total !== undefined){
-    console.log(data)
     return (
       <>
       <MDBRow className="mb-4">
@@ -107,7 +106,8 @@ const AdminCardSection1 = () => {
                   <div className="data">
                   <MDBTypography tag='h6'>{data.respose.label[4]}</MDBTypography>
                     <h4>
-                    <MDBBadge color="secondary">+{data.respose.dataset[4]}</MDBBadge>                    </h4>
+                    <MDBBadge color="secondary">+{data.respose.dataset[4]}</MDBBadge>                    
+                    </h4>
                   </div>
                 </div>
                 <MDBCardBody>

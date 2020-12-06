@@ -28,8 +28,9 @@ const TabListDisesea = ()=> {
     setValue(newValue);
   };
   return (
-    <div className={classes.root}>
-    <Paper className={classes.root} className=" blue lighten-4" >
+    <div className={classes.root} className="z-depth-1">
+    <Paper className={classes.root} className="cloudy-knoxville-gradient
+"  >
         <Tabs
             value={value}
             onChange={handleChange}

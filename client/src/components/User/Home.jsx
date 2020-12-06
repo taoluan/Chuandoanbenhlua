@@ -43,9 +43,9 @@ const Home = ()=>{
             </MDBMask>
         </MDBView>
         <main>
-        <MDBContainer>
-        <MDBRow className=" d-flex justify-content-center deep-blue-gradient shadow-box-example z-depth-3 mt-4 mb-4 rounded">
-            <MDBCol sm="12"  className="text-center text-dark mb-0 pb-0 pt-3 ">
+        <MDBContainer className="pt-3">
+        <MDBRow className=" d-flex justify-content-center deep-blue-gradient shadow-box-example z-depth-3  mb-4 rounded">
+            <MDBCol sm="12"  className="text-center text-dark mb-0 pb-0 pt-3 mt-3">
               <p className="title-1 mb-0 pb-0">CÁC BƯỚC CHUẨN ĐOÁN BỆNH</p>
             </MDBCol>
             <MDBCol sm="12" lg="6" size="12" className=" d-flex align-self-center mt-0 pt-0">
@@ -100,7 +100,7 @@ const Home = ()=>{
           </MDBRow>
            
         </MDBContainer>
-        <MDBContainer fluid className="pt-2" style={{backgroundColor:"white" ,height:"1000px"}}>
+        <MDBContainer fluid className="pt-2" style={{backgroundColor:"white" ,height:"1100px"}}>
           <MDBRow className="d-flex justify-content-center">
             <MDBCol lg="10">
               <MDBCol sm="12" className="text-center pb-4">

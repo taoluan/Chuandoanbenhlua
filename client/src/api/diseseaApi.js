@@ -48,5 +48,10 @@ const diseseaApi ={
         const url = '/getalldsbenh'
         return axiosClient.get(url)
     },
+    getTrieuChungCuaBenh: (params)=>{
+        const url = '/getthongtinbenh'
+        return axiosClient.get(url,{params})
+    },
+    
 }
 export default diseseaApi
