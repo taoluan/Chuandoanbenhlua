@@ -281,5 +281,31 @@ module.exports = {
         } catch (err) {
             console.log(err)
         }
+    },
+    getThongTinBenh:async(req,res)=>{
+        try {
+            let tenbenh = req.query.tenbenh
+            let data = await graphDBEndpoint.query(
+                `
+                select DISTINCT  ?ten_trieuchung ?vitri ?hinh
+                    WHERE { 
+                        ?uri_benh data:hasSymptom ?uri_trieuchung;
+                                rdfs:label ?ten_benh.
+                        FILTER(regex(?ten_benh,"${tenbenh}","i"))
+                        ?uri_trieuchung rdfs:comment ?ten_trieuchung.
+                        ?annotation owl:annotatedSource ?uri_benh;
+                                        owl:annotatedTarget  ?uri_trieuchung;
+                                        data:DiseaseSite ?vitri.
+                        OPTIONAL{
+                            ?annotation data:Image ?hinh
+                        }
+                    }
+                `
+            )
+            const results =await functions.handling_getThongTinBenh(data.results.bindings)
+            res.json(results)
+        } catch (err) {
+            console.log(err)
+        }
     }
 }

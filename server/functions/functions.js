@@ -369,4 +369,13 @@ module.exports={
             res(result)
         })
     },
+    handling_getThongTinBenh:(data)=>{
+        return new Promise((res,rej)=>{
+            let result = []
+            data.map(x=>{
+                result.push({ten_trieuchung: x.ten_trieuchung.value, vitri: x.vitri.value , hinhanh : (x.hinh !== undefined) ? x.hinh.value : ''})
+            })
+            res(result)
+        })
+    }
 }
