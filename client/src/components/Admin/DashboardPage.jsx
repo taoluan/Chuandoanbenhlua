@@ -14,7 +14,6 @@ const DashboardPage =  () => {
       <AdminCardSection1 />
       <ChartSection1 />
       <TableSection/>
-     
     </React.Fragment>
   )
 }

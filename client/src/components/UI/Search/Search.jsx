@@ -9,7 +9,6 @@ import Icon from '../UndrawDesigner/IconSVG'
 import { useHistory ,useLocation } from 'react-router-dom';
 import diseseaApi from '../../../api/diseseaApi'
 import {message } from 'antd';
-
 const Search = ()=> {
     const [textSearch, setTextSearch] = useState()
     const [data,setData] = useState([])
