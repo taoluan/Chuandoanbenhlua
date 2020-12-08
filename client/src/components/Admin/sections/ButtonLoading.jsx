@@ -2,9 +2,10 @@ import { Button } from 'antd';
 import { PoweroffOutlined } from '@ant-design/icons';
 import React,{useEffect,useState} from 'react';
 
-const ButtonLoading = ()=> {
+const ButtonLoading = (props)=> {
   const [loadings, setloadings] = useState(false);
   const enterLoading = () => {
+    props.callOnClick()
     setloadings(true)
     setTimeout(() => {
      setloadings(false)

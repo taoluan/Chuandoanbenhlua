@@ -11,14 +11,14 @@ const TopNavigation = () => {
             <MDBListGroup className="list-group-flush w-100" style={{width:"100%"}}>
                 <NavLink exact={true} to="/admin/dashboard" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="chart-pie" className="mr-3"/>
-                        Thống kê
+                        <img src={process.env.PUBLIC_URL + '/img/pie-chart.png'} height="25" width="25" alt="" className="mr-2 pb-1"/>
+                        <span className="title-8 ">Thống kê</span>
                     </MDBListGroupItem>
                 </NavLink>
-                <NavLink to="/profile" activeClassName="activeClass">
+                <NavLink to="/admin/diseseae" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="user" className="mr-3"/>
-                        Profile
+                        <img src={process.env.PUBLIC_URL + '/img/folders.png'} height="25" width="25" alt="" className="mr-2 pb-1"/>
+                        <span className="title-8 ">Danh sách bệnh</span>
                     </MDBListGroupItem>
                 </NavLink>
             </MDBListGroup>

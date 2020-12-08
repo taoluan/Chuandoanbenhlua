@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-            <Route path="/admin" exact component={DirectionAdmin}/> 
+            <Route path="/admin" component={DirectionAdmin}/> 
             <Route path="/" component={DirectionUser} />
         </Switch>
       </BrowserRouter>

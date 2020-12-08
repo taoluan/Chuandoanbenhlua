@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter , Switch ,Route} from 'react-router-dom';
 import DashboardPage from '../components/Admin/DashboardPage';
+import DataDiseseaPage from '../components/Admin/DataDiseseaPage';
 // import ProfilePage from './pages/ProfilePage';
 // import TablesPage from './pages/TablesPage';
 // import MapsPage from './pages/MapsPage';
@@ -16,13 +17,11 @@ const Admin = ()=>{
             <TopNavigation />
             <SideNavigation />
             <main id="content" className="p-5">
-                <Routes />
-                {/* <Switch>
-                    <Route path='/' exact component={DashboardPage} />
-                    <Route path='/dashboard' component={DashboardPage} />
-                    <Route path='/profile' component={ProfilePage} />
-                    <Route path='/tables' component={TablesPage} />
-                </Switch> */}
+            <Switch>
+                <Route path='/admin' exact component={DashboardPage} />
+                <Route path='/admin/dashboard' exact component={DashboardPage} />
+                <Route path='/admin/diseseae' exact component={DataDiseseaPage} />
+            </Switch>
             </main>
             {/* <Footer /> */}
             </div>

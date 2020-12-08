@@ -5,8 +5,31 @@ import diseseaApi from '../../../api/diseseaApi'
 import {Image as ImageCloud} from 'cloudinary-react';
 import AutoComplete from './AutoComplete'
 import ButtonLoading from './ButtonLoading'
+import TableMap from './TableMap'
+const checkTT = (list,object) => {
+  let i
+  for (i = 0; i < list.length; i++) {
+      if (list[i].index === object.index && list[i].ten_trieuchungmoi === object.ten_trieuchung) {
+          return {result: true , vitri:i};
+      }
+
+}
+return {result: false};
+}
+const checkVT= (list,object) => {
+  let i
+  for (i = 0; i < list.length; i++) {
+      if (list[i].index === object.index && list[i].vitri === object.vitri) {
+          return {result: true , vitri:i};
+      }
+
+}
+return {result: false};
+}
+
 const TableSection = () => {
   const [checkbox1, setCheckbox1] = useState('');
+  const [update, setupdate] = useState([]);
   const [data, setdata] = useState([]);
   const [show,setShow] = useState(false)
   const [showmodalUpdate,setShowModalUpdate] = useState(false)
@@ -54,6 +77,37 @@ const TableSection = () => {
     setShow(true)
     fetchThongTinBenh()
   };
+  const handleClick = (e) => {
+    console.log(e)
+    console.log(update)
+  }
+  const handleChangeTT = (e) => {
+    if(checkTT(update,e).result){
+      let vitri = checkTT(update,e).vitri
+      let newArr = [...update]
+      newArr[vitri].ten_trieuchungmoi = e.ten_trieuchung
+      setupdate(newArr)
+    }else{
+      setupdate([
+        ...update,
+        e
+      ])
+    }
+  }
+  const handleChangeVT = (e) => {
+    if(checkVT(update,e).result){
+      let vitri = checkVT(update,e).vitri
+      let newArr = [...update]
+      newArr[vitri].vitri = e.vitri
+      setupdate(newArr)
+    }else{
+      setupdate([
+        ...update,
+        e
+      ])
+    }
+  }
+  
   if(datatable.rows.length >0){
     return (
     <MDBRow className="mb-4 mt-0">
@@ -139,22 +193,24 @@ const TableSection = () => {
                             </MDBTableHead>
                             <MDBTableBody>
                               {
-                                  data.map((item,key)=>{
+                                  data.map((items,key)=>{
                                   return ( 
-                                  <tr key={key}>
-                                      <td className="align-middle">{key+1}</td>
-                                      <td className="align-middle">{item.ten_trieuchung}</td>
-                                      <td className="align-middle"><AutoComplete/></td>
-                                      <td className="align-middle">{item.vitri}</td>
-                                      <td className="align-middle"></td>
-                                      <td className="align-middle">{item.hinhanh !== "" 
-                                        ? <ImageCloud cloudName="taoluanby" publicId={item.hinhanh} width="100" height="100" crop="scale"/>
-                                        : 'Không có'
-                                      }
-                                      </td>
-                                      <td className="align-middle" ></td>
-                                      <td className="align-middle"><ButtonLoading/></td>
-                                    </tr>)
+                                    <TableMap key={key} item={items} i={key}/>
+                                    // <tr key={key}>
+                                    //     <td className="align-middle">{key+1}</td>
+                                    //     <td className="align-middle">{item.ten_trieuchung}</td>
+                                    //     <td className="align-middle"><AutoComplete option="trieuchung" evChangeTT={key} callOnChangeTT={(e)=>{handleChangeTT(e)}}/></td>
+                                    //     <td className="align-middle">{item.vitri}</td>
+                                    //     <td className="align-middle"><AutoComplete evChangeVT={key} callOnChangeVT={(e)=>{handleChangeVT(e)}}/></td>
+                                    //     <td className="align-middle">{item.hinhanh !== "" 
+                                    //       ? <ImageCloud cloudName="taoluanby" publicId={item.hinhanh} width="100" height="100" crop="scale"/>
+                                    //       : 'Không có'
+                                    //     }
+                                    //     </td>
+                                    //     <td className="align-middle" ></td>
+                                    //     <td className="align-middle"><ButtonLoading evClick={data[key]} callOnClick={(e)=>{handleClick(e)}}/></td>
+                                    // </tr>
+                                    )
                                   })
                                   
                               }
@@ -166,6 +222,7 @@ const TableSection = () => {
                   </MDBRow>
                 </MDBModalBody>
                 <MDBModalFooter>
+                  
                   <MDBBtn color="secondary" onClick={()=>{setShowModalUpdate(!showmodalUpdate)}}>Close</MDBBtn>
                 </MDBModalFooter>
               </MDBModal>
