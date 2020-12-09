@@ -177,7 +177,7 @@ const TableSection = () => {
                   <MDBRow className=" d-flex justify-content-center">
                   <MDBCol md="12" className="m-0 p-0">
                     <MDBCard className="z-depth-0 m-0 p-0">
-                        <MDBCardBody>
+                        <MDBCardBody className="pt-0 pb-0">
                           <MDBTable scrollY maxHeight="500px">
                             <MDBTableHead color="dark">
                               <tr>
@@ -195,7 +195,7 @@ const TableSection = () => {
                               {
                                   data.map((items,key)=>{
                                   return ( 
-                                    <TableMap key={key} item={items} i={key}/>
+                                    <TableMap evOnClick={(e)=>{showLogs2(e)}} tenbenh={checkbox1} key={key} item={items} i={key}/>
                                     // <tr key={key}>
                                     //     <td className="align-middle">{key+1}</td>
                                     //     <td className="align-middle">{item.ten_trieuchung}</td>

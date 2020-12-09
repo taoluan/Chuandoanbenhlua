@@ -124,7 +124,7 @@ module.exports = {
         try {
             let timkiem = await graphDBEndpoint.query(
                 `
-                select DISTINCT ?ten_trieuchung  ?vitri
+                select DISTINCT ?ten_trieuchung  ?vitri ?uri_trieuchung
                 WHERE { 
                     ?uri_trieuchung rdf:type data:Triệu_Chứng;
                                     rdfs:comment ?ten_trieuchung.
@@ -287,7 +287,7 @@ module.exports = {
             let tenbenh = req.query.tenbenh
             let data = await graphDBEndpoint.query(
                 `
-                select DISTINCT  ?ten_trieuchung ?vitri ?hinh
+                select DISTINCT  ?ten_trieuchung ?vitri ?hinh ?uri_benh ?uri_trieuchung
                     WHERE { 
                         ?uri_benh data:hasSymptom ?uri_trieuchung;
                                 rdfs:label ?ten_benh.
@@ -307,5 +307,105 @@ module.exports = {
         } catch (err) {
             console.log(err)
         }
-    }
+    },
+    getAllTrieuChung:async(req,res)=>{
+        try {
+            let timkiem = await graphDBEndpoint.query(
+                `
+                select DISTINCT ?ten_trieuchung  ?vitri ?uri_trieuchung
+                WHERE { 
+                    ?uri_trieuchung rdf:type data:Triệu_Chứng;
+                                    rdfs:comment ?ten_trieuchung.
+                    ?uri_benh data:hasSymptom ?uri_trieuchung.
+                    ?annotation owl:annotatedSource ?uri_benh;
+                                owl:annotatedTarget  ?uri_trieuchung;
+                                data:DiseaseSite ?vitri.
+                    }
+                `)
+            let result =await functions.handling_getalltrieuchung(timkiem.results.bindings)
+            res.send(result)
+        } catch (error) {
+            
+        }
+    },
+    updateTrieuChung:async(req,res)=>{
+        try {
+            let data = req.body
+            if(data.newTrieuchung){
+                const update = await graphDBEndpoint.update(
+                    `
+                    DELETE{
+                        <${data.benh}> data:hasSymptom <${data.uriTrieuchungCu}>.
+                        <${data.uriTrieuchungCu}> data:isSymptomOf  <${data.benh}>.
+                        ?annotation  data:DiseaseSite "${data.vitri}"
+                    }
+                    WHERE { 
+                        ?annotation owl:annotatedSource  <${data.benh}>;
+                                 owl:annotatedProperty data:hasSymptom;
+                                 owl:annotatedTarget <${data.uriTrieuchungCu}>;
+                                 data:DiseaseSite "${data.vitri}".
+                    };
+                    INSERT DATA {
+                        <${data.benh}> data:hasSymptom <${data.newTrieuchung.uri_trieuchung}>.
+                        <${data.newTrieuchung.uri_trieuchung}> data:isSymptomOf  <${data.benh}>.
+                        _:x rdf:type owl:Axiom .
+                        _:x owl:annotatedSource  <${data.benh}> .
+                        _:x owl:annotatedProperty data:hasSymptom .
+                        _:x owl:annotatedTarget  <${data.newTrieuchung.uri_trieuchung}> .
+                        _:x data:DiseaseSite "${data.newTrieuchung.vitri}"
+                    }
+                    `)
+                res.status(200).send(update.success)
+            }else{
+                const update = await graphDBEndpoint.update(
+                    `
+                    DELETE{
+                        <${data.benh}> data:hasSymptom <${data.uriTrieuchungCu}>.
+                        <${data.uriTrieuchungCu}> data:isSymptomOf  <${data.benh}>.
+                        ?annotation  data:DiseaseSite "${data.vitri}"
+                    }
+                    WHERE { 
+                        ?annotation owl:annotatedSource  <${data.benh}>;
+                                 owl:annotatedProperty data:hasSymptom;
+                                 owl:annotatedTarget <${data.uriTrieuchungCu}>;
+                                 data:DiseaseSite "${data.vitri}".
+                    };
+                    INSERT DATA {
+                        <${data.benh}> data:hasSymptom <${data.uriTrieuchungCu}>.
+                        <${data.uriTrieuchungCu}> data:isSymptomOf  <${data.benh}>.
+                        _:x rdf:type owl:Axiom .
+                        _:x owl:annotatedSource  <${data.benh}> .
+                        _:x owl:annotatedProperty data:hasSymptom .
+                        _:x owl:annotatedTarget  <${data.uriTrieuchungCu}> .
+                        _:x data:DiseaseSite "${data.newVitri}"
+                    }
+                    `)
+                res.status(200).send(update.success)
+            }
+        } catch (error) {
+            res.status(400).send(update.success)
+        }
+    },
+    deleteTrieuChung:async(req,res)=>{
+        try {
+            let data = req.body
+            const deletes = await graphDBEndpoint.update(
+                `
+                DELETE{
+                    <${data.benh}> data:hasSymptom <${data.uriTrieuchungCu}>.
+                    <${data.uriTrieuchungCu}> data:isSymptomOf  <${data.benh}>.
+                    ?annotation  data:DiseaseSite "${data.vitri}"
+                }
+                WHERE { 
+                    ?annotation owl:annotatedSource  <${data.benh}>;
+                             owl:annotatedProperty data:hasSymptom;
+                             owl:annotatedTarget <${data.uriTrieuchungCu}>;
+                             data:DiseaseSite "${data.vitri}".
+                };
+                `)
+            res.status(200).send(deletes.success)
+        } catch (error) {
+            res.status(400).send(deletes.success)
+        }
+    },
 }

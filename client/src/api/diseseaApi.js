@@ -52,6 +52,17 @@ const diseseaApi ={
         const url = '/getthongtinbenh'
         return axiosClient.get(url,{params})
     },
-    
+    getAllTrieuChungAdmin: ()=>{
+        const url = '/getalltrieuchung'
+        return axiosClient.get(url)
+    },
+    updateTrieuChung: (params)=>{
+        const url = '/updatetrieuchung'
+        return axiosClient.post(url,params)
+    },
+    deleteTrieuChung: (params)=>{
+        const url = '/deletetrieuchung'
+        return axiosClient.post(url,params)
+    },
 }
 export default diseseaApi

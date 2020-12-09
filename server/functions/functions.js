@@ -314,7 +314,8 @@ module.exports={
                 results.push({
                     ten_trieuchung: `${x.ten_trieuchung.value} vị trí trên ${x.vitri.value}`,
                     vitri: x.vitri.value,
-                    trieuchung: x.ten_trieuchung.value
+                    trieuchung: x.ten_trieuchung.value,
+                    uri_trieuchung: x.uri_trieuchung.value
                 })
             })
             res(results)
@@ -373,9 +374,21 @@ module.exports={
         return new Promise((res,rej)=>{
             let result = []
             data.map(x=>{
-                result.push({ten_trieuchung: x.ten_trieuchung.value, vitri: x.vitri.value , hinhanh : (x.hinh !== undefined) ? x.hinh.value : ''})
+                result.push({ten_trieuchung: x.ten_trieuchung.value,uri_trieuchung: x.uri_trieuchung.value,uri_benh: x.uri_benh.value ,  vitri: x.vitri.value , hinhanh : (x.hinh !== undefined) ? x.hinh.value : ''})
             })
             res(result)
         })
-    }
+    },
+    handling_getalltrieuchung: (data)=>{
+        return new Promise((res,rej)=>{
+            let results = []
+            data.map(x=>{
+                results.push({
+                    ten_trieuchung: x.ten_trieuchung.value,
+                    uri_trieuchung: x.uri_trieuchung.value,
+                })
+            })
+            res(results)
+        })
+    },
 }

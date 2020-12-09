@@ -16,4 +16,8 @@ router.get('/gettrieuchung',api_controllers.getTrieuChung)
 router.get('/getgionglua',api_controllers.getGiongLua)
 router.get('/getalldsbenh',api_controllers.getAlldsbenh)
 router.get('/getthongtinbenh',api_controllers.getThongTinBenh)
-module.exports = router;
+router.get('/getalltrieuchung',api_controllers.getAllTrieuChung)
+router.post('/updatetrieuchung',urlencodedParser,api_controllers.updateTrieuChung)
+router.post('/deletetrieuchung',urlencodedParser,api_controllers.deleteTrieuChung)
+
+module.exports = router
