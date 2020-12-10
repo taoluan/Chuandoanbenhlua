@@ -1,5 +1,7 @@
 const functions = require('../functions/functions')
 const graphDBEndpoint = require('../graphDB/ontology')
+const cloudinary = require('../cloundinary/config')
+const e = require('express')
 module.exports = {
     chuandoan: async(req,res)=>{
         try {
@@ -357,6 +359,44 @@ module.exports = {
                     `)
                 res.status(200).send(update.success)
             }else{
+                if(data.newHinhanh){
+                    cloudinary.uploader.upload(
+                        data.newHinhanh,
+                        {folder: "LuanVan_CNTT"},
+                         async (error, result) =>{
+                             try {
+                                let public_id =  result.public_id
+                                const update = await graphDBEndpoint.update(
+                                    `
+                                    DELETE{
+                                        <${data.benh}> data:hasSymptom <${data.uriTrieuchungCu}>.
+                                        <${data.uriTrieuchungCu}> data:isSymptomOf  <${data.benh}>.
+                                        ?annotation  data:DiseaseSite "${data.vitri}".
+                                        ?annotation  data:Image "${data.hinhanh}"
+                                    }
+                                    WHERE { 
+                                        ?annotation owl:annotatedSource  <${data.benh}>;
+                                                 owl:annotatedProperty data:hasSymptom;
+                                                 owl:annotatedTarget <${data.uriTrieuchungCu}>;
+                                    };
+                                    INSERT DATA {
+                                        <${data.benh}> data:hasSymptom <${data.uriTrieuchungCu}>.
+                                        <${data.uriTrieuchungCu}> data:isSymptomOf  <${data.benh}>.
+                                        _:x rdf:type owl:Axiom .
+                                        _:x owl:annotatedSource  <${data.benh}> .
+                                        _:x owl:annotatedProperty data:hasSymptom .
+                                        _:x owl:annotatedTarget  <${data.uriTrieuchungCu}> .
+                                        _:x data:DiseaseSite "${data.newVitri}".
+                                        _:x data:Image "${public_id}"
+                                    }
+                                    `)
+                                res.status(200).send(update.success)
+                             } catch (error) {
+                                res.status(400).send(error)
+                             }
+                           
+                        });
+                }else{
                 const update = await graphDBEndpoint.update(
                     `
                     DELETE{
@@ -381,6 +421,7 @@ module.exports = {
                     }
                     `)
                 res.status(200).send(update.success)
+                }
             }
         } catch (error) {
             res.status(400).send(update.success)
@@ -389,6 +430,24 @@ module.exports = {
     deleteTrieuChung:async(req,res)=>{
         try {
             let data = req.body
+            if(data.hinhanh !== ''){
+                const deletes_img = await graphDBEndpoint.update(
+                    `
+                    DELETE{
+                        <${data.benh}> data:hasSymptom <${data.uriTrieuchungCu}>.
+                        <${data.uriTrieuchungCu}> data:isSymptomOf  <${data.benh}>.
+                        ?annotation  data:DiseaseSite "${data.vitri}"
+                    }
+                    WHERE { 
+                        ?annotation owl:annotatedSource  <${data.benh}>;
+                                 owl:annotatedProperty data:hasSymptom;
+                                 owl:annotatedTarget <${data.uriTrieuchungCu}>;
+                                 data:DiseaseSite "${data.vitri}";
+                                 data:Image "${data.hinhanh}"
+                    };
+                    `)
+                res.status(200).send(deletes_img.success)
+            }else{
             const deletes = await graphDBEndpoint.update(
                 `
                 DELETE{
@@ -404,8 +463,66 @@ module.exports = {
                 };
                 `)
             res.status(200).send(deletes.success)
+            }
         } catch (error) {
-            res.status(400).send(deletes.success)
+            res.status(400).send(error)
+        }
+    },
+    insertTrieuChung:async(req,res)=>{
+        try {
+            let data = req.body
+            let benh = await graphDBEndpoint.query(
+                `
+                select ?uri_benh where { 
+                    ?uri_benh rdf:type <http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh>;
+                         rdfs:label "${data.benh}".
+                }
+                `)
+            let uri_benh = benh.results.bindings[0].uri_benh.value
+            let insert_data = data.data
+            if(data.data.value){
+                cloudinary.uploader.upload(
+                    data.data.value,
+                    {folder: "LuanVan_CNTT"},
+                     async (error, result) =>{
+                         try {
+                            let public_id =  result.public_id
+                            const insert = await graphDBEndpoint.update(
+                                `
+                                INSERT DATA {
+                                    <${uri_benh}> data:hasSymptom <${insert_data.newTrieuchung.uri_trieuchung}>.
+                                    <${insert_data.newTrieuchung.uri_trieuchung}> data:isSymptomOf  <${uri_benh}>.
+                                    _:x rdf:type owl:Axiom .
+                                    _:x owl:annotatedSource  <${uri_benh}> .
+                                    _:x owl:annotatedProperty data:hasSymptom .
+                                    _:x owl:annotatedTarget  <${insert_data.newTrieuchung.uri_trieuchung}> .
+                                    _:x data:DiseaseSite "${insert_data.newVitri}".
+                                    _:x data:Image "${public_id}"
+                                }
+                                `)
+                            res.status(200).send(insert.success)
+                         } catch (error) {
+                            res.status(400).send(error)
+                         }
+                       
+                    });
+            }else{
+                const insert = await graphDBEndpoint.update(
+                    `
+                    INSERT DATA {
+                        <${uri_benh}> data:hasSymptom <${insert_data.newTrieuchung.uri_trieuchung}>.
+                        <${insert_data.newTrieuchung.uri_trieuchung}> data:isSymptomOf  <${uri_benh}>.
+                        _:x rdf:type owl:Axiom .
+                        _:x owl:annotatedSource  <${uri_benh}> .
+                        _:x owl:annotatedProperty data:hasSymptom .
+                        _:x owl:annotatedTarget  <${insert_data.newTrieuchung.uri_trieuchung}> .
+                        _:x data:DiseaseSite "${insert_data.newVitri}".
+                    }
+                    `)
+                res.status(200).send(insert.success)
+            }
+        } catch (error) {
+             res.status(400).send(error)
         }
     },
 }

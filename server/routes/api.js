@@ -19,5 +19,5 @@ router.get('/getthongtinbenh',api_controllers.getThongTinBenh)
 router.get('/getalltrieuchung',api_controllers.getAllTrieuChung)
 router.post('/updatetrieuchung',urlencodedParser,api_controllers.updateTrieuChung)
 router.post('/deletetrieuchung',urlencodedParser,api_controllers.deleteTrieuChung)
-
+router.post('/inserttrieuchung',urlencodedParser,api_controllers.insertTrieuChung)
 module.exports = router

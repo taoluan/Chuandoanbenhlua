@@ -64,5 +64,9 @@ const diseseaApi ={
         const url = '/deletetrieuchung'
         return axiosClient.post(url,params)
     },
+    insertTrieuChung: (params)=>{
+        const url = '/inserttrieuchung'
+        return axiosClient.post(url,params)
+    },
 }
 export default diseseaApi

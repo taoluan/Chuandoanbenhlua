@@ -4,35 +4,16 @@ import { MDBDataTableV5 } from 'mdbreact';
 import diseseaApi from '../../../api/diseseaApi'
 import {Image as ImageCloud} from 'cloudinary-react';
 import AutoComplete from './AutoComplete'
-import ButtonLoading from './ButtonLoading'
 import TableMap from './TableMap'
-const checkTT = (list,object) => {
-  let i
-  for (i = 0; i < list.length; i++) {
-      if (list[i].index === object.index && list[i].ten_trieuchungmoi === object.ten_trieuchung) {
-          return {result: true , vitri:i};
-      }
-
-}
-return {result: false};
-}
-const checkVT= (list,object) => {
-  let i
-  for (i = 0; i < list.length; i++) {
-      if (list[i].index === object.index && list[i].vitri === object.vitri) {
-          return {result: true , vitri:i};
-      }
-
-}
-return {result: false};
-}
-
+import UploadFile from './UploadFile'
 const TableSection = () => {
   const [checkbox1, setCheckbox1] = useState('');
   const [update, setupdate] = useState([]);
+  const [insert, setinsert] = useState({});
   const [data, setdata] = useState([]);
   const [show,setShow] = useState(false)
   const [showmodalUpdate,setShowModalUpdate] = useState(false)
+  const [showInsert,setShowInsert] = useState(false)
   const [datatable, setDatatable] = useState({
     columns: [
       {
@@ -68,44 +49,32 @@ const TableSection = () => {
     }
     fetchDanhSachBenh()
   },[]);
-  const showLogs2 = (e) => {
-     setCheckbox1(e.ten_benh);
-    const fetchThongTinBenh = async()=>{
-      const respose = await diseseaApi.getTrieuChungCuaBenh({tenbenh : e.ten_benh})
+  const fetchThongTinBenh = async(ten_benh)=>{
+      const respose = await diseseaApi.getTrieuChungCuaBenh({tenbenh : ten_benh})
       await setdata(respose)
     }
+  const showLogs2 = (e) => {
+    setCheckbox1(e.ten_benh);
     setShow(true)
-    fetchThongTinBenh()
+    fetchThongTinBenh(e.ten_benh)
   };
-  const handleClick = (e) => {
-    console.log(e)
-    console.log(update)
+  const changeImg = (value) => {
+    setinsert({
+      ...insert,
+      value
+    })
+   
   }
-  const handleChangeTT = (e) => {
-    if(checkTT(update,e).result){
-      let vitri = checkTT(update,e).vitri
-      let newArr = [...update]
-      newArr[vitri].ten_trieuchungmoi = e.ten_trieuchung
-      setupdate(newArr)
-    }else{
-      setupdate([
-        ...update,
-        e
-      ])
-    }
-  }
-  const handleChangeVT = (e) => {
-    if(checkVT(update,e).result){
-      let vitri = checkVT(update,e).vitri
-      let newArr = [...update]
-      newArr[vitri].vitri = e.vitri
-      setupdate(newArr)
-    }else{
-      setupdate([
-        ...update,
-        e
-      ])
-    }
+  const handleInsert = async () => {
+     if(insert.newTrieuchung  && insert.newVitri ){
+       let respose = await diseseaApi.insertTrieuChung({data: insert , benh : checkbox1})
+       if(respose){
+        setShowInsert(false)
+        fetchThongTinBenh(checkbox1)
+       } 
+     }else{
+       alert('no no')
+     }
   }
   
   if(datatable.rows.length >0){
@@ -168,6 +137,7 @@ const TableSection = () => {
                         </MDBTableBody>
                       </MDBTable>
                       <MDBBtn className="float-right m-0 " color="primary" onClick={()=>{setShowModalUpdate(!showmodalUpdate)}}>Cập nhật</MDBBtn>
+                      <MDBBtn className="float-right m-0 mr-1" color="success" onClick={()=>{ setShowInsert(true), setinsert({})}}>Thêm triệu chứng</MDBBtn>
                     </MDBCardBody>
                 </MDBCard>
               </MDBCol>
@@ -196,20 +166,6 @@ const TableSection = () => {
                                   data.map((items,key)=>{
                                   return ( 
                                     <TableMap evOnClick={(e)=>{showLogs2(e)}} tenbenh={checkbox1} key={key} item={items} i={key}/>
-                                    // <tr key={key}>
-                                    //     <td className="align-middle">{key+1}</td>
-                                    //     <td className="align-middle">{item.ten_trieuchung}</td>
-                                    //     <td className="align-middle"><AutoComplete option="trieuchung" evChangeTT={key} callOnChangeTT={(e)=>{handleChangeTT(e)}}/></td>
-                                    //     <td className="align-middle">{item.vitri}</td>
-                                    //     <td className="align-middle"><AutoComplete evChangeVT={key} callOnChangeVT={(e)=>{handleChangeVT(e)}}/></td>
-                                    //     <td className="align-middle">{item.hinhanh !== "" 
-                                    //       ? <ImageCloud cloudName="taoluanby" publicId={item.hinhanh} width="100" height="100" crop="scale"/>
-                                    //       : 'Không có'
-                                    //     }
-                                    //     </td>
-                                    //     <td className="align-middle" ></td>
-                                    //     <td className="align-middle"><ButtonLoading evClick={data[key]} callOnClick={(e)=>{handleClick(e)}}/></td>
-                                    // </tr>
                                     )
                                   })
                                   
@@ -222,9 +178,41 @@ const TableSection = () => {
                   </MDBRow>
                 </MDBModalBody>
                 <MDBModalFooter>
-                  
                   <MDBBtn color="secondary" onClick={()=>{setShowModalUpdate(!showmodalUpdate)}}>Close</MDBBtn>
                 </MDBModalFooter>
+              </MDBModal>
+              <MDBModal isOpen={showInsert} toggle={()=>{setShowInsert(!showInsert)}} fullHeight position="bottom">
+                  <MDBModalHeader className="text-center" toggle={()=>{setShowInsert(!showInsert)}}>Thêm triệu chứng mới cho {checkbox1} </MDBModalHeader>
+                  <MDBModalBody className="m-0 p-0">
+                  <MDBRow className=" d-flex justify-content-center">
+                  <MDBCol md="8" className="m-0 p-0">
+                      <MDBCard className="z-depth-0 m-0 p-0">
+                          <MDBCardBody className="pt-0 pb-0">
+                            <MDBTable scrollY maxHeight="500px">
+                              <MDBTableHead color="dark">
+                                <tr>
+                                  <th>Triệu chứng</th>
+                                  <th>Vị trí</th>
+                                  <th>Hình ảnh</th>
+                                </tr>
+                              </MDBTableHead>
+                              <MDBTableBody>
+                              <tr>
+                                  <td className="align-middle"><AutoComplete option="trieuchung" callOnChangeTT={(value)=>{value && setinsert({...insert,newTrieuchung:value}) }}/></td>
+                                  <td className="align-middle" ><AutoComplete callOnChangeVT={(value)=>{setinsert({...insert,newVitri:value})}}/></td>
+                                  <td className="align-middle" ><UploadFile img={changeImg}/></td>
+                              </tr>
+                              </MDBTableBody>
+                            </MDBTable>
+                          </MDBCardBody>
+                      </MDBCard>
+                  </MDBCol>
+                  </MDBRow>
+                  </MDBModalBody>
+                  <MDBModalFooter>
+                  <MDBBtn className="float-right m-0 " color="primary" onClick={()=>{handleInsert()}}>Cập nhật</MDBBtn>
+                  <MDBBtn color="secondary" onClick={()=>{setShowInsert(!showInsert)}}>Close</MDBBtn>
+                  </MDBModalFooter>
               </MDBModal>
             </>
             )

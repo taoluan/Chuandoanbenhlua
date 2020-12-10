@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import diseseaApi from '../../../api/diseseaApi'
-const AutoCompleteFrom = (props) => {
+const AutoCompleteFromv2 = (props) => {
   const [data,setData] = useState([])
   useEffect(() => {
     const fetchAllTrieuChung = async() =>{
@@ -37,10 +37,7 @@ const AutoCompleteFrom = (props) => {
       style={{ width: props.option === "trieuchung" ? 350 : 150 }}
       renderInput={(params) => <TextField {...params}  label={props.option === "trieuchung" ? "Triệu chứng mới" : "Vị trí mới"} variant="outlined" />}
       onChange={(e,value)=>{
-        if(value !== null){
-      props.option === "trieuchung" 
-      ? props.callOnChangeTT({ten_trieuchung: value.trieuchung , vitri: value.vitri , uri_trieuchung: value.uri_trieuchung}) 
-      : props.callOnChangeVT(value.vitri)}
+        
         }
       }
     />
@@ -62,4 +59,4 @@ const dataViTri = [
   { vitri: 'Ống rạ' },
   { vitri: 'Phiến lá' }
 ]
-export default React.memo(AutoCompleteFrom)
+export default React.memo(AutoCompleteFromv2)
