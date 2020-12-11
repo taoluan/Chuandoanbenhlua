@@ -324,25 +324,26 @@ module.exports={
     handling_benh: (data)=>{
         return new Promise((res,rej)=>{
             let result = []
+            console.log(data)
             let temp = {}
             data.map(x=>{
                // result.push({type: x.data.value , value: x.value.value})
                 if(x.data.value === "Cách phòng chống"){
-                    temp.phongchong = {type: x.data.value , value: x.value.value}
+                    temp.phongchong = {type: x.data.value , value: x.value.value , uri: x.p.value}
                 }else if(x.data.value === "Tác hại"){
-                    temp.tachai =  {type: x.data.value , value: x.value.value}
+                    temp.tachai =  {type: x.data.value , value: x.value.value , uri: x.p.value}
                 }else if( x.data.value === "Đặc điểm phát sinh và phát triển"){
-                    temp.ddpspt =  {type: x.data.value , value: x.value.value}
+                    temp.ddpspt =  {type: x.data.value , value: x.value.value , uri: x.p.value}
                 }else if( x.data.value === "Triệu chứng cụ thể"){
-                    temp.trieuchung =  {type: x.data.value , value: x.value.value.split('\n')}
+                    temp.trieuchung =  {type: x.data.value , uri: x.p.value, value: x.value.value.split('\n')}
                 }else if( x.data.value === 	"Đặc điểm hình thái"){
-                    temp.ddht =  {type: x.data.value , value: x.value.value}
+                    temp.ddht =  {type: x.data.value , value: x.value.value, uri: x.p.value}
                 }else if( x.data.value === 	"Cách điều trị"){
-                    temp.dieutri =  {type: x.data.value , value: x.value.value}
+                    temp.dieutri =  {type: x.data.value , value: x.value.value, uri: x.p.value}
                 }else if( x.data.value === 	"Đặc điểm sinh học và gây hại"){
-                    temp.ddshgh =  {type: x.data.value , value: x.value.value}
+                    temp.ddshgh =  {type: x.data.value , value: x.value.value, uri: x.p.value}
                 }else if( x.data.value === 	"Nguyên nhân"){
-                    temp.nguyennhan =  {type: x.data.value , value: x.value.value.split('\n')}
+                    temp.nguyennhan =  {type: x.data.value , value: x.value.value.split('\n'), uri: x.p.value}
                 }
             })
             if(data[0].hinhanh !== undefined){

@@ -40,7 +40,7 @@ module.exports = {
             let uri_benh = req.query.uri_benh
             let rs_data_benh = await graphDBEndpoint.query(
             `
-            select ?data ?value ?hinhanh ?mota ?ten_benh where { 
+            select ?data ?value ?hinhanh ?mota ?ten_benh ?p where { 
                 ?x rdf:type data:Bệnh;
                     rdfs:label ?label;
                     data:Describe ?mota;
@@ -371,8 +371,8 @@ module.exports = {
                                     DELETE{
                                         <${data.benh}> data:hasSymptom <${data.uriTrieuchungCu}>.
                                         <${data.uriTrieuchungCu}> data:isSymptomOf  <${data.benh}>.
-                                        ?annotation  data:DiseaseSite "${data.vitri}".
-                                        ?annotation  data:Image "${data.hinhanh}"
+                                        ?annotation  data:Image "${data.hinhanh}";
+                                                    data:DiseaseSite "${data.vitri}"
                                     }
                                     WHERE { 
                                         ?annotation owl:annotatedSource  <${data.benh}>;
@@ -386,7 +386,7 @@ module.exports = {
                                         _:x owl:annotatedSource  <${data.benh}> .
                                         _:x owl:annotatedProperty data:hasSymptom .
                                         _:x owl:annotatedTarget  <${data.uriTrieuchungCu}> .
-                                        _:x data:DiseaseSite "${data.newVitri}".
+                                        _:x data:DiseaseSite "${data.vitri}"
                                         _:x data:Image "${public_id}"
                                     }
                                     `)
@@ -400,8 +400,6 @@ module.exports = {
                 const update = await graphDBEndpoint.update(
                     `
                     DELETE{
-                        <${data.benh}> data:hasSymptom <${data.uriTrieuchungCu}>.
-                        <${data.uriTrieuchungCu}> data:isSymptomOf  <${data.benh}>.
                         ?annotation  data:DiseaseSite "${data.vitri}"
                     }
                     WHERE { 
@@ -411,8 +409,6 @@ module.exports = {
                                  data:DiseaseSite "${data.vitri}".
                     };
                     INSERT DATA {
-                        <${data.benh}> data:hasSymptom <${data.uriTrieuchungCu}>.
-                        <${data.uriTrieuchungCu}> data:isSymptomOf  <${data.benh}>.
                         _:x rdf:type owl:Axiom .
                         _:x owl:annotatedSource  <${data.benh}> .
                         _:x owl:annotatedProperty data:hasSymptom .
@@ -460,6 +456,7 @@ module.exports = {
                              owl:annotatedProperty data:hasSymptom;
                              owl:annotatedTarget <${data.uriTrieuchungCu}>;
                              data:DiseaseSite "${data.vitri}".
+                             
                 };
                 `)
             res.status(200).send(deletes.success)
