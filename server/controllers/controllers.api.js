@@ -522,4 +522,101 @@ module.exports = {
              res.status(400).send(error)
         }
     },
+    updateProperty: async (req,res)=>{
+        try {
+            let data = req.body
+            let benh = await graphDBEndpoint.query(
+                `
+                select ?uri_benh where { 
+                    ?uri_benh rdf:type <http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh>;
+                         rdfs:label "${data.benh}".
+                }
+                `)
+            let uri_benh = benh.results.bindings[0].uri_benh.value
+            if(data.data.uri){
+                let update = await graphDBEndpoint.update(
+                    `
+                    delete  {
+                        <${uri_benh}> <${data.data.uri}> ?noidung
+                    } 
+                    where{
+                        <${uri_benh}> <${data.data.uri}> ?noidung
+                    };
+                    insert data{
+                        <${uri_benh}>  <${data.data.uri}> "${data.newValue}"
+                    }`
+                )
+                res.status(200).send(update.success)
+            }else{
+                let update = await graphDBEndpoint.update(
+                    `
+                    delete data {
+                        <${uri_benh}> rdfs:comment "${data.data.value}"
+                    };
+                    insert data{
+                        <${uri_benh}> rdfs:comment "${data.newValue}"
+                    }`
+                )
+                res.status(200).send(update.success)
+            }
+            
+        } catch (error) {
+            res.status(400).send(error)
+        }
+    },
+    updateImage: async (req,res)=>{
+        try {
+            let data = req.body
+            let ImgCu = data.imgCu
+            let benh = await graphDBEndpoint.query(
+                `
+                select ?uri_benh where { 
+                    ?uri_benh rdf:type <http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh>;
+                         rdfs:label "${data.benh}".
+                }
+                `)
+            let uri_benh = benh.results.bindings[0].uri_benh.value
+            if(data.insertImg.length > 0 ){
+                let newArr = []
+                for(let i = 0 ; i < data.insertImg.length ; i++){
+                    let updateImage =await cloudinary.uploader.upload(data.insertImg[i],{folder: "LuanVan_CNTT"})
+                    ImgCu.push(updateImage.public_id)
+                }
+                let strImg = ImgCu.join()
+                await graphDBEndpoint.update(
+                    `
+                    delete  {
+                        <${uri_benh}> data:Image ?noidung
+                    } 
+                    where{
+                        <${uri_benh}> data:Image ?noidung
+                    };
+                    insert data{
+                        <${uri_benh}>  data:Image "${strImg}"
+                    }`
+                )
+
+            }
+            if(data.removeImg.length >0){
+                let checkArr = functions.check_2arr(data.removeImg,data.imgCu)
+                let strImgRemove = checkArr.join()
+                await graphDBEndpoint.update(
+                    `
+                    delete  {
+                        <${uri_benh}> data:Image ?noidung
+                    } 
+                    where{
+                        <${uri_benh}> data:Image ?noidung
+                    };
+                    insert data{
+                        <${uri_benh}>  data:Image "${strImgRemove}"
+                    }`
+                )
+            }
+            res.status(400).send(true)
+        } catch (error) {
+            console.log(error)
+            res.status(400).send(error)
+        }
+    }
 }

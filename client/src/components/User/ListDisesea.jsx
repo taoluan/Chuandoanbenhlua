@@ -59,7 +59,7 @@ const DiseseaTag = () =>{
                     <MDBCol md="8" size="12" className=" d-flex justify-content-center mt-1">
                         <MDBTypography blockquote bqColor="primary" className="mt-0 pt-0">
                             <MDBBox tag="p" mb={0}>
-                                 {data.mota.value.map(x=>{
+                                 {data.mota.value.split('\n').map(x=>{
                                     if(x !== ""){
                                         return( <p className="mb-0 mt-0 p-0">- {x.replace(/[-]/gi,' ')}</p>)
                                     }
@@ -76,7 +76,7 @@ const DiseseaTag = () =>{
                     </MDBCol>
                     <MDBCol size="12" className=" d-flex justify-content-start mt-1">
                     <MDBTypography note noteColor='warning' className="trieuchung">
-                        {data.trieuchung.value.map(x=>{
+                        {data.trieuchung.value.split('\n').map(x=>{
                             if(x !== ""){
                                 return( <p className="mb-1"> <li>{x.replace(/[-,+]/gi,' ')}</li></p>)
                             }
@@ -124,7 +124,7 @@ const DiseseaTag = () =>{
                                     <MDBCol md="8" size="12" className=" d-flex justify-content-center mt-1">
                                         <MDBTypography blockquote bqColor="primary" className=" mt-0 pt-0">
                                             <MDBBox tag="p" mb={0}>
-                                            {data.nguyennhan.value.map(x=>{
+                                            {data.nguyennhan.value.split('\n').map(x=>{
                                                     if(x !== ""){
                                                         return( <p className="mb-0 mt-0 p-0">- {x.replace(/[-]/gi,' ')}</p>)
                                                     }

@@ -20,4 +20,6 @@ router.get('/getalltrieuchung',api_controllers.getAllTrieuChung)
 router.post('/updatetrieuchung',urlencodedParser,api_controllers.updateTrieuChung)
 router.post('/deletetrieuchung',urlencodedParser,api_controllers.deleteTrieuChung)
 router.post('/inserttrieuchung',urlencodedParser,api_controllers.insertTrieuChung)
+router.post('/updateproperty',urlencodedParser,api_controllers.updateProperty)
+router.post('/updateimage',urlencodedParser,api_controllers.updateImage)
 module.exports = router

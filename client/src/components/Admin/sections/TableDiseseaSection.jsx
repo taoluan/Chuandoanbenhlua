@@ -1,7 +1,11 @@
 import { MDBCard, MDBCardBody, MDBDataTableV5, MDBTableBody, MDBTableHead, MDBRow, MDBCol ,MDBCardHeader,MDBTable, MDBBtn,MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 import React,{useEffect,useState} from 'react';
 import diseseaApi from '../../../api/diseseaApi'
-
+import { Button } from 'antd';
+import {Image as ImageCloud} from 'cloudinary-react';
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import ShowListImage from './ShowListImage'
 const TableDiseseaSection = () => {
     const [datatable, setDatatable] = useState({
         columns: [
@@ -22,9 +26,15 @@ const TableDiseseaSection = () => {
         ],
         rows:[]
         })
+    const [insertProperty, setinsertProperty] = useState(false);
     const [checkbox1, setCheckbox1] = useState('');
     const [data,setdata] = useState([])
     const [show, setshow] = useState(false);
+    const [showUpdate, setshowUpdate] = useState(false);
+    const [updatedata, setUpdateData] = useState()
+    const [update, setupdate] = useState(false);
+    const [text, settext] = useState('');
+    
     const fetchDanhSachBenh = async()=>{
         const respose = await diseseaApi.dsBenhNoType()
         let newArr = []
@@ -42,23 +52,51 @@ const TableDiseseaSection = () => {
         const respose = await diseseaApi.getThongTinBenh({uri_benh: benh})
         let newArr = []
         newArr = Object.values(respose)
-        return newArr
+        setdata(newArr)
+    }
+    const hanldelUpdate = (value)=>{
+        setshowUpdate(true)
+        setUpdateData(value)
     }
     useEffect(() => {
         fetchDanhSachBenh()
         },[]);
+    const handleUpdate = async (value) => {
+        if(text === value.value || text === ''){
+            alert('no no no')
+        }else{
+            const respose = await diseseaApi.updateProperty({data: value , benh: checkbox1 , newValue: text})
+            setupdate(true)
+            setTimeout(() => {
+                setupdate(false)
+                setshowUpdate(false)
+                fetchThongTinBenh(checkbox1)
+            }, 3000);
+        }
+       
+    }
     const showLogs2 = async (e) => {
         setCheckbox1(e.ten_benh);
         setshow(true)
-        let rs = await fetchThongTinBenh(e.ten_benh)
-        setdata(rs)
-        console.log(data)
+        fetchThongTinBenh(e.ten_benh)
         };
+    const handleUpdateImg = async (e) => {
+        e.benh =  checkbox1
+        const respose = await diseseaApi.updateImage(e)
+        if(respose){
+            fetchThongTinBenh(checkbox1)
+        }
+    }
+    const top100Films = [
+        { title: 'The Shawshank Redemption', year: 1994 },
+        { title: 'The Godfather', year: 1972 },
+        { title: 'The Godfather: Part II', year: 1974 },
+    ]
         return(
             (datatable.rows.length >0 )
                 ?   (
                     <MDBRow className="justify-content-start mb-5 mt-4">
-                        <MDBCol sm="5">
+                        <MDBCol sm="5" size="12">
                             <MDBCard>
                             <MDBCardHeader className="text-center title-2 mt-0 mb-0 text-dark">Danh sách bệnh</MDBCardHeader>
                                 <MDBCardBody>
@@ -79,36 +117,128 @@ const TableDiseseaSection = () => {
                             </MDBCard>
                         </MDBCol>
                             {data.length > 0
-                                && <MDBCol sm="7" style={{ display: show ? "block" : "none" }}>
-                                    <MDBCard className="z-depth-0 m-0 p-0">
-                                        <MDBCardBody className="p-0 ">
-                                            <MDBTable >
-                                                    <MDBTableHead color="dark" >
-                                                    <tr>
-                                                        <th className="text-center" style={{width:'20%'}}>Giới thiệu</th>
-                                                        <th className="text-center">Mô tả</th>
-                                                    </tr>
-                                                    </MDBTableHead>
-                                                    <MDBTableBody>
-                                                        {
-                                                            data.map((item,key)=>{
-                                                               return( 
-                                                                   (item.type)
-                                                                        && (
+                                && 
+                                <>
+                                    <MDBCol sm="7" size="12" style={{ display: show ? "block" : "none" }}>
+                                        <MDBCard className="z-depth-0 m-0 p-0">
+                                            <MDBCardBody className="p-0 ">
+                                                <MDBTable >
+                                                        <MDBTableHead color="dark" >
+                                                        <tr>
+                                                            <th className="text-center" style={{width:'30%'}}>Giới thiệu</th>
+                                                            <th className="text-center">Mô tả</th>
+                                                        </tr>
+                                                        </MDBTableHead>
+                                                        <MDBTableBody>
+                                                            {
+                                                                data.map((item,key)=>{
+                                                                    return(
+                                                                        (item.type)
+                                                                        ?   (
+                                                                            item.value
+                                                                            ?
                                                                             <tr key={key}>
                                                                                 <td>{item.type}</td>
-                                                                                <td>{item.value} <img style={{cursor: 'pointer'}} onClick={()=>{alert(item.uri)}} src={process.env.PUBLIC_URL + '/img/pen.png'} width="20" height="20" alt=""/></td>
+                                                                                <td>{item.value}
+                                                                                <img style={{cursor: 'pointer'}} onClick={()=>hanldelUpdate(item)} src={process.env.PUBLIC_URL + '/img/pen.png'} width="20" height="20" alt=""/></td>
+                                                                            </tr>
+                                                                            :
+                                                                            <tr key={key}>
+                                                                            <td>{item.type}</td>
+                                                                            <td>
+                                                                               
+                                                                                 <ShowListImage data={item.img} evUpdateImg={handleUpdateImg}/>
+                                                                                            {/* // &&  <ImageCloud key={key} cloudName="taoluanby" publicId={img} width="100" height="100" crop="scale" className="mr-4"/>   */}
+                                                                                </td>
+                                                                        </tr>
+                                                                            )
+                                                                        : (
+                                                                            
+                                                                            <tr key={key}>
+                                                                                <td>Mô tả thêm</td>
+                                                                                <td>{item.value} <img style={{cursor: 'pointer'}} onClick={()=>hanldelUpdate(item)} src={process.env.PUBLIC_URL + '/img/pen.png'} width="20" height="20" alt=""/></td>
                                                                             </tr>
                                                                         )
-                                                               )
-                                                            })
-                                                        }
-                                                   
-                                                    </MDBTableBody>
-                                            </MDBTable>
-                                        </MDBCardBody>
-                                    </MDBCard>
-                                </MDBCol>
+                                                                    )
+                                                                })
+                                                               
+                                                            }
+                                                             <tr >
+                                                                <td >
+                                                                    <div className=" d-flex  align-self-center">
+                                                                        <Autocomplete
+                                                                        
+                                                                            id="disabled-options-demo"
+                                                                            options={top100Films.map((option) => option.title)}
+                                                                            style={{ width: '100%' , marginTop:"40px"}}
+                                                                            renderInput={(params) => (
+                                                                                <TextField {...params} label="Thêm mô tả" variant="outlined" />
+                                                                            )}
+                                                                    />
+                                                                    </div>
+                                                                    
+
+                                                                </td>
+                                                                <td>
+                                                                <div className="input-group ">
+                                                                    <div className="input-group-prepend">
+                                                                        <span className="input-group-text" id="basic-addon">
+                                                                        <i className="fas fa-pencil-alt prefix"></i>
+                                                                        </span>
+                                                                    </div>
+                                                                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="5" onChange={(e)=>settext(e.target.value)}>
+                                                                        
+                                                                    </textarea>
+                                                                    <div className="d-flex justify-content-cente align-self-center">
+                                                                        <Button type="primary" size="large" className="ml-1" loading={insertProperty} onClick={() => handleInsertProperty()}>
+                                                                            Thêm
+                                                                        </Button>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                                </td>
+                                                            </tr>
+                                                        </MDBTableBody>
+                                                </MDBTable>
+                                            </MDBCardBody>
+                                        </MDBCard>
+                                    </MDBCol>
+                                    <MDBModal isOpen={showUpdate} toggle={()=>{setshowUpdate(!showUpdate)}} fullHeight position="bottom">
+                                        <MDBModalHeader className="text-center" toggle={()=>{setshowUpdate(!showUpdate)}}>Cập nhật {updatedata && updatedata.type } của {checkbox1} </MDBModalHeader>
+                                        <MDBModalBody className="m-0 p-0">
+                                        <MDBRow className=" d-flex justify-content-center">
+                                        <MDBCol md="10">
+                                            <MDBCard className="z-depth-0 m-0 p-0">
+                                                <MDBCardBody>
+                                                            {updatedata
+                                                                ? (     <>
+                                                                            <div className="input-group">
+                                                                                <div className="input-group-prepend">
+                                                                                    <span className="input-group-text" id="basic-addon">
+                                                                                    <i className="fas fa-pencil-alt prefix"></i>
+                                                                                    </span>
+                                                                                </div>
+                                                                                <textarea className="form-control" id="exampleFormControlTextarea1" rows="5" onChange={(e)=>settext(e.target.value)}>
+                                                                                    {updatedata && updatedata.value.replace(/[\n]/gi,' ')}
+                                                                                </textarea>
+                                                                            </div>
+                                                                        </>
+                                                                    )
+                                                                : ''
+                                                            }
+                                                </MDBCardBody>
+                                            </MDBCard>
+                                        </MDBCol>
+                                        </MDBRow>
+                                        </MDBModalBody>
+                                        <MDBModalFooter>
+                                        <Button type="primary" size="large" loading={update} onClick={() => handleUpdate(updatedata)}>
+                                            Cập nhật
+                                        </Button>
+                                        <MDBBtn color="secondary" onClick={()=>{setshowUpdate(!showUpdate)}}>Close</MDBBtn>
+                                        </MDBModalFooter>
+                                    </MDBModal>
+                                </>
                                 }
                     </MDBRow>
                     )

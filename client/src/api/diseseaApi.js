@@ -68,5 +68,13 @@ const diseseaApi ={
         const url = '/inserttrieuchung'
         return axiosClient.post(url,params)
     },
+    updateProperty: (params)=>{
+        const url = '/updateproperty'
+        return axiosClient.post(url,params)
+    },
+    updateImage: (params)=>{
+        const url = '/updateimage'
+        return axiosClient.post(url,params)
+    },
 }
 export default diseseaApi
