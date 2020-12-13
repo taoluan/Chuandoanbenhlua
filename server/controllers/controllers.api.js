@@ -46,10 +46,15 @@ module.exports = {
                     data:Describe ?mota;
                     rdfs:comment ?ten_benh.
                 FILTER( regex(?label, "${uri_benh}","i")).
-                ?x ?p ?value .
-                ?p a owl:DatatypeProperty .
-                ?x data:Image ?hinhanh.
-                ?p rdfs:comment ?data
+              OPTIONAL{ 
+                        ?x rdf:type data:Bệnh.
+                        ?x ?p ?value .
+                        ?p a owl:DatatypeProperty .
+                        ?p rdfs:comment ?data
+                    }
+                OPTIONAL{
+                    ?x data:Image ?hinhanh.
+                }
             }
         
             `)
@@ -287,6 +292,7 @@ module.exports = {
     getThongTinBenh:async(req,res)=>{
         try {
             let tenbenh = req.query.tenbenh
+            
             let data = await graphDBEndpoint.query(
                 `
                 select DISTINCT  ?ten_trieuchung ?vitri ?hinh ?uri_benh ?uri_trieuchung
@@ -616,6 +622,78 @@ module.exports = {
             res.status(400).send(true)
         } catch (error) {
             console.log(error)
+            res.status(400).send(error)
+        }
+    },
+    getproperty: async (req,res)=>{
+        try {
+            let data = req.query
+            let benh = await graphDBEndpoint.query(
+                `
+                select ?uri_benh where { 
+                    ?uri_benh rdf:type <http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh>;
+                         rdfs:label "${data.benh}".
+                }
+                `)
+            let uri_benh = benh.results.bindings[0].uri_benh.value
+            let getDataProperty = await graphDBEndpoint.query(
+                `select ?uri ?mota
+                    where { 
+                        ?uri a owl:DatatypeProperty .
+                        ?uri rdfs:comment ?mota.
+                        FILTER NOT EXISTS{
+                            <${uri_benh}> ?uri ?o .
+                            ?uri a owl:DatatypeProperty .
+                        }
+                    } 
+                `
+            )
+            let result =await functions.handling_getproperty(getDataProperty.results.bindings)
+            res.status(200).send(result)
+        } catch (error) {
+            res.send.status(400).send(error)
+        }
+    },
+    insertBenh: async (req,res)=>{
+        try {
+            let data  = req.body
+            let uri_benh = data.tenbenh.replace(' ','_')
+            let insertBenh = await graphDBEndpoint.query(
+                ` insert data{ 
+                    data:${uri_benh} rdf:type owl:NamedIndividual;
+                                    rdf:type <${data.loaibenh}>;
+                                    rdf:type data:Bệnh;
+                                    rdfs:comment "Bệnh do ${data.tenbenh} gây ra";
+                                    rdfs:label "${data.tenbenh}";
+                                    data:Describe "${data.mota}"
+                }
+                `
+            )
+            res.status(200).send(insertBenh.success)
+        } catch (error) {
+            res.status(400).send(error)
+        }
+    },
+    insertProperty: async (req,res)=>{
+        try {
+            let data  = req.body
+            let benh = await graphDBEndpoint.query(
+                `
+                select ?uri_benh where { 
+                    ?uri_benh rdf:type <http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh>;
+                         rdfs:label "${data.benh}".
+                }
+                `)
+            let uri_benh = benh.results.bindings[0].uri_benh.value
+            let insertProperty = await graphDBEndpoint.update(
+                `
+                insert data{ 
+                    <${uri_benh}> <${data.data.uri}> "${data.data.noidung}"
+                }
+                `
+            )
+            res.status(200).send(insertProperty.success)
+        } catch (error) {
             res.status(400).send(error)
         }
     }

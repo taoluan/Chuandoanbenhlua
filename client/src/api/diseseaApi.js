@@ -72,9 +72,21 @@ const diseseaApi ={
         const url = '/updateproperty'
         return axiosClient.post(url,params)
     },
+    insertProperty: (params)=>{
+        const url = '/insertproperty'
+        return axiosClient.post(url,params)
+    },
     updateImage: (params)=>{
         const url = '/updateimage'
         return axiosClient.post(url,params)
     },
+    getProperty: (params)=>{
+        const url = '/getproperty'
+        return axiosClient.get(url,{params})
+    },
+    insertBenh: (params)=>{
+        const url = '/insertbenh'
+        return axiosClient.post(url,params)
+    }
 }
 export default diseseaApi

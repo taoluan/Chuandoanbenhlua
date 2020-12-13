@@ -336,7 +336,8 @@ module.exports={
         return new Promise((res,rej)=>{
             let result = []
             let temp = {}
-            data.map(x=>{
+           if(data[0].p ){ 
+               data.map(x=>{
                // result.push({type: x.data.value , value: x.value.value})
                 if(x.data.value === "Cách phòng chống"){
                     temp.phongchong = {type: x.data.value , value: x.value.value , uri: x.p.value}
@@ -355,7 +356,7 @@ module.exports={
                 }else if( x.data.value === 	"Nguyên nhân"){
                     temp.nguyennhan =  {type: x.data.value , value: x.value.value, uri: x.p.value}
                 }
-            })
+            })}
             temp.mota = {type:'Mô tả' , value: data[0].mota.value , uri:'http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Describe'}
             if(data[0].hinhanh !== undefined){
                let hinhanh = data[0].hinhanh.value 
@@ -400,6 +401,15 @@ module.exports={
                 })
             })
             res(results)
+        })
+    },
+    handling_getproperty: (dataproperty)=>{
+        return new Promise((res,rej)=>{
+            let result = []
+            dataproperty.map(item=>{
+                result.push({mota: item.mota.value,uri: item.uri.value })
+            })
+            res(result)
         })
     },
 }

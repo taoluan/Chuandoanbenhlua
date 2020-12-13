@@ -101,8 +101,8 @@ const TableSection = () => {
               </MDBCard>
           </MDBCol>
           {
-            (data.length > 0)
-            &&(
+            // (data.length > 0)
+            // &&(
               <>
               <MDBCol md="6"  style={{ display: show ? "block" : "none" }}>
                 <MDBCard>
@@ -121,18 +121,25 @@ const TableSection = () => {
                         </MDBTableHead>
                         <MDBTableBody>
                           {
-                              data.map((item,key)=>{
-                               return ( <tr key={key}>
-                                  <td>{key+1}</td>
-                                  <td>{item.ten_trieuchung}</td>
-                                  <td>{item.vitri}</td>
-                                  <td>{item.hinhanh !== "" 
-                                    ? <ImageCloud cloudName="taoluanby" publicId={item.hinhanh} width="100" height="100" crop="scale"/>
-                                    : 'Không có'
-                                  }
-                                  </td>
-                                </tr>)
-                              })
+                            (data.length > 0)
+                             ? data.map((item,key)=>{
+                                return ( <tr key={key}>
+                                    <td>{key+1}</td>
+                                    <td>{item.ten_trieuchung}</td>
+                                    <td>{item.vitri}</td>
+                                    <td>{item.hinhanh !== "" 
+                                      ? <ImageCloud cloudName="taoluanby" publicId={item.hinhanh} width="100" height="100" crop="scale"/>
+                                      : 'Không có'
+                                    }
+                                    </td>
+                                  </tr>)
+                                })
+                              : (
+                                <tr className="text-center">
+                                 <td colspan="4">Chưa có chiệu chứng ! Vui lòng nhập triếu chứng</td> 
+                                </tr>
+                              )
+
                           }
                         </MDBTableBody>
                       </MDBTable>
@@ -215,7 +222,7 @@ const TableSection = () => {
                   </MDBModalFooter>
               </MDBModal>
             </>
-            )
+            // )
           }
           
       </MDBRow>

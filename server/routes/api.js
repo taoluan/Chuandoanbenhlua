@@ -22,4 +22,8 @@ router.post('/deletetrieuchung',urlencodedParser,api_controllers.deleteTrieuChun
 router.post('/inserttrieuchung',urlencodedParser,api_controllers.insertTrieuChung)
 router.post('/updateproperty',urlencodedParser,api_controllers.updateProperty)
 router.post('/updateimage',urlencodedParser,api_controllers.updateImage)
+router.post('/insertproperty',urlencodedParser,api_controllers.insertProperty)
+router.post('/insertbenh',urlencodedParser,api_controllers.insertBenh)
+router.get('/getproperty',api_controllers.getproperty)
+
 module.exports = router

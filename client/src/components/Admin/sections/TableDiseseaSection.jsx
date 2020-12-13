@@ -1,4 +1,4 @@
-import { MDBCard, MDBCardBody, MDBDataTableV5, MDBTableBody, MDBTableHead, MDBRow, MDBCol ,MDBCardHeader,MDBTable, MDBBtn,MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
+import { MDBCard, MDBCardBody, MDBDataTableV5, MDBTableBody,MDBInput, MDBTableHead, MDBRow, MDBCol ,MDBCardHeader,MDBTable, MDBBtn,MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 import React,{useEffect,useState} from 'react';
 import diseseaApi from '../../../api/diseseaApi'
 import { Button } from 'antd';
@@ -6,6 +6,16 @@ import {Image as ImageCloud} from 'cloudinary-react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import ShowListImage from './ShowListImage'
+import ModalInsert from './ModalInsert'
+const check_Arr = (data) => {
+    for(let i = 0 ; i < data.length ; i++){
+        if(data[i].type === "Hình ảnh"){
+            return true
+        }
+    }
+    return false
+}
+
 const TableDiseseaSection = () => {
     const [datatable, setDatatable] = useState({
         columns: [
@@ -34,7 +44,10 @@ const TableDiseseaSection = () => {
     const [updatedata, setUpdateData] = useState()
     const [update, setupdate] = useState(false);
     const [text, settext] = useState('');
-    
+    const [insertbenh, setinsertbenh] = useState(false);
+    const [insertloading, setinsertloading] = useState(false);
+    const [dataproperty, setdataproperty] = useState([]);
+    const [insertDataProperty, setinsertDataProperty] = useState({});
     const fetchDanhSachBenh = async()=>{
         const respose = await diseseaApi.dsBenhNoType()
         let newArr = []
@@ -47,6 +60,10 @@ const TableDiseseaSection = () => {
         ...datatable,
         rows:newArr
         })
+    }
+    const fetchProperty = async(data)=>{
+        const respose = await diseseaApi.getProperty(data)
+        setdataproperty(respose)
     }
     const fetchThongTinBenh= async(benh)=>{
         const respose = await diseseaApi.getThongTinBenh({uri_benh: benh})
@@ -75,10 +92,27 @@ const TableDiseseaSection = () => {
         }
        
     }
+    const handleInsertProperty =async() => {
+        if(insertDataProperty.uri && insertDataProperty.noidung){
+            const respose = await diseseaApi.insertProperty({data: insertDataProperty , benh : checkbox1})
+            setinsertProperty(true)
+        setTimeout(() => {
+            setinsertProperty(false)
+            setinsertbenh({})
+            respose && fetchThongTinBenh(checkbox1)
+        }, 3000);
+        }else{
+            alert('nono')
+        }
+        
+    }
     const showLogs2 = async (e) => {
+        console.log(data)
+        console.log((check_Arr(data)))
         setCheckbox1(e.ten_benh);
         setshow(true)
         fetchThongTinBenh(e.ten_benh)
+        fetchProperty({benh : e.ten_benh})
         };
     const handleUpdateImg = async (e) => {
         e.benh =  checkbox1
@@ -87,18 +121,15 @@ const TableDiseseaSection = () => {
             fetchThongTinBenh(checkbox1)
         }
     }
-    const top100Films = [
-        { title: 'The Shawshank Redemption', year: 1994 },
-        { title: 'The Godfather', year: 1972 },
-        { title: 'The Godfather: Part II', year: 1974 },
-    ]
         return(
             (datatable.rows.length >0 )
                 ?   (
                     <MDBRow className="justify-content-start mb-5 mt-4">
                         <MDBCol sm="5" size="12">
                             <MDBCard>
-                            <MDBCardHeader className="text-center title-2 mt-0 mb-0 text-dark">Danh sách bệnh</MDBCardHeader>
+                            <MDBCardHeader className="text-center title-2 mt-0 mb-0 text-dark">Danh sách bệnh  
+                            <img className="float-right mt-1" onClick={()=>setinsertbenh(true)} style={{cursor: 'pointer'}} src={process.env.PUBLIC_URL + '/img/plus.png'} height="30px" width="30px" alt=""/>
+                            </MDBCardHeader>
                                 <MDBCardBody>
                                 <MDBDataTableV5
                                     hover
@@ -146,10 +177,9 @@ const TableDiseseaSection = () => {
                                                                             <tr key={key}>
                                                                             <td>{item.type}</td>
                                                                             <td>
-                                                                               
                                                                                  <ShowListImage data={item.img} evUpdateImg={handleUpdateImg}/>
                                                                                             {/* // &&  <ImageCloud key={key} cloudName="taoluanby" publicId={img} width="100" height="100" crop="scale" className="mr-4"/>   */}
-                                                                                </td>
+                                                                            </td>
                                                                         </tr>
                                                                             )
                                                                         : (
@@ -167,17 +197,16 @@ const TableDiseseaSection = () => {
                                                                 <td >
                                                                     <div className=" d-flex  align-self-center">
                                                                         <Autocomplete
-                                                                        
                                                                             id="disabled-options-demo"
-                                                                            options={top100Films.map((option) => option.title)}
+                                                                            options={dataproperty}
+                                                                            getOptionLabel={(option) => option.mota}
                                                                             style={{ width: '100%' , marginTop:"40px"}}
+                                                                            onChange={(e,value)=>setinsertDataProperty({...insertDataProperty,uri: value.uri})}
                                                                             renderInput={(params) => (
                                                                                 <TextField {...params} label="Thêm mô tả" variant="outlined" />
                                                                             )}
                                                                     />
                                                                     </div>
-                                                                    
-
                                                                 </td>
                                                                 <td>
                                                                 <div className="input-group ">
@@ -186,7 +215,7 @@ const TableDiseseaSection = () => {
                                                                         <i className="fas fa-pencil-alt prefix"></i>
                                                                         </span>
                                                                     </div>
-                                                                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="5" onChange={(e)=>settext(e.target.value)}>
+                                                                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="5" onChange={(e)=>setinsertDataProperty({...insertDataProperty , noidung : e.target.value})}>
                                                                         
                                                                     </textarea>
                                                                     <div className="d-flex justify-content-cente align-self-center">
@@ -198,6 +227,16 @@ const TableDiseseaSection = () => {
                                                                 </div>
                                                                 </td>
                                                             </tr>
+                                                            {
+                                                                !check_Arr(data)
+                                                                &&
+                                                                    <tr>
+                                                                        <td>Hình ảnh {check_Arr(data)}</td>
+                                                                        <td>
+                                                                        <ShowListImage data={[]} evUpdateImg={handleUpdateImg}/>
+                                                                        </td>
+                                                                    </tr>
+                                                            }
                                                         </MDBTableBody>
                                                 </MDBTable>
                                             </MDBCardBody>
@@ -238,8 +277,10 @@ const TableDiseseaSection = () => {
                                         <MDBBtn color="secondary" onClick={()=>{setshowUpdate(!showUpdate)}}>Close</MDBBtn>
                                         </MDBModalFooter>
                                     </MDBModal>
+                                   
                                 </>
-                                }
+                            }
+                            <ModalInsert insertShow={insertbenh} evInsert={()=>setinsertbenh(!insertbenh)}/>
                     </MDBRow>
                     )
                 : (
