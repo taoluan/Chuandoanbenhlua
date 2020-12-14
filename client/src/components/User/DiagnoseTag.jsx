@@ -12,6 +12,7 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import Icon from '../UI/UndrawDesigner/IconSVG'
 import Progress from '../UI/Progress/ProressTag'
 import QuestionForm from '../UI/Container/QuestionForm'
+import QuestionDefault from '../UI/Container/QuestionDefault'
 import {  useSelector , useDispatch} from 'react-redux'
 import {addData , addFirstTrieuChung,resetDisessea} from '../../reduxToolkit/Slice/diseseaSlice'
 import diseseaApi from '../../api/diseseaApi'
@@ -25,45 +26,54 @@ const DiagnoseTag = () =>{
   const [textSearch, setTextSearch] = useState()
   const [ketqua,setKetQua] = useState([])
   const [question, setQuestion] = useState([])
+  const [datadefault,setdatadefault] = useState({
+      khuvuc: null,
+      vumua: null,
+      giaidoan: null
+  })
   const Params = useParams();
+  const fetchKetQua = async(data)=>{
+    const respose =await diseseaApi.getKetQua(data)
+    setKetQua(respose)
+  }
+  const fetchQuestion = async(data)=>{
+    const repose = await diseseaApi.chuandoan(data)
+    setQuestion(repose)
+  }
   useEffect(()=>{
-    const fetchQuestion = async()=>{
-        const repose = await diseseaApi.chuandoan({data: dsTrieuChung})
-        setQuestion(repose)
+    if(dsTrieuChung.length>0 && datadefault.vumua && datadefault.khuvuc && datadefault.giaidoan){
+      fetchQuestion({data: dsTrieuChung , datadefault: datadefault})
+      fetchKetQua({data: dsTrieuChung, datadefault: datadefault})
+     // dispatch(addData(question))
     }
-    const fetchKetQua = async()=>{
-        const respose =await diseseaApi.getKetQua({data: dsTrieuChung})
-        setKetQua(respose)
-    }
-    if(dsTrieuChung.length>0){
-      fetchQuestion()
-      fetchKetQua()
+  },[datadefault])
+  useEffect(()=>{
+    if(dsTrieuChung.length>1 && datadefault.vumua && datadefault.khuvuc && datadefault.giaidoan){
+      fetchQuestion({data: dsTrieuChung , datadefault: datadefault})
+      fetchKetQua({data: dsTrieuChung, datadefault: datadefault})
      // dispatch(addData(question))
     }
   },[dsTrieuChung])
   useEffect(() => {
+    setdatadefault({})
+    setKetQua([])
     dispatch(addFirstTrieuChung({ten_trieuchung:Params.trieuchung, vitri: Params.vitri}))
   }, [Params]);
   useEffect(() => {
-    const fetchKetQua = async()=>{
-      const respose =await diseseaApi.getKetQua({data: [{ten_trieuchung: Params.trieuchung, vitri: Params.vitri}]})
-      setKetQua(respose)
+    if(datadefault.vumua && datadefault.khuvuc && datadefault.giaidoan){
+      fetchKetQua({data: [{ten_trieuchung: Params.trieuchung, vitri: Params.vitri}]})
+      fetchQuestion({data: [{ten_trieuchung: Params.trieuchung, vitri: Params.vitri}]})
     }
-    const fetchQuestion = async()=>{
-      const repose = await diseseaApi.chuandoan({data: [{ten_trieuchung: Params.trieuchung, vitri: Params.vitri}]})
-      setQuestion(repose)
-    }
-    console.log(1)
-    fetchKetQua()
-    fetchQuestion()
+    //fetchKetQua({data: [{ten_trieuchung: Params.trieuchung, vitri: Params.vitri}]})
    // dispatch(addData(question))
     if(FirstTrieuChung.ten_trieuchung !== undefined){
        dispatch(resetDisessea(FirstTrieuChung))
     }
   }, [FirstTrieuChung])
   return(
-        <Route>
-          <Header url={false}/>
+        <>
+          <Header url={false}/> 
+          <Route>
           <main className="grey lighten-4 pb-3">
           <MDBContainer fluid style={{paddingTop:"100px" }}>
             <MDBContainer  className="bg-white shadow-box-example z-depth-1">
@@ -103,14 +113,17 @@ const DiagnoseTag = () =>{
                 </MDBCol>
                 <MDBCol sm="9" size="12" className=" pr-0 pl-0">
                   <header className=" align-self-md-center" style={{height:"40px" , backgroundColor:"#9e9e9e "}}>
-                      <p className="title-2">Hãy quan sát thêm các triệu chứng tiếp theo <Icon.ExclamationIcon/></p>
+                      <p className="title-2">Hãy quan sát thêm các triệu chứng tiếp thedata <Icon.ExclamationIcon/></p>
                   </header>
                   <MDBRow>
-                  {
-                    question.map((x,key)=>{
-                      return (<QuestionForm key={key} results={x}/>)
-                    })
-                  }
+                    <QuestionDefault data={datadefault} khuvuc={(e)=>setdatadefault({...datadefault, khuvuc: e})} vumua={(e)=>setdatadefault({...datadefault, vumua: e})} giaidoan={(e)=>setdatadefault({...datadefault, giaidoan: e})}/>
+                    <MDBCol style={{display: datadefault.vumua && datadefault.khuvuc && datadefault.giaidoan ? "block" : "none"}}>
+                      {
+                        question.map((x,key)=>{
+                          return (<QuestionForm key={key} results={x}/>)
+                        })
+                      }
+                    </MDBCol>
                   {/* <QuestionForm results={question}/> */}
                   </MDBRow>
                 </MDBCol>
@@ -119,6 +132,7 @@ const DiagnoseTag = () =>{
           </MDBContainer>
           </main>
         </Route>
+        </>
     )
 }
 export default DiagnoseTag;

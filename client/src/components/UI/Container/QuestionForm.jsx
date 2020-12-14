@@ -75,8 +75,8 @@ const QuestionForm = (props) => {
         // {   
         //     props.results.map((x,key)=>{
         //         return(
-                    <MDBCol size="12" className="pt-1 ">
-                        <Accordion className="m-0 p-0">
+                    // <MDBCol size="12" className="pt-1 ">
+                        <Accordion className="m-0 p-0 w-100">
                         <AccordionSummary
                             className="m-0 p-0 border border-0"
                             style={{backgroundColor: "#faf4e0"}}
@@ -106,7 +106,7 @@ const QuestionForm = (props) => {
                         </AccordionDetails>
                             
                         </Accordion>
-                    </MDBCol>
+                    // </MDBCol>
         //         )
         //     })
         // }
