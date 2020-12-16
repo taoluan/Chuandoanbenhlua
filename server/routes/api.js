@@ -28,5 +28,7 @@ router.get('/getproperty',api_controllers.getproperty)
 router.get('/getgiong',api_controllers.getGiong)
 router.get('/getkhuvuc',api_controllers.getKhuVuc)
 router.get('/getgiaidoan',api_controllers.getGiaiDoan)
-
+router.get('/getvumua',api_controllers.getVuMua)
+router.post('/insertoption',urlencodedParser,api_controllers.insertOption)
+router.post('/deleteoption',urlencodedParser,api_controllers.deleteOption)
 module.exports = router

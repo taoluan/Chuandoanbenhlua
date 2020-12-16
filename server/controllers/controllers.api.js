@@ -760,4 +760,55 @@ module.exports = {
             res.status(400).send(err)
         }
     },
+    getVuMua: async(req,res)=>{
+        try {
+            let tenbenh = req.query.benh
+                let uri_benh =await functions.getUri(tenbenh)
+                let getgiaidoan = await graphDBEndpoint.query(
+                    `select * where { 
+                        <${uri_benh}> data:diseaseSeason ?uri_vumua.
+                        ?uri_vumua rdfs:label ?ten_vumua;
+                    } `
+                )
+                res.status(200).send(getgiaidoan.results.bindings)
+        } catch (error) {
+            res.status(400).send(err)
+        }
+    },
+    insertOption: async(req,res)=>{
+        try {
+            let data = req.body
+            let uri_benh = await functions.getUri(data.benh)
+            console.log(uri_benh)
+            console.log(data)
+            let insert =await graphDBEndpoint.update(
+                `
+                insert data{ 
+                    <${uri_benh}> ${data.event} <${data.value.data}>
+                }
+                `
+            )
+            console.log(insert)
+            res.status(200).send(insert.success)
+        } catch (error) {
+            res.status(400).send(error)
+        }
+    }
+    ,
+    deleteOption: async(req,res)=>{
+        try {
+            let data = req.body
+            let uri_benh = await functions.getUri(data.benh)
+            let deletes =await graphDBEndpoint.update(
+                `
+                delete data{ 
+                    <${uri_benh}> ${data.event} <${data.value.data}>
+                }
+                `
+            )
+            res.status(200).send(deletes.success)
+        } catch (error) {
+            res.status(400).send(error)
+        }
+    }
 }
