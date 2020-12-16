@@ -45,7 +45,7 @@ export default function SearchBenh() {
                 id="highlights-demo"
                 options={data}
                 getOptionLabel={(option) => option.ten_trieuchung}
-                onChange={(e,value)=>{setTextSearch(value.ten_trieuchung)}}
+                onChange={(e,value)=>{value && setTextSearch(value.ten_trieuchung)}}
                 renderInput={(params) => (
                     <TextField {...params} label="Nhập triệu chứng trên lúa ?" variant="outlined" margin="normal" />
                 )}

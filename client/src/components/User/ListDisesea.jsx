@@ -6,20 +6,23 @@ import CarouselPage from '../UI/Container/ShowImgBenh'
 import SpeedScroll from '../UI/Container/SpeedScroll'
 import diseseaApi from '../../api/diseseaApi'
 import { Route } from 'react-router-dom';
+import NoteDisesea from '../UI/Container/NoteDisesea'
 const DiseseaTag = () =>{
     const Params = useParams()
     let location = useLocation();
     const [data, setData] = useState([]);
+
     useEffect(() => {
         document.querySelector('#benh').scrollIntoView({ behavior: 'smooth', block: 'start' })
-    })
+    }) 
+    const fetchThongTinBenh = async(data)=>{
+        const respose = await diseseaApi.getThongTinBenh({uri_benh:data})
+        setData(respose)
+    }
+
     useEffect(()=>{
-        const fetchThongTinBenh = async()=>{
-            const respose = await diseseaApi.getThongTinBenh({uri_benh: Params.benh})
-            setData(respose)
-        }
         if(Params.benh){
-            fetchThongTinBenh()
+            fetchThongTinBenh(Params.benh)
         }
     },[location.pathname])
     if(data.mota){
@@ -57,11 +60,11 @@ const DiseseaTag = () =>{
                         <p className="title-9 mb-0">Mô tả</p>
                     </MDBCol>
                     <MDBCol md="8" size="12" className=" d-flex justify-content-center mt-1">
-                        <MDBTypography blockquote bqColor="primary" className="mt-0 pt-0">
+                        <MDBTypography blockquote bqColor="primary" component={'p'} variant={'body2'} className="mt-0 pt-0">
                             <MDBBox tag="p" mb={0}>
-                                 {data.mota.value.split('\n').map(x=>{
+                                 {data.mota.value.split('\n').map((x,key)=>{
                                     if(x !== ""){
-                                        return( <p className="mb-0 mt-0 p-0">- {x.replace(/[-]/gi,' ')}</p>)
+                                        return( <p key={key} className="mb-0 mt-0 p-0">- {x.replace(/[-]/gi,' ')}</p>)
                                     }
                                 
                                 })}
@@ -76,9 +79,9 @@ const DiseseaTag = () =>{
                     </MDBCol>
                     <MDBCol size="12" className=" d-flex justify-content-start mt-1">
                     <MDBTypography note noteColor='warning' className="trieuchung">
-                        {data.trieuchung.value.split('\n').map(x=>{
+                        {data.trieuchung.value.split('\n').map((x,key)=>{
                             if(x !== ""){
-                                return( <p className="mb-1"> <li>{x.replace(/[-,+]/gi,' ')}</li></p>)
+                                return( <p key={key} className="mb-1"> <li>{x.replace(/[-,+]/gi,' ')}</li></p>)
                             }
                            
                         })}
@@ -190,8 +193,7 @@ const DiseseaTag = () =>{
                                 </MDBRow>
                             </MDBCol>
                         )
-                    }
-                    
+                    }                  
                     <MDBCol sm="6">
                         <MDBRow>
                             <MDBCol size="12" className=" d-flex justify-content-center mt-5"> 
@@ -242,8 +244,10 @@ const DiseseaTag = () =>{
                         </MDBRow>
                     </MDBCol>
                 </MDBRow>
+                <MDBRow id="motathem">
+                    <NoteDisesea data={Params.benh}/>
+                </MDBRow>
             </MDBContainer>
-            
         </main>
         </div>
         </Route>

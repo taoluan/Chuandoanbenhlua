@@ -25,5 +25,8 @@ router.post('/updateimage',urlencodedParser,api_controllers.updateImage)
 router.post('/insertproperty',urlencodedParser,api_controllers.insertProperty)
 router.post('/insertbenh',urlencodedParser,api_controllers.insertBenh)
 router.get('/getproperty',api_controllers.getproperty)
+router.get('/getgiong',api_controllers.getGiong)
+router.get('/getkhuvuc',api_controllers.getKhuVuc)
+router.get('/getgiaidoan',api_controllers.getGiaiDoan)
 
 module.exports = router

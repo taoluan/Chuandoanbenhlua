@@ -45,7 +45,7 @@ const Search = ()=> {
                 id="highlights-demo"
                 options={data}
                 getOptionLabel={(option) => option.ten_trieuchung}
-                onChange={(e,value)=>{setTextSearch(value)}}
+                onChange={(e,value)=>{value && setTextSearch(value)}}
                 renderInput={(params) => (
                     <TextField {...params} label="Nhập triệu chứng trên lúa ?" variant="outlined" margin="normal" />
                 )}

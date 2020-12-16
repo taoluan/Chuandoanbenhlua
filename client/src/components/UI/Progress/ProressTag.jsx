@@ -10,11 +10,20 @@ import diseseaApi from '../../../api/diseseaApi'
 import {  useSelector , useDispatch} from 'react-redux'
 const checkArray = (list, object)=>{
   let i;
-  for (i = 0; i < list.length; i++) {
-      if (list[i].ten_trieuchung === object.ten_trieuchung && list[i].vitri === object.vitri) {
+  if(object.hinhanh){
+    for (i = 0; i < list.length; i++) {
+      if (list[i].ten_trieuchung === object.ten_trieuchung && list[i].vitri === object.vitri && list[i].hinhanh === object.hinhanh) {
           return {result: true , vitri:i};
       }
   }
+  }else{
+    for (i = 0; i < list.length; i++) {
+      if (list[i].ten_trieuchung === object.ten_trieuchung && list[i].vitri === object.vitri) {
+          return {result: true , vitri:i};
+      }
+    }
+  }
+  
   return {result: false};
 }
 const ProgressTag = (props) => {
@@ -24,9 +33,9 @@ const ProgressTag = (props) => {
       useEffect(() => {
         const fetchTrieuChung = async ()=>{
             const respose = await diseseaApi.getTrieuChung({uri_benh: props.results.uri_benh})
-            let arr = []
+            let arr = [] 
             respose.map(x=>{
-                arr.push({ten_trieuchung : x.ten_trieuchung.value , vitri: x.vitri.value , check : false})
+                arr.push({ten_trieuchung : x.ten_trieuchung.value , vitri: x.vitri.value ,hinhanh: x.hinhanh && x.hinhanh.value ,check : false})
             })
             let arrNew = [...arr]
             dataRidux.map(x=>{
@@ -65,9 +74,9 @@ const ProgressTag = (props) => {
     //     setdata(arrNew)
     //    // setdataResult(arrNew)
     // }, [dataRidux]);
-    return (
-    <>
-     <MDBRow className=" mt-2">
+      return (
+      <>
+      <MDBRow className=" mt-2">
         <MDBCol sm="12" className="d-flex justify-content-center">
           <Progress
                 type="circle"
@@ -79,7 +88,7 @@ const ProgressTag = (props) => {
               />
            {(data.length > 0)
                   && (<Popover content={
-                    <div>
+                    <div style={{maxWidth:"500px"}}>
                         {
                           
                           data.map((x,key)=>{
@@ -111,35 +120,6 @@ const ProgressTag = (props) => {
 
         </MDBCol>
       </MDBRow>
-    {/* <MDBContainer>
-      {
-        props.results.map((x,key)=>{
-          return(
-            <MDBRow key={key} className=" mt-2">
-              <MDBCol sm="12" className="d-flex justify-content-center">
-              <Progress
-                    type="circle"
-                    strokeColor={{
-                      '0%': '#108ee9',
-                      '100%': '#87d068',
-                    }}
-                    percent={x.tyle}
-                  />
-                  <Popover uri={x.uri_benh}/>               
-              </MDBCol>
-              <MDBCol sm="12" className="d-flex justify-content-center">
-                <Link target="_blank"
-                to={{
-                  pathname: `/benh/${x.tenbenhlabel}`,
-                }}
-                ><p className="title-4">{x.tenbenh} </p>  </Link>
-              
-              </MDBCol>
-            </MDBRow>
-          )
-        })
-      }
-    </MDBContainer> */}
   </>
     )
 }

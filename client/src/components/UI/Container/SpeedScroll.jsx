@@ -37,6 +37,7 @@ const actions = [
   { icon: <img src={process.env.PUBLIC_URL + '/img/emergency.png'} height="30px" width="30px" alt=""/>, name: 'Triệu chứng',scroll: '#trieuchung' },
   { icon: <img src={process.env.PUBLIC_URL + '/img/pictures.png'} height="30px" width="30px" alt=""/>, name: 'Hình ảnh' ,scroll: '#hinhanh'},
   { icon: <img src={process.env.PUBLIC_URL + '/img/cross.png'} height="30px" width="30px" alt=""/>, name: 'Tác hại, nguyên nhân và điều trị',scroll: '#tachai' },
+  { icon: <img src={process.env.PUBLIC_URL + '/img/note.png'} height="30px" width="30px" alt=""/>, name: 'Thông tin thêm',scroll: '#motathem' },
 ];
 
 export default function OpenIconSpeedDial() {

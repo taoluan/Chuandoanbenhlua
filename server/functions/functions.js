@@ -138,7 +138,7 @@ module.exports={
         return new Promise(async (res,rej)=>{
             let rs_count = await graphDBEndpoint.query(
             `
-             SELECT DISTINCT  ?ten_benh ?uri_benh ( COUNT( ?uri_trieuchung) AS ?so_trieuchung )
+             SELECT DISTINCT  ?ten_benh ?uri_benh ?ten_benhlabel ( COUNT( ?uri_trieuchung) AS ?so_trieuchung )
              WHERE {
              ?uri_benh data:hasSymptom ?uri_trieuchung.
              ?uri_trieuchung rdfs:comment ?ten_trieuchung.
@@ -147,9 +147,10 @@ module.exports={
                              data:DiseaseSite ?vitri.
              OPTIONAL {?annotation data:Image ?hinh.}
              FILTER  (${arr_trieuchung}).     
-             ?uri_benh rdfs:comment ?ten_benh.           
+             ?uri_benh rdfs:comment ?ten_benh;
+                        rdfs:label ?ten_benhlabel        
              }
-                groupby ?ten_benh ?uri_benh
+                groupby ?ten_benh ?uri_benh ?ten_benhlabel
                 orderby DESC(?so_trieuchung)
                 limit 6
             `)
@@ -157,7 +158,7 @@ module.exports={
             rs_count.results.bindings.map(x=>{
                 count_benh_all.map(y=>{
                      (x.ten_benh.value.toLocaleUpperCase() == y.ten_benh.value.toLocaleUpperCase()) 
-                     && results.push({tenbenh: x.ten_benh.value ,uri_benh: x.uri_benh.value ,tyle: Math.round((x.so_trieuchung.value / y.so_trieuchung.value )*100)})
+                     && results.push({tenbenh: x.ten_benh.value,tenbenhlabel: x.ten_benhlabel.value ,uri_benh: x.uri_benh.value ,tyle: Math.round((x.so_trieuchung.value / y.so_trieuchung.value )*100)})
                      
                 })
             })
@@ -411,5 +412,20 @@ module.exports={
             })
             res(result)
         })
+    },
+    getUri:async (tenbenh)=> {
+        try {
+            let benh = await graphDBEndpoint.query(
+            `
+            select ?uri_benh where { 
+                ?uri_benh rdf:type <http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Bệnh>;
+                     rdfs:label "${tenbenh}".
+            }
+            `)
+            return benh.results.bindings[0].uri_benh.value
+        } catch (error) {
+            return error
+        }
+        
     },
 }

@@ -5,12 +5,16 @@ const e = require('express')
 module.exports = {
     chuandoan: async(req,res)=>{
         try {
+            let datadef = req.body.datadefault
             let trieuchung_input = await functions.map_sysptom(req.body.data)
             let rs_trieutung_new = await graphDBEndpoint.query(
                 `
                 SELECT DISTINCT  ?ten_trieuchung_moi ?uri_trieuchungmoi ?img ?vi_tri
                 WHERE {
                 ?uri_benh data:hasSymptom ?uri_trieuchung.
+                ?uri_benh data:diseaseStage <${datadef.giaidoan}>.
+                ?uri_benh data:inArea <${datadef.khuvuc}>.
+                ?uri_benh data:diseaseSeason <${datadef.vumua}>.
     			?uri_trieuchung rdfs:comment ?ten_trieuchung.
                 ?uri_benh rdfs:comment ?ten_benh.
                 ?annotation_1 owl:annotatedSource ?uri_benh;
@@ -28,6 +32,7 @@ module.exports = {
                 }orderby ?vi_tri
                 `)
             let result = await functions.handling_chuandoan(rs_trieutung_new.results.bindings)
+            console.log(rs_trieutung_new.results.bindings)
             //let resut_count_benh = await functions.handling_count_benh(count_benh.results.bindings)
             //let resut_possibility = await functions.handling_possibility(resut_count_benh,rs_trieutung_new.results.bindings)
             res.send(result)
@@ -67,12 +72,17 @@ module.exports = {
     },
     thongke: async(req,res)=>{
         try {
+            
+            let datadef = req.body.datadefault
             let trieuchung_input = await functions.map_sysptom(req.body.data) 
             let count_benh_all = await graphDBEndpoint.query(
             `
             SELECT DISTINCT ?ten_benh ?uri_benh ( COUNT( DISTINCT ?uri_trieuchung_all) AS ?so_trieuchung )
             WHERE {
                 ?uri_benh data:hasSymptom ?uri_trieuchung.
+                ?uri_benh data:diseaseStage <${datadef.giaidoan}>.
+                ?uri_benh data:inArea <${datadef.khuvuc}>.
+                ?uri_benh data:diseaseSeason <${datadef.vumua}>.
                 ?uri_trieuchung rdfs:comment ?ten_trieuchung.
                 ?annotation owl:annotatedSource ?uri_benh;
                                 owl:annotatedTarget  ?uri_trieuchung;
@@ -240,13 +250,18 @@ module.exports = {
             let uri_benh = req.query.uri_benh
             let data = await graphDBEndpoint.query(
                 `
-                select DISTINCT ?ten_trieuchung  ?uri_trieuchung ?vitri
+                select DISTINCT ?ten_trieuchung  ?uri_trieuchung ?vitri ?hinhanh
                 WHERE { 
                     ?uri_trieuchung data:isSymptomOf <${uri_benh}>;
                                     rdfs:comment ?ten_trieuchung.
                     ?annotation owl:annotatedSource <${uri_benh}>;
                                 owl:annotatedTarget  ?uri_trieuchung;
                                 data:DiseaseSite ?vitri.
+                    OPTIONAL{
+                        ?annotation owl:annotatedSource <${uri_benh}>;
+                                    owl:annotatedTarget  ?uri_trieuchung;
+                                    data:Image ?hinhanh
+                    }
                 }
                 `
             )
@@ -696,5 +711,53 @@ module.exports = {
         } catch (error) {
             res.status(400).send(error)
         }
-    }
+    },
+    getGiong: async(req,res)=>{
+        try {
+            let tenbenh = req.query.benh
+            let uri_benh =await functions.getUri(tenbenh)
+            let getgiong = await graphDBEndpoint.query(
+                `select * where { 
+                    <${uri_benh}>  data:hasResistantVarieties ?uri_giong.
+                    ?uri_giong rdfs:label ?ten_giong;
+                               rdfs:comment ?mota
+                } `
+            )
+            res.status(200).send(getgiong.results.bindings)
+        } catch (error) {
+            res.status(400).send(err)
+        }
+    },
+    getKhuVuc: async(req,res)=>{
+        try {
+                let tenbenh = req.query.benh
+                let uri_benh =await functions.getUri(tenbenh)
+                let getkhuvuc = await graphDBEndpoint.query(
+                    `select * where { 
+                        <${uri_benh}>  data:inArea ?uri_khuvuc.
+                        ?uri_khuvuc rdfs:label ?ten_khuvuc;
+                            
+                    } `
+                )
+                res.status(200).send(getkhuvuc.results.bindings)
+        } catch (error) {
+            res.status(400).send(err)
+        }
+    },
+    getGiaiDoan: async(req,res)=>{
+        try {
+            let tenbenh = req.query.benh
+                let uri_benh =await functions.getUri(tenbenh)
+                let getgiaidoan = await graphDBEndpoint.query(
+                    `select * where { 
+                        <${uri_benh}>  data:diseaseStage ?uri_giaidoan.
+                        ?uri_giaidoan rdfs:label ?ten_giaidoan;
+                                   rdfs:comment ?mota
+                    } `
+                )
+                res.status(200).send(getgiaidoan.results.bindings)
+        } catch (error) {
+            res.status(400).send(err)
+        }
+    },
 }

@@ -36,7 +36,7 @@ const Dianose = () =>{
         </Helmet>
         <Header url={false}/>
         <main className="grey lighten-4 pb-3">
-        <MDBContainer fluid style={{paddingTop:"100px" }}>
+        <MDBContainer fluid style={{paddingTop:"100px"}}>
           <MDBContainer className="bg-white shadow-box-example z-depth-1">
             <MDBRow>
               <MDBCol className="text-center">

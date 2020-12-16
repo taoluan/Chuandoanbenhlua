@@ -8,7 +8,12 @@ export default function MediaControlCard(props) {
     return (
     <MDBCol>
        <MDBTypography component={'span'} note noteColor='warning' noteTitle={props.results.tenbenhlabel}> <Link target="_blank" to={{ pathname: "/benh/"+props.results.tenbenh.replace(/[/]/gi,' ') , query:{data: props.results.uri_benh}}} className="float-right"><Icon.Warning heigh="15" width="15" mr="mb-1"/></Link> 
-        <p className="text-muted mb-0">Kháng bệnh: <span className="font-weight-bold text-warning">{props.results.khangbenh ? 'Có' : 'Không'}</span></p>  
+        <p className="text-muted mb-0">Kháng bệnh: {
+          props.results.khangbenh 
+          ? (<span className="font-weight-bold text-success">Có</span>)
+          : (<span className="font-weight-bold text-warning">Không</span>)
+        }
+        </p>  
       </MDBTypography>
     </MDBCol>
   );

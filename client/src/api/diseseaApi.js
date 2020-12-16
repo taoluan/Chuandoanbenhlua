@@ -87,6 +87,18 @@ const diseseaApi ={
     insertBenh: (params)=>{
         const url = '/insertbenh'
         return axiosClient.post(url,params)
+    },
+    getGiong: (params)=>{
+        const url = '/getgiong'
+        return axiosClient.get(url,{params})
+    },
+    getKhuVuc: (params)=>{
+        const url = '/getkhuvuc'
+        return axiosClient.get(url,{params})
+    },
+    getGiaiDoan: (params)=>{
+        const url = '/getgiaidoan'
+        return axiosClient.get(url,{params})
     }
 }
 export default diseseaApi
