@@ -99,6 +99,18 @@ const diseseaApi ={
     getGiaiDoan: (params)=>{
         const url = '/getgiaidoan'
         return axiosClient.get(url,{params})
+    },
+    getVuMua: (params)=>{
+        const url = '/getvumua'
+        return axiosClient.get(url,{params})
+    },
+    deleteOption: (params)=>{
+        const url = '/deleteoption'
+        return axiosClient.post(url,params)
+    },
+    insertOption: (params)=>{
+        const url = '/insertoption'
+        return axiosClient.post(url,params)
     }
 }
 export default diseseaApi

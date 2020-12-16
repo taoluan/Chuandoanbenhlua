@@ -6,6 +6,7 @@ const NoteDisesea = (props) => {
     const [gionglua, setgionglua] = useState([]);
     const [khuvuc, setkhuvuc] = useState([]);
     const [giaidoan, setgiaidoan] = useState([]);
+    const [vumua, setvumua] = useState([]);
     const fetchGiong = async (benh)=>{
         const respose = await diseseaApi.getGiong({benh})
         setgionglua(respose)
@@ -18,10 +19,15 @@ const NoteDisesea = (props) => {
         const respose = await diseseaApi.getGiaiDoan({benh})
         setgiaidoan(respose)
     }
+    const fetchVuMua = async (benh)=>{
+        const respose = await diseseaApi.getVuMua({benh})
+        setvumua(respose)
+    }
     useEffect(() => {
         fetchGiong(props.data)
         fetchKhuVuc(props.data)
         fetchGiaiDoan(props.data)
+        fetchVuMua(props.data)
     }, [props.data]);
     if(gionglua.length === 0 && khuvuc.length === 0 && gionglua.length === 0){
        return(
@@ -57,12 +63,22 @@ const NoteDisesea = (props) => {
                 )
             }
                 </p>
-            <p className="font-weight-bold">Khu vực dễ mắc bệnh : {
+            <p className="font-weight-bold">Khu vực bị gây hại : {
                 khuvuc.map((item,key)=>{
                     return (
                     key === khuvuc.length-1
                     ? <span className="font-weight-normal" key={key}>{item.ten_khuvuc.value}</span>
                     : <span className="font-weight-normal" key={key}>{item.ten_khuvuc.value}, </span>
+                    )
+                })
+            }
+            </p>
+            <p className="font-weight-bold">Vụ mùa bị gây hại   : {
+                vumua.map((item,key)=>{
+                    return (
+                    key === vumua.length-1
+                    ? <span className="font-weight-normal" key={key}>{item.ten_vumua.value}</span>
+                    : <span className="font-weight-normal" key={key}>{item.ten_vumua.value}, </span>
                     )
                 })
             }

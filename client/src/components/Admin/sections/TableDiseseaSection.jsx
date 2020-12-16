@@ -7,6 +7,8 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import ShowListImage from './ShowListImage'
 import ModalInsert from './ModalInsert'
+import ModalUpdate from './ModalUpdate'
+
 const check_Arr = (data) => {
     for(let i = 0 ; i < data.length ; i++){
         if(data[i].type === "Hình ảnh"){
@@ -48,6 +50,12 @@ const TableDiseseaSection = () => {
     const [insertloading, setinsertloading] = useState(false);
     const [dataproperty, setdataproperty] = useState([]);
     const [insertDataProperty, setinsertDataProperty] = useState({});
+    const [gionglua, setgionglua] = useState([]);
+    const [khuvuc, setkhuvuc] = useState([]);
+    const [giaidoan, setgiaidoan] = useState([]);
+    const [vumua, setvumua] = useState([]);
+    const [updateTT, setupdateTT] = useState(false);
+    const [optionupdate, setoptionupdate] = useState({});
     const fetchDanhSachBenh = async()=>{
         const respose = await diseseaApi.dsBenhNoType()
         let newArr = []
@@ -61,6 +69,18 @@ const TableDiseseaSection = () => {
         rows:newArr
         })
     }
+    const fetchGiong = async (benh)=>{
+        const respose = await diseseaApi.getGiong({benh})
+        setgionglua(respose)
+    }
+    const fetchKhuVuc = async (benh)=>{
+        const respose = await diseseaApi.getKhuVuc({benh})
+        setkhuvuc(respose)
+    }
+    const fetchGiaiDoan = async (benh)=>{
+        const respose = await diseseaApi.getGiaiDoan({benh})
+        setgiaidoan(respose)
+    }
     const fetchProperty = async(data)=>{
         const respose = await diseseaApi.getProperty(data)
         setdataproperty(respose)
@@ -70,6 +90,10 @@ const TableDiseseaSection = () => {
         let newArr = []
         newArr = Object.values(respose)
         setdata(newArr)
+    }
+    const fetchVuMua = async (benh)=>{
+        const respose = await diseseaApi.getVuMua({benh})
+        setvumua(respose)
     }
     const hanldelUpdate = (value)=>{
         setshowUpdate(true)
@@ -106,13 +130,23 @@ const TableDiseseaSection = () => {
         }
         
     }
+    const hanldelUpdateOption = () => {
+        setupdateTT(!updateTT)
+        fetchGiong(checkbox1)
+        fetchKhuVuc(checkbox1)
+        fetchGiaiDoan(checkbox1)
+        fetchVuMua(checkbox1)
+    }
+    
     const showLogs2 = async (e) => {
-        console.log(data)
-        console.log((check_Arr(data)))
         setCheckbox1(e.ten_benh);
         setshow(true)
         fetchThongTinBenh(e.ten_benh)
         fetchProperty({benh : e.ten_benh})
+        fetchGiong(e.ten_benh)
+        fetchKhuVuc(e.ten_benh)
+        fetchGiaiDoan(e.ten_benh)
+        fetchVuMua(e.ten_benh)
         };
     const handleUpdateImg = async (e) => {
         e.benh =  checkbox1
@@ -121,6 +155,11 @@ const TableDiseseaSection = () => {
             fetchThongTinBenh(checkbox1)
         }
     }
+    const hanldelUpdateTT = (e) => {
+        setupdateTT(true)
+        setoptionupdate(e)
+    }
+    
         return(
             (datatable.rows.length >0 )
                 ?   (
@@ -193,6 +232,78 @@ const TableDiseseaSection = () => {
                                                                 })
                                                                
                                                             }
+                                                            <tr>
+                                                                <td>Giống lúa kháng bệnh</td>
+                                                                <td>
+                                                                    {   gionglua.length === 0
+                                                                        ? 'chưa có thông tin'
+                                                                        :
+                                                                        gionglua.map((item,key)=>{
+                                                                            return(
+                                                                                key === gionglua.length-1
+                                                                                    ? item.ten_giong.value
+                                                                                    : item.ten_giong.value+", "
+                                                                            
+                                                                            )
+                                                                        })
+                                                                    }
+                                                                    <img className="ml-1" style={{cursor: 'pointer'}} onClick={()=>hanldelUpdateTT({option: 'data:Giống_Lúa',value :gionglua , benh: checkbox1})} src={process.env.PUBLIC_URL + '/img/pen.png'} width="20" height="20" alt=""/>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Khu vực ảnh hưởng</td>
+                                                                <td>
+                                                                    {   khuvuc.length === 0
+                                                                        ? 'chưa có thông tin'
+                                                                        :
+                                                                        khuvuc.map((item,key)=>{
+                                                                            return(
+                                                                                key === khuvuc.length-1
+                                                                                    ? item.ten_khuvuc.value
+                                                                                    : item.ten_khuvuc.value+", "
+                                                                            
+                                                                            )
+                                                                        })
+                                                                    }
+                                                                     <img className="ml-1" style={{cursor: 'pointer'}} onClick={()=>hanldelUpdateTT({option: 'data:Khu_Vực',value :khuvuc, benh: checkbox1})} src={process.env.PUBLIC_URL + '/img/pen.png'} width="20" height="20" alt=""/>                                                                   
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Giai đoạn gây hại</td>
+                                                                <td>
+                                                                    {   giaidoan.length === 0
+                                                                        ? 'chưa có thông tin'
+                                                                        :
+                                                                        giaidoan.map((item,key)=>{
+                                                                            return(
+                                                                                key === giaidoan.length-1
+                                                                                    ? item.ten_giaidoan.value
+                                                                                    : item.ten_giaidoan.value+", "
+                                                                            
+                                                                            )
+                                                                        })
+                                                                    }
+                                                                    <img className="ml-1" style={{cursor: 'pointer'}} onClick={()=>hanldelUpdateTT({option: 'data:Giai_Đoạn',value :giaidoan , benh: checkbox1})} src={process.env.PUBLIC_URL + '/img/pen.png'} width="20" height="20" alt=""/>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Vụ mùa gây hại</td>
+                                                                <td>
+                                                                    {   vumua.length === 0
+                                                                        ? 'chưa có thông tin'
+                                                                        :
+                                                                        vumua.map((item,key)=>{
+                                                                            return(
+                                                                                key === vumua.length-1
+                                                                                    ? item.ten_vumua.value
+                                                                                    : item.ten_vumua.value+", "
+                                                                            
+                                                                            )
+                                                                        })
+                                                                    }
+                                                                    <img className="ml-1" style={{cursor: 'pointer'}} onClick={()=>hanldelUpdateTT({option: 'data:Vụ_Mùa',value :giaidoan , benh: checkbox1})} src={process.env.PUBLIC_URL + '/img/pen.png'} width="20" height="20" alt=""/>
+                                                                </td>
+                                                            </tr>
                                                              <tr >
                                                                 <td >
                                                                     <div className=" d-flex  align-self-center">
@@ -281,6 +392,7 @@ const TableDiseseaSection = () => {
                                 </>
                             }
                             <ModalInsert insertShow={insertbenh} evInsert={()=>setinsertbenh(!insertbenh)}/>
+                            <ModalUpdate insertShowTT={updateTT} benh={checkbox1} option={optionupdate} evInsertTT={()=>(hanldelUpdateOption())}/>
                     </MDBRow>
                     )
                 : (
