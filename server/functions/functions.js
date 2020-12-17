@@ -397,8 +397,9 @@ module.exports={
             let results = []
             data.map(x=>{
                 results.push({
-                    ten_trieuchung: x.ten_trieuchung.value,
+                    trieuchung: x.ten_trieuchung.value,
                     uri_trieuchung: x.uri_trieuchung.value,
+                    vitri: x.vitri.value
                 })
             })
             res(results)

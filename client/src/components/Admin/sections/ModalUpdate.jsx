@@ -65,57 +65,56 @@ const ModalUpdate = (props) => {
     }
     
     if(props.option){
-    return(
-        <MDBModal isOpen={props.insertShowTT} toggle={props.evInsertTT} fullHeight position="bottom">
-            <MDBModalHeader className="text-center" toggle={props.evInsertTT}>Cặp nhật {option.title}</MDBModalHeader>
-            <MDBModalBody className="m-0 p-0">
-            <MDBRow className=" d-flex justify-content-center">
-                <MDBCol md="6">
-                    <MDBCard className="z-depth-0 m-0 p-0">
-                        <MDBCardBody className="p-0 ">
-                        <MDBTable striped>
-                            <MDBTableHead color="dark" >
-                            <tr>
-                                <th className="text-center">Thay đổi</th>
-                                <th className="text-center" style={{width:'40%'}}>Thêm/Xóa</th>
-                            </tr>
-                            </MDBTableHead>
-                            <MDBTableBody>
+        return(
+            <MDBModal isOpen={props.insertShowTT} toggle={props.evInsertTT} fullHeight position="bottom">
+                <MDBModalHeader className="text-center" toggle={props.evInsertTT}>Cặp nhật {option.title}</MDBModalHeader>
+                <MDBModalBody className="m-0 p-0">
+                <MDBRow className=" d-flex justify-content-center">
+                    <MDBCol md="6">
+                        <MDBCard className="z-depth-0 m-0 p-0">
+                            <MDBCardBody className="p-0 ">
+                            <MDBTable striped>
+                                <MDBTableHead color="dark" >
                                 <tr>
-                                    <td className="align-middle " >
-                                        <Autocomplete
-                                            id="disabled-options-demo"
-                                            options={option.data}
-                                            getOptionLabel={(option) => option.title}
-                                            onChange={(e,value)=>setdata({data: value.uri})}
-                                            renderInput={(params) => (
-                                                <TextField {...params} label="Cặp nhật" variant="outlined" />
-                                            )}
-                                        />
-                                    </td>
-                                    <td  className="d-flex justify-content-center">
-                                        <Button type="primary" className="mr-2" size="large" loading={insert} onClick={() => handleInsert({benh: props.benh, event: option.event  , option : option.uri , value: data})}>
-                                            Thêm bệnh
-                                        </Button>
-                                        <Button type="primary" danger size="large" loading={deletes} onClick={() => handleDelete({benh: props.benh,event: option.event,option :  option.uri , value: data})}>
-                                            Xóa bệnh
-                                        </Button>
-                                    </td>
+                                    <th className="text-center">Thay đổi</th>
+                                    <th className="text-center" style={{width:'40%'}}>Thêm/Xóa</th>
                                 </tr>
-                    
-                            </MDBTableBody>
-                        </MDBTable >
-                        </MDBCardBody>
-                    </MDBCard>
-                </MDBCol>
-            </MDBRow>
-            </MDBModalBody>
-            <MDBModalFooter>
-                
-                <MDBBtn color="secondary" onClick={props.evInsertTT}>Close</MDBBtn>
-            </MDBModalFooter>
-        </MDBModal>
-    )
+                                </MDBTableHead>
+                                <MDBTableBody>
+                                    <tr>
+                                        <td className="align-middle " >
+                                            <Autocomplete
+                                                id="disabled-options-demo"
+                                                options={option.data}
+                                                getOptionLabel={(option) => option.title}
+                                                onChange={(e,value)=>setdata({data: value.uri})}
+                                                renderInput={(params) => (
+                                                    <TextField {...params} label="Cặp nhật" variant="outlined" />
+                                                )}
+                                            />
+                                        </td>
+                                        <td  className="d-flex justify-content-center">
+                                            <Button type="primary" className="mr-2" size="large" loading={insert} onClick={() => handleInsert({benh: props.benh, event: option.event  , option : option.uri , value: data})}>
+                                                Thêm bệnh
+                                            </Button>
+                                            <Button type="primary" danger size="large" loading={deletes} onClick={() => handleDelete({benh: props.benh,event: option.event,option :  option.uri , value: data})}>
+                                                Xóa bệnh
+                                            </Button>
+                                        </td>
+                                    </tr>
+                        
+                                </MDBTableBody>
+                            </MDBTable >
+                            </MDBCardBody>
+                        </MDBCard>
+                    </MDBCol>
+                </MDBRow>
+                </MDBModalBody>
+                <MDBModalFooter>
+                    <MDBBtn color="secondary" onClick={props.evInsertTT}>Close</MDBBtn>
+                </MDBModalFooter>
+            </MDBModal>
+        )
     }else{
         return(
             <></>

@@ -274,15 +274,16 @@ module.exports = {
         try {
             let data = await graphDBEndpoint.query(
                 `
-                select DISTINCT ?uri ?title where { 
+                select DISTINCT ?uri ?title ?thongtin where { 
                     ?uri rdf:type <http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giống_Lúa>;
-                          rdfs:label ?title
+                          rdfs:label ?title;
+                          rdfs:comment ?thongtin
                 }
                 `
             )
             res.json(data.results.bindings)
         } catch (err) {
-            console.log(err)
+            res.status(400).send(error)
         }
     },
     getAlldsbenh:async(req,res)=>{
@@ -335,20 +336,18 @@ module.exports = {
         try {
             let timkiem = await graphDBEndpoint.query(
                 `
-                select DISTINCT ?ten_trieuchung  ?vitri ?uri_trieuchung
-                WHERE { 
+                select ?ten_trieuchung ?uri_trieuchung ?vitri where { 
                     ?uri_trieuchung rdf:type data:Triệu_Chứng;
-                                    rdfs:comment ?ten_trieuchung.
-                    ?uri_benh data:hasSymptom ?uri_trieuchung.
-                    ?annotation owl:annotatedSource ?uri_benh;
-                                owl:annotatedTarget  ?uri_trieuchung;
-                                data:DiseaseSite ?vitri.
-                    }
+                                     rdf:type ?uri_vitri.
+                    FILTER(?uri_vitri != owl:NamedIndividual && ?uri_vitri != data:Triệu_Chứng).
+                    ?uri_trieuchung rdfs:comment ?ten_trieuchung.
+                    ?uri_vitri rdfs:label ?vitri
+                }order by ?vitri                
                 `)
             let result =await functions.handling_getalltrieuchung(timkiem.results.bindings)
             res.send(result)
         } catch (error) {
-            
+            res.status(400).send(error)
         }
     },
     updateTrieuChung:async(req,res)=>{
@@ -779,8 +778,6 @@ module.exports = {
         try {
             let data = req.body
             let uri_benh = await functions.getUri(data.benh)
-            console.log(uri_benh)
-            console.log(data)
             let insert =await graphDBEndpoint.update(
                 `
                 insert data{ 
@@ -788,13 +785,11 @@ module.exports = {
                 }
                 `
             )
-            console.log(insert)
             res.status(200).send(insert.success)
         } catch (error) {
             res.status(400).send(error)
         }
-    }
-    ,
+    },
     deleteOption: async(req,res)=>{
         try {
             let data = req.body
@@ -804,6 +799,75 @@ module.exports = {
                 delete data{ 
                     <${uri_benh}> ${data.event} <${data.value.data}>
                 }
+                `
+            )
+            res.status(200).send(deletes.success)
+        } catch (error) {
+            res.status(400).send(error)
+        }
+    },
+    insertGiong: async(req,res)=>{
+        try {
+            let data = req.body
+            let uri_benh = data.tengiong.replace(' ','_')
+            let insert =await graphDBEndpoint.update(
+                `
+                insert data{ 
+                    data:${uri_benh} rdf:type owl:NamedIndividual;
+                            rdf:type data:Giống_Lúa;
+                            rdfs:comment "Giống lúa ${data.tengiong} :${data.mota}";
+                            rdfs:label "${data.tengiong}".
+                }
+                `
+            )
+            res.status(200).send(insert.success)
+        } catch (error) {
+            res.status(400).send(error)
+        }
+    },
+    insertTrieuchungNew: async(req,res)=>{
+        try {
+            let data = req.body
+            const regex = / /gi
+            let uri_benh = data.trieuchung.replace(regex,'_')
+            let insert =await graphDBEndpoint.update(
+                `
+                insert data{ 
+                    data:${uri_benh} rdf:type owl:NamedIndividual;
+                            rdf:type ${data.vitri};
+                            rdf:type data:Triệu_Chứng;
+                            rdfs:comment "${data.trieuchung}".
+                }
+                `
+            )
+            res.status(200).send(insert.success)
+        } catch (error) {
+            res.status(400).send(error)
+        }
+    },
+    deleteTC: async (req,res)=>{
+        try {
+            let data = req.body
+            let deletes =await graphDBEndpoint.update(
+                `
+                delete where{  
+                    <${data.uri_trieuchung}> ?p ?o
+              }
+                `
+            )
+            res.status(200).send(deletes.success)
+        } catch (error) {
+            res.status(400).send(error)
+        }
+    },
+    deleteG: async (req,res)=>{
+        try {
+            let data = req.body
+            let deletes =await graphDBEndpoint.update(
+                `
+                delete where{  
+                    <${data.uri}> ?p ?o
+              }
                 `
             )
             res.status(200).send(deletes.success)

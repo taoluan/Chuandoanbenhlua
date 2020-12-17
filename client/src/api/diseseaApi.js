@@ -111,6 +111,22 @@ const diseseaApi ={
     insertOption: (params)=>{
         const url = '/insertoption'
         return axiosClient.post(url,params)
+    },
+    insertGiong: (params)=>{
+        const url = '/insertgiong'
+        return axiosClient.post(url,params)
+    },
+    insertTrieuChungNew: (params)=>{
+        const url = '/inserttrieuchungnew'
+        return axiosClient.post(url,params)
+    },
+    deleteTC: (params)=>{
+        const url = '/deletetc'
+        return axiosClient.post(url,params)
+    },
+    deleteG: (params)=>{
+        const url = '/deleteg'
+        return axiosClient.post(url,params)
     }
 }
 export default diseseaApi

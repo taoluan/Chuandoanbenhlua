@@ -31,4 +31,9 @@ router.get('/getgiaidoan',api_controllers.getGiaiDoan)
 router.get('/getvumua',api_controllers.getVuMua)
 router.post('/insertoption',urlencodedParser,api_controllers.insertOption)
 router.post('/deleteoption',urlencodedParser,api_controllers.deleteOption)
+router.post('/insertgiong',urlencodedParser,api_controllers.insertGiong)
+router.post('/inserttrieuchungnew',urlencodedParser,api_controllers.insertTrieuchungNew)
+router.post('/deletetc',urlencodedParser,api_controllers.deleteTC)
+router.post('/deleteg',urlencodedParser,api_controllers.deleteG)
+
 module.exports = router

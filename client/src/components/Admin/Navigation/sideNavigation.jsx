@@ -21,6 +21,12 @@ const TopNavigation = () => {
                         <span className="title-8 ">Danh sách bệnh</span>
                     </MDBListGroupItem>
                 </NavLink>
+                <NavLink to="/admin/symptom" activeClassName="activeClass">
+                    <MDBListGroupItem>
+                        <img src={process.env.PUBLIC_URL + '/img/photos.png'} height="25" width="25" alt="" className="mr-2 pb-1"/>
+                        <span className="title-8 ">Triệu chứng</span>
+                    </MDBListGroupItem>
+                </NavLink>
             </MDBListGroup>
         </div>
     );
