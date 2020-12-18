@@ -35,5 +35,6 @@ router.post('/insertgiong',urlencodedParser,api_controllers.insertGiong)
 router.post('/inserttrieuchungnew',urlencodedParser,api_controllers.insertTrieuchungNew)
 router.post('/deletetc',urlencodedParser,api_controllers.deleteTC)
 router.post('/deleteg',urlencodedParser,api_controllers.deleteG)
+router.post('/createadmin',urlencodedParser,api_controllers.createAdmin)
 
 module.exports = router

@@ -1,7 +1,10 @@
 const functions = require('../functions/functions')
 const graphDBEndpoint = require('../graphDB/ontology')
 const cloudinary = require('../cloundinary/config')
-const e = require('express')
+const crypto = require('crypto');
+const createAdmin = require('../mongoose/ModelAdmin')
+const mongoose = require('mongoose');
+
 module.exports = {
     chuandoan: async(req,res)=>{
         try {
@@ -871,6 +874,21 @@ module.exports = {
                 `
             )
             res.status(200).send(deletes.success)
+        } catch (error) {
+            res.status(400).send(error)
+        }
+    },
+    createAdmin: async (req,res)=>{
+        try {
+            mongoose.connect(`mongodb://${process.env.MONGOODB_USERNAME}:${process.env.MONGOODB_PASSWORD}@localhost:${process.env.MONGOODB_PORT}/${process.env.MONGOODB_DBNAME}?authSource=${process.env.MONGOODB_USERNAME}`, { useNewUrlParser: true });
+            let name = req.body.name
+            let number = crypto.createHash('sha256').update(req.body.number).digest('base64')
+            const createddmin = new createAdmin({
+                _id: new mongoose.Types.ObjectId(),
+                name: name,
+                numberphone: number
+            })
+            await createddmin.save()
         } catch (error) {
             res.status(400).send(error)
         }

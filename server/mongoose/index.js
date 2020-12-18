@@ -1,0 +1,1 @@
+mongoose.connect(`mongodb://${process.env.MONGOODB_USERNAME}:${process.env.MONGOODB_PASSWORD}@localhost:${process.env.MONGOODB_PORT}/${process.env.MONGOODB_DBNAME}?authSource=${process.env.MONGOODB_USERNAME}`, { useNewUrlParser: true });
