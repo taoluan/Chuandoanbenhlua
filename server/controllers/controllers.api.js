@@ -4,7 +4,9 @@ const cloudinary = require('../cloundinary/config')
 const crypto = require('crypto');
 const createAdmin = require('../mongoose/ModelAdmin')
 const mongoose = require('mongoose');
-
+const twilio = require('twilio');
+const client = new twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+const OTPList = {}
 module.exports = {
     chuandoan: async(req,res)=>{
         try {
@@ -889,6 +891,31 @@ module.exports = {
                 numberphone: number
             })
             await createddmin.save()
+        } catch (error) {
+            res.status(400).send(error)
+        }
+    },
+    loginAdmin:async (req,res)=>{
+        try {
+            mongoose.connect(`mongodb://${process.env.MONGOODB_USERNAME}:${process.env.MONGOODB_PASSWORD}@localhost:${process.env.MONGOODB_PORT}/${process.env.MONGOODB_DBNAME}?authSource=${process.env.MONGOODB_USERNAME}`, { useNewUrlParser: true });
+            let numberphone = req.body.number
+            let number =  crypto.createHash('sha256').update(numberphone).digest('base64')
+            const result = await createAdmin.findOne({phonenumber: number})
+            if(result){
+                const OTP = await functions.createOTP()
+                const send = await client.messages.create({
+                    body:'Mã OTP dành cho admin là '+ OTP + ' (OTP)',
+                    to: '+84382875500',
+                    from: '+12517662098'
+                })
+                if(send.sid){
+                    OTPList[OTP] = {message: send.sid , phone: numberphone} 
+                    setTimeout(()=>{
+                        delete OTPList[OTP]
+                    },60000)
+                    res.status(400)({status: true})
+                }
+            }
         } catch (error) {
             res.status(400).send(error)
         }

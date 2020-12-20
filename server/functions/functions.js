@@ -429,4 +429,14 @@ module.exports={
         }
         
     },
+    createOTP: async()=>{
+        return new Promise((res,rej)=>{
+            let number = '0123456789'
+            let OTP = '';
+            for(let i = 0 ; i < 4; i++){
+                OTP += number[Math.floor(Math.random()*10)]
+            }
+            res(OTP) 
+        })
+    }
 }
