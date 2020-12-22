@@ -3,7 +3,7 @@ import { BrowserRouter , Switch ,Route} from 'react-router-dom';
 import DashboardPage from '../components/Admin/DashboardPage';
 import DataDiseseaPage from '../components/Admin/DataDiseseaPage';
 import DataSymptom from '../components/Admin/DataSymptom';
-import Routes from '../components/Admin/Routes'
+import LoginPage from '../components/Admin/LoginPage';
 import TopNavigation from '../components/Admin/Navigation/topNavigation';
 import SideNavigation from '../components/Admin/Navigation/sideNavigation';
 import '../css/admin.css'

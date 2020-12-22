@@ -5,7 +5,9 @@ const crypto = require('crypto');
 const createAdmin = require('../mongoose/ModelAdmin')
 const mongoose = require('mongoose');
 const twilio = require('twilio');
+const jwt = require('jsonwebtoken')
 const client = new twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+const tokenList = {}
 const OTPList = {}
 module.exports = {
     chuandoan: async(req,res)=>{
@@ -677,6 +679,7 @@ module.exports = {
         try {
             let data  = req.body
             let uri_benh = data.tenbenh.replace(' ','_')
+            console.log(uri_benh)
             let insertBenh = await graphDBEndpoint.query(
                 ` insert data{ 
                     data:${uri_benh} rdf:type owl:NamedIndividual;
@@ -690,6 +693,7 @@ module.exports = {
             )
             res.status(200).send(insertBenh.success)
         } catch (error) {
+            console.log(error)
             res.status(400).send(error)
         }
     },
@@ -888,9 +892,10 @@ module.exports = {
             const createddmin = new createAdmin({
                 _id: new mongoose.Types.ObjectId(),
                 name: name,
-                numberphone: number
+                phonenumber: number
             })
             await createddmin.save()
+            res.status(200).send({status: true})
         } catch (error) {
             res.status(400).send(error)
         }
@@ -901,6 +906,7 @@ module.exports = {
             let numberphone = req.body.number
             let number =  crypto.createHash('sha256').update(numberphone).digest('base64')
             const result = await createAdmin.findOne({phonenumber: number})
+            console.log(result)
             if(result){
                 const OTP = await functions.createOTP()
                 const send = await client.messages.create({
@@ -909,13 +915,66 @@ module.exports = {
                     from: '+12517662098'
                 })
                 if(send.sid){
-                    OTPList[OTP] = {message: send.sid , phone: numberphone} 
+                    OTPList[numberphone] = {message: send.sid , otp: OTP} 
                     setTimeout(()=>{
-                        delete OTPList[OTP]
+                        delete OTPList[numberphone]
                     },60000)
-                    res.status(400)({status: true})
+                    res.status(200).send({status: true})
                 }
+            }else{
+                res.status(200).send({status: false, message: "Số điện thoại không đúng"})
             }
+        } catch (error) {
+            res.status(400).send(error)
+        }
+    },
+    checkOtp:async (req,res)=>{
+        try {
+            mongoose.connect(`mongodb://${process.env.MONGOODB_USERNAME}:${process.env.MONGOODB_PASSWORD}@localhost:${process.env.MONGOODB_PORT}/${process.env.MONGOODB_DBNAME}?authSource=${process.env.MONGOODB_USERNAME}`, { useNewUrlParser: true });
+            let phone = req.body.phone
+            let otp = req.body.otp
+            const result = await createAdmin.findOne({phonenumber: crypto.createHash('sha256').update(phone).digest('base64')})
+            if(OTPList[phone] && result){
+                if(OTPList[phone].otp === otp){
+                    delete OTPList[phone]
+                    const data = {
+                        rules: result.rules,
+                        name: result.name
+                    }
+                    const token = jwt.sign(data,process.env.SECRET_JWT,{expiresIn:process.env.LIFE_TOKEN_JWT})
+                    tokenList[token] = {status: 'success',token:token,data: data}
+                    return res.status(200).send({status: 'success',token:token})
+                }else{
+                    res.status(400).send({status: false , message: 'Mã OTP của bạn không đúng'})
+                }
+            }else{
+                res.status(400).send({status: false ,  message: 'Số điện thoại của bạn không đúng'})
+            }
+        } catch (error) {
+            res.status(400).send(error)
+        }
+    },
+    verifyToken: async(req,res)=>{
+        try {
+            const token = req.body.token || req.query.token || req.headers['authorization'] 
+            //const token = auth && auth.split(' ')[1]
+            console.log(token)
+            if (token) {
+                jwt.verify(token,process.env.SECRET_JWT, function(err, decoded) {
+                    if (err) {
+                        return res.status(401).send({"error": true, "message": 'Unauthorized access.' });
+                    }
+                    req.decoded = decoded;
+                    console.log(req.decoded)
+                    res.status(200).send(req.decoded)
+                    //next();
+                });
+              } else {
+                return res.status(403).send({
+                    "error": true,
+                    "message": 'No token provided.'
+                });
+              }
         } catch (error) {
             res.status(400).send(error)
         }

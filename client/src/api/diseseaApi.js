@@ -127,6 +127,10 @@ const diseseaApi ={
     deleteG: (params)=>{
         const url = '/deleteg'
         return axiosClient.post(url,params)
+    },
+    checkPhone: (params)=>{
+        const url = '/login'
+        return axiosClient.post(url,params)
     }
 }
 export default diseseaApi

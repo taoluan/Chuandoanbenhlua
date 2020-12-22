@@ -8,6 +8,7 @@ import Disesea from './components/User/Disesea'
 import Header from './components/UI/Header/Header'
 import DirectionUser from './directional/User';
 import DirectionAdmin from './directional/Admin';
+import LoginPage from './components/Admin/LoginPage'
 import './css/scrollbar.css';
 
 class App extends Component {
@@ -15,7 +16,8 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-            <Route path="/admin" component={DirectionAdmin}/> 
+            <Route path="/admin" component={DirectionAdmin}/>
+            <Route path='/login' exact component={LoginPage} />
             <Route path="/" component={DirectionUser} />
         </Switch>
       </BrowserRouter>
