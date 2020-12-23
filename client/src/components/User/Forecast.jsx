@@ -1,11 +1,12 @@
 import React, { useState , useEffect} from 'react'
 import { MDBMask,MDBView,MDBContainer, MDBRow, MDBCol } from 'mdbreact';
-import { useHistory } from 'react-router-dom';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import "../UI/Header/Header"
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+import FormControl from '@material-ui/core/FormControl';
 import Header from '../UI/Header/Header'
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
@@ -13,6 +14,9 @@ import Button from '@material-ui/core/Button';
 import DuBaoBenh from '../UI/Container/CtnDuBaoBenh'
 import diseseaApi from '../../api/diseseaApi'
 import {message } from 'antd';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import Radio from '@material-ui/core/Radio';
+
 const khuVuc = [
   { title: 'Đồng bằng Sông Cửu Long', uri: 'http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long' },
   { title: 'Đồng bằng Sông Hồng', uri: 'http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng' },
@@ -34,10 +38,16 @@ const Forecast = () =>{
     const [gionglua,setGiongLua] = useState([])
     const [data,setData] = useState([])
     const [thongtin, setThongTin] = useState({
-      vumua: {},
-      giong: {},
-      khuvuc:{},
-      giaidoan:{}
+      vumua: null,
+      giong: null,
+      khuvuc:null,
+      giaidoan:null
+    })
+    const [thongtinshow, setThongTinShow] = useState({
+      vumua: '',
+      giong: '',
+      khuvuc: '',
+      giaidoan:''
     })
     useEffect(() => {
       const fetchGiongLua =async ()=>{
@@ -46,9 +56,10 @@ const Forecast = () =>{
       }
       fetchGiongLua()
     }, [])
-    const handelClick = async(e)=>{
-      if(thongtin.vumua.title !== undefined && thongtin.giong.title !== undefined && thongtin.khuvuc.title !== undefined && thongtin.giaidoan.title !== undefined){
-        const respose = await diseseaApi.duBao({khuvuc: thongtin.khuvuc.uri, giaidoan: thongtin.giaidoan.uri , vumua: thongtin.vumua.uri , giong: thongtin.giong.uri.value})
+    const handelClick = async(e)=>{        
+      console.log(thongtin)
+      if(thongtin.vumua  && thongtin.giong  && thongtin.khuvuc && thongtin.giaidoan){
+        const respose = await diseseaApi.duBao({khuvuc: thongtin.khuvuc, giaidoan: thongtin.giaidoan , vumua: thongtin.vumua , giong: thongtin.giong})
         setData(respose)
         await setShow(true)
         document.querySelector('#onBottom').scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -77,47 +88,93 @@ const Forecast = () =>{
                     <MDBRow>
                   <MDBCol sm="12">
                       <MDBRow className="mb-4">
-                          <MDBCol sm="6" className="d-flex justify-content-center pb-4">
-                              <Autocomplete
+                          <MDBCol sm="6" className="d-flex justify-content-center">
+                          <FormControl  className="mt-0 ml-2">
+                            <p className="title-3">Vụ Mùa</p>
+                            <RadioGroup className="ml-3" aria-label="gender" name="vumua" value={thongtin.vumua} onChange={(e)=>{
+                              setThongTin({...thongtin,vumua:e.target.value})
+                              setThongTinShow({...thongtinshow,vumua:e.target.name})
+                              }}>
+                                  <FormControlLabel style={{color:'black'}} name="Đông Xuân" value="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đông_Xuân" control={<Radio color="primary"  />} label="Vụ Đông Xuân"/>
+                                  <FormControlLabel style={{color:'black'}} name="Mùa" value="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Mùa" control={<Radio color="primary"  />} label="Vụ Mùa"/>
+                                  <FormControlLabel style={{color:'black'}} name="Hè Thu" value="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Hè_Thu" control={<Radio color="primary"  />} label="Vụ Hè Thu"/>
+                              </RadioGroup>
+                          </FormControl>
+                              {/* <Autocomplete
                                   id="combo-box-demo"
                                   options={vuMua}
                                   getOptionLabel={(option) => option.title}
-                                  onChange={(e,value)=>{setThongTin({...thongtin,vumua:value})}}
+                                  onChange={(e,value)=>{value && setThongTin({...thongtin,vumua:value})}}
                                   style={{ width: 300 }}
                                   renderInput={(params) => <TextField {...params} label="VỤ MÙA" variant="outlined" />}
-                              />
+                              /> */}
                           </MDBCol>
                           <MDBCol sm="6" className="d-flex justify-content-center ">
-                              <Autocomplete
-                                  id="combo-box-demo"
-                                  options={giaiDoan}
-                                  getOptionLabel={(option) => option.title}
-                                  onChange={(e,value)=>{setThongTin({...thongtin,giaidoan:value})}}
-                                  style={{ width: 300 }}
-                                  renderInput={(params) => <TextField {...params} label="GIAI ĐOẠN" variant="outlined" />}
-                              />
-                          </MDBCol>
-                      </MDBRow>
-                      <MDBRow>
-                          <MDBCol sm="6" className="d-flex justify-content-center  pb-4">
-                              <Autocomplete
-                                  id="combo-box-demo"
-                                  options={gionglua}
-                                  getOptionLabel={(option) => option.title.value}
-                                  onChange={(e,value)=>{setThongTin({...thongtin,giong:value})}}
-                                  style={{ width: 300 }}
-                                  renderInput={(params) => <TextField {...params} label="GIỐNG LÚA" variant="outlined" />}
-                              />
-                          </MDBCol>
-                          <MDBCol sm="6" className="d-flex justify-content-center ">
-                              <Autocomplete
+                            <FormControl  className="mt-0 ml-2">
+                            <p className="title-3">Khu Vực</p>
+                                <RadioGroup className="ml-3" aria-label="gender" name="khuvuc" value={thongtin.khuvuc} onChange={(e)=>{
+                                  setThongTin({...thongtin,khuvuc:e.target.value})
+                                  setThongTinShow({...thongtinshow,khuvuc:e.target.name})
+                                  }}>
+                                    <FormControlLabel style={{color:'black'}} name="Đồng bằng Sông Cửu Long" value="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Cửu_Long" control={<Radio color="primary"  />} label="Đồng bằng Sông Cửu Long"/>
+                                    <FormControlLabel style={{color:'black'}} name="Đồng bằng Sông Hồng" value="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Sông_Hồng" control={<Radio color="primary"  />} label="Đồng bằng Sông Hồng"/>
+                                    <FormControlLabel style={{color:'black'}} name="Đồng bằng Duyên Hải Miền Trung" value="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Đồng_Bằng_Duyên_Hải_Miền_Trung" control={<Radio color="primary"  />} label="Đồng bằng Duyên Hải Miền Trung"/>
+                                </RadioGroup>
+                            </FormControl>
+                              {/* <Autocomplete
                                   id="combo-box-demo"
                                   options={khuVuc}
                                   getOptionLabel={(option) => option.title}
-                                  onChange={(e,value)=>{setThongTin({...thongtin, khuvuc:value})}}
+                                  onChange={(e,value)=>{value && setThongTin({...thongtin, khuvuc:value})}}
                                   style={{ width: 300 }}
                                   renderInput={(params) => <TextField {...params} label="KHU VỰC" variant="outlined" />}
+                              /> */}
+                          </MDBCol>
+                      </MDBRow>
+                      <MDBRow>
+                          <MDBCol sm="6" className="d-flex justify-content-center ">
+                            <FormControl className="mt-0 ml-2">
+                            <p className="title-3">Giai đoạn</p>
+                                <RadioGroup className="ml-3" aria-label="gender" name="khuvuc" value={thongtin.giaidoan} onChange={(e)=>{
+                                  setThongTin({...thongtin,giaidoan:e.target.value})
+                                  setThongTinShow({...thongtinshow,giaidoan:e.target.name})
+                                  }}>
+                                  <FormControlLabel style={{color:'black'}} name="Giai đoạn mạ" value="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_mạ" control={<Radio color="primary"  />} label="Giai đoạn mạ"/>
+                                  <FormControlLabel style={{color:'black'}} name="Giai đoạn làm đồng" value="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_làm_đồng" control={<Radio color="primary"  />} label="Giai đoạn làm đồng"/>
+                                  <FormControlLabel style={{color:'black'}} name="Giai đoạn đẻ nhánh" value="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_đẻ_nhánh" control={<Radio color="primary"  />} label="Giai đoạn đẻ nhánh"/>
+                                  <FormControlLabel style={{color:'black'}} name="Giai đoạn trổ chín" value="http://www.semanticweb.org/tvanl/ontologies/2020/8/benhlua#Giai_đoạn_trổ-chín" control={<Radio color="primary"  />} label="Giai đoạn trổ chín"/>
+                                </RadioGroup>
+                            </FormControl>
+                              {/* <Autocomplete
+                                  id="combo-box-demo"
+                                  options={khuVuc}
+                                  getOptionLabel={(option) => option.title}
+                                  onChange={(e,value)=>{value && setThongTin({...thongtin, khuvuc:value})}}
+                                  style={{ width: 300 }}
+                                  renderInput={(params) => <TextField {...params} label="KHU VỰC" variant="outlined" />}
+                              /> */}
+                          </MDBCol>
+                          <MDBCol sm="6">
+                            <MDBRow>
+                              <MDBCol sm="12"><p className="title-3 mb-0 pb-0">Giống Lúa</p></MDBCol>
+                              <MDBCol sm="12" className="d-flex justify-content-center mt-0 pt-0">
+                                <Autocomplete
+                                  id="highlights-demo"
+                                  options={gionglua}
+                                  className="mt-0 pt-0"
+                                  getOptionLabel={(option) => option.title.value}
+                                  onChange={(e,value)=>{if(value){ 
+                                    setThongTin({...thongtin,giong:value.uri.value})
+                                    setThongTinShow({...thongtinshow,giong:value.title.value})
+                                  }
+                                  }}
+                                  style={{ width: 300 }}
+                                  renderInput={(params) => (
+                                      <TextField {...params} label="GIỐNG LÚA" variant="outlined" margin="normal" />
+                                  )}
                               />
+                              </MDBCol>
+                            </MDBRow>
                           </MDBCol>
                       </MDBRow>
                       <MDBRow className="d-flex justify-content-center pt-2">
@@ -125,7 +182,7 @@ const Forecast = () =>{
                               DỰ BÁO
                           </Button>
                       </MDBRow>
-                  </MDBCol>
+                  </MDBCol>khuvuc
               </MDBRow>
                     </MDBCol>
                   </MDBRow>
@@ -143,19 +200,19 @@ const Forecast = () =>{
           <MDBRow className="mt-4">
             <MDBCol sm="6" className="text-center mb-3">
               <p className="title-text mb-0 ">Khu Vực</p> 
-              <span className="title-text-small">{thongtin.khuvuc.title}</span>
+              <span className="title-text-small">{thongtinshow.khuvuc}</span>
             </MDBCol>
             <MDBCol sm="6" className="text-center mb-3">
               <p className="title-text mb-0">Vụ Mùa</p>
-              <span className="title-text-small">{thongtin.vumua.title}</span>
+              <span className="title-text-small">{thongtinshow.vumua}</span>
             </MDBCol>
             <MDBCol sm="6" className="text-center mb-3">
               <p className="title-text mb-0">Giai Đoạn</p>
-              <span className="title-text-small">{thongtin.giaidoan.title}</span>
+              <span className="title-text-small">{thongtinshow.giaidoan}</span>
             </MDBCol>
             <MDBCol sm="6" className="text-center mb-3">
               <p className="title-text mb-0">Giống Lúa</p>
-              <span className="title-text-small">{thongtin.giong.title ? thongtin.giong.title.value : ''}</span>
+              <span className="title-text-small">{thongtinshow.giong}</span>
             </MDBCol>
           </MDBRow>
           <hr/>

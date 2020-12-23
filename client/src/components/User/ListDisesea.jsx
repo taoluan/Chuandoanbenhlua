@@ -31,7 +31,7 @@ const DiseseaTag = () =>{
         <div className="rgba-blue-slight" style={{position: "relative"}} id="timkiem">
         <Disesea />
         <SpeedScroll />
-        <main className=" smooth-scroll pb-4 " id="benh">
+        <main className=" smooth-scroll pb-4 " id="benh" >
             <MDBContainer className="bg-white mt-2 pb-4 z-depth-1" >
                 <MDBRow id="mota">
                 <header className=" align-self-md-center w-100" style={{backgroundColor:"#00C851"}}>

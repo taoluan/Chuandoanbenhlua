@@ -42,27 +42,27 @@ const Search = ()=> {
         <>
             <MDBCol md="9" sm="12" size="12" >
                 <Autocomplete
-                id="highlights-demo"
-                options={data}
-                getOptionLabel={(option) => option.ten_trieuchung}
-                onChange={(e,value)=>{value && setTextSearch(value)}}
-                renderInput={(params) => (
-                    <TextField {...params} label="Nhập triệu chứng trên lúa ?" variant="outlined" margin="normal" />
-                )}
-                renderOption={(option, { inputValue }) => {
-                    const matches = match(option.ten_trieuchung, inputValue);
-                    const parts = parse(option.ten_trieuchung, matches);
+                    id="highlights-demo"
+                    options={data}
+                    getOptionLabel={(option) => option.ten_trieuchung}
+                    onChange={(e,value)=>{value && setTextSearch(value)}}
+                    renderInput={(params) => (
+                        <TextField {...params} label="Nhập triệu chứng trên lúa ?" variant="outlined" margin="normal" />
+                    )}
+                    renderOption={(option, { inputValue }) => {
+                        const matches = match(option.ten_trieuchung, inputValue);
+                        const parts = parse(option.ten_trieuchung, matches);
 
-                    return (
-                    <div>
-                        {parts.map((part, index) => (
-                        <span key={index} style={{ fontWeight: part.highlight ? 700 : 400 }}>
-                            {part.text}
-                        </span>
-                        ))}
-                    </div>
-                    );
-                }}
+                        return (
+                        <div>
+                            {parts.map((part, index) => (
+                            <span key={index} style={{ fontWeight: part.highlight ? 700 : 400 }}>
+                                {part.text}
+                            </span>
+                            ))}
+                        </div>
+                        );
+                    }}
                 />
             </MDBCol>
             <MDBCol  md ="2" sm="12" size="12" className="d-flex align-items-center pr-0 mt-1 justify-content-start justify-content-center"> 

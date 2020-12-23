@@ -18,6 +18,7 @@ import {addData , addFirstTrieuChung,resetDisessea} from '../../reduxToolkit/Sli
 import diseseaApi from '../../api/diseseaApi'
 import { useTabContext } from '@material-ui/lab';
 import { Route } from 'react-router-dom';
+import SpeedScrollKetQua from '../UI/Container/SpeedScrollKetQua'
 const DiagnoseTag = () =>{
   let dispatch = useDispatch()
  // let ketqua = useSelector(state=>state.disesea.chuandoan)
@@ -75,8 +76,9 @@ const DiagnoseTag = () =>{
           <Header url={false}/> 
           <Route>
           <main className="grey lighten-4 pb-3">
+          <SpeedScrollKetQua ketqua={ketqua}/>
           <MDBContainer fluid style={{paddingTop:"100px" }}>
-            <MDBContainer  className="bg-white shadow-box-example z-depth-1">
+            <MDBContainer  className="bg-white shadow-box-example z-depth-1" >
               <MDBRow>
                 <MDBCol className="text-center">
                   <p className="title-3 mb-0 pb-0 mt-3">Chuẩn đoán bệnh</p>
@@ -100,7 +102,7 @@ const DiagnoseTag = () =>{
                       </header>
                     </MDBCol>
                     <MDBCol size="12" className="d-flex align-items-center">
-                      <MDBContainer>
+                      <MDBContainer >
                         {
                           ketqua.map((x,key)=>{
                             return (<Progress key={key} results={x}/>)
