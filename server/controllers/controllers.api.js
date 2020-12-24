@@ -5,7 +5,8 @@ const crypto = require('crypto');
 const createAdmin = require('../mongoose/ModelAdmin')
 const mongoose = require('mongoose');
 const twilio = require('twilio');
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const { readSync } = require('fs');
 const client = new twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 const tokenList = {}
 const OTPList = {}
@@ -906,7 +907,6 @@ module.exports = {
             let numberphone = req.body.number
             let number =  crypto.createHash('sha256').update(numberphone).digest('base64')
             const result = await createAdmin.findOne({phonenumber: number})
-            console.log(result)
             if(result){
                 const OTP = await functions.createOTP()
                 const send = await client.messages.create({
@@ -918,7 +918,7 @@ module.exports = {
                     OTPList[numberphone] = {message: send.sid , otp: OTP} 
                     setTimeout(()=>{
                         delete OTPList[numberphone]
-                    },60000)
+                    },100000)
                     res.status(200).send({status: true})
                 }
             }else{
@@ -934,48 +934,83 @@ module.exports = {
             let phone = req.body.phone
             let otp = req.body.otp
             const result = await createAdmin.findOne({phonenumber: crypto.createHash('sha256').update(phone).digest('base64')})
+            console.log({phone,OTPList})
             if(OTPList[phone] && result){
                 if(OTPList[phone].otp === otp){
-                    delete OTPList[phone]
                     const data = {
                         rules: result.rules,
                         name: result.name
                     }
                     const token = jwt.sign(data,process.env.SECRET_JWT,{expiresIn:process.env.LIFE_TOKEN_JWT})
                     tokenList[token] = {status: 'success',token:token,data: data}
-                    return res.status(200).send({status: 'success',token:token})
+                    delete OTPList[phone]
+                    res.status(200).send({status: true,token:token})
                 }else{
-                    res.status(400).send({status: false , message: 'Mã OTP của bạn không đúng'})
+                    res.status(200).send({status: false , message: 'Mã OTP của bạn không đúng'})
                 }
             }else{
-                res.status(400).send({status: false ,  message: 'Số điện thoại của bạn không đúng'})
+                res.status(200).send({status: false ,  message: 'Số điện thoại của bạn không đúng'})
             }
         } catch (error) {
             res.status(400).send(error)
         }
     },
-    verifyToken: async(req,res)=>{
-        try {
+    verifyToken: async(req,res,next)=>{ 
+        try {  
             const token = req.body.token || req.query.token || req.headers['authorization'] 
             //const token = auth && auth.split(' ')[1]
-            console.log(token)
             if (token) {
                 jwt.verify(token,process.env.SECRET_JWT, function(err, decoded) {
                     if (err) {
-                        return res.status(401).send({"error": true, "message": 'Unauthorized access.' });
+                        return res.status(401).send({status: false, message: 'Truy cập trái phép' });
                     }
-                    req.decoded = decoded;
-                    console.log(req.decoded)
-                    res.status(200).send(req.decoded)
-                    //next();
+                    const data  = decoded;
+                    if(data.rules === 'admin'){
+                        next();
+                    }else{
+                        res.status(401).send({status: false , message:'Không có phép truy cập'})
+                    }
+                    // console.log(req.decoded)
+                    // res.status(200).send(req.decoded)
+                    // //next();
                 });
               } else {
-                return res.status(403).send({
-                    "error": true,
-                    "message": 'No token provided.'
+                res.status(403).send({
+                    status: false,
+                    message: 'Không có mã thông báo nào được cung cấp.'
                 });
               }
         } catch (error) {
+            res.status(400).send(error)
+        }
+    },
+    getdataToken: async(req,res)=>{ 
+        try {  
+            const token = req.body.token || req.query.token || req.headers['authorization'] 
+            //const token = auth && auth.split(' ')[1]
+            if (token) {
+                jwt.verify(token,process.env.SECRET_JWT, function(err, decoded) {
+                    if (err) {
+                        return res.status(401).send({status: false, message: 'Truy cập trái phép' });
+                    } 
+                    const data  = decoded
+                    if(data.rules === 'admin'){
+                        res.status(200).send({status:true, data: data.name})
+                    }else{
+                        res.status(401).send({status: false , message:'Không có phép truy cập'})
+                    }
+                    // console.log(req.decoded)
+                    // res.status(200).send(req.decoded)
+                    // //next();
+                });
+              } else {
+                res.status(403).send({
+                    status: false,
+                    message: 'Không có mã thông báo nào được cung cấp.'
+                });
+              }
+        } catch (error) {
+            console.log(error)
             res.status(400).send(error)
         }
     }

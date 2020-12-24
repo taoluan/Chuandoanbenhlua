@@ -38,6 +38,6 @@ router.post('/deleteg',urlencodedParser,api_controllers.deleteG)
 router.post('/createadmin',urlencodedParser,api_controllers.createAdmin)
 router.post('/login',urlencodedParser,api_controllers.loginAdmin)
 router.post('/checkotp',urlencodedParser,api_controllers.checkOtp)
-router.post('/veryfitoken',urlencodedParser,api_controllers.verifyToken)
+router.post('/veryfitoken',urlencodedParser,api_controllers.verifyToken,api_controllers.getdataToken)
 
 module.exports = router

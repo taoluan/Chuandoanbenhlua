@@ -9,7 +9,8 @@ import SideNavigation from '../components/Admin/Navigation/sideNavigation';
 import '../css/admin.css'
 const Admin = ()=>{
     return(
-        <BrowserRouter>
+        <>
+        <Route>
             <div className="flexible-content">
             <TopNavigation />
             <SideNavigation />
@@ -23,7 +24,8 @@ const Admin = ()=>{
             </main>
             {/* <Footer /> */}
             </div>
-        </BrowserRouter>
+        </Route>
+        </>
     )
 }
 export default  Admin;

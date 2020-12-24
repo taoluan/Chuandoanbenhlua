@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+import { Redirect,Route,useHistory,BrowserRouter} from 'react-router-dom';
 import diseseaApi from '../../api/diseseaApi'
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
@@ -57,6 +57,8 @@ export default function SignInSide() {
     const [phone, setphone] = useState();
     const [check, setcheck] = useState(false);
     const [otp, setotp] = useState('');
+    const [logincheck, setlogincheck] = useState(false);
+    const history = useHistory();
     const handlePhone = async () => {
         if(phone){
             const respose = await diseseaApi.checkPhone({number : phone})
@@ -65,21 +67,33 @@ export default function SignInSide() {
             }else{
                 alert(respose.message)
             }
-            
         }else{
             alert('no no')
         }
     }
-    const handleOTP = () => {
+    const handleOTP = async () => {
         if(otp.length == 4){
-
+          const checkOTP = await diseseaApi.checkOTP({phone: phone , otp : otp})
+          if(checkOTP.status){
+            await localStorage.setItem('token', checkOTP.token)
+            setlogincheck(true)
+          }else{
+            alert(checkOTP.message)
+          }
         }else{
             alert("no no")
         }
     }
+    return(
+  logincheck
+  ? (
+    <Redirect to={{
+      pathname:"/admin",
+      }}/>
+  )
+  :(
     
-  return (
-      <>
+     <>
     <Header url={true}/>
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -133,5 +147,6 @@ export default function SignInSide() {
       </Grid>
     </Grid>
     </>
-  );
+  )
+)
 }

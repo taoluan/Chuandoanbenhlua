@@ -1,4 +1,5 @@
 import axiosClient from './axiosClient'
+import axiosAdmin from './axiosAdmin'
 const diseseaApi ={
     thongkeLoaiBenh: ()=>{
         const url = '/thongketheoloaibenh'
@@ -131,6 +132,15 @@ const diseseaApi ={
     checkPhone: (params)=>{
         const url = '/login'
         return axiosClient.post(url,params)
-    }
+    },
+    checkOTP: (params)=>{
+        const url = '/checkotp'
+        return axiosClient.post(url,params)
+    },
+    verifyToken: (params)=>{
+        const url = '/veryfitoken'
+        return axiosAdmin.post(url,params)
+    },
+
 }
 export default diseseaApi

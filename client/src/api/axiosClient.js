@@ -20,6 +20,6 @@ return response;
 }, (error) => {
 // Handle errors
     console.log(error)
-    throw error;
+     throw error;
 });
 export default axiosClient;
