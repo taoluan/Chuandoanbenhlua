@@ -949,7 +949,7 @@ module.exports = {
                     res.status(200).send({status: false , message: 'Mã OTP của bạn không đúng'})
                 }
             }else{
-                res.status(200).send({status: false ,  message: 'Số điện thoại của bạn không đúng'})
+                res.status(200).send({status: false ,  message: 'Mã OTP của bạn đã hết hạn'})
             }
         } catch (error) {
             res.status(400).send(error)

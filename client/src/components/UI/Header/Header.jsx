@@ -36,14 +36,14 @@ const Header = (props)=>{
                       <MDBNavLink className="text-dark font-weight-bold" to="/benh">Bệnh</MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
-                <MDBNavbarNav right>
+                {/* <MDBNavbarNav right>
                   <MDBNavItem>
                     <MDBNavLink to="#"><MDBIcon className="text-dark" fab icon="facebook-f" /></MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
                     <MDBNavLink to="#"><MDBIcon className="text-dark" fab icon="instagram" /></MDBNavLink>
                   </MDBNavItem>
-                </MDBNavbarNav>
+                </MDBNavbarNav> */}
               </MDBCollapse>
               </MDBContainer>
             </MDBNavbar>

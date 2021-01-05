@@ -115,7 +115,7 @@ const DiagnoseTag = () =>{
                 </MDBCol>
                 <MDBCol sm="9" size="12" className=" pr-0 pl-0">
                   <header className=" align-self-md-center" style={{height:"40px" , backgroundColor:"#9e9e9e "}}>
-                      <p className="title-2">Hãy quan sát thêm các triệu chứng tiếp thedata <Icon.ExclamationIcon/></p>
+                      <p className="title-2">Hãy quan sát thêm các triệu chứng tiếp theo <Icon.ExclamationIcon/></p>
                   </header>
                   <MDBRow>
                     <QuestionDefault data={datadefault} khuvuc={(e)=>setdatadefault({...datadefault, khuvuc: e})} vumua={(e)=>setdatadefault({...datadefault, vumua: e})} giaidoan={(e)=>setdatadefault({...datadefault, giaidoan: e})}/>

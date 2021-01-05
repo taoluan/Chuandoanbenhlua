@@ -4,7 +4,7 @@ import diseseaApi from '../../api/diseseaApi'
 import ModalInsertGiong from './sections/ModalInsertGiong'
 import ModalInsertTrieuChung from './sections/ModalInsertTrieuChung'
 import { Button } from 'antd';
-
+import { useHistory } from 'react-router-dom';
 const DataSymptom = () => {
     const [datatable, setDatatable] = useState({
         columns: [
@@ -53,6 +53,8 @@ const DataSymptom = () => {
     const [showdeletett, setshowdeletett] = useState(false);
     const [deleteG, setdeleteG] = useState(false);
     const [showdeleteg, setshowdeleteg] = useState(false);
+    const [isLogin, setisLogin] = useState(false);
+    const history = useHistory();
     const fetchAllTrieuChung = async() =>{
         const respose = await diseseaApi.getAllTrieuChungAdmin()
         setDatatable({
@@ -103,6 +105,22 @@ const DataSymptom = () => {
         setinsertGionglua(false)
         // fetchAllGiong()
     }
+    
+    const checkLogin = async (tokens) => {
+      const respose = await diseseaApi.verifyToken({token: tokens})
+      if(respose.status){
+        await setisLogin(true)
+      }else{
+        localStorage.removeItem('token')
+        history.push('/login');
+      }
+    }
+    useEffect(() => {
+      const tokens = localStorage.getItem('token')
+      checkLogin(tokens)
+      
+    }, [localStorage.getItem('token')]);
+    if(isLogin){
         return(
             (datatable.rows.length >0)
             ? (<MDBContainer fluid>
@@ -173,5 +191,11 @@ const DataSymptom = () => {
                 <></>
             )
         )
+    }else{
+        return(
+            <></>
+        )
+    }
+        
 }
 export default DataSymptom
